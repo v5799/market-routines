@@ -1,0 +1,17 @@
+{
+  "routine": "deepdive",
+  "run_at": "2026-08-23T18:05:00Z",
+  "items": [
+    { "label": "NVDA — thesis", "tag": "CONSTRUCTIVE", "detail": "Dominant AI-compute franchise trading at ~23x forward EPS with ~80% growth; buy-on-weakness, but a binary Q2 FY27 print (Aug 26-27) sits days away." },
+    { "label": "Price / cap", "tag": "$215.38", "detail": "Down 0.68% on the day, +15.5% YTD, ~9% below the $236.54 52-wk high; ~$5.2T market cap on ~24.29B shares." },
+    { "label": "Valuation", "tag": "~23x FWD", "detail": "45x trailing FY26 non-GAAP EPS ($4.77) but only ~23x FY27 consensus (~$9.3); PEG ~0.4 — cheap vs its own history and growth." },
+    { "label": "Growth", "tag": "HIGH", "detail": "FY26 revenue $215.9B (+65%), NI $120.1B; Q1 FY27 revenue $82B (+85% YoY), Data Center $75.2B; FY27 consensus ~$394B (+83%)." },
+    { "label": "Q2 FY27 earnings", "tag": "CATALYST 8/26", "detail": "Reports on/around Aug 26-27; guide ~$91B ±2%, consensus ~$92-95B. Stock priced for a beat; 2.2 beta amplifies any guidance miss." },
+    { "label": "Drivers", "tag": "MOAT", "detail": "Blackwell in full production, Rubin ramping H2-CY26 (3-4x FLOPs), networking ~doubling, sovereign AI ~92% share (~$30B, ~14% of revenue)." },
+    { "label": "Key risks", "tag": "RISK", "detail": "AI-capex/circular-financing bubble narrative (Burry, Altman caution), China/H20 export on-off ($8B/qtr swing), hyperscaler concentration, custom-silicon competition." },
+    { "label": "Consensus", "tag": "STRONG BUY", "detail": "~36 of 37 firms Buy; average target ~$305 (range $180-$500), implying ~40% upside; sell-side raised FY27 EPS toward $9.3." },
+    { "label": "12-mo scenarios", "tag": "TRIANGULATED", "detail": "Base ~$300 (+39%), Bull ~$400 (+86%), Bear ~$180 (-16%) — favorable but skewed, event-driven risk/reward." },
+    { "label": "Reporting currency", "tag": "USD", "detail": "Confirmed U.S. dollar — NVIDIA is a Delaware/SEC filer; 10-K/10-Q and all investor materials are reported in USD." }
+  ],
+  "full_report_url": "data/deepdive-latest.html"
+}
