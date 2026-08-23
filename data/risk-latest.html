@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Risk Review</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2530; --line:#2a3441;
+    --txt:#e6edf3; --muted:#9aa7b4; --accent:#58a6ff;
+    --hi:#f85149; --med:#e3b341; --ok:#3fb950; --gold:#e8b923;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:26px;margin:0 0 4px}
+  h2{font-size:18px;margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--muted);font-size:13px;margin-bottom:6px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+  .card .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .card .v{font-size:22px;font-weight:600;margin-top:4px}
+  .card .d{font-size:12px;color:var(--muted);margin-top:4px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .bar{height:8px;background:var(--panel2);border-radius:5px;overflow:hidden;min-width:80px}
+  .bar>span{display:block;height:100%;background:var(--accent)}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em}
+  .t-HIGH{background:rgba(248,81,73,.15);color:var(--hi)}
+  .t-MED{background:rgba(227,179,65,.15);color:var(--med)}
+  .t-WATCH{background:rgba(227,179,65,.12);color:var(--med)}
+  .t-PASS{background:rgba(63,185,80,.15);color:var(--ok)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-top:12px}
+  .hedge{border-left:3px solid var(--ok);padding:10px 14px;margin:10px 0;background:var(--panel);border-radius:0 8px 8px 0}
+  .hedge b{color:var(--ok)}
+  .heat td{text-align:center;font-variant-numeric:tabular-nums;font-weight:600}
+  .note{color:var(--muted);font-size:12px}
+  .src{font-size:12px;color:var(--muted)}
+  .src a{color:var(--accent);text-decoration:none}
+  .pill{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+  .flag{color:var(--hi);font-weight:600}
+  .good{color:var(--ok)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Portfolio Risk Review</h1>
+  <div class="sub">Live IBKR account &middot; generated 2026-08-23 17:06 UTC &middot; all figures sourced from IBKR connector or live web (dated) unless labeled ESTIMATED</div>
+
+  <div class="cards">
+    <div class="card"><div class="k">Net Liq. Value</div><div class="v">$494,329</div><div class="d">get_account_summary</div></div>
+    <div class="card"><div class="k">Cash</div><div class="v">$52,740</div><div class="d">10.7% &middot; leverage 0.89</div></div>
+    <div class="card"><div class="k">S&amp;P 500 block</div><div class="v" style="color:var(--hi)">68.8%</div><div class="d">SPY5+SPYL, corr 0.998</div></div>
+    <div class="card"><div class="k">TWR YTD</div><div class="v good">+3.39%</div><div class="d">MTD +2.55% &middot; 7D &minus;0.50%</div></div>
+    <div class="card"><div class="k">Gold (IGLN)</div><div class="v" style="color:var(--gold)">8.4%</div><div class="d">$41,737 &middot; +$1,654 U/L</div></div>
+    <div class="card"><div class="k">Positions</div><div class="v">13</div><div class="d">all long, no options/margin</div></div>
+  </div>
+
+  <h2>1 &middot; The concentration problem</h2>
+  <div class="panel">
+    Two of your holdings — <b>SPY5</b> ($221,213) and <b>SPYL</b> ($118,635) — are both S&amp;P 500 trackers.
+    Together they are <span class="flag">68.8% of NAV in a single index</span>, and their measured weekly-return
+    correlation over the past year is <b>0.998</b>. This is not two diversified positions; it is one bet held twice.
+    Adding the US single stocks (NVDA, MU, SNDK, GOOG, TTWO) pushes true US-equity beta to roughly <b>78% of NAV</b>.
+    <div class="note" style="margin-top:8px">Note: IBKR's allocation tags this book ~80% "Ireland / Europe" — that is the UCITS ETF <i>domicile</i>, not economic exposure. The underlying is overwhelmingly US large-cap.</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Holding</th><th class="num">Market value</th><th class="num">% NAV</th><th>Weight</th><th>Asset</th></tr></thead>
+    <tbody id="pos"></tbody>
+  </table>
+  <div class="note">Source: IBKR get_account_positions, 2026-08-23. Cash from get_account_summary.</div>
+
+  <h2>2 &middot; Risk flags</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Level</th><th>Detail</th></tr></thead>
+    <tbody id="flags"></tbody>
+  </table>
+
+  <h2>3 &middot; Real correlations (weekly returns, ~1yr, IBKR price history)</h2>
+  <div class="sub">Each concentrated holding vs. candidate hedge assets. Lower = better hedge. Computed from IBKR get_price_history (ONE_WEEK / ONE_YEAR), 51 weekly return observations.</div>
+  <table class="heat">
+    <thead><tr><th>Holding \ Hedge</th><th class="num">TLT</th><th class="num">IEF</th><th class="num">VEA</th><th class="num">VWO</th><th class="num">IGLN</th></tr></thead>
+    <tbody id="heat"></tbody>
+  </table>
+  <div class="note">Color scale: <span class="good">green</span> = low correlation (good hedge), <span class="flag">red</span> = high (poor hedge). TLT=20+yr Treasuries, IEF=7-10yr Treasuries, VEA=ex-US developed equity, VWO=emerging equity, IGLN=gold. Annualized vol: SPY5 12.3%, IGLN 23.0%, TLT 8.7%, IEF 4.4%, VEA 15.7%, VWO 16.3%.</div>
+
+  <h2>4 &middot; The 3 best hedges (chosen on the numbers)</h2>
+
+  <div class="hedge">
+    <b>1. Add IEF &mdash; 7-10yr US Treasuries</b> &nbsp;<span class="pill">corr +0.16 to S&amp;P block</span><br>
+    Lowest correlation of every candidate tested, at just 4.4% annualized vol. The cleanest ballast against the 69% equity concentration.
+  </div>
+  <div class="hedge">
+    <b>2. Add TLT &mdash; 20+yr US Treasuries</b> &nbsp;<span class="pill">corr +0.17 to S&amp;P block</span><br>
+    Longer duration gives more convex upside if the Fed eases into a growth scare. Caveat from the data: TLT is <b>0.91 correlated with IEF</b>, so size the two together as one duration sleeve rather than stacking both at full weight. Rate risk is live — the 10Y sits near a 1-year high at 4.72%.
+  </div>
+  <div class="hedge">
+    <b>3. Scale up IGLN gold toward ~12-15%</b> &nbsp;<span class="pill">corr +0.33 to S&amp;P block</span><br>
+    Gold correlates only +0.42 to Treasuries, so it is a genuinely independent hedge — and it covers the inflation / debasement / Middle-East (Strait of Hormuz) scenario that bonds do not. It is already the book's best diversifier at 8.4%.
+  </div>
+  <div class="panel" style="border-color:rgba(248,81,73,.4)">
+    <b class="flag">What the numbers rule out:</b> ex-US equity ETFs are <i>not</i> hedges for this book — VEA correlates <b>+0.65</b> and VWO <b>+0.66</b> to the S&amp;P block. "Just add international" would not meaningfully reduce drawdown risk here.
+  </div>
+
+  <h2>5 &middot; Macro backdrop (live web, dated)</h2>
+  <div class="panel">
+    <ul style="margin:0;padding-left:20px">
+      <li><b>Rates:</b> 10Y Treasury ~4.72%, near a 1-year high; markets scaled back Sept Fed <i>hike</i> odds to ~35% after a dovish PPI print (2026-08-18/20).</li>
+      <li><b>Geopolitics:</b> Strait of Hormuz crisis (ongoing since Feb 2026) keeps an oil + gold risk premium in place; Iran negotiations reported stalled.</li>
+      <li><b>Gold:</b> ~$4,400&ndash;4,530/oz, off the Jan 2026 all-time high near $5,600 but bid on the debasement trade after US Treasury bond-market intervention weakened the dollar.</li>
+      <li><b>Equities:</b> S&amp;P supported by the AI capex supercycle vs. headwinds from oil, tariffs, and a two-sided Fed — a setup where a duration + gold hedge combination covers both the deflationary and inflationary tail.</li>
+    </ul>
+  </div>
+  <div class="src" style="margin-top:10px">
+    Sources:
+    <a href="https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-thursday-august-20-2026-gold-rallies-after-treasury-announcement-fomc-meeting-minutes-153323375.html">Yahoo Finance — gold, 2026-08-20</a> &middot;
+    <a href="https://www.cnbc.com/2026/08/20/stock-market-today-live-updates.html">CNBC market news, 2026-08-21</a> &middot;
+    <a href="https://www.morganstanley.com/insights/articles/2026-market-optimism-and-risks">Morgan Stanley 2026 outlook</a> &middot;
+    <a href="https://www.jpmorgan.com/insights/global-research/outlook/market-outlook">J.P. Morgan 2026 outlook</a>
+  </div>
+
+  <div class="note" style="margin-top:26px">Portfolio metrics from the IBKR connector (get_account_positions / _summary / _balances / _pa_performance_all_periods / _pa_allocation / get_price_history), 2026-08-23. Correlations and vols computed from IBKR weekly closes. Not investment advice.</div>
+</div>
+
+<script>
+const NAV = 494328.94;
+const positions = [
+  ["SPY5", 221212.79, "S&P 500 ETF"],
+  ["SPYL", 118634.87, "S&P 500 ETF"],
+  ["IGLN", 41736.96, "Gold"],
+  ["TTWO", 10911.60, "US equity"],
+  ["MU", 9632.00, "Semis/memory"],
+  ["SNDK", 7965.99, "Semis/memory"],
+  ["REMX", 7860.00, "Rare-earth miners"],
+  ["SSLV", 7805.70, "Silver"],
+  ["NVDA", 5384.50, "Semis"],
+  ["IOVA", 3477.60, "Healthcare"],
+  ["PLUG", 2287.50, "Clean energy"],
+  ["GOOG", 2052.90, "US equity"],
+  ["GEV", 1914.50, "Utilities"],
+  ["Cash", 52739.84, "USD cash"],
+];
+const maxw = Math.max(...positions.map(p=>p[1]/NAV));
+document.getElementById("pos").innerHTML = positions.map(([t,v,a])=>{
+  const w = v/NAV;
+  return `<tr><td><b>${t}</b></td><td class="num">$${v.toLocaleString(undefined,{maximumFractionDigits:0})}</td>`+
+    `<td class="num">${(w*100).toFixed(1)}%</td>`+
+    `<td><div class="bar"><span style="width:${(w/maxw*100).toFixed(1)}%"></span></div></td>`+
+    `<td class="note">${a}</td></tr>`;
+}).join("");
+
+const flags = [
+  ["S&P 500 duplication","HIGH","SPY5+SPYL = 68.8% of NAV in one index, correlation 0.998 — effectively a single position."],
+  ["US equity beta","HIGH","~78% of NAV once single stocks are added; ETF 'Ireland/Europe' tag is domicile, not exposure."],
+  ["Semis cluster","WATCH","NVDA+MU+SNDK = $22,982 (4.6%), all high-beta to the tech block already dominant."],
+  ["Gold vol","MED","IGLN 23.0% annualized vol, but corr only +0.33 to equities — best existing diversifier."],
+  ["Rate risk on hedges","WATCH","10Y ~4.72% near 1yr high; Treasury hedges carry duration risk — pair with gold."],
+  ["Performance","PASS","TWR YTD +3.39%, MTD +2.55%; drawdown risk is concentration, not returns."],
+];
+document.getElementById("flags").innerHTML = flags.map(([i,l,d])=>
+  `<tr><td>${i}</td><td><span class="tag t-${l}">${l}</span></td><td class="note">${d}</td></tr>`).join("");
+
+const heat = [
+  ["SPY5",[0.17,0.16,0.65,0.66,0.33]],
+  ["SPYL",[0.18,0.16,0.65,0.66,0.34]],
+  ["IGLN",[0.41,0.42,0.48,0.42,1.00]],
+];
+function heatColor(v){
+  // 0 -> green, 1 -> red
+  const g = Math.round(185*(1-v)), r = Math.round(180*v+40);
+  return `background:rgba(${r},${g},70,0.20)`;
+}
+document.getElementById("heat").innerHTML = heat.map(([t,row])=>
+  `<tr><td style="text-align:left"><b>${t}</b></td>`+
+  row.map(v=>`<td style="${heatColor(v)}">${v.toFixed(2)}</td>`).join("")+`</tr>`).join("");
+</script>
+</body>
+</html>

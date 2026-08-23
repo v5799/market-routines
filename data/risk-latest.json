@@ -1,0 +1,20 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-23T17:06:14Z",
+  "items": [
+    { "label": "PORTFOLIO", "tag": "HIGH", "detail": "NAV $494,329 (IBKR get_account_summary); leverage 0.89 (no margin, $52,740 cash = 10.7%). Concentration is the dominant risk." },
+    { "label": "SPY5+SPYL", "tag": "HIGH", "detail": "Two S&P 500 ETFs = $339,848 or 68.8% of NAV; their weekly-return correlation is 0.998, so this is effectively one position, not diversification." },
+    { "label": "SPY5", "tag": "HIGH", "detail": "Single largest holding at $221,213 (44.7% of NAV), unrealized -$2,714 (IBKR get_account_positions)." },
+    { "label": "IGLN gold", "tag": "MED", "detail": "$41,737 (8.4% of NAV), +$1,654 unrealized; 23.0% annualized vol but corr only +0.33 to the S&P block — the book's best existing diversifier." },
+    { "label": "US equity beta", "tag": "HIGH", "detail": "~78% of NAV is US-equity beta (S&P block plus NVDA/MU/SNDK/GOOG/TTWO). Allocation's 80% 'Ireland/Europe' tag is ETF domicile, not economic exposure." },
+    { "label": "Semis cluster", "tag": "WATCH", "detail": "NVDA+MU+SNDK memory/semis = $22,982 (4.6%), all high-beta to the S&P tech block already dominating the book." },
+    { "label": "Performance", "tag": "PASS", "detail": "TWR YTD +3.39%, MTD +2.55%, 7D -0.50%, 1D +0.04% (IBKR get_pa_performance_all_periods, last update 2026-08-23 17:02 UTC)." },
+    { "label": "Macro", "tag": "WATCH", "detail": "10Y Treasury ~4.72% near 1yr high; Strait of Hormuz crisis + sticky oil keep Fed path two-sided (Sept hike odds ~35%); gold ~$4,400-4,530/oz on debasement bid (live web, 2026-08-18/20)." }
+  ],
+  "diversification_actions": [
+    { "action": "Add IEF (7-10yr US Treasuries) as core ballast", "rationale": "IEF's weekly-return correlation to the 69%-of-NAV S&P 500 block (SPY5) is +0.16 over the past year — the lowest of every candidate tested — at just 4.4% annualized vol, so it dampens equity drawdowns with minimal tracking noise." },
+    { "action": "Add TLT (20+yr US Treasuries) for convex growth-scare protection", "rationale": "TLT correlates +0.17 to the S&P 500 block; its long duration gives more convex upside if the Fed eases into a growth scare, though it is 0.91 correlated with IEF so the two should be sized together as one duration sleeve, not stacked." },
+    { "action": "Scale up the existing IGLN gold sleeve toward ~12-15%", "rationale": "Gold correlates +0.33 to the S&P block and only +0.42 to Treasuries, so it is an independent hedge that also covers the inflation/debasement and Middle-East (Hormuz) scenario bonds miss — unlike ex-US equity ETFs VEA (+0.65) and VWO (+0.66), which the data shows would NOT diversify this book." }
+  ],
+  "full_report_url": "data/risk-latest.html"
+}
