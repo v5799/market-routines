@@ -1,0 +1,20 @@
+{
+  "routine": "momentum",
+  "run_at": "2026-08-23T18:20:00Z",
+  "items": [
+    { "label": "MSFT", "tag": "HIGH", "detail": "Only ticker to clear the full 4-stage momentum funnel: +15.2% above its 50-day SMA, +12.1% above its 200-day SMA, RSI(14)=47 (healthy, not overbought), and a +15.3% 3-month return vs SPY's +3.1%." },
+    { "label": "MU", "tag": "MED", "detail": "Long-term uptrend intact (+68.7% above 200-day SMA, +26.9% 3-month vs SPY +3.1%) but price is essentially flat against its 50-day SMA and 23.3% off its $1,255 52-week high after the AI-memory rally cooled." },
+    { "label": "SNDK", "tag": "MED", "detail": "200-day SMA confirms a powerful long-term uptrend (+69.6%), but price is 3.7% below its 50-day SMA and 32.3% off its 52-week high, indicating short-term momentum has stalled." },
+    { "label": "NVDA", "tag": "MED", "detail": "Clean technical uptrend (+3.8% vs 50-day SMA, +10.3% vs 200-day SMA, RSI 59.5) but its -2.2% 3-month return trails SPY's +3.1%, missing the relative-strength bar despite intact trend." },
+    { "label": "TTWO", "tag": "MED", "detail": "Price holds just above both moving averages (+0.8%/+6.0%) with a neutral RSI of 46, but its +0.7% 3-month return badly trails SPY's +3.1% -- hold, not a fresh momentum entry." },
+    { "label": "IOVA", "tag": "WATCH", "detail": "Explosive momentum (+124% 3-month, +61.6% 1-month) but RSI(14) is an extreme 83 and the stock fell 7.9% Friday (to $8.28 from $8.99) -- flagged for blow-off-top/reversal risk, not a fresh entry." },
+    { "label": "AMZN", "tag": "WATCH", "detail": "Trend structure is bullish (+4.0% vs 50-day SMA, +8.9% vs 200-day SMA) but RSI(14) has dropped to 24.5 -- an oversold reading that contradicts a clean momentum breakout; stalling, not accelerating." },
+    { "label": "GEV", "tag": "FAIL", "detail": "Below its 50-day SMA (-7.5%) with RSI 40 and a -8.3% 3-month return vs SPY's +3.1%; 19.9% off its 52-week high -- momentum has broken down despite a still-positive 200-day trend." },
+    { "label": "GOOG", "tag": "FAIL", "detail": "RSI(14) at 21 and a -10.9% 3-month return (vs SPY +3.1%) signal a sharp momentum breakdown even though price remains marginally above its 200-day SMA (+3.0%)." },
+    { "label": "AAPL", "tag": "FAIL", "detail": "Essentially flat against its 50-day SMA (-0.2%, a borderline miss) with a +1.4% 3-month return trailing SPY's +3.1% -- no meaningful relative strength despite an intact 200-day uptrend." },
+    { "label": "PLUG", "tag": "FAIL", "detail": "Below both the 50-day (-2.7%) and 200-day (-8.1%) SMAs with a -40.0% 3-month return; 50.1% off its 52-week high -- no momentum case." },
+    { "label": "TSLA", "tag": "FAIL", "detail": "Friday's +5.4% single-session pop is not read as a trend signal (no-single-print guard): price stays below both the 50-day (-0.5%) and 200-day (-9.8%) SMAs, 3-month return -13.2% vs SPY +3.1%." },
+    { "label": "META", "tag": "FAIL", "detail": "Below both moving averages (-6.8% vs 50-day, -11.4% vs 200-day) with RSI 31 and a -9.5% 3-month return vs SPY's +3.1% -- a clear downtrend." }
+  ],
+  "full_report_url": "data/momentum-latest.html"
+}
