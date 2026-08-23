@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scout — Memory Semiconductor Supercycle</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#141926; --panel2:#1b2233; --line:#26304a;
+    --ink:#e7ecf5; --mut:#93a0bd; --accent:#5eead4; --accent2:#7dd3fc;
+    --lead:#34d399; --high:#fbbf24; --watch:#7dd3fc; --risk:#fb7185; --theme:#c4b5fd;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 64px}
+  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px}
+  .kicker{color:var(--accent);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+  h1{font-size:27px;margin:8px 0 6px;line-height:1.2}
+  .sub{color:var(--mut);font-size:14px}
+  .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .pill{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--mut)}
+  h2{font-size:17px;margin:34px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+  .stat{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+  .stat .n{font-size:22px;font-weight:700}
+  .stat .l{color:var(--mut);font-size:12px;margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;display:block}
+  @media(min-width:720px){table{display:table}}
+  th,td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tag{display:inline-block;border-radius:6px;padding:2px 9px;font-size:11px;font-weight:700;letter-spacing:.03em}
+  .t-lead{background:rgba(52,211,153,.15);color:var(--lead);border:1px solid rgba(52,211,153,.4)}
+  .t-high{background:rgba(251,191,36,.14);color:var(--high);border:1px solid rgba(251,191,36,.4)}
+  .t-watch{background:rgba(125,211,252,.14);color:var(--watch);border:1px solid rgba(125,211,252,.4)}
+  .t-risk{background:rgba(251,113,133,.14);color:var(--risk);border:1px solid rgba(251,113,133,.4)}
+  .t-theme{background:rgba(196,181,253,.14);color:var(--theme);border:1px solid rgba(196,181,253,.4)}
+  .pos{color:var(--lead)} .neg{color:var(--risk)}
+  ul{margin:8px 0 0;padding-left:20px} li{margin:6px 0}
+  .forces{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+  .force{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
+  .force .f{font-weight:700;font-size:13px}
+  .force .v{font-size:12px;margin-top:2px}
+  .lo{color:var(--lead)} .mid{color:var(--high)} .hi{color:var(--risk)}
+  .lead-box{background:linear-gradient(180deg,rgba(52,211,153,.08),rgba(20,25,38,0));border:1px solid rgba(52,211,153,.35)}
+  footer{margin-top:40px;color:var(--mut);font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+  code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">Scout · Opportunity Identification</div>
+  <h1>Memory Semiconductors — Riding the AI Memory Supercycle</h1>
+  <div class="sub">Industry-specific opportunity screen · DRAM · NAND · HBM · picks-and-shovels enablers</div>
+  <div class="meta">
+    <span class="pill">Run 2026-08-23 17:03 UTC</span>
+    <span class="pill">Industry selected from active-conviction holdings</span>
+    <span class="pill">Anchors: MU + SNDK (held) · NVDA (adjacent)</span>
+  </div>
+</header>
+
+<div class="card">
+  <strong>Why this industry.</strong> The account holds two single-name memory positions — <b>Micron (MU)</b> and
+  <b>SanDisk (SNDK)</b> — both winning hard, plus AI-adjacent NVDA. That makes memory the portfolio's clearest
+  coherent industry bet, so this screen goes deep on it. The thesis is already <i>validated</i> by the tape;
+  the job now is to find where the opportunity has <i>rotated</i> next.
+</div>
+
+<h2>Market landscape</h2>
+<div class="grid">
+  <div class="stat"><div class="n">~16% / ~17%</div><div class="l">IDC 2026 DRAM / NAND supply growth YoY — below historical norm vs AI demand</div></div>
+  <div class="stat"><div class="n">+60–70% QoQ</div><div class="l">TrendForce server-DRAM contract pricing; Jefferies models +40-50% again in Q3'26</div></div>
+  <div class="stat"><div class="n">$60–100</div><div class="l">Price of one HBM3E module vs ~$5–10 for equivalent DDR5 — the margin magnet pulling capacity to HBM</div></div>
+  <div class="stat"><div class="n">2027–2030+</div><div class="l">When supply relief is expected; SK Hynix warns the shortage may run past 2030</div></div>
+</div>
+
+<h3 style="color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-top:22px">Porter's Five Forces</h3>
+<div class="forces">
+  <div class="force"><div class="f">Internal rivalry <span class="lo">LOW</span></div><div class="v">3 makers ≈95% of DRAM; discipline as capacity shifts to HBM</div></div>
+  <div class="force"><div class="f">Supplier power <span class="mid">MOD–HIGH</span></div><div class="v">WFE oligopoly (AMAT/LRCX/ASML/KLAC) + HBM bonder (Hanmi) price up</div></div>
+  <div class="force"><div class="f">Buyer power <span class="lo">LOW now</span></div><div class="v">Hyperscalers prepaying / long-term agreements to secure HBM</div></div>
+  <div class="force"><div class="f">New entrants <span class="hi">RISK</span></div><div class="v">Subsidized China entry (CXMT/YMTC) in commodity tiers</div></div>
+  <div class="force"><div class="f">Substitutes <span class="lo">LOW</span></div><div class="v">No substitute for HBM in AI accelerators near-term</div></div>
+</div>
+
+<h2>Opportunity set — top leads</h2>
+<table>
+  <thead><tr><th>Name</th><th>Role in the chain</th><th class="num">YTD</th><th class="num">Price / 52w range</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><b>RMBS</b><br>Rambus</td>
+      <td>DDR5/HBM interface IP + register/PMIC content per module</td>
+      <td class="num neg">-0.5%</td>
+      <td class="num">$91.48<br><span style="color:var(--mut)">$70.9 – $174.1</span></td>
+      <td><span class="tag t-lead">lead</span> flat while sector parabolic; near 52w low</td>
+    </tr>
+    <tr>
+      <td><b>042700.KS</b><br>Hanmi Semiconductor</td>
+      <td>Near-monopoly HBM thermal-compression bonders</td>
+      <td class="num pos">+67.6%</td>
+      <td class="num">₩213,500<br><span style="color:var(--mut)">₩87k – ₩372.5k</span></td>
+      <td><span class="tag t-lead">lead</span> ~43% off high; HBM4 adds bonding steps</td>
+    </tr>
+    <tr>
+      <td><b>000660.KS</b><br>SK Hynix</td>
+      <td>HBM share leader (~62% shipments; ~70% HBM4 est.)</td>
+      <td class="num pos">+166%</td>
+      <td class="num">₩1.73M<br><span style="color:var(--mut)">₩245k – ₩2.99M</span></td>
+      <td><span class="tag t-high">HIGH</span> least extended vs its dominance</td>
+    </tr>
+    <tr>
+      <td><b>LRCX</b><br>Lam Research</td>
+      <td>Etch/deposition WFE for 3D-NAND & HBM TSV/capacity</td>
+      <td class="num pos">+84%</td>
+      <td class="num">$314.59<br><span style="color:var(--mut)">$93.6 – $438.5</span></td>
+      <td><span class="tag t-watch">WATCH</span> equipment-oligopoly moat, high visibility</td>
+    </tr>
+    <tr>
+      <td><b>CXL pooling</b><br>Astera / Marvell / Rambus</td>
+      <td>Memory expansion & pooling controllers (market gap)</td>
+      <td class="num" style="color:var(--mut)">—</td>
+      <td class="num" style="color:var(--mut)">theme</td>
+      <td><span class="tag t-lead">lead</span> scarcity forces disaggregation; barely priced</td>
+    </tr>
+  </tbody>
+</table>
+<p style="color:var(--mut);font-size:12.5px">Held-for-reference (extended): SNDK +571% YTD, Kioxia (285A) +416%, MU +238% — the thesis is proven here, but these are the parabolic legs, not the entry.</p>
+
+<h2>Most promising lead — Rambus (RMBS)</h2>
+<div class="card lead-box">
+  <p>Of everything screened, <b>Rambus offers the cleanest risk/reward disconnect</b>. It is a direct content
+  beneficiary of the exact thing driving the cycle — every DDR5 module carries Rambus register-clock drivers and
+  companion power/temperature chips, and dollar-content <i>rises</i> with DDR5 mix, MRDIMM, and HBM/CXL adoption.
+  Yet the stock is <b>flat on the year (-0.5%)</b> and trading near its 52-week low while pure memory makers have
+  gone up 2–6×.</p>
+  <ul>
+    <li><b>Defensibility:</b> patent/royalty IP moat plus a tight buffer-chip oligopoly (with Montage &amp; Renesas) — high barriers, sticky sockets.</li>
+    <li><b>Asymmetry:</b> it has simply not participated, so it does not carry the parabolic downside of SNDK/MU/Kioxia.</li>
+    <li><b>Catalyst path:</b> DDR5 server ramp, MRDIMM attach, and CXL memory expansion each add content the market has not yet rewarded.</li>
+    <li><b>The catch:</b> flat-for-a-reason risk — royalty-timing lumpiness and competition mean this is a lead to <i>validate</i>, not a reflex buy.</li>
+  </ul>
+</div>
+
+<h2>Critical shifts &amp; emerging threats</h2>
+<div class="card">
+  <ul>
+    <li><span class="tag t-risk">RISK</span> <b>Late-cycle froth.</b> Parabolic pure-memory moves (SNDK +571%, Kioxia +416% YTD) are classic late-cycle behavior; an AI-capex digestion air-pocket would hit these first and hardest.</li>
+    <li><span class="tag t-risk">RISK</span> <b>China commodity supply.</b> Subsidized CXMT (DRAM) and YMTC (NAND) ramps threaten commodity-tier pricing and add two-way geopolitical/export-control risk.</li>
+    <li><span class="tag t-theme">SHIFT</span> <b>HBM base-die goes logic.</b> HBM4 moves the base die toward foundry logic — pulling TSMC and custom silicon into the memory value chain and reshaping who captures margin.</li>
+    <li><span class="tag t-theme">NOTE</span> <b>Book concentration.</b> The portfolio is already long memory (MU + SNDK + NVDA); adding memory single-names raises correlation — favor enablers with a different driver (WFE, bonders, interface IP) over another DRAM/NAND maker.</li>
+  </ul>
+</div>
+
+<footer>
+  Generated by the Scout market routine. Industry auto-selected from IBKR active-conviction holdings.
+  Market/pricing data via the Interactive Brokers connector (snapshot 2026-08-23); macro/forecast context via
+  live web search (IDC, TrendForce, Jefferies, Omdia, SK Hynix). Research and educational use only — not
+  investment advice. Figures are point-in-time snapshots and change intraday.
+</footer>
+</div>
+</body>
+</html>

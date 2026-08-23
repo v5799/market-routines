@@ -1,0 +1,1 @@
+2026-08-23 — Scout: Memory semiconductors (DRAM/NAND/HBM) supercycle; industry from active-conviction holdings (MU+SNDK). Top lead RMBS (flat YTD, near 52w low) as under-participated DDR5/HBM content play; also Hanmi (HBM bonders), SK Hynix, LRCX; flagged late-cycle froth + China supply risk.

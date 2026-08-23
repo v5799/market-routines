@@ -1,0 +1,16 @@
+{
+  "routine": "scout",
+  "run_at": "2026-08-23T17:03:48Z",
+  "industry": "Memory Semiconductors (DRAM / NAND / HBM) — the AI memory supercycle",
+  "selection_method": "Active-conviction holdings: two single-name memory positions held and winning (MU +238% YTD, SNDK +571% YTD) plus AI-adjacent NVDA, making memory the account's clearest coherent industry bet.",
+  "items": [
+    { "label": "Memory market", "tag": "supercycle", "detail": "IDC sees 2026 DRAM/NAND supply growth of only 16%/17% YoY vs demand from AI, and TrendForce/Jefferies model server-DRAM +60-70% QoQ with relief unlikely before 2027-2028 — an oligopoly (Samsung/SK Hynix/Micron ~95% of DRAM) with disciplined pricing." },
+    { "label": "RMBS", "tag": "lead", "detail": "Rambus is the single most asymmetric name: a DDR5/HBM interface-IP and register/PMIC content beneficiary that is FLAT YTD (-0.5%) and sits near its 52-week low ($91 vs $71 low / $174 high) while the whole sector is parabolic." },
+    { "label": "042700.KS (Hanmi)", "tag": "lead", "detail": "Hanmi Semiconductor holds a near-monopoly on HBM thermal-compression bonders and each HBM4/HBM4E generation adds bonding steps (structural content growth); +68% YTD but ~43% off its high — a pullback in a picks-and-shovels winner (KRX access/liquidity is the catch)." },
+    { "label": "000660.KS (SK Hynix)", "tag": "HIGH", "detail": "SK Hynix is the HBM share leader (~62% of HBM shipments, UBS sees ~70% HBM4 share) yet up only 166% YTD — far less extended than SNDK/MU/Kioxia relative to its dominance." },
+    { "label": "LRCX", "tag": "WATCH", "detail": "Lam Research is the etch/deposition WFE leader most levered to 3D-NAND layer scaling and HBM TSV/DRAM capacity adds; +84% YTD with a durable equipment-oligopoly moat and higher visibility than the memory makers themselves." },
+    { "label": "CXL memory pooling", "tag": "lead", "detail": "Emerging market gap: as scarcity forces AI datacenters to pool and disaggregate memory, CXL expansion/controller vendors (Astera Labs, Marvell, Rambus) gain a new content vector that is barely priced in." },
+    { "label": "Cycle risk", "tag": "RISK", "detail": "Parabolic moves in the pure memory makers (SNDK +571%, Kioxia +416% YTD) signal late-cycle froth, and 2026 capacity additions plus subsidized China supply (CXMT DRAM, YMTC NAND) could sharply reverse commodity-tier pricing." }
+  ],
+  "full_report_url": "data/scout-latest.html"
+}
