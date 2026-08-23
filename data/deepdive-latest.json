@@ -1,0 +1,11 @@
+{
+  "routine": "deepdive",
+  "run_at": "2026-08-23T16:24:07Z",
+  "items": [
+    {
+      "label": "no input",
+      "tag": "skipped",
+      "detail": "Run skipped: the API trigger payload contained no recognizable target ticker symbol, so no valuation dossier was produced."
+    }
+  ]
+}
