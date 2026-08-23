@@ -1,0 +1,10 @@
+{
+  "routine": "deepdive",
+  "run_at": "2026-08-23T17:02:00Z",
+  "status": "skipped",
+  "skip_reason": "No target ticker supplied in the trigger payload. The deepdive routine expects an API payload of the form 'Target ticker: NVDA'; none was present, so there was nothing to value.",
+  "items": [
+    { "label": "(no ticker)", "tag": "SKIPPED", "detail": "Run skipped for missing input: trigger payload contained no recognizable ticker symbol." }
+  ],
+  "full_report_url": "data/deepdive-latest.json"
+}
