@@ -1,3 +1,4 @@
 # Changelog
 
 - 2026-08-23: Momentum screener v2 (audit-hardened) run on 13-name account/watchlist universe vs SPY; 1/13 (MSFT) cleared the full 4-stage funnel, IOVA/AMZN flagged WATCH for overbought/oversold divergence, TSLA's +5.44% session excluded from scoring under the no-single-print guard.
+- 2026-08-23: Industry deepdive on Memory & Storage Semiconductors (DRAM/NAND/HBM), industry chosen from active-conviction holdings (MU/SNDK/NVDA cluster, IBKR "Memory Chips" theme). Landscape + Porter's Five Forces + opportunity map; ranked MU (#1, held), SK Hynix (#2, HBM leader ~62%/~70% Rubin HBM4, not held), SNDK (#3, held), Kioxia (consolidation watch) and CXL disaggregation (thematic lead). Key risk: late-cycle ASP peak (~mid-2026) with the account already leaning into one AI-memory macro bet.
