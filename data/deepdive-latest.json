@@ -1,0 +1,15 @@
+{
+  "routine": "deepdive",
+  "run_at": "2026-08-23T16:45:00Z",
+  "items": [
+    { "label": "NVDA", "tag": "BUY", "detail": "Base-case 12-mo fair value ~$300 (≈40% upside) vs $215.38 spot; forward ~26x FY27E / ~20x FY28E EPS for a 50%+ grower with 71% margins and $72B net cash." },
+    { "label": "Currency", "tag": "USD", "detail": "Primary reporting currency is US dollars per NVIDIA's audited 10-K/10-Q filings and investor materials." },
+    { "label": "Catalyst", "tag": "HIGH", "detail": "Q2 FY2027 earnings print lands Aug 26, 2026 (3 days out); Street models ~$93B revenue, options price ~39% annualized IV — binary near-term risk." },
+    { "label": "Fundamentals", "tag": "PASS", "detail": "FY26 revenue $215.9B (+65%), net income $120.1B, GAAP EPS $4.90; Q1 FY27 revenue $81.6B with Data Center +92% YoY to $75.2B." },
+    { "label": "Demand", "tag": "PASS", "detail": "Hyperscaler capex ~$690B in 2026 (Amazon $220B, Google ~$200B); management guided Q2 ~$91B with China revenue stripped out entirely." },
+    { "label": "Competition", "tag": "WATCH", "detail": "Still ~80% AI-accelerator share, but custom ASICs (Broadcom $8.4B/qtr, +106%; $73B backlog) and AMD MI400 (6GW each from OpenAI & Meta) are the structural bear case." },
+    { "label": "China", "tag": "WATCH", "detail": "H20/H200 export licenses granted but effectively $0 realized China revenue; local rivals (Huawei) filling the gap — upside optionality, not a base-case contributor." },
+    { "label": "Valuation", "tag": "MED", "detail": "$5.2T market cap; trailing 44x GAAP EPS compresses to ~26x FY27E as earnings compound — de-rating risk if AI capex digestion arrives." }
+  ],
+  "full_report_url": "data/deepdive-latest.html"
+}

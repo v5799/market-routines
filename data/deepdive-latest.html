@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVDA — Valuation Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0A0C0D; --bg-1:#111417; --bg-2:#171B1F; --bg-3:#1E2327;
+    --line:#262C31; --line-strong:#343B41;
+    --ink-0:#EDEFEF; --ink-1:#A9B0B6; --ink-2:#6C747B;
+    --chrome:#7FA0B8; --copper:#C9915A;
+    --up:#4EAE83; --down:#D9695F; --warn:#C9A94E;
+    --font-display:'Fraunces',serif; --font-mono:'IBM Plex Mono',monospace; --font-sans:'Inter',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg-0);color:var(--ink-0);font-family:var(--font-sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 24px 90px;}
+  a{color:var(--chrome);text-decoration:none;border-bottom:1px solid var(--line-strong);}
+
+  /* masthead */
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px;}
+  .wordmark{font-family:var(--font-display);font-weight:600;font-size:24px;letter-spacing:0.2px;line-height:1.15;}
+  .wordmark span{color:var(--copper);}
+  .subline{color:var(--ink-2);font-size:11.5px;font-family:var(--font-mono);margin-top:5px;letter-spacing:0.4px;}
+  .status-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end;}
+  .status-pill{display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:11px;color:var(--ink-1);}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--ink-2);}
+  .dot.ok{background:var(--up);} .dot.warn{background:var(--warn);}
+
+  .disclaimer{background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--copper);padding:9px 14px;font-family:var(--font-mono);font-size:11px;color:var(--ink-1);margin:18px 0 26px;line-height:1.65;}
+  .disclaimer b{color:var(--copper);font-weight:500;}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-bottom:16px;}
+  @media(max-width:820px){.hero{grid-template-columns:1fr;}}
+  .panel{background:var(--bg-1);border:1px solid var(--line);padding:22px 24px;margin-bottom:16px;}
+  .panel-title{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-1);text-transform:uppercase;letter-spacing:0.6px;margin:0 0 16px;display:flex;justify-content:space-between;align-items:center;}
+  .panel-title .tag{color:var(--ink-2);text-transform:none;letter-spacing:0;font-size:11px;}
+
+  .verdict-head{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
+  .verdict-ticker{font-family:var(--font-display);font-size:34px;font-weight:600;}
+  .verdict-name{color:var(--ink-2);font-size:13px;font-family:var(--font-mono);}
+  .rating-badge{font-family:var(--font-mono);font-size:13px;font-weight:600;letter-spacing:0.5px;padding:4px 12px;border:1px solid var(--up);color:var(--up);background:rgba(78,174,131,0.08);}
+  .thesis-text{font-size:14px;color:var(--ink-1);line-height:1.68;}
+  .thesis-text strong{color:var(--ink-0);font-weight:600;}
+
+  .price-box{display:flex;flex-direction:column;justify-content:center;}
+  .price-now{font-family:var(--font-display);font-size:40px;font-weight:600;line-height:1;}
+  .price-chg{font-family:var(--font-mono);font-size:13px;margin-top:6px;}
+  .price-chg.down{color:var(--down);} .price-chg.up{color:var(--up);}
+  .price-rows{margin-top:16px;border-top:1px solid var(--line);padding-top:12px;}
+  .price-rows .r{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:12px;padding:5px 0;color:var(--ink-1);border-bottom:1px solid var(--line);}
+  .price-rows .r:last-child{border-bottom:none;}
+  .price-rows .r b{color:var(--ink-0);font-weight:500;}
+
+  /* metric strip */
+  .metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px;}
+  @media(max-width:820px){.metric-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric{background:var(--bg-2);border:1px solid var(--line);padding:13px 15px;}
+  .metric-label{font-family:var(--font-mono);font-size:10px;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.5px;}
+  .metric-value{font-family:var(--font-display);font-size:22px;font-weight:500;margin-top:6px;}
+  .metric-value.up{color:var(--up);} .metric-value.copper{color:var(--copper);}
+  .metric-sub{font-family:var(--font-mono);font-size:10px;color:var(--ink-2);margin-top:3px;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-family:var(--font-mono);font-size:12.5px;}
+  th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line);}
+  th:first-child,td:first-child{text-align:left;}
+  thead th{color:var(--ink-2);font-weight:500;font-size:10.5px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--line-strong);}
+  tbody tr:hover{background:var(--bg-2);}
+  td b{color:var(--ink-0);} .num-up{color:var(--up);} .num-down{color:var(--down);}
+  .fy-cur{background:rgba(201,145,90,0.06);}
+
+  /* scenario bars */
+  .scen{display:flex;flex-direction:column;gap:14px;}
+  .scen-row{display:grid;grid-template-columns:110px 1fr 92px;gap:14px;align-items:center;}
+  @media(max-width:820px){.scen-row{grid-template-columns:90px 1fr 78px;}}
+  .scen-name{font-family:var(--font-mono);font-size:12px;}
+  .scen-name .p{color:var(--ink-2);font-size:10.5px;display:block;margin-top:2px;}
+  .bar-track{position:relative;height:26px;background:var(--bg-2);border:1px solid var(--line);}
+  .bar-fill{position:absolute;top:0;left:0;height:100%;opacity:0.85;}
+  .bar-fill.bull{background:var(--up);} .bar-fill.base{background:var(--copper);} .bar-fill.bear{background:var(--down);}
+  .bar-cur{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink-0);}
+  .bar-cur span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:9px;color:var(--ink-1);white-space:nowrap;}
+  .scen-tgt{font-family:var(--font-mono);font-size:15px;text-align:right;font-weight:600;}
+  .scen-tgt .u{display:block;font-size:10px;font-weight:400;color:var(--ink-2);margin-top:2px;}
+
+  /* two-col driver lists */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:820px){.split{grid-template-columns:1fr;}}
+  .drv-list{list-style:none;margin:0;padding:0;}
+  .drv-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-1);display:flex;gap:10px;line-height:1.55;}
+  .drv-list li:last-child{border-bottom:none;}
+  .drv-list li .mk{font-family:var(--font-mono);font-size:11px;flex-shrink:0;margin-top:1px;}
+  .mk.plus{color:var(--up);} .mk.minus{color:var(--down);}
+  .drv-list li b{color:var(--ink-0);font-weight:600;}
+
+  .sec-h{font-family:var(--font-display);font-size:19px;font-weight:600;margin:34px 0 4px;}
+  .sec-sub{color:var(--ink-2);font-size:12px;font-family:var(--font-mono);margin-bottom:16px;}
+
+  .callout{background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--chrome);padding:12px 16px;font-size:13px;color:var(--ink-1);margin-top:14px;line-height:1.6;}
+  .callout b{color:var(--ink-0);}
+
+  .tri-note{font-family:var(--font-mono);font-size:11px;color:var(--ink-2);margin-top:12px;line-height:1.6;}
+  footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-family:var(--font-mono);font-size:11px;color:var(--ink-2);line-height:1.7;}
+  .pill-tag{display:inline-block;padding:1px 7px;font-size:10px;font-family:var(--font-mono);border:1px solid var(--line-strong);color:var(--ink-1);margin-left:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="wordmark">Stairway to Heaven <span>Financial</span></div>
+      <div class="subline">DEEP-DIVE DESK · EQUITY VALUATION DOSSIER</div>
+    </div>
+    <div class="status-row">
+      <div class="status-pill"><span class="dot ok"></span> LIVE QUOTE · IBKR</div>
+      <div class="status-pill"><span class="dot ok"></span> FILINGS FY25–Q1FY27</div>
+      <div class="status-pill"><span class="dot warn"></span> EARNINGS T-3D</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <b>RESEARCH NOTE — NOT INVESTMENT ADVICE.</b> Automated deep-dive generated 2026-08-23. Figures blend live IBKR market data with NVIDIA audited filings (FY2025–Q1 FY2027) and consensus aggregates. Forward estimates and scenario targets are model outputs, not guarantees. Reporting currency: <b>USD</b>. Position for the Q2 FY2027 print on <b>Aug 26, 2026</b>.
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="panel">
+      <div class="verdict-head">
+        <span class="verdict-ticker">NVDA</span>
+        <span class="verdict-name">NVIDIA Corp · NASDAQ · USD</span>
+        <span class="rating-badge">BUY · ACCUMULATE</span>
+      </div>
+      <p class="thesis-text">
+        NVIDIA sits at the center of the largest capex cycle in computing history and remains the default supplier of AI compute at <strong>~80% accelerator share</strong>. FY2026 closed at <strong>$215.9B revenue (+65%)</strong> and <strong>$120.1B net income</strong>; Q1 FY2027 already ran at an <strong>$81.6B quarterly pace</strong> with Data Center up 92%. Yet the stock trades ~9% below its 52-week high, and the forward multiple has compressed to <strong>~26x FY27E / ~20x FY28E</strong> as earnings outrun the price. With <strong>$72B net cash</strong>, 71% gross margins, and hyperscaler capex still accelerating, the risk/reward skews constructive — <strong>base-case fair value ≈ $300 (~40% upside)</strong>. The near-term swing factor is the <strong>Aug 26 print</strong>; the structural swing factor is custom-ASIC competition. Size the position for both.
+      </p>
+    </div>
+    <div class="panel price-box">
+      <div>
+        <div class="price-now">$215.38</div>
+        <div class="price-chg down">▼ 1.47 (−0.68%) · intraday</div>
+      </div>
+      <div class="price-rows">
+        <div class="r"><span>Prior close</span><b>$216.85</b></div>
+        <div class="r"><span>52-wk range</span><b>164.04 – 236.54</b></div>
+        <div class="r"><span>YTD change</span><b class="num-up">+15.5%</b></div>
+        <div class="r"><span>Implied vol (annual)</span><b>39.2%</b></div>
+        <div class="r"><span>Market cap</span><b>≈ $5.21T</b></div>
+        <div class="r"><span>Div yield</span><b>0.13%</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUATION METRIC STRIP -->
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-label">P/E trailing</div>
+      <div class="metric-value">44×</div>
+      <div class="metric-sub">FY26 GAAP EPS $4.90</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">P/E forward</div>
+      <div class="metric-value copper">~26×</div>
+      <div class="metric-sub">FY27E EPS ~$8.3</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">EV / Sales fwd</div>
+      <div class="metric-value">~13×</div>
+      <div class="metric-sub">FY27E rev ~$382B</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Gross margin</div>
+      <div class="metric-value up">71.1%</div>
+      <div class="metric-sub">FY26 GAAP</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Net cash</div>
+      <div class="metric-value copper">$72B</div>
+      <div class="metric-sub">$80.6B liquid − $8.5B debt</div>
+    </div>
+  </div>
+
+  <!-- FUNDAMENTALS -->
+  <div class="sec-h">Multi-year fundamentals</div>
+  <div class="sec-sub">Fiscal year ends late January · USD · GAAP · FY27 = current year (Q1 actual, Q2–Q4 modeled)</div>
+  <div class="panel" style="padding-top:16px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>FY2024</th>
+          <th>FY2025</th>
+          <th>FY2026</th>
+          <th>FY2027E</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Revenue ($B)</td><td>60.9</td><td>130.5</td><td><b>215.9</b></td><td class="fy-cur"><b>~382</b></td></tr>
+        <tr><td>&nbsp;&nbsp;YoY growth</td><td class="num-up">+126%</td><td class="num-up">+114%</td><td class="num-up">+65%</td><td class="fy-cur num-up">~+77%</td></tr>
+        <tr><td>Data Center ($B)</td><td>47.5</td><td>~115</td><td><b>193.7</b></td><td class="fy-cur">~345</td></tr>
+        <tr><td>Gross margin</td><td>72.7%</td><td>75.0%</td><td>71.1%</td><td class="fy-cur">~72–73%</td></tr>
+        <tr><td>Operating income ($B)</td><td>33.0</td><td>81.5</td><td><b>130.4</b></td><td class="fy-cur">~235</td></tr>
+        <tr><td>Net income ($B)</td><td>29.8</td><td>72.9</td><td><b>120.1</b></td><td class="fy-cur">~200</td></tr>
+        <tr><td>GAAP EPS ($)</td><td>1.19</td><td>2.94</td><td><b>4.90</b></td><td class="fy-cur"><b>~8.3</b></td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <b>Q1 FY2027 (ended Apr 26, 2026):</b> revenue $81.6B, Data Center +92% YoY to $75.2B, management guided Q2 to ~$91B with China revenue excluded entirely. <b>Q2 FY2027 prints Aug 26, 2026</b> — Street models ~$93B revenue. The FY27E column above assumes a continued sequential ramp of Blackwell Ultra and the early Rubin cycle; it is a model, not consensus.
+    </div>
+  </div>
+
+  <!-- DRIVERS -->
+  <div class="sec-h">Qualitative drivers</div>
+  <div class="sec-sub">What actually moves the thesis over the next 12–24 months</div>
+  <div class="split">
+    <div class="panel">
+      <div class="panel-title">Tailwinds <span class="tag">bull case</span></div>
+      <ul class="drv-list">
+        <li><span class="mk plus">▲</span><span><b>Hyperscaler capex sprint.</b> ~$690B of 2026 AI infrastructure spend — Amazon $220B, Google ~$200B — with cloud capacity still supply-constrained.</span></li>
+        <li><span class="mk plus">▲</span><span><b>Blackwell → Rubin cadence.</b> Blackwell Ultra ramping; annual architecture cadence keeps the performance-per-watt lead and pricing power intact.</span></li>
+        <li><span class="mk plus">▲</span><span><b>Networking flywheel.</b> NVLink/Spectrum + InfiniBand attach nearly doubled; the rack-scale system, not just the GPU, is the moat.</span></li>
+        <li><span class="mk plus">▲</span><span><b>CUDA software lock-in.</b> Two decades of developer tooling raise switching costs against every merchant and custom-silicon rival.</span></li>
+        <li><span class="mk plus">▲</span><span><b>Fortress balance sheet.</b> $72B net cash funds buybacks, supply pre-payments, and strategic stakes without dilution.</span></li>
+        <li><span class="mk plus">▲</span><span><b>China optionality.</b> H20/H200 export licenses exist; any realized China revenue is upside not yet in numbers.</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Headwinds <span class="tag">bear case</span></div>
+      <ul class="drv-list">
+        <li><span class="mk minus">▼</span><span><b>Custom ASIC encroachment.</b> Broadcom AI-ASIC revenue $8.4B/qtr (+106%) with a $73B backlog; Google TPU, AWS Trainium, MS Maia pull hyperscaler share in-house.</span></li>
+        <li><span class="mk minus">▼</span><span><b>AMD MI400.</b> HBM4-class memory advantage; AMD secured ~6GW commitments each from OpenAI and Meta for the 2026 launch.</span></li>
+        <li><span class="mk minus">▼</span><span><b>Customer concentration.</b> A handful of hyperscalers drive ~50% of revenue — capex digestion by any one dents the model.</span></li>
+        <li><span class="mk minus">▼</span><span><b>Margin normalization.</b> Gross margin already stepped down from ~75% to ~71%; mix and competition cap re-expansion.</span></li>
+        <li><span class="mk minus">▼</span><span><b>China zeroed out.</b> Effectively $0 realized China revenue vs ~$5B/yr prior; local rivals (Huawei) entrenching.</span></li>
+        <li><span class="mk minus">▼</span><span><b>"AI bubble" / valuation.</b> $5.2T cap prices sustained hyper-growth; any capex-cycle wobble compresses the multiple fast.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCENARIOS -->
+  <div class="sec-h">Scenario analysis — 12-month price targets</div>
+  <div class="sec-sub">Probability-weighted expected value ≈ $302 (~40% upside) · white marker = spot $215</div>
+  <div class="panel">
+    <div class="scen">
+      <div class="scen-row">
+        <div class="scen-name">Bull <span class="p">p = 30%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill bull" style="width:86%;"></div>
+          <div class="bar-cur" style="left:43%;"><span>spot</span></div>
+        </div>
+        <div class="scen-tgt">$430<span class="u">+100%</span></div>
+      </div>
+      <div class="scen-row">
+        <div class="scen-name">Base <span class="p">p = 45%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill base" style="width:60%;"></div>
+          <div class="bar-cur" style="left:43%;"><span>spot</span></div>
+        </div>
+        <div class="scen-tgt">$300<span class="u">+39%</span></div>
+      </div>
+      <div class="scen-row">
+        <div class="scen-name">Bear <span class="p">p = 25%</span></div>
+        <div class="bar-track">
+          <div class="bar-fill bear" style="width:30%;"></div>
+          <div class="bar-cur" style="left:43%;"><span>spot</span></div>
+        </div>
+        <div class="scen-tgt">$150<span class="u">−30%</span></div>
+      </div>
+    </div>
+    <div class="split" style="margin-top:20px;">
+      <div class="callout" style="border-left-color:var(--up);">
+        <b>Bull ($430).</b> AI supercycle persists into FY28; Rubin ramps cleanly, China re-opens, margins hold ~73%. FY28E EPS ~$12 on a 35× multiple. Compute demand outruns supply through 2027.
+      </div>
+      <div class="callout" style="border-left-color:var(--down);">
+        <b>Bear ($150).</b> Hyperscaler capex digestion begins; ASICs + AMD take incremental share; GM slips toward 68%. FY27E EPS ~$7 on a de-rated ~20× as growth normalizes and "bubble" fears dominate.
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUATION TRIANGULATION -->
+  <div class="sec-h">Valuation triangulation</div>
+  <div class="sec-sub">Three independent lenses converge near $290–$305</div>
+  <div class="panel" style="padding-top:16px;">
+    <table>
+      <thead>
+        <tr><th>Method</th><th>Key input</th><th>Multiple / rate</th><th>Implied value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Forward P/E</td><td>FY27E EPS ~$8.3</td><td>35×</td><td><b>$290</b></td></tr>
+        <tr><td>Forward P/E (FY28)</td><td>FY28E EPS ~$11</td><td>28×</td><td><b>$308</b></td></tr>
+        <tr><td>EV / Sales</td><td>FY27E rev ~$382B</td><td>18× → EV $6.9T</td><td><b>$298</b></td></tr>
+        <tr><td>DCF (reverse)</td><td>FCF ~$110B, g→8%</td><td>WACC 10.5%</td><td><b>$285–315</b></td></tr>
+        <tr class="fy-cur"><td><b>Blended fair value</b></td><td>equal-weight</td><td>—</td><td><b>~$300</b></td></tr>
+        <tr><td>Street consensus</td><td>61 analysts</td><td>Strong Buy · 85% buy</td><td>median $300 · avg $305–317</td></tr>
+      </tbody>
+    </table>
+    <div class="tri-note">
+      Multiples anchored to a business still compounding earnings &gt;50%; a 28–35× forward P/E is a PEG well under 1.0. Consensus range is wide — low $180 (−16%), high $500 (+133%) — reflecting genuine disagreement on AI-capex durability. Blended model output ($300) lands squarely on the consensus median, a useful cross-check rather than a coincidence.
+    </div>
+  </div>
+
+  <!-- THESIS -->
+  <div class="sec-h">Decision-ready thesis</div>
+  <div class="panel">
+    <p class="thesis-text" style="margin-top:0;">
+      <strong>Rating: BUY / Accumulate.</strong> At $215, NVDA offers a rare combination for a mega-cap — <strong>50%+ growth, 71% gross margins, $72B net cash, and a ~26× forward multiple</strong>. The market is paying a normalized price for a business still in hyper-growth because the earnings denominator is compounding faster than the share price. Base-case fair value of <strong>~$300 (~40% upside)</strong> is corroborated by three independent methods and the analyst median.
+    </p>
+    <p class="thesis-text">
+      <strong>The two things to watch.</strong> Near term, the <strong>Aug 26 Q2 FY2027 print</strong> is a binary event — options imply ~39% annualized vol, and a guide below the ~$91B run-rate would pressure the stock regardless of the long-term story; consider sizing entries around it rather than chasing into it. Structurally, the bear case is not demand but <strong>supply of alternatives</strong> — custom ASICs (Broadcom's $73B backlog) and AMD's MI400 wins are the first credible dents in the ~80% share. Neither breaks the thesis in the base case, but both cap the multiple.
+    </p>
+    <p class="thesis-text" style="margin-bottom:0;">
+      <strong>Action.</strong> Accumulate on weakness toward the $180–195 support shelf; trim into $300+. The asymmetry (base +39% / bull +100% / bear −30%) and a positive expected value of ~+40% justify a core position, sized so a post-earnings drawdown is survivable.
+    </p>
+  </div>
+
+  <footer>
+    Stairway to Heaven Financial Services — Deep-Dive Desk · Automated equity valuation routine · Generated 2026-08-23 16:45 UTC<br>
+    Sources: live IBKR market data (NVDA, NASDAQ); NVIDIA investor relations FY2025–Q1 FY2027 press releases &amp; SEC 10-K/10-Q filings; sell-side consensus aggregates (stockanalysis.com, MarketScreener). Reporting currency USD.<br>
+    For research and educational purposes only. Not investment advice, not a solicitation. Do your own due diligence.
+  </footer>
+
+</div>
+</body>
+</html>
