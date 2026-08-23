@@ -1,0 +1,38 @@
+{
+  "routine": "scout",
+  "run_at": "2026-08-23T17:23:53Z",
+  "industry": "AI data-center electrical power & grid infrastructure (power generation, electrical equipment, and EPC build-out)",
+  "selection_method": "Grounded in current IBKR active-conviction holdings. The account's single-name bets cluster around AI-infrastructure enablers — memory/compute (MU, SNDK, NVDA) and a power seed (GE Vernova, held). Yet the portfolio has near-zero exposure to the electrical/grid build-out that AI data centers require (Utilities 0.39%, Energy 0.46%, Industrials ~0%). This routine researches that adjacent gap, cross-checked against the dominant live news theme (data-center power demand).",
+  "market_context": "Global data-center power demand is projected +220% vs 2023 to ~1,350 TWh by 2030 (Goldman Sachs, Apr-2026); US DC capacity +197% 2025-2030 to ~95 GW. Hyperscaler AI capex raised to ~$750B in 2026, crossing $1T in 2027. Grid investment ~$550B in 2026 with multi-year backlogs in transformers, switchgear and turbines. Bottleneck has shifted from GPUs to electrons: switchgear, transformers, gas/nuclear generation and skilled electrical construction. Portfolio holds the compute side but almost none of the power side — a genuine diversifier, low correlation to the precious-metals sleeve and additive to the 68% S&P index core.",
+  "items": [
+    {
+      "label": "VRT (Vertiv Holdings)",
+      "tag": "lead",
+      "detail": "Pure-play data-center power & thermal management; ~$15B backlog on 252% Q1-2026 order growth, revenue guide $13.5-14.0B (~30% YoY), and its power/cooling is designed into Nvidia GB-class rack reference architectures — the tightest fit to the AI-power chokepoint. At $262 it sits ~31% below its 52w high of $380 and near its 13-week low, the best entry of the group despite +62% YTD.",
+      "diversification_note": "Adds a high-growth AI-power-infrastructure factor the portfolio lacks entirely; shares AI-capex beta with the existing NVDA/MU/SNDK compute sleeve so it is not a hedge against them, but is near-uncorrelated with the ~10% gold/silver/rare-earth sleeve and diversifies the 68% S&P index concentration.",
+      "suggested_size": "~$8,000 (30 shares @ $262 ≈ 1.6% of $494K NAV) — the largest of the four, funded from $52.7K cash; stage in given the momentum and volatility."
+    },
+    {
+      "label": "ETN (Eaton)",
+      "tag": "lead",
+      "detail": "Diversified electrical-equipment blue-chip and the quality anchor of the theme: revenue $8.5B (+21% YoY) with data-center segments up ~65%, electrical backlog +48%, 2026 guide $41-42B and 1.1% dividend. Highest defensibility — vast installed base and multi-year switchgear/transformer lead times are a real barrier to entry. Trades ~12% off its $478 high at $421.",
+      "diversification_note": "Introduces Industrials sector exposure (currently ~0% of NAV) plus a dividend and the lowest volatility of the four, making it a stabilizing complement rather than another high-beta bet alongside the compute names.",
+      "suggested_size": "~$6,000 (14 shares @ $421 ≈ 1.2% of NAV) — sized as the low-volatility anchor of the new sleeve."
+    },
+    {
+      "label": "PWR (Quanta Services)",
+      "tag": "WATCH",
+      "detail": "The EPC contractor actually building the grid and data-center electrical infrastructure, with record backlog and data-center work as its fastest-growing segment. Skilled electrical-construction labor scarcity is a durable moat; more cyclical and execution-sensitive than the equipment makers. At $639 it is ~19% off its $789 high, +52% YTD.",
+      "diversification_note": "A services/construction exposure distinct from both the compute sleeve and the equipment makers, broadening the theme beyond hardware; still carries AI-capex beta, so treat as a satellite rather than a core holding.",
+      "suggested_size": "~$4,000 (6 shares @ $639 ≈ 0.8% of NAV) — smaller, reflecting higher execution/cyclical risk."
+    },
+    {
+      "label": "CEG (Constellation Energy)",
+      "tag": "MED",
+      "detail": "Contrarian generation play: the largest US nuclear fleet supplying scarce 24/7 carbon-free baseload to hyperscalers via long-dated PPAs. The one laggard here, -22% YTD to $273 (52w range $229-$411), on PPA-pricing and valuation-reset concerns — a value entry into the scarcest resource in the stack, but with idiosyncratic regulatory/contract risk.",
+      "diversification_note": "Adds regulated-power/utility factor exposure (Utilities is 0.39% of NAV today) and, as the group's laggard, is the least momentum-correlated addition — the closest thing to a diversifier within the theme itself.",
+      "suggested_size": "~$3,000 (11 shares @ $273 ≈ 0.6% of NAV) — deliberately the smallest, risk-adjusted for the idiosyncratic PPA/regulatory overhang."
+    }
+  ],
+  "full_report_url": "data/scout-latest.html"
+}

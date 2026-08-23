@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scout — AI Power Infrastructure</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --panel:#ffffff; --ink:#12151c; --muted:#5b6472; --line:#e4e7ec;
+    --accent:#1f6feb; --lead:#0b8457; --watch:#b7791f; --med:#7048e8; --chip:#eef2f7;
+    --pos:#0b8457; --neg:#c0392b; --shadow:0 1px 3px rgba(16,22,35,.06),0 8px 24px rgba(16,22,35,.05);
+  }
+  :root:not([data-theme="light"]){}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1017; --panel:#151a23; --ink:#e9edf3; --muted:#98a2b3; --line:#252c38;
+      --accent:#4c8dff; --lead:#2dd4a7; --watch:#e0b64c; --med:#a98bff; --chip:#1c232f;
+      --pos:#2dd4a7; --neg:#f2735f; --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1017; --panel:#151a23; --ink:#e9edf3; --muted:#98a2b3; --line:#252c38;
+    --accent:#4c8dff; --lead:#2dd4a7; --watch:#e0b64c; --med:#a98bff; --chip:#1c232f;
+    --pos:#2dd4a7; --neg:#f2735f; --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:32px 20px 64px}
+  header.top{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+  .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:26px;margin:8px 0 6px;line-height:1.2}
+  .sub{color:var(--muted);font-size:14.5px;max-width:760px}
+  .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .pill{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;color:var(--muted)}
+  h2{font-size:16px;margin:34px 0 12px;display:flex;align-items:center;gap:9px}
+  h2::before{content:"";width:4px;height:16px;background:var(--accent);border-radius:2px;display:inline-block}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+  p{margin:0 0 12px}
+  .lede{font-size:15px}
+  .tablewrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:720px;background:var(--panel);font-size:13.5px}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700;background:var(--chip)}
+  tr:last-child td{border-bottom:none}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tick{font-weight:700}
+  .pos{color:var(--pos)} .neg{color:var(--neg)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;letter-spacing:.03em}
+  .tag.lead{background:color-mix(in srgb,var(--lead) 16%,transparent);color:var(--lead)}
+  .tag.watch{background:color-mix(in srgb,var(--watch) 18%,transparent);color:var(--watch)}
+  .tag.med{background:color-mix(in srgb,var(--med) 16%,transparent);color:var(--med)}
+  .cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:6px}
+  .card{padding:16px 18px}
+  .card h3{margin:0 0 4px;font-size:15.5px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .card .why{color:var(--muted);font-size:13.5px;margin:6px 0 10px}
+  .row{display:flex;flex-wrap:wrap;gap:18px;margin-top:8px}
+  .row .b{flex:1 1 240px}
+  .b .lab{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin-bottom:3px}
+  .b .val{font-size:13px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .forces{padding:16px 18px}
+  .forces li{margin-bottom:8px;font-size:13.5px}
+  .forces strong{color:var(--ink)}
+  .callout{padding:16px 18px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
+  .risk{padding:14px 18px}
+  .risk li{font-size:13.5px;margin-bottom:7px;color:var(--muted)}
+  .risk strong{color:var(--ink)}
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+  a{color:var(--accent)}
+  .src{font-size:12px;color:var(--muted)}
+  .src a{word-break:break-word}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">Scout · Industry Opportunity Scan</div>
+    <h1>AI Data-Center Power &amp; Grid Infrastructure</h1>
+    <p class="sub">Picks-and-shovels of the AI build-out beyond the chip: electrical equipment, power generation, and the contractors that install it. Screened as an adjacent diversifier to a portfolio already long AI compute and memory but nearly empty of power.</p>
+    <div class="meta">
+      <span class="pill">Run 2026-08-23 17:23 UTC</span>
+      <span class="pill">Selection: IBKR active-conviction holdings</span>
+      <span class="pill">NAV $494,329</span>
+      <span class="pill">Cash $52,740</span>
+      <span class="pill">Live IBKR quotes</span>
+    </div>
+  </header>
+
+  <h2>Why this industry, this account</h2>
+  <div class="panel forces">
+    <p class="lede">The account's active convictions — the single-name and thematic bets sitting on top of a 68% S&amp;P 500 index core — cluster tightly around <strong>AI-infrastructure enablers</strong>: memory and compute (MU +$830, SNDK +$1,560 unrealized, NVDA) and a lone power seed, GE Vernova (GEV, held). The portfolio owns the <em>compute</em> side of the AI trade almost to the exclusion of the <em>power</em> side that makes it run: Utilities are 0.39% of NAV, Energy 0.46%, and dedicated electrical/industrial equipment is effectively 0%.</p>
+    <p style="margin-bottom:0">That gap is precisely where 2026's dominant market narrative is pointing. The AI bottleneck has migrated from GPUs to electrons — transformers, switchgear, turbines, nuclear baseload, and skilled electrical labor. Researching this industry both follows the account's own conviction and fills its largest structural hole, with low correlation to the ~10% precious/strategic-metals sleeve (IGLN, SSLV, REMX).</p>
+  </div>
+
+  <h2>Market landscape</h2>
+  <div class="grid2">
+    <div class="panel forces">
+      <div class="b"><div class="lab">Demand trajectory</div></div>
+      <ul style="margin:6px 0 0;padding-left:18px">
+        <li>Global data-center power demand projected <strong>+220% vs 2023 → ~1,350 TWh by 2030</strong> (Goldman Sachs, Apr-2026).</li>
+        <li>US DC capacity <strong>+197% 2025-2030 → ~95 GW</strong>; DC share of US electricity ~6% → ~11% by 2030.</li>
+        <li>Hyperscaler AI capex raised to <strong>~$750B in 2026</strong>, crossing <strong>$1T in 2027</strong>.</li>
+        <li>Grid investment ~$550B in 2026, with <strong>multi-year backlogs</strong> in transformers, switchgear and turbines.</li>
+      </ul>
+    </div>
+    <div class="panel forces">
+      <div class="b"><div class="lab">Porter's Five Forces — quick read</div></div>
+      <ul class="forces" style="margin:6px 0 0;padding-left:18px">
+        <li><strong>Rivalry:</strong> moderate — demand outruns supply, so backlogs, not price wars, set the pace.</li>
+        <li><strong>New entrants:</strong> low — capital intensity, certification, multi-year lead times and installed base are steep barriers.</li>
+        <li><strong>Supplier power:</strong> elevated — transformer/turbine and skilled-labor scarcity favor incumbents with capacity.</li>
+        <li><strong>Buyer power:</strong> low-moderate — hyperscalers are big but supply-constrained and locking in via long PPAs.</li>
+        <li><strong>Substitutes:</strong> low — electrons have no substitute; competition is among generation/equipment forms.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Top opportunities</h2>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th><th>Rank</th><th class="num">Last</th><th class="num">YTD</th>
+          <th class="num">vs 52w high</th><th>Growth signal</th><th class="num">Suggested size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tick">VRT</span><br><span class="src">Vertiv Holdings</span></td>
+          <td><span class="tag lead">LEAD</span></td>
+          <td class="num">$262.05</td><td class="num pos">+61.8%</td><td class="num neg">-31%</td>
+          <td>Rev ~+30%; $15B backlog, +252% Q1 orders</td>
+          <td class="num">$8,000 · 30 sh</td>
+        </tr>
+        <tr>
+          <td><span class="tick">ETN</span><br><span class="src">Eaton</span></td>
+          <td><span class="tag lead">LEAD</span></td>
+          <td class="num">$420.65</td><td class="num pos">+32.8%</td><td class="num neg">-12%</td>
+          <td>Rev +21%; DC segments +65%, backlog +48%</td>
+          <td class="num">$6,000 · 14 sh</td>
+        </tr>
+        <tr>
+          <td><span class="tick">PWR</span><br><span class="src">Quanta Services</span></td>
+          <td><span class="tag watch">WATCH</span></td>
+          <td class="num">$639.35</td><td class="num pos">+51.6%</td><td class="num neg">-19%</td>
+          <td>Record backlog; DC fastest-growing segment</td>
+          <td class="num">$4,000 · 6 sh</td>
+        </tr>
+        <tr>
+          <td><span class="tick">CEG</span><br><span class="src">Constellation Energy</span></td>
+          <td><span class="tag med">MED</span></td>
+          <td class="num">$273.20</td><td class="num neg">-22.4%</td><td class="num neg">-34%</td>
+          <td>Largest US nuclear fleet; 24/7 baseload PPAs</td>
+          <td class="num">$3,000 · 11 sh</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:8px">Prices are live IBKR quotes, 2026-08-23. "vs 52w high" from IBKR 52-week statistics. Sizes are suggestions sized to NAV, fundable from the $52.7K cash balance; total ≈ $21,000 (~4.2% of NAV).</p>
+
+  <h2>The most promising lead — Vertiv (VRT)</h2>
+  <div class="panel callout">
+    <p class="lede">Of the four, <strong>Vertiv is the tightest fit to the AI-power chokepoint</strong>. It is not a diversified industrial with a data-center segment — it <em>is</em> the data-center power-and-thermal business, and its power/cooling is designed into Nvidia's GB-class rack reference architectures, giving it design-win lock-in as racks scale in density. A ~$15B backlog built on 252% Q1-2026 order growth and a $13.5-14.0B revenue guide (~30% YoY) put it at the top of the group for growth.</p>
+    <p style="margin-bottom:0">Crucially, the entry is favorable: despite +62% YTD, VRT trades ~31% below its 52-week high and near its 13-week low, a meaningful pullback in an otherwise-extended theme. It is the highest-conviction, largest-sized suggestion here — best staged in rather than bought in one clip given the volatility.</p>
+  </div>
+
+  <h2>How each fits the portfolio</h2>
+  <div class="cards">
+    <div class="panel card">
+      <h3>VRT · Vertiv <span class="tag lead">LEAD</span></h3>
+      <p class="why">Pure-play DC power &amp; thermal; highest growth of the group, best pullback entry.</p>
+      <div class="row">
+        <div class="b"><div class="lab">Diversification</div><div class="val">Adds an AI-power factor the book lacks; shares AI-capex beta with NVDA/MU/SNDK so not a hedge to them, but near-uncorrelated with the gold/silver/rare-earth sleeve and diversifies the 68% index core.</div></div>
+        <div class="b"><div class="lab">Suggested size</div><div class="val">~$8,000 · 30 sh @ $262 (1.6% of NAV) — largest, from cash; stage in.</div></div>
+      </div>
+    </div>
+    <div class="panel card">
+      <h3>ETN · Eaton <span class="tag lead">LEAD</span></h3>
+      <p class="why">Blue-chip diversified electrical; quality anchor with dividend and lowest volatility.</p>
+      <div class="row">
+        <div class="b"><div class="lab">Diversification</div><div class="val">Introduces Industrials exposure (~0% today) plus a 1.1% dividend and lower volatility — a stabilizer alongside the high-beta compute names.</div></div>
+        <div class="b"><div class="lab">Suggested size</div><div class="val">~$6,000 · 14 sh @ $421 (1.2% of NAV) — low-vol anchor.</div></div>
+      </div>
+    </div>
+    <div class="panel card">
+      <h3>PWR · Quanta Services <span class="tag watch">WATCH</span></h3>
+      <p class="why">The EPC contractor building the grid; labor scarcity is the moat, execution the risk.</p>
+      <div class="row">
+        <div class="b"><div class="lab">Diversification</div><div class="val">A services/construction exposure distinct from both the compute sleeve and the equipment makers; still AI-capex beta, so a satellite, not core.</div></div>
+        <div class="b"><div class="lab">Suggested size</div><div class="val">~$4,000 · 6 sh @ $639 (0.8% of NAV) — smaller for cyclical risk.</div></div>
+      </div>
+    </div>
+    <div class="panel card">
+      <h3>CEG · Constellation Energy <span class="tag med">MED</span></h3>
+      <p class="why">Contrarian nuclear-generation play; the group's laggard and its value entry.</p>
+      <div class="row">
+        <div class="b"><div class="lab">Diversification</div><div class="val">Adds regulated-power/utility factor (Utilities 0.39% today) and, as the only laggard, the least momentum-correlated addition — closest to a within-theme diversifier.</div></div>
+        <div class="b"><div class="lab">Suggested size</div><div class="val">~$3,000 · 11 sh @ $273 (0.6% of NAV) — smallest, risk-adjusted for PPA/regulatory overhang.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Risks &amp; emerging threats</h2>
+  <div class="panel risk">
+    <ul style="margin:0;padding-left:18px">
+      <li><strong>Theme concentration / AI-capex beta.</strong> All four rise and fall with hyperscaler capex, which also drives the account's NVDA/MU/SNDK. Sizing the whole sleeve to ~4-5% of NAV keeps it a satellite, not a doubling-down.</li>
+      <li><strong>Extended valuations &amp; momentum.</strong> VRT/PWR/GEV are +45-62% YTD; the pullbacks off highs are the reason to stage entries rather than chase.</li>
+      <li><strong>Capex-cycle risk.</strong> Any hyperscaler capex pause would hit order growth first — watch quarterly bookings/backlog, not just revenue.</li>
+      <li><strong>Idiosyncratic (CEG).</strong> Nuclear PPA pricing and regulatory/relicensing risk explain its -22% YTD; sized smallest for that reason.</li>
+      <li><strong>Supply-chain normalization.</strong> Today's pricing power rests on transformer/turbine scarcity; easing lead times would compress margins for equipment makers.</li>
+    </ul>
+  </div>
+
+  <div class="panel forces" style="margin-top:18px">
+    <div class="lab" style="font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;margin-bottom:6px">Sources</div>
+    <p class="src" style="margin:0">Goldman Sachs / hyperscaler-capex &amp; grid figures via <a href="https://fortune.com/2026/08/11/data-center-stocks/">Fortune</a>, <a href="https://tickeron.com/trading-investing-101/the-data-center-power-boom-10-stocks-and-10-etfs-positioned-for-the-ai-infrastructure-supercycle/">Tickeron</a>, <a href="https://www.sahmcapital.com/news/content/top-ai-infrastructure-stocks-for-2026-industrial-super-cycle-2025-12-23">Sahm Capital</a>. Company backlog/revenue detail via <a href="https://www.barchart.com/story/news/176475/vrt-q4-deep-dive-ai-infrastructure-demand-fuels-order-backlog-and-guidance-upside">Barchart (VRT)</a>, <a href="https://www.aol.com/articles/ai-electricity-demand-ge-vernova-041641000.html">AOL (GEV/ETN)</a>, <a href="https://finance.yahoo.com/news/1-4-trillion-needed-ai-132108238.html">Yahoo Finance</a>. Prices, holdings, NAV and 52-week statistics from the Interactive Brokers connector, 2026-08-23.</p>
+  </div>
+
+  <footer>
+    Scout routine · market-routines · generated 2026-08-23. Research and educational output only — not investment advice or an order instruction. Verify live prices before acting; suggested sizes are illustrative, sized to current NAV and existing allocation.
+  </footer>
+</div>
+</body>
+</html>
