@@ -1,3 +1,4 @@
 # Changelog
 
 - 2026-08-23: Momentum screener v2 (audit-hardened) run on 13-name account/watchlist universe vs SPY; 1/13 (MSFT) cleared the full 4-stage funnel, IOVA/AMZN flagged WATCH for overbought/oversold divergence, TSLA's +5.44% session excluded from scoring under the no-single-print guard.
+- 2026-08-23: Risk review of live IBKR account (NAV $494,329, YTD +3.39% TWR); flagged 68.7% S&P 500 single-index concentration (SPY5+SPYL duplicate ETFs), near-zero equity risk premium, 10% precious-metals at post-record highs, and AI-memory cluster. Computed 1Y daily-return correlations from get_price_history: best hedges = IDTL long Treasuries (+0.288 to S&P, +0.137 to gold) and AGGG global agg (+0.392, 5.5% vol); rejected EM equity EIMI (+0.713). Each risk flag carries a specific corrective action.

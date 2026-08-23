@@ -1,0 +1,69 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-23T17:25:00Z",
+  "items": [
+    {
+      "label": "S&P 500 single-index concentration",
+      "tag": "HIGH",
+      "detail": "SPY5 ($221,213, 44.7% of NAV) + SPYL ($118,635, 24.0%) = $339,848, or 68.7% of the $494,329 NAV, sits in one index; a single S&P 500 drawdown drives more than two-thirds of the book (source: get_account_positions, get_account_summary).",
+      "recommendation": "Trim the combined S&P 500 block from 68.7% toward ~50% of NAV: sell ~$95k (about 125 sh SPY5 or ~5,000 sh SPYL) and redeploy into the IDTL long-Treasury sleeve, whose 1Y daily-return correlation to SPY5 is only +0.288 (computed from get_price_history), cutting equity-beta concentration by ~19 points."
+    },
+    {
+      "label": "Duplicate holdings (SPY5 + SPYL)",
+      "tag": "HIGH",
+      "detail": "SPY5 and SPYL are both accumulating S&P 500 UCITS ETFs tracking the identical index, so they are ~1.00 correlated; holding two share classes doubles single-index risk with zero diversification benefit (source: get_account_positions).",
+      "recommendation": "Consolidate into one ticker after comparing total expense ratios, and from now on risk-size the two as ONE 68.7% position, not two separate ~45% and ~24% lines that each look individually acceptable."
+    },
+    {
+      "label": "Near-zero equity risk premium + macro",
+      "tag": "HIGH",
+      "detail": "The S&P 500 forward earnings yield is roughly at parity with the 10Y Treasury (ERP ~0.02%, among the lowest on record), with tariff escalation, Fed-policy uncertainty and slowdown risk cited as the top-3 systemic threats; a valuation-driven correction lands almost entirely on the 68.7% S&P block (source: Forbes/uCapital Aug-2026 outlooks, Morgan Stanley 2026 outlook).",
+      "recommendation": "Add a low-correlation Treasury hedge (IDTL, corr +0.288 to S&P 500) sized to ~8-10% of NAV (~$40-49k), funded from idle cash plus the S&P trim above; this single step is the highest-impact de-risking move and doubles as diversification action #1."
+    },
+    {
+      "label": "Precious metals near record highs",
+      "tag": "MED",
+      "detail": "Gold IGLN ($41,737, 8.4%) + silver SSLV ($7,806, 1.6%) = 10.0% of NAV in metals whose 1Y annualized vol is 27.4% (IGLN, computed); gold set a record ~$5,600 in Jan-2026 then fell 20%+ in its worst quarter since 2013 before rebounding, so the position carries a $1,654 gain into a high-volatility, post-record regime (source: get_account_positions, get_price_history, goldsilver/eToro Aug-2026).",
+      "recommendation": "Protect the gain without abandoning the (validated) diversifier: place a stop-loss alert on IGLN near $84 (~5% below the current $89.37) and trim the more volatile SSLV silver by ~half after its run, keeping total metals near 7-8% of NAV."
+    },
+    {
+      "label": "Semiconductor / AI-memory cluster",
+      "tag": "MED",
+      "detail": "MU ($9,632) + NVDA ($5,385) + SNDK ($7,966) = $22,983 (4.6% of NAV) are all AI/memory-cycle names that draw down together; SNDK is +$1,560 (+24%) and MU +$830 unrealized, so gains are concentrated in one correlated theme (source: get_account_positions).",
+      "recommendation": "Take partial profits on the biggest winner: sell 2 of 5 SNDK shares (~$3,186) to lock ~$620 of gain, since MU/NVDA/SNDK would fall in tandem on any AI-capex or memory-pricing reversal."
+    },
+    {
+      "label": "No genuine ex-US diversification (domicile illusion)",
+      "tag": "MED",
+      "detail": "get_pa_allocation reports 80.4% Ireland / 19.6% US by DOMICILE, but the Irish-domiciled SPY5/SPYL hold US large-caps, so true economic equity exposure is ~90%+ US; there is essentially no real geographic diversification, and EM equity does not fix it (EIMI corr to S&P 500 is +0.713, computed).",
+      "recommendation": "Do not add EM equity as a 'diversifier' (it is equity beta in disguise); get genuine non-correlated ballast from the bond/gold sleeve instead, and if adding ex-US, keep it small and developed-market rather than EM."
+    },
+    {
+      "label": "Idle cash drag",
+      "tag": "LOW",
+      "detail": "Total cash is $52,740 (10.7% of NAV) with dividends reported at $0 and leverage 0.89 (no margin debt), so the cash is a buffer but currently earns nothing (source: get_account_summary, get_account_balances).",
+      "recommendation": "Sweep idle cash into a short T-bill UCITS (e.g. IB01/ERNS) to earn ~4% risk-free, or use it directly to fund the Treasury/bond hedge rather than letting it sit at 0% or drift into more equity."
+    },
+    {
+      "label": "Speculative micro-cap single names",
+      "tag": "LOW",
+      "detail": "PLUG ($2,288, hydrogen, $2.29/sh penny-stock) and IOVA ($3,478, clinical-stage biotech) are high-blow-up-risk single names too small (<1% each) to move the upside but able to fall sharply (source: get_account_positions).",
+      "recommendation": "Set hard stop-losses (e.g. PLUG stop at $2.00) or exit PLUG outright, since a hydrogen micro-cap can approach zero and the position is too small to justify carrying that tail risk."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Add a US long-Treasury sleeve (IDTL) as the primary hedge",
+      "rationale": "IDTL's 1Y daily-return correlation is +0.288 to the S&P 500 block and just +0.137 to gold (IGLN) — the two lowest of every pair tested — making it the single best hedge for BOTH major concentrations at once; size it modestly (~5-8% NAV) because 30Y yields near 5.2% mean real duration risk (correlations from get_price_history; yields from Intellectia/Barchart Aug-2026)."
+    },
+    {
+      "action": "Add global aggregate bonds (AGGG) as low-volatility ballast",
+      "rationale": "AGGG shows +0.392 correlation to the S&P 500 with only 5.5% annualized volatility (vs 12.2% for SPY5), giving lower-duration, lower-drawdown ballast that beats EM equity as a hedge — the better risk-adjusted choice given the rate backdrop (computed from get_price_history)."
+    },
+    {
+      "action": "Keep gold (IGLN); reject EM equity (EIMI) as a hedge",
+      "rationale": "EIMI's +0.713 correlation to the S&P 500 proves it is equity beta, not diversification, whereas gold's +0.339 correlation and independent +36.2% 1Y return make IGLN the portfolio's true existing diversifier — so hedge with bonds/gold, not emerging-market stocks (all figures computed from get_price_history)."
+    }
+  ],
+  "full_report_url": "data/risk-latest.html"
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Risk Review</title>
+<style>
+  :root{
+    --bg:#0f1216; --panel:#171b21; --panel2:#1e242c; --line:#2a323c;
+    --tx:#e7ecf2; --mut:#9aa7b4; --hi:#ff5c5c; --med:#ffb020; --low:#4aa3ff;
+    --good:#39d98a; --accent:#7c9cff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:26px;margin:0 0 4px}
+  h2{font-size:18px;margin:34px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+  .sub{color:var(--mut);font-size:13px;margin-bottom:18px}
+  .grid{display:grid;gap:14px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .kpi .v{font-size:22px;font-weight:650}
+  .kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:right;padding:7px 9px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+  .scroll{overflow-x:auto}
+  .pos{color:var(--good)} .neg{color:var(--hi)}
+  .tag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.03em}
+  .t-HIGH{background:rgba(255,92,92,.16);color:var(--hi)}
+  .t-MED{background:rgba(255,176,32,.16);color:var(--med)}
+  .t-LOW{background:rgba(74,163,255,.16);color:var(--low)}
+  .flag{border-left:3px solid var(--line);padding:12px 16px;margin:10px 0;background:var(--panel);border-radius:0 10px 10px 0}
+  .flag.HIGH{border-left-color:var(--hi)} .flag.MED{border-left-color:var(--med)} .flag.LOW{border-left-color:var(--low)}
+  .flag h3{margin:0 0 6px;font-size:15px;display:flex;gap:10px;align-items:center}
+  .flag p{margin:6px 0;color:#cdd6df;font-size:13.5px}
+  .rec{margin-top:8px;padding:9px 11px;background:var(--panel2);border-radius:8px;font-size:13px}
+  .rec b{color:var(--accent)}
+  .heat td.c{font-variant-numeric:tabular-nums;font-weight:600;color:#0d1013}
+  .note{color:var(--mut);font-size:12.5px;margin-top:6px}
+  .bar{height:10px;border-radius:5px;background:var(--accent);display:inline-block;vertical-align:middle}
+  a{color:var(--accent)}
+  .foot{color:var(--mut);font-size:12px;margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Portfolio Risk Review</h1>
+  <div class="sub">Live IBKR account &middot; run 2026-08-23 17:25 UTC &middot; TWR performance &middot; all figures sourced from IBKR connector calls or dated web sources unless labeled ESTIMATED</div>
+
+  <div class="grid kpis">
+    <div class="card kpi"><div class="l">Net Liq (NAV)</div><div class="v">$494,329</div></div>
+    <div class="card kpi"><div class="l">Cash</div><div class="v">$52,740 <span style="font-size:13px;color:var(--mut)">(10.7%)</span></div></div>
+    <div class="card kpi"><div class="l">Gross Positions</div><div class="v">$440,931</div></div>
+    <div class="card kpi"><div class="l">Leverage</div><div class="v">0.89 <span style="font-size:13px;color:var(--good)">no margin</span></div></div>
+    <div class="card kpi"><div class="l">Unrealized P&amp;L</div><div class="v pos">+$1,463</div></div>
+    <div class="card kpi"><div class="l">YTD (TWR)</div><div class="v pos">+3.39%</div></div>
+  </div>
+  <div class="note">Performance trend (TWR, get_pa_performance_all_periods): 1D +0.04% &middot; 7D &minus;0.50% &middot; MTD +2.55% &middot; YTD +3.39% (account inception 2026-02-25, so 1Y = YTD). Peaked ~$497.5k on 2026-08-17, now ~$494.3k.</div>
+
+  <h2>The one chart that matters: 68.7% is one index</h2>
+  <div class="card">
+    <div class="scroll"><table>
+      <tr><th>Holding</th><th>Asset</th><th>Mkt Value</th><th>% NAV</th><th>Unrl P&amp;L</th><th>Weight</th></tr>
+      <tr><td>SPY5</td><td>S&amp;P 500 UCITS</td><td>$221,213</td><td>44.7%</td><td class="neg">&minus;$2,714</td><td><span class="bar" style="width:224px"></span></td></tr>
+      <tr><td>SPYL</td><td>S&amp;P 500 UCITS (duplicate)</td><td>$118,635</td><td>24.0%</td><td class="neg">&minus;$1,462</td><td><span class="bar" style="width:120px"></span></td></tr>
+      <tr><td>IGLN</td><td>Physical Gold</td><td>$41,737</td><td>8.4%</td><td class="pos">+$1,654</td><td><span class="bar" style="width:42px;background:#e8b84b"></span></td></tr>
+      <tr><td>TTWO</td><td>Take-Two (games)</td><td>$10,912</td><td>2.2%</td><td class="pos">+$612</td><td><span class="bar" style="width:11px"></span></td></tr>
+      <tr><td>MU</td><td>Micron (memory)</td><td>$9,632</td><td>1.9%</td><td class="pos">+$830</td><td><span class="bar" style="width:10px;background:#7c9cff"></span></td></tr>
+      <tr><td>SNDK</td><td>SanDisk (memory)</td><td>$7,966</td><td>1.6%</td><td class="pos">+$1,560</td><td><span class="bar" style="width:8px;background:#7c9cff"></span></td></tr>
+      <tr><td>REMX</td><td>Rare Earth/Strat Metals</td><td>$7,860</td><td>1.6%</td><td class="pos">+$45</td><td><span class="bar" style="width:8px"></span></td></tr>
+      <tr><td>SSLV</td><td>Physical Silver</td><td>$7,806</td><td>1.6%</td><td class="pos">+$325</td><td><span class="bar" style="width:8px;background:#e8b84b"></span></td></tr>
+      <tr><td>NVDA</td><td>Nvidia (AI/semis)</td><td>$5,385</td><td>1.1%</td><td class="neg">&minus;$266</td><td><span class="bar" style="width:5px;background:#7c9cff"></span></td></tr>
+      <tr><td>IOVA</td><td>Iovance (biotech)</td><td>$3,478</td><td>0.7%</td><td class="pos">+$926</td><td><span class="bar" style="width:4px"></span></td></tr>
+      <tr><td>PLUG</td><td>Plug Power (hydrogen)</td><td>$2,288</td><td>0.5%</td><td class="pos">+$32</td><td><span class="bar" style="width:2px"></span></td></tr>
+      <tr><td>GOOG</td><td>Alphabet</td><td>$2,053</td><td>0.4%</td><td class="neg">&minus;$20</td><td><span class="bar" style="width:2px"></span></td></tr>
+      <tr><td>GEV</td><td>GE Vernova (utilities)</td><td>$1,915</td><td>0.4%</td><td class="neg">&minus;$113</td><td><span class="bar" style="width:2px"></span></td></tr>
+    </table></div>
+    <div class="note">Source: get_account_positions (market values &amp; P&amp;L), get_account_summary (NAV). SPY5 + SPYL combined = <b>$339,848 = 68.7% of NAV</b> in a single index. Asset-class mix (get_pa_allocation): Equities 79.2% / Commodities 10.0% / Cash 10.8%. Country by <i>domicile</i>: Ireland 80.4% / US 19.6% &mdash; but SPY5/SPYL hold US stocks, so true economic exposure is ~90%+ US.</div>
+  </div>
+
+  <h2>Diversification: real correlations, not rules of thumb</h2>
+  <p class="sub" style="margin-bottom:10px">1-year daily-return correlations, computed from get_price_history (253 daily bars, 2025-08-22 → 2026-08-21). Lower = better hedge. Every candidate is a real LSE-listed UCITS the account could buy.</p>
+  <div class="card scroll">
+    <table class="heat">
+      <tr><th>vs. concentrated holding →</th><th>SPY5 (S&amp;P 500)</th><th>IGLN (Gold)</th><th>1Y vol</th><th>1Y return</th></tr>
+      <tr><td><b>IDTL</b> — US 20+yr Treasuries</td><td class="c" style="background:#39d98a">+0.288</td><td class="c" style="background:#2fd484">+0.137</td><td>9.7%</td><td class="neg">&minus;5.8%</td></tr>
+      <tr><td><b>AGGG</b> — Global Aggregate Bond</td><td class="c" style="background:#8fd96a">+0.392</td><td class="c" style="background:#8fd96a">+0.376</td><td>5.5%</td><td class="neg">&minus;2.4%</td></tr>
+      <tr><td><b>IGLN</b> — Gold (already held)</td><td class="c" style="background:#bfd85a">+0.339</td><td class="c" style="background:#444">—</td><td>27.4%</td><td class="pos">+36.2%</td></tr>
+      <tr><td><b>EIMI</b> — EM equity <span class="note">(rejected)</span></td><td class="c" style="background:#ff8a4a">+0.713</td><td class="c" style="background:#e8b84b">+0.469</td><td>22.4%</td><td class="pos">+33.0%</td></tr>
+    </table>
+    <div class="note">Reference: SPY5 1Y vol 12.2%, return +18.5%. All correlations positive this cycle (stocks &amp; bonds moved together on the rate story), so no true negative hedge existed in the tested set — IDTL is simply the <i>least</i> correlated, and to gold it is nearly uncorrelated (+0.137).</div>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:14px">
+    <div class="card"><b>1. Add IDTL (long Treasuries)</b><p class="note">Corr +0.288 to the S&amp;P block, +0.137 to gold — lowest of all pairs. Best single hedge for both concentrations. Size modestly (~5-8% NAV): 30Y yields ~5.2% carry real duration risk.</p></div>
+    <div class="card"><b>2. Add AGGG (global agg bond)</b><p class="note">Corr +0.392, but only 5.5% vol — lower-duration ballast that beats EM as a hedge on a risk-adjusted basis given the rate backdrop.</p></div>
+    <div class="card"><b>3. Keep gold, reject EM equity</b><p class="note">EIMI's +0.713 corr = equity beta, not diversification. Gold's +0.339 corr and +36% independent return make IGLN the real diversifier already in the book.</p></div>
+  </div>
+
+  <h2>Risk flags &amp; specific corrective actions</h2>
+  <div class="flag HIGH"><h3><span class="tag t-HIGH">HIGH</span> S&amp;P 500 single-index concentration</h3>
+    <p>68.7% of NAV ($339,848) rides one index via SPY5 (44.7%) + SPYL (24.0%). A single S&amp;P drawdown moves two-thirds of the book.</p>
+    <div class="rec"><b>Action:</b> Trim the block toward ~50% of NAV — sell ~$95k (≈125 sh SPY5 or ~5,000 sh SPYL) and redeploy into IDTL (corr +0.288), cutting equity-beta concentration ~19 points.</div></div>
+
+  <div class="flag HIGH"><h3><span class="tag t-HIGH">HIGH</span> Duplicate holdings (SPY5 + SPYL)</h3>
+    <p>Two accumulating S&amp;P 500 UCITS ETFs track the identical index (~1.00 correlated) — doubled single-index risk, zero diversification benefit.</p>
+    <div class="rec"><b>Action:</b> Consolidate into the cheaper ticker (compare TERs) and risk-size the two as ONE 68.7% position, not two individually "acceptable" lines.</div></div>
+
+  <div class="flag HIGH"><h3><span class="tag t-HIGH">HIGH</span> Near-zero equity risk premium + macro</h3>
+    <p>S&amp;P forward earnings yield ≈ 10Y Treasury (ERP ~0.02%, among lowest on record); tariffs, Fed uncertainty and slowdown are the cited top-3 systemic risks. A valuation correction lands almost entirely on the 68.7% S&amp;P block.</p>
+    <div class="rec"><b>Action:</b> Add IDTL hedge sized ~8-10% NAV (~$40-49k) from idle cash + the S&amp;P trim — highest-impact de-risking move; doubles as diversification action #1.</div></div>
+
+  <div class="flag MED"><h3><span class="tag t-MED">MED</span> Precious metals near record highs</h3>
+    <p>Gold (8.4%) + silver (1.6%) = 10.0% of NAV; IGLN 1Y vol 27.4%. Gold hit ~$5,600 in Jan-2026, then fell 20%+ (worst quarter since 2013) before rebounding — a $1,654 gain sitting in a high-vol, post-record regime.</p>
+    <div class="rec"><b>Action:</b> Stop-loss alert on IGLN near $84 (~5% below $89.37) and trim the more-volatile SSLV silver by ~half; keep total metals ~7-8% of NAV.</div></div>
+
+  <div class="flag MED"><h3><span class="tag t-MED">MED</span> Semiconductor / AI-memory cluster</h3>
+    <p>MU + NVDA + SNDK = $22,983 (4.6%), all AI/memory-cycle names that draw down together; gains concentrated in SNDK (+24%) and MU.</p>
+    <div class="rec"><b>Action:</b> Sell 2 of 5 SNDK shares (~$3,186, locks ~$620) — the trio would fall in tandem on any AI-capex or memory-pricing reversal.</div></div>
+
+  <div class="flag MED"><h3><span class="tag t-MED">MED</span> No genuine ex-US diversification</h3>
+    <p>IBKR shows 80.4% "Ireland" by domicile, but SPY5/SPYL hold US large-caps — true economic exposure ~90%+ US. EM equity won't fix it (EIMI corr +0.713).</p>
+    <div class="rec"><b>Action:</b> Don't add EM as a "diversifier"; take non-correlated ballast from the bond/gold sleeve. If adding ex-US, keep it small and developed-market.</div></div>
+
+  <div class="flag LOW"><h3><span class="tag t-LOW">LOW</span> Idle cash drag</h3>
+    <p>$52,740 (10.7%) cash, dividends $0, no margin debt — a buffer, but earning nothing.</p>
+    <div class="rec"><b>Action:</b> Sweep into a short T-bill UCITS (IB01/ERNS) for ~4% risk-free, or use it to fund the bond hedge rather than drifting into more equity.</div></div>
+
+  <div class="flag LOW"><h3><span class="tag t-LOW">LOW</span> Speculative micro-cap single names</h3>
+    <p>PLUG ($2,288, hydrogen penny stock) and IOVA ($3,478, clinical biotech) carry high blow-up risk, too small to move the upside.</p>
+    <div class="rec"><b>Action:</b> Set hard stops (PLUG at $2.00) or exit PLUG outright — a hydrogen micro-cap can approach zero and the position isn't worth the tail risk.</div></div>
+
+  <h2>Macro backdrop (live sources)</h2>
+  <ul style="color:#cdd6df;font-size:13.5px">
+    <li><b>Equities:</b> S&amp;P 500 bull case intact (Morgan Stanley ~7,500 target) but ERP near-zero and valuations elevated; tariffs / Fed / slowdown are the top-3 risks — <a href="https://www.forbes.com/sites/investor-hub/article/what-to-expect-for-the-stock-markets-last-6-months-of-2026/">Forbes</a>, <a href="https://www.morganstanley.com/insights/articles/2026-market-optimism-and-risks">Morgan Stanley</a> (Aug-2026).</li>
+    <li><b>Gold:</b> record ~$5,600 (Jan-2026), &minus;20%+ worst quarter since 2013, rebounding on 62% YoY jump in Q2 central-bank buying — <a href="https://goldsilver.com/industry-news/article/gold-price-outlook-august-2026/">GoldSilver</a>, <a href="https://www.etoro.com/news-and-analysis/market-insights/gold-gains-more-than-10-in-a-month-is-it-heading-for-new-highs/">eToro</a> (Aug-2026).</li>
+    <li><b>Rates:</b> 30Y Treasury ~5.21% (19-yr high), TLT down YTD on duration, but Powell signaled a September cut and Treasuries on longest winning streak in 3 years — <a href="https://intellectia.ai/blog/30-year-treasury-yield-19-year-high-august-2026">Intellectia</a>, <a href="https://www.barchart.com/story/news/28296138/etfs-soaring-on-treasuries-longest-winning-streak-in-3-years">Barchart</a> (Aug-2026).</li>
+    <li><b>Rare earths (REMX):</b> China's expanded export controls (~90% market share) keep the reshoring trade bid; REMX +6% late-Aug, but 31% China exposure and high volatility — <a href="https://247wallst.com/investing/2026/08/21/usa-rare-earth-rises-8-critical-metals-jumps-10-mp-materials-climbs-5-as-the-resource-sector-catches-a-bid/">24/7 Wall St.</a> (Aug-2026).</li>
+  </ul>
+
+  <div class="foot">
+    Generated by the market-routines risk routine. Numbers sourced from IBKR connector calls (get_account_positions, get_account_summary, get_account_balances, get_pa_performance_all_periods, get_pa_allocation, get_price_history) and dated live web sources. Correlations &amp; volatilities computed from 253 daily closing bars. This is analysis, not investment advice; verify before trading.
+  </div>
+</div>
+</body>
+</html>
