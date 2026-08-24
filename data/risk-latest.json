@@ -1,0 +1,56 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-24T09:30:00Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL (S&P 500 duplication)",
+      "tag": "HIGH",
+      "detail": "SPY5 ($220,536, 44.8% of NAV) and SPYL ($118,260, 24.0% of NAV) are both SPDR S&P 500 UCITS ETF share classes tracking the identical index; trailing-year daily-return correlation is r=0.994 (n=208, IBKR get_price_history), so together they are one 68.8%-of-NAV bet on the S&P 500, not two diversified positions.",
+      "recommendation": "Consolidate SPYL into SPY5 to remove the duplicate share class, then redeploy roughly 10-15% of the combined $338,796 stake into IGLT (iShares Core UK Gilts) and/or EIMI (iShares Core EM IMI) — the two lowest-correlation assets tested against SPY5 (r=0.45 and r=0.71 respectively vs r=0.88 for VWRL)."
+    },
+    {
+      "label": "Zero fixed-income / rate duration",
+      "tag": "HIGH",
+      "detail": "The account holds $0 in bonds against $492,670.94 NAV (IBKR get_account_positions/get_account_summary) while the next FOMC decision lands Sept 16, 2026 and long-end Treasury yields are being flagged near a 5.25% 'regime-switch' threshold (Seeking Alpha, Aug 2026; cambridgecurrencies.com FOMC calendar).",
+      "recommendation": "Open a starter IGLT (iShares Core UK Gilts) position ahead of the Sept 16 FOMC meeting — of all assets tested it has the lowest correlation to every one of the account's three largest holdings (SPY5 r=0.45, SPYL r=0.46, IGLN r=0.28), making it the most effective real ballast available rather than relying on gold alone."
+    },
+    {
+      "label": "IGLN (gold) concentration after a sharp rally",
+      "tag": "MED",
+      "detail": "IGLN is 8.5% of NAV ($42,000.81, +4.8% unrealized) and gold is up roughly 10% in August 2026 alone — its best month since January — with J.P. Morgan Global Research projecting $6,000/oz by year-end on accelerating central-bank buying (Q2 2026 net purchases of 288.9 tonnes, +62% YoY; goldsilver.com, jpmorgan.com, Aug 2026).",
+      "recommendation": "Trim IGLN by roughly 15-20% (~$6,300-$8,400) to lock in the August rally, and rotate the proceeds into IGLT rather than SSLV or more metals — IGLT correlates to IGLN at only r=0.28, the lowest of any asset tested, versus r=0.46 for EM equities and r=0.30 for global equities."
+    },
+    {
+      "label": "REMX — China rare-earth export-control exposure",
+      "tag": "MED",
+      "detail": "REMX (rare-earth/strategic-metals miners, 1.6% of NAV, $7,908) sits directly in the path of China's widening export controls — 10 US firms restricted in June 2026 and 14 EU firms in July 2026 — with the IEA warning $6.5 trillion of downstream production is at risk (china-briefing.com, morganlewis.com, Aug 2026).",
+      "recommendation": "Set a hard price alert on REMX (e.g. -15% from the current $15.816 close) instead of sizing the position up further, since extraterritorial-provision enforcement was pushed to November 2026 and a single new MOFCOM announcement could move it sharply in either direction."
+    },
+    {
+      "label": "MU / SNDK / NVDA — chip export-policy cluster",
+      "tag": "MED",
+      "detail": "MU (1.9%, $9,341), SNDK (1.6%, $7,640) and NVDA (1.1%, $5,370) — 4.5% of NAV combined — all sit on the same regulatory catalyst: BIS's Jan 2026 shift to case-by-case China licensing for advanced chips (25% tariff, 50% volume cap) plus standing HBM memory export controls (bis.gov, ai-frontiers.org, Jan-Aug 2026). NVDA is already down 5.0% unrealized (-$280.75) since entry.",
+      "recommendation": "Size MU, SNDK and NVDA as one regulatory-risk bucket rather than three independent bets, and trim NVDA (the current laggard) first if reducing exposure, since a single BIS ruling or Chinese retaliation headline would move all three together."
+    },
+    {
+      "label": "Overall performance",
+      "tag": "PASS",
+      "detail": "NAV is $492,670.94, down 0.30% on the day and 0.97% over 7 days but still up 2.20% MTD and 3.05% YTD (IBKR get_pa_performance_all_periods, TWR basis, last updated 2026-08-24 08:26 UTC); leverage is 0.89 with no margin debt (gross position value fully funded by NAV, IBKR get_account_summary).",
+      "recommendation": "No action needed — the pullback is within the account's normal MTD range and there is no margin/leverage risk to address."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Redirect part of SPY5 into IGLT (UK Gilts)",
+      "rationale": "SPY5 (44.8% of NAV) shows the lowest trailing-year correlation to IGLT (r=0.45, n=251 daily returns, IBKR get_price_history) versus VWRL (r=0.88) or EIMI (r=0.71), making Gilts the most effective real diversifier tested against the account's single biggest holding."
+    },
+    {
+      "action": "Consolidate SPYL into SPY5, rotate proceeds into EIMI",
+      "rationale": "SPYL and SPY5 are both SPDR S&P 500 UCITS share classes and correlate at r=0.994 (n=208) — holding both is not diversification — while SPYL correlates to EIMI (EM equities) at only r=0.73, so redeploying the $118,260 SPYL stake into EIMI keeps equity exposure while breaking the single-index duplication."
+    },
+    {
+      "action": "Pair IGLN with IGLT rather than adding more metals",
+      "rationale": "Among all assets tested, IGLN (gold, 8.5% of NAV) has its lowest trailing-year correlation with IGLT (r=0.28, n=251) — lower than its correlation to EM equities (r=0.46) or global equities (r=0.30) — so Gilts, not more silver or rare-earth miners, is the numerically strongest hedge for the metals sleeve."
+    }
+  ]
+}
