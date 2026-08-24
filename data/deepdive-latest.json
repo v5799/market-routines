@@ -1,0 +1,47 @@
+{
+  "routine": "deepdive",
+  "run_at": "2026-08-23T19:05:00Z",
+  "items": [
+    {
+      "label": "Industry: Memory & Storage Semiconductors (DRAM / NAND / HBM)",
+      "tag": "SELECTED",
+      "detail": "Grounded in the account's active-conviction single-name holdings: Micron (MU, $9.6k), SanDisk (SNDK, $8.0k) and NVDA ($5.4k) form a clear memory/AI-compute cluster; IBKR maps MU to the 'Memory Chips' theme with SNDK, SK Hynix, Samsung and Kioxia as top peers."
+    },
+    {
+      "label": "MU (Micron)",
+      "tag": "lead",
+      "detail": "Only US-listed near-pure memory maker with all three legs (DRAM/NAND/HBM); overtook Samsung to #2 in HBM (~21% share), HBM capacity sold through 2027, ~$25B+ capex funding HBM4 for NVIDIA Rubin.",
+      "suggested_size": "Core holding already at ~1.9% NAV; earnings-cyclical, so add only on pullbacks toward the 50-day SMA (~$965), keep single-name <3% NAV",
+      "diversification_note": "Already held; adding concentrates the existing MU+SNDK+NVDA memory/AI cluster (~4.6% of NAV in Technology) into a single macro cycle."
+    },
+    {
+      "label": "000660.KS (SK Hynix)",
+      "tag": "lead",
+      "detail": "HBM leader at ~62% share and projected ~70% of NVIDIA HBM4 Rubin allocation; completed HBM4 development (40% better power efficiency, 10 Gbps). The purest way to own the HBM supercycle, but Korea-listed (ADR/local access).",
+      "suggested_size": "New starter 1-2% NAV via local line or ADR if accessible; sizes the HBM leader without doubling US-memory exposure",
+      "diversification_note": "Adds a non-US memory leader; only lightly correlated to the US names on FX/listing but shares the same demand cycle."
+    },
+    {
+      "label": "SNDK (SanDisk)",
+      "tag": "lead",
+      "detail": "Pure-play NAND leveraged to AI enterprise-SSD demand; Kioxia alliance lifting joint capex ~41% YoY ($4.5B consortium) into the gap left as Samsung/SK Hynix divert wafers to HBM. Carries consolidation optionality (WD-Kioxia talks restarted July 2026).",
+      "suggested_size": "Held with +$1.56k unrealized gain; trim-and-hold rather than add at $1,593 (32% off 52-wk high, below 50-day SMA)",
+      "diversification_note": "Already held; NAND cycle is distinct from DRAM/HBM but still an AI-memory beta."
+    },
+    {
+      "label": "Kioxia (consolidation target)",
+      "tag": "lead",
+      "detail": "Pure-play NAND; Western Digital/SanDisk merger talks restarted July 2026 make it the industry's clearest consolidation catalyst, though antitrust and peak-cycle valuation gaps keep deal odds low.",
+      "suggested_size": "Event-driven watch only, not a position; monitor for confirmed deal terms",
+      "diversification_note": "Speculative event exposure, uncorrelated to the rest of the book if entered on deal news."
+    },
+    {
+      "label": "CXL / memory pooling & disaggregation (underserved niche)",
+      "tag": "lead",
+      "detail": "Emerging underserved niche: AI data centers face DRAM scarcity, driving CXL memory-pooling and DDR4 reuse (e.g. Meta's Vistara ASIC bridging legacy DDR4 to DDR5-only EPYC servers). No clean US-listed pure-play yet; a durable multi-year adoption gap rather than an immediate trade.",
+      "suggested_size": "No position; thesis watch. Best expressed today via incumbents (MU) until a pure-play emerges",
+      "diversification_note": "Thematic lead only; keeps the book alert to the second-order winner of the shortage."
+    }
+  ],
+  "full_report_url": "data/deepdive-latest.html"
+}
