@@ -1,0 +1,68 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-25T05:40:00Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL (S&P 500 duplication)",
+      "tag": "HIGH",
+      "detail": "Two S&P 500-tracking LSE ETFs together are 68.9% of NAV ($220,396 SPY5 + $118,198 SPYL of $491,451 total, per get_account_positions/get_account_summary) and their 6-month daily returns correlate at r=0.996 (122 obs, computed from get_price_history) -- they are statistically one position, not two.",
+      "recommendation": "Sell ~$50k of SPYL and reallocate to VXUS (r=0.184 vs SPYL, the lowest of any hedge tested) and IEF (r=0.216 vs SPYL) to cut single-factor US large-cap beta from 68.9% toward ~55% of NAV without reducing market exposure."
+    },
+    {
+      "label": "Precious/strategic-metals cluster (IGLN, NEM, REMX, SSLV)",
+      "tag": "MED",
+      "detail": "Gold ETF, gold miner, rare-earth ETF and silver ETF combine to 13.0% of NAV ($42,332+$6,175+$7,825+$7,777 of $491,451). China widened rare-earth export controls to 10 US firms in June 2026 and 14 EU firms in July 2026, with NdPr alloy input costs up 21.4% in the month through July 1, 2026 (Morgan Lewis, China Briefing, chinatrademonitor.com) -- all four holdings are exposed to the same escalation/de-escalation headline risk.",
+      "recommendation": "Cap combined metals exposure at 10% of NAV by trimming REMX (~$2,000, the most China-policy-sensitive of the four) and redeploying into AGG, which correlates at just r=0.141 to IGLN, the lowest of any bond candidate tested."
+    },
+    {
+      "label": "CRWV (CoreWeave) financing risk",
+      "tag": "WATCH",
+      "detail": "2.66% of NAV ($13,050). CoreWeave guides to $31-35B of full-year 2026 capex against a $5.13B quarterly revenue base and carries $35B in balance-sheet debt; shares fell on Aug 18, 2026 as higher Treasury yields and the capex plan pressured the stock (Motley Fool, cnbc.com, tech-insider.org, Aug 2026).",
+      "recommendation": "Set a trailing stop (e.g. 15% off the recent high) on CRWV, or trim toward 1.5% of NAV, ahead of CoreWeave's next earnings print if the debt-to-revenue gap widens further."
+    },
+    {
+      "label": "NVDA",
+      "tag": "WATCH",
+      "detail": "Down 7.6% unrealized (-$401.50) at 1.07% of NAV ($5,249), amid the same AI-capex financing scrutiny hitting CoreWeave and other data-center names (cnbc.com, io-fund.com, Aug 2026).",
+      "recommendation": "Hold at current size (position is too small to drive portfolio risk); do not average down until AI-capex sentiment stabilizes, per the same news flow flagged for CRWV."
+    },
+    {
+      "label": "GEV (GE Vernova)",
+      "tag": "WATCH",
+      "detail": "Down 13.8% unrealized (-$139.90) at just 0.38% of NAV ($1,888) -- the portfolio's worst percentage decliner by position, per get_account_positions.",
+      "recommendation": "Position is too small (0.38% of NAV) to warrant action now; if adding on the AI-power-demand thesis, size any add so GEV stays under 1% of NAV."
+    },
+    {
+      "label": "TLT as an equity hedge",
+      "tag": "WATCH",
+      "detail": "20+yr Treasuries (TLT) correlate at r=0.530 to SPY5 and r=0.521 to SPYL over the trailing 6 months (computed from get_price_history) -- unusually high for a 'safe-haven' duration asset, meaning TLT has been moving with, not against, this portfolio's largest holdings in the current regime.",
+      "recommendation": "Do not rely on TLT as the primary equity hedge right now; use IEF (r=0.225/0.216 vs SPY5/SPYL) or VXUS (r=0.187/0.184) instead, per the diversification actions below."
+    },
+    {
+      "label": "Portfolio leverage & liquidity",
+      "tag": "PASS",
+      "detail": "Leverage 0.93x with $0 initial/maintenance margin and $32,444 (6.6% of NAV) in settled cash, per get_account_summary/get_account_balances -- no margin debt outstanding.",
+      "recommendation": "No action needed; cash buffer is adequate to add to hedge positions above without raising new cash."
+    },
+    {
+      "label": "FOMC meeting Sept 15-16, 2026",
+      "tag": "WATCH",
+      "detail": "Markets price 63% odds of a hold at 3.50-3.75% vs 37% odds of a hike to 3.75-4.00% as of Aug 24, 2026; J.P. Morgan Wealth Management strategists expect a 0.25pt hike on Iran-linked energy-driven inflation risk, a minority view vs. Wall Street consensus for a hold (Chase, Forbes, Aug 2026).",
+      "recommendation": "Keep the IEF/AGG additions recommended above ready as dry powder to buy into any post-FOMC equity selloff rather than pre-positioning ahead of the binary rate decision."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Trim SPYL, add VXUS",
+      "rationale": "SPY5 and SPYL 6-month daily returns correlate at r=0.996 (122 observations) -- they are the same trade. Of 6 hedge candidates tested (AGG, TLT, IEF, VXUS, EFA, ACWX) via get_price_history, VXUS has the lowest correlation to both SPY5 (r=0.187) and SPYL (r=0.184), and also the lowest correlation to IGLN (r=0.039)."
+    },
+    {
+      "action": "Add IEF (7-10yr Treasuries) as bond ballast for the S&P 500 legs",
+      "rationale": "IEF correlates at r=0.225 to SPY5 and r=0.216 to SPYL -- notably lower than TLT (r=0.530/0.521), which has drifted unusually equity-correlated this regime. IEF also has the second-lowest correlation to IGLN (r=0.153) among the 6 candidates tested."
+    },
+    {
+      "action": "Add AGG (US aggregate bonds) to dilute the metals cluster",
+      "rationale": "AGG correlates at just r=0.141 to IGLN (gold), the second-lowest of all 6 hedge candidates tested against gold after VXUS (r=0.039), while carrying the lowest annualized volatility of the group (4.5%, vs IGLN's 28.3%, both computed from the same 6-month daily price series)."
+    }
+  ]
+}
