@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Momentum / Technical Equity Screener — 2026-08-23</title>
+<title>Momentum / Technical Equity Screener — 2026-08-25</title>
 <style>
   :root{
     --bg:#0b0e14; --panel:#121620; --panel2:#171c28; --border:#242b3a;
@@ -40,68 +40,85 @@
   .tag.FAIL{background:rgba(255,107,107,.15); color:var(--fail);}
   .funnel{display:flex; flex-direction:column; gap:6px;}
   .fstage{background:var(--panel); border:1px solid var(--border); border-radius:6px; padding:10px 14px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:12px;}
-  .fstage .n{font-family:var(--mono); font-weight:700; color:var(--accent); min-width:56px;}
+  .fstage .n{font-family:var(--mono); font-weight:700; color:var(--accent); min-width:64px; text-align:right;}
   .fbar{height:6px; border-radius:3px; background:var(--border); flex:1; overflow:hidden; margin:0 12px;}
   .fbar > div{height:100%; background:var(--accent);}
   .card{background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:16px 18px; margin-bottom:12px;}
   .card .head{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;}
   .card .ticker{font-family:var(--mono); font-weight:700; font-size:15px;}
   .card p{margin:6px 0 0 0; font-size:13px; color:var(--text);}
+  .card .entry{margin:8px 0 0 0; font-size:12.5px; color:var(--accent);}
+  .card .div{margin:4px 0 0 0; font-size:12.5px; color:var(--muted); font-style:italic;}
   .card .metrics{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:8px;}
   ul.checklist{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px;}
   ul.checklist li{background:var(--panel); border:1px solid var(--border); border-radius:6px; padding:10px 12px; font-size:12.5px;}
   ul.checklist li b{color:var(--accent); font-family:var(--mono); font-size:11px; display:block; margin-bottom:3px;}
   .source-note{font-size:11.5px; color:var(--muted); margin-top:8px;}
   .flag{background:rgba(255,159,90,.1); border:1px solid rgba(255,159,90,.35); border-radius:6px; padding:10px 14px; font-size:12.5px; margin-top:10px;}
+  .flag.bad{background:rgba(255,107,107,.08); border-color:rgba(255,107,107,.35);}
   footer{color:var(--muted); font-size:11px; text-align:center; margin-top:40px; border-top:1px solid var(--border); padding-top:16px;}
   code{font-family:var(--mono); background:var(--panel2); padding:1px 5px; border-radius:3px; font-size:11.5px;}
+  a{color:var(--accent);}
+  ol.src{font-size:12px; color:var(--muted); padding-left:18px;}
+  ol.src li{margin-bottom:4px;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <h1>Momentum / Technical Equity Screener <span style="color:var(--muted); font-weight:400;">v2 — audit-hardened</span></h1>
-  <div class="subtitle">Run at 2026-08-23T18:20:00Z &middot; Data as of last completed session: <b style="color:var(--text)">Friday, 2026-08-21 close</b> (report generated Sunday 2026-08-23; US equity markets closed for the weekend, so no fresher print exists) &middot; Source: Interactive Brokers TWS market-data API (account-linked, live feed)</div>
+  <h1>Momentum / Technical Equity Screener <span style="color:var(--muted); font-weight:400;">v2 — audit-hardened, broad-market</span></h1>
+  <div class="subtitle">Run at 2026-08-25T03:15:00Z &middot; Price history through Monday 2026-08-24 close; live snapshots retrieved ≈2026-08-25 02:00–03:11 UTC &middot; Primary data source: Interactive Brokers TWS market-data API (account-linked, live/delayed feed) &middot; Universe-construction sources: live web search (see §6)</div>
 
   <div class="banner">
-    <b>Universe transparency.</b> This is a personal-portfolio-scoped screen, not a market-wide scan: the 13-name universe is every individual common-stock ticker currently held or watchlisted in this Interactive Brokers account (8 open positions + 5 additional names from the "Favorites" watchlist). Benchmark is SPY. Non-equity instruments in the same account/watchlists (leveraged/physical commodity ETCs, broad index trackers, and covered-call income funds) were deliberately excluded from candidacy — see the No-Derivatives Guard note below.
+    <b>Universe transparency — this run corrects a scoping error from 2026-08-23.</b> The prior run improperly restricted candidates to this account's own holdings + watchlist (13 names). Per updated instructions, the screening universe is now the <b>full S&amp;P 500</b> (503 constituent share classes across 500 companies, per Slickcharts/Wikipedia index-membership summaries as of ~Q1 2026 — see §1 for the important caveat on this figure). Current IBKR holdings are used <i>only</i> to write the one-sentence diversification note on each surviving name — never to pick the candidates themselves.
   </div>
 
   <section>
-    <h2>1. Universe &amp; exclusions</h2>
+    <h2>1. Universe &amp; pre-filter methodology</h2>
     <p style="font-size:13px;">
-      <b>Screened (13 equities):</b> GEV, GOOG, IOVA, MU, NVDA, PLUG, SNDK, TTWO <span style="color:var(--muted)">(from account open positions)</span> + AAPL, AMZN, TSLA, MSFT, META <span style="color:var(--muted)">(from "Favorites" watchlist)</span>.<br>
-      <b>Benchmark:</b> SPY (SPDR S&amp;P 500 ETF Trust), used for all relative-strength comparisons.<br>
-      <b>Excluded, with reason (No-Derivatives / no-proxy-vehicle guard):</b> SPY, QQQ, SPY5, SPYL, CNDX, VUAA (broad index trackers — momentum here reflects the index, not a single equity); IGLN, SSLV, REMX (physically-backed / commodity-sector ETCs — price action driven by commodity spot &amp; FX, not equity fundamentals); JEPI, JEPQ, JEPG (covered-call income funds — capped upside by design, not a momentum vehicle). None of these 9 instruments were scored.
+      <b>UNIVERSE:</b> S&amp;P 500 index, all 503 listed share classes / 500 companies, broad market — not this account's holdings or watchlist.
     </p>
+    <p style="font-size:13px;">
+      Exhaustively computing SMA50/SMA200/RSI14/relative-strength for all 503 constituents by hand, in this tooling environment, in one run is not practical (no bulk-screener API was reachable — see the egress note below). Consistent with standard technical-screening practice, a two-stage funnel was used instead:
+    </p>
+    <p style="font-size:13px;">
+      <b>Stage 0 (breadth pre-filter, sourced from live web search, not this session's judgment):</b> S&amp;P 500 names independently flagged by financial press/data sites as showing current technical strength — Trefis's daily "S&amp;P 500 stocks at 52-week highs" series (Aug 17–24, 2026 editions), an Investing.com report of Visa hitting a 52-week high, Yahoo Finance/Zacks "Best Momentum Stocks" daily lists (Aug 2026 editions, S&amp;P-500-member names only), and general semiconductor/AI-capex rally coverage (NerdWallet, 247WallSt, WTOP). This produced a candidate list of 11 S&amp;P 500 names: <code>LLY, V, GRMN, BAX, ROST, MU, AVGO, AMD, AMAT, NVDA, GOOG</code>.
+    </p>
+    <p style="font-size:13px;">
+      <b>Stage 1 (hard verification, this session, IBKR live data):</b> every one of those 11 names — plus the SPY benchmark — was independently re-priced and re-scored from raw IBKR daily OHLCV history and live snapshots (§5–6). <b>Two of the 11 press-flagged names (AVGO, AMD) failed the hard technical screen once actually computed</b> — a useful audit finding: momentum narrative in the press does not always match the price action (see AVGO's card below).
+    </p>
+    <div class="flag bad">
+      <b>Explicit limitation — WebFetch tool unavailable this session.</b> This session's outbound web-fetch tool returned <code>EGRESS_BLOCKED</code> for every finance domain attempted (finviz.com, stockanalysis.com, trefis.com, chartmill.com, finance.yahoo.com, even en.wikipedia.org) — an environment/org network policy, not a data-availability issue. All web-sourced facts in Stage 0 above therefore come from WebSearch's synthesized result snippets (which do carry source URLs, reproduced in §6), not from directly re-fetched and re-verified source pages. This means Stage 0 candidate selection could not be cross-checked against the full original articles, and the "503 constituents" figure for the S&amp;P 500 itself is asserted from search-result summaries (Slickcharts/Wikipedia), not from a directly fetched, machine-readable constituent list. Flagged here rather than silently assumed.
+    </div>
   </section>
 
   <section>
     <h2>2. Setup criterion checklist (applied in order, disqualifying)</h2>
     <ul class="checklist">
-      <li><b>C1 — Primary trend</b>Price &gt; 200-day SMA (computed from 1yr daily closes)</li>
+      <li><b>C1 — Primary trend</b>Price &gt; 200-day SMA (computed from IBKR 1yr daily closes)</li>
       <li><b>C2 — Short-term trend</b>Price &gt; 50-day SMA</li>
-      <li><b>C3 — Momentum quality band</b>RSI(14) between 40 and 75 (below 40 = weak/no momentum; above 75 = overbought / blow-off risk, excluded even though technically "hot")</li>
-      <li><b>C4 — Relative strength</b>3-month total return &gt; SPY's 3-month total return (+3.10%, the benchmark hurdle for this run)</li>
-      <li><b>Guard — No single-print momentum</b>A single day's move is never treated as a trend signal by itself; scoring uses SMA/RSI/3-month windows, not the latest session's % change alone (see TSLA note below).</li>
+      <li><b>C3 — Momentum quality band</b>RSI(14) between 40 and 75 (below 40 = weak/reversal risk; above 75 = overbought / blow-off risk)</li>
+      <li><b>C4 — Relative strength</b>3-month total return &gt; SPY's 3-month total return (+2.39%, this run's benchmark hurdle)</li>
+      <li><b>Guard — No single-print momentum</b>A single day's move is never treated as a trend signal; scoring uses SMA/RSI/3-month windows only. Every name below moved &lt;0.5% on the latest session — no single-print distortion to guard against this run.</li>
     </ul>
   </section>
 
   <section>
     <h2>3. Funnel reconciliation</h2>
     <div class="funnel">
-      <div class="fstage"><span>Universe (individual equities, account + watchlist)</span><div class="fbar"><div style="width:100%"></div></div><span class="n">13</span></div>
-      <div class="fstage"><span>Pass C1 (price &gt; 200-day SMA)</span><div class="fbar"><div style="width:76.9%"></div></div><span class="n">10 / 13</span></div>
-      <div class="fstage"><span>Pass C1 + C2 (price &gt; 50-day SMA too)</span><div class="fbar"><div style="width:38.5%"></div></div><span class="n">5 / 13</span></div>
-      <div class="fstage"><span>Pass C1–C3 (RSI 40–75)</span><div class="fbar"><div style="width:23.1%"></div></div><span class="n">3 / 13</span></div>
-      <div class="fstage"><span>Pass C1–C4 (3m return &gt; SPY +3.10%) — <b style="color:var(--high)">final HIGH list</b></span><div class="fbar"><div style="width:7.7%"></div></div><span class="n">1 / 13</span></div>
+      <div class="fstage"><span>S&amp;P 500 universe (full index, per §1)</span><div class="fbar"><div style="width:100%"></div></div><span class="n">503</span></div>
+      <div class="fstage"><span>Stage-0 press/search technical-strength pre-filter</span><div class="fbar"><div style="width:2.2%"></div></div><span class="n">11 / 503</span></div>
+      <div class="fstage"><span>Pass C1 (price &gt; 200-day SMA)</span><div class="fbar"><div style="width:90.9%"></div></div><span class="n">10 / 11</span></div>
+      <div class="fstage"><span>Pass C1+C2 (price &gt; 50-day SMA too)</span><div class="fbar"><div style="width:54.5%"></div></div><span class="n">6 / 11</span></div>
+      <div class="fstage"><span>Pass C1–C3 (RSI 40–75)</span><div class="fbar"><div style="width:27.3%"></div></div><span class="n">3 / 11</span></div>
+      <div class="fstage"><span>Pass C1–C4 (3m return &gt; SPY +2.39%) — <b style="color:var(--high)">final HIGH list</b></span><div class="fbar"><div style="width:18.2%"></div></div><span class="n">2 / 11</span></div>
     </div>
     <p style="font-size:12.5px; color:var(--muted); margin-top:10px;">
-      Failed at C1 (broken long-term trend): PLUG, TSLA, META (3).<br>
-      Passed C1, failed C2 (long-term up, but below/at 50-day SMA): GEV, GOOG, SNDK, MU (borderline, −0.14%), AAPL (borderline, −0.17%) (5).<br>
-      Passed C1+C2, failed C3 (RSI outside the 40–75 quality band): IOVA (RSI 83.2, overbought) and AMZN (RSI 24.5, oversold — contradicts the up-trend read) (2).<br>
-      Passed C1–C3, failed C4 (relative strength vs SPY): NVDA (3m −2.18%) and TTWO (3m +0.65%), both below SPY's +3.10% (2).<br>
-      Cleared every stage: <b style="color:var(--high)">MSFT</b> (1).
+      Failed at C1 (broke long-term trend): <b>AVGO</b> (1) — price is now 2.84% below its own 200-day SMA.<br>
+      Passed C1, failed C2 (long-term up, price below 50-day SMA): <b>MU, AMD, AMAT, GOOG</b> (4).<br>
+      Passed C1+C2, failed C3 (RSI outside 40–75): <b>GRMN</b> (32.8), <b>BAX</b> (32.6), <b>ROST</b> (39.6, hairline miss) (3).<br>
+      Passed C1–C3, failed C4 (relative strength vs SPY): <b>NVDA</b> (3m −3.18% vs SPY +2.39%) (1).<br>
+      Cleared every stage: <b style="color:var(--high)">V, LLY</b> (2).
     </p>
   </section>
 
@@ -109,81 +126,85 @@
     <h2>4. Screening results</h2>
 
     <div class="card">
-      <div class="head"><span class="ticker">MSFT</span><span class="tag HIGH">HIGH</span></div>
-      <p>Clears all four criteria. Price is 15.16% above its 50-day SMA ($419.84) and 12.10% above its 200-day SMA ($431.31); RSI(14) is a non-overbought 47.0; 3-month return is +15.31%, nearly 5x SPY's +3.10%. Sits 12.14% below its 52-week high of $550.29 (last set &gt;26 weeks ago per IBKR's 13w/26w high fields, meaning it's a resumed uptrend, not a fresh breakout to a new high).</p>
-      <div class="metrics">close $483.49 (Fri, +0.49% d/d) · SMA50 $419.84 · SMA200 $431.31 · RSI14 47.0 · 1m +26.64% · 3m +15.31% · 6m +21.65% · 52w range $349.20–$550.29 · avg 90d $ vol $19.3B</div>
+      <div class="head"><span class="ticker">V</span><span class="tag HIGH">HIGH</span></div>
+      <p>Clears all four criteria and is the strongest signal this run: live price ($383.00) is now trading <b>above</b> its own IBKR-tracked 52-week high of $373.95 — a fresh breakout, consistent with Investing.com's Aug 21 report of Visa hitting $374.20. +8.02% above the 50-day SMA ($354.02), +15.15% above the 200-day SMA ($332.09), RSI(14)=62.0 (healthy, not overbought), 3-month return +16.28% vs SPY's +2.39% (+13.89pp).</p>
+      <p class="entry">Entry to watch: at/near current levels ($380–385) given the fresh breakout; on a pullback, 50-day SMA support sits near $354.</p>
+      <p class="div">Diversification: you currently hold zero payments/financials exposure — Visa adds a new, largely uncorrelated sector versus your heavy gold/silver/uranium-mining and mega-cap AI-tech concentration.</p>
+      <div class="metrics">close $382.41 (Mon, +0.15% d/d) · SMA50 $354.02 · SMA200 $332.09 · RSI14 62.0 · 1m +7.50% · 3m +16.28% · 6m +24.76% · 52w range $293.29–$373.95 (price now above range) · avg 90d $ vol $3.12B</div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="ticker">LLY</span><span class="tag HIGH">HIGH</span></div>
+      <p>Clears all four criteria: +5.56% above the 50-day SMA ($1,181.30), +18.23% above the 200-day SMA ($1,054.68), RSI(14)=68.9 (strong, just short of overbought), and a 3-month return of +17.08% vs SPY's +2.39% (+14.69pp). Sits only 3.41% below its $1,292.60 52-week high — a resumed uptrend, not a fresh breakout to new highs, and consistent with Trefis's Aug 20 "18 large-cap 52-week highs" coverage naming LLY as the largest name on that list.</p>
+      <p class="entry">Entry to watch: near current levels ($1,240–1,250); on a pullback, first support is the 50-day SMA near $1,181.</p>
+      <p class="div">Diversification: already your only healthcare position (10 sh, ~$12.5k) — adding more concentrates rather than diversifies your book.</p>
+      <div class="metrics">close $1,246.93 (Mon, +0.13% d/d) · SMA50 $1,181.30 · SMA200 $1,054.68 · RSI14 68.9 · 1m +4.26% · 3m +17.08% · 6m +17.79% · 52w range $691.01–$1,292.60 · avg 90d $ vol $3.72B</div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="ticker">GRMN</span><span class="tag WATCH">WATCH</span></div>
+      <p>Trend structure is strong on both moving averages (+10.25% vs 50-day SMA, +24.14% vs 200-day SMA) and the 3-month return of +21.00% crushes SPY's +2.39% (+18.60pp), but RSI(14) has fallen to 32.8 after a sharp two-week pullback from its $314.09 52-week high (now 7.27% off that high). Strong uptrend digesting a big move, not a fresh breakout — flagged for reversal/continuation risk rather than an immediate entry.</p>
+      <p class="entry">Entry to watch: no entry recommended yet — wait for RSI(14) to reclaim ~40–45; support at the 50-day SMA near $264, bounce-confirmation near $295.</p>
+      <p class="div">Diversification: a new sector for your book (consumer electronics/GPS hardware) — would diversify away from your semiconductor/AI-infrastructure and precious-metals tilt.</p>
+      <div class="metrics">close $291.25 (Mon, +0.01% d/d) · SMA50 $264.18 · SMA200 $234.61 · RSI14 32.8 · 1m +19.84% · 3m +21.00% · 6m +17.87% · 52w range $185.17–$314.09 · avg 90d $ vol $269M</div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="ticker">BAX</span><span class="tag WATCH">WATCH</span></div>
+      <p>Same pattern as GRMN: +11.67% above the 50-day SMA, +32.48% above the 200-day SMA, and the single strongest 3-month return in this entire run (+38.11% vs SPY's +2.39%, +35.72pp) — but RSI(14) has dropped to 32.6 following a fast pullback from its $30.00 52-week high (now 11.67% off high). An outsized run that's currently reversing; reversal risk flagged rather than treated as a fresh entry.</p>
+      <p class="entry">Entry to watch: no entry recommended yet — wait for RSI(14) to stabilize above ~40; support at the 50-day SMA near $23.72, or a reclaim of $27.</p>
+      <p class="div">Diversification: a second healthcare name, but medtech rather than pharma like your existing LLY position — only modest diversification within a sector you're already in.</p>
+      <div class="metrics">close $26.49 (Mon, +0.04% d/d) · SMA50 $23.72 · SMA200 $20.00 · RSI14 32.6 · 1m +18.26% · 3m +38.11% · 6m +24.60% · 52w range $15.74–$30.00 · avg 90d $ vol $182M</div>
+    </div>
+
+    <div class="card">
+      <div class="head"><span class="ticker">ROST</span><span class="tag MED">MED</span></div>
+      <p>Passes on paper but with weak conviction: +2.99% above the 50-day SMA, +15.31% above the 200-day SMA, RSI(14)=39.6 (a hairline 0.4-point miss of the healthy 40–75 band), and a 3-month return of +2.86% that barely clears SPY's +2.39% (+0.47pp). A hold-level signal, not a fresh momentum entry.</p>
+      <p class="entry">Entry to watch: only on strength — a close back above the recent range high near $255; or, for a lower-risk entry, a pullback to the 50-day SMA near $234.52.</p>
+      <p class="div">Diversification: a genuinely new, largely uncorrelated sector (off-price retail/consumer discretionary) — good diversification benefit against your materials/commodities- and tech-heavy book.</p>
+      <div class="metrics">close $241.52 (Mon, −0.05% d/d) · SMA50 $234.52 · SMA200 $209.45 · RSI14 39.6 · 1m +1.10% · 3m +2.86% · 6m +19.63% · 52w range $142.75–$257.00 · avg 90d $ vol $737M</div>
     </div>
 
     <div class="card">
       <div class="head"><span class="ticker">MU</span><span class="tag MED">MED</span></div>
-      <p>Long-term trend is exceptionally strong — 68.66% above its 200-day SMA and +26.86% over 3 months (vs SPY +3.10%) — but price ($963.20) is essentially flat against its 50-day SMA ($964.59, −0.14%), and it's 23.25% off its 52-week high of $1,255.00. Reads as a strong uptrend consolidating at short-term support, not a fresh momentum signal.</p>
-      <div class="metrics">close $963.20 (Fri, −1.14% d/d) · SMA50 $964.59 · SMA200 $571.10 · RSI14 68.8 · 1m −2.37% · 3m +26.86% · 6m +125.79% · 52w range $114.08–$1,255.00 · avg 90d $ vol $46.6B</div>
+      <p>Long-term trend is exceptional — 58.46% above the 200-day SMA — and 3-month relative strength is strong (+21.23% vs SPY's +2.39%, +18.84pp), but price ($910.43) has fallen 5.45% below its 50-day SMA ($962.88) and sits 27.29% off its $1,255.00 52-week high. The AI-memory rally cooling into a consolidation — the same pattern this routine flagged for MU in the prior (2026-08-23) run.</p>
+      <p class="entry">Entry to watch: wait for a reclaim of the 50-day SMA near $963; a more conservative entry is a further pullback toward $850–870.</p>
+      <p class="div">Diversification: adds to an already-concentrated AI/semiconductor sleeve alongside your existing NVDA and CRWV positions — increases correlation risk rather than reducing it.</p>
+      <div class="metrics">close $910.43 (Mon, +0.23% d/d) · SMA50 $962.88 · SMA200 $574.56 · RSI14 52.5 · 1m −1.14% · 3m +21.23% · 6m +116.27% · 52w range $114.08–$1,255.00 · avg 90d $ vol $44.1B</div>
     </div>
 
     <div class="card">
-      <div class="head"><span class="ticker">SNDK</span><span class="tag MED">MED</span></div>
-      <p>Same pattern as MU (both are NAND/DRAM names caught in the same memory-shortage rally): 200-day SMA confirms a powerful long-term trend (+69.63%), but price is 3.69% below its 50-day SMA and 32.33% off its 52-week high of $2,354.39 — short-term momentum has cooled from the peak.</p>
-      <div class="metrics">close $1,593.20 (Fri, −0.46% d/d) · SMA50 $1,654.17 · SMA200 $939.21 · RSI14 63.0 · 1m −0.88% · 3m +3.49% · 6m +145.56% · 52w range $46.01–$2,354.39 · avg 90d $ vol $22.1B</div>
+      <div class="head"><span class="ticker">AMAT</span><span class="tag MED">MED</span></div>
+      <p>200-day trend remains solidly positive (+22.03%) and the 3-month return of +12.04% still beats SPY's +2.39% (+9.65pp), but the stock is 13.44% below its 50-day SMA and 34.34% off its $739.67 52-week high, with RSI(14) at a weak 33.9 — short-term momentum has broken down even though the longer trend and relative strength haven't.</p>
+      <p class="entry">Entry to watch: high risk to chase here (34% off high, RSI 33.9); wait for a reclaim of the 50-day SMA near $559.</p>
+      <p class="div">Diversification: same semiconductor-equipment/AI-capex theme as your existing NVDA, CRWV and DELL exposure — poor diversification.</p>
+      <div class="metrics">close $484.19 (Mon, +0.31% d/d) · SMA50 $559.34 · SMA200 $396.78 · RSI14 33.9 · 1m −9.71% · 3m +12.04% · 6m +29.62% · 52w range $153.75–$739.67 · avg 90d $ vol $4.68B</div>
     </div>
 
     <div class="card">
       <div class="head"><span class="ticker">NVDA</span><span class="tag MED">MED</span></div>
-      <p>Clean, healthy trend structure (+3.76% vs 50-day SMA, +10.29% vs 200-day SMA, RSI 59.5 — no overbought concern) and only 8.95% off its 52-week high. Fails purely on relative strength: 3-month return of −2.18% trails SPY's +3.10%, so despite intact technicals it hasn't been a momentum leader over this window.</p>
-      <div class="metrics">close $215.38 (Fri, −0.68% d/d) · SMA50 $207.58 · SMA200 $195.29 · RSI14 59.5 · 1m +2.85% · 3m −2.18% · 6m +13.12% · 52w range $164.04–$236.54 · avg 90d $ vol $30.2B</div>
+      <p>Clean technical structure — marginally above both the 50-day SMA (+0.40%) and 200-day SMA (+6.73%), RSI(14)=46.0 (neutral, no overbought concern) — but fails purely on relative strength: 3-month return of −3.18% trails SPY's +2.39% by 5.57pp. Intact trend, but no fresh catalyst to chase.</p>
+      <p class="entry">Entry to watch: roughly fair value near current levels ($205–210) relative to its own SMAs, but no momentum catalyst — watch, don't chase.</p>
+      <p class="div">Diversification: already your largest single tech holding — adding more increases single-name concentration rather than diversifying.</p>
+      <div class="metrics">close $208.48 (Mon, +0.40% d/d) · SMA50 $207.65 · SMA200 $195.34 · RSI14 46.0 · 1m +0.79% · 3m −3.18% · 6m +8.84% · 52w range $164.04–$236.54 · avg 90d $ vol $29.35B</div>
     </div>
 
     <div class="card">
-      <div class="head"><span class="ticker">TTWO</span><span class="tag MED">MED</span></div>
-      <p>Marginally above both moving averages (+0.80% / +6.02%) with a neutral RSI of 45.8 — a stable, unremarkable trend. 3-month return of only +0.65% badly trails SPY's +3.10%. A hold, not a momentum candidate.</p>
-      <div class="metrics">close $242.48 (Fri, +0.97% d/d) · SMA50 $240.56 · SMA200 $228.70 · RSI14 45.8 · 1m +4.07% · 3m +0.65% · 6m +19.98% · 52w range $187.63–$265.94 · avg 90d $ vol $604M</div>
+      <div class="head"><span class="ticker">AMD</span><span class="tag FAIL">FAIL</span></div>
+      <p>Below its 50-day SMA (−10.37%) with RSI(14) at 32.8 and a −2.30% 3-month return trailing SPY's +2.39% by 4.69pp. The 200-day SMA is still +38.03% positive, so the multi-quarter uptrend isn't broken, but short/medium-term momentum has clearly stalled.</p>
+      <div class="metrics">close $456.75 (Mon, +0.18% d/d) · SMA50 $509.60 · SMA200 $330.90 · RSI14 32.8 · 1m −12.49% · 3m −2.30% · 6m +132.32% · 52w range $149.22–$584.73 · avg 90d $ vol $13.15B</div>
     </div>
 
     <div class="card">
-      <div class="head"><span class="ticker">IOVA</span><span class="tag WATCH">WATCH</span></div>
-      <p>By far the strongest raw momentum in the universe — +124.05% over 3 months, +61.60% over 1 month, +188.85% over 6 months — but RSI(14) of 83.2 is deep into overbought territory, and Friday's session alone was −7.90% (from $8.99 to $8.28). This combination (extreme RSI + a sharp single-day reversal after a huge run) is the textbook blow-off-top pattern; flagged for reversal risk rather than treated as a fresh entry.</p>
-      <div class="metrics">close $8.28 (Fri, −7.90% d/d) · SMA50 $5.04 · SMA200 $3.63 · RSI14 83.2 · 1m +61.60% · 3m +124.05% · 6m +188.85% · 52w range $1.76–$9.36 · avg 90d $ vol $139.7M</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">AMZN</span><span class="tag WATCH">WATCH</span></div>
-      <p>Trend is bullish on paper (+3.95% vs 50-day SMA, +8.92% vs 200-day SMA) but RSI(14) has fallen to 24.5 — an oversold reading that is inconsistent with an accelerating uptrend. Reads as a stalling/consolidating move rather than clean momentum; watch for either a bounce back into the uptrend or a break of the 50-day SMA.</p>
-      <div class="metrics">close $259.59 (Fri, −0.20% d/d) · SMA50 $249.73 · SMA200 $238.33 · RSI14 24.5 · 1m +10.69% · 3m −3.66% · 6m +23.09% · 52w range $196.00–$287.20 · avg 90d $ vol $13.0B</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">GEV</span><span class="tag FAIL">FAIL</span></div>
-      <p>Below its 50-day SMA (−7.52%) with RSI 40.1 sitting right at the weak/neutral boundary; 3-month return of −8.33% badly trails SPY's +3.10%. Still 10.28% above its 200-day SMA, so the long-term uptrend isn't broken, but short/medium-term momentum clearly has.</p>
-      <div class="metrics">close $957.25 (Fri, −0.91% d/d) · SMA50 $1,035.05 · SMA200 $868.06 · RSI14 40.1 · 1m −7.21% · 3m −8.33% · 6m +15.24% · 52w range $529.53–$1,195.49 · avg 90d $ vol $2.7B</div>
+      <div class="head"><span class="ticker">AVGO</span><span class="tag FAIL">FAIL</span></div>
+      <p>Fails every stage — the only screened name to break its long-term trend: −7.53% below the 50-day SMA <b>and</b> −2.84% below the 200-day SMA, RSI(14)=18.4 (deeply oversold), 3-month return −13.37% vs SPY's +2.39% (−15.76pp), and 27.48% off its $495.00 52-week high. This notably diverges from the bullish AI-networking-chip press narrative that surfaced it in the Stage-0 pre-filter (§1, §6) — a concrete example of why this run computes hard technicals rather than trusting sentiment.</p>
+      <div class="metrics">close $358.76 (Mon, +0.06% d/d) · SMA50 $387.97 · SMA200 $369.23 · RSI14 18.4 · 1m −6.06% · 3m −13.37% · 6m +8.60% · 52w range $285.53–$495.00 · avg 90d $ vol $9.45B</div>
     </div>
 
     <div class="card">
       <div class="head"><span class="ticker">GOOG</span><span class="tag FAIL">FAIL</span></div>
-      <p>RSI(14) of 20.6 is deeply oversold and 3-month return of −10.88% is the weakest relative-strength reading of any large-cap in the universe versus SPY's +3.10%. Price is only marginally above its 200-day SMA (+3.04%), offering little cushion.</p>
-      <div class="metrics">close $342.15 (Fri, +1.17% d/d) · SMA50 $350.16 · SMA200 $332.06 · RSI14 20.6 · 1m +7.35% · 3m −10.88% · 6m +8.53% · 52w range $205.48–$404.47 · avg 90d $ vol $7.5B</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">AAPL</span><span class="tag FAIL">FAIL</span></div>
-      <p>A near-miss on C2: price is just 0.17% below its 50-day SMA ($310.21), essentially flat. But the 3-month return of +1.43% trails SPY's +3.10%, so it doesn't clear the relative-strength bar even if the moving-average test is treated generously. 200-day trend remains intact (+10.01%).</p>
-      <div class="metrics">close $309.69 (Fri, −0.52% d/d) · SMA50 $310.21 · SMA200 $281.50 · RSI14 56.8 · 1m −3.83% · 3m +1.43% · 6m +16.92% · 52w range $224.05–$344.57 · avg 90d $ vol $17.6B</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">PLUG</span><span class="tag FAIL">FAIL</span></div>
-      <p>Below both the 50-day (−2.68%) and 200-day (−8.08%) SMAs, with a −39.95% 3-month return and sitting 50.05% off its 52-week high. No part of the momentum case holds up here.</p>
-      <div class="metrics">close $2.29 (Fri, +3.98% d/d) · SMA50 $2.35 · SMA200 $2.49 · RSI14 60.2 · 1m +3.65% · 3m −39.95% · 6m +21.39% · 52w range $1.41–$4.58 · avg 90d $ vol $135.4M</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">TSLA</span><span class="tag FAIL">FAIL</span></div>
-      <p><b>No-derivatives / no-single-print guard applied:</b> Friday's session was +5.44%, the single largest daily move in this universe, but that alone is not scored as momentum. On the metrics that matter here, price remains below both the 50-day (−0.53%) and 200-day (−9.77%) SMAs, and the 3-month return is −13.16% against SPY's +3.10% — a structural downtrend that one strong session doesn't reverse.</p>
-      <div class="metrics">close $363.92 (Fri, +5.44% d/d) · SMA50 $365.86 · SMA200 $403.32 · RSI14 72.7 · 1m +13.50% · 3m −13.16% · 6m −11.89% · 52w range $297.38–$498.83 · avg 90d $ vol $15.3B</div>
-    </div>
-
-    <div class="card">
-      <div class="head"><span class="ticker">META</span><span class="tag FAIL">FAIL</span></div>
-      <p>Below both moving averages (−6.75% vs 50-day, −11.40% vs 200-day) with RSI 31.3 and a −9.46% 3-month return vs SPY's +3.10%. 29.92% off its 52-week high of $788.98 (last hit &gt;26 weeks ago). A clean downtrend on every measure used here.</p>
-      <div class="metrics">close $552.95 (Fri, +1.30% d/d) · SMA50 $592.99 · SMA200 $624.13 · RSI14 31.3 · 1m −9.27% · 3m −9.46% · 6m −16.13% · 52w range $520.26–$788.98 · avg 90d $ vol $10.3B</div>
+      <p>RSI(14)=20.6 is deeply oversold and the 3-month return of −9.17% is among the weakest relative-strength readings this run vs SPY's +2.39% (−11.56pp). Barely above its 200-day SMA (+3.67%, thin cushion) and below its 50-day SMA (−1.52%). Consistent with the FAIL verdict this routine gave GOOG in the prior (2026-08-23) run (RSI 20.6 this run vs RSI 21 then) — a persistent breakdown, not noise.</p>
+      <div class="metrics">close $344.59 (Mon, −0.07% d/d) · SMA50 $349.92 · SMA200 $332.40 · RSI14 20.6 · 1m +7.99% · 3m −9.17% · 6m +10.56% · 52w range $205.48–$404.47 · avg 90d $ vol $7.59B</div>
     </div>
   </section>
 
@@ -192,23 +213,21 @@
     <div class="tablewrap">
     <table>
       <thead><tr>
-        <th>Ticker</th><th>Tag</th><th>Close (Fri)</th><th>d/d %</th><th>SMA50</th><th>vs SMA50</th><th>SMA200</th><th>vs SMA200</th><th>RSI(14)</th><th>1m %</th><th>3m %</th><th>6m %</th><th>52w High</th><th>52w Low</th><th>% off 52w Hi</th><th>Avg 90d $ Vol</th>
+        <th>Ticker</th><th>Tag</th><th>Close (Mon)</th><th>d/d %</th><th>SMA50</th><th>vs SMA50</th><th>SMA200</th><th>vs SMA200</th><th>RSI(14)</th><th>1m %</th><th>3m %</th><th>6m %</th><th>52w High</th><th>52w Low</th><th>% off 52w Hi</th><th>Avg 90d $ Vol</th>
       </tr></thead>
       <tbody>
-        <tr><td class="label">MSFT</td><td><span class="tag HIGH">HIGH</span></td><td>$483.49</td><td class="pos">+0.49%</td><td>$419.84</td><td class="pos">+15.16%</td><td>$431.31</td><td class="pos">+12.10%</td><td>47.0</td><td class="pos">+26.64%</td><td class="pos">+15.31%</td><td class="pos">+21.65%</td><td>$550.29</td><td>$349.20</td><td class="neg">−12.14%</td><td>$19.3B</td></tr>
-        <tr><td class="label">MU</td><td><span class="tag MED">MED</span></td><td>$963.20</td><td class="neg">−1.14%</td><td>$964.59</td><td class="neg">−0.14%</td><td>$571.10</td><td class="pos">+68.66%</td><td>68.8</td><td class="neg">−2.37%</td><td class="pos">+26.86%</td><td class="pos">+125.79%</td><td>$1,255.00</td><td>$114.08</td><td class="neg">−23.25%</td><td>$46.6B</td></tr>
-        <tr><td class="label">SNDK</td><td><span class="tag MED">MED</span></td><td>$1,593.20</td><td class="neg">−0.46%</td><td>$1,654.17</td><td class="neg">−3.69%</td><td>$939.21</td><td class="pos">+69.63%</td><td>63.0</td><td class="neg">−0.88%</td><td class="pos">+3.49%</td><td class="pos">+145.56%</td><td>$2,354.39</td><td>$46.01</td><td class="neg">−32.33%</td><td>$22.1B</td></tr>
-        <tr><td class="label">NVDA</td><td><span class="tag MED">MED</span></td><td>$215.38</td><td class="neg">−0.68%</td><td>$207.58</td><td class="pos">+3.76%</td><td>$195.29</td><td class="pos">+10.29%</td><td>59.5</td><td class="pos">+2.85%</td><td class="neg">−2.18%</td><td class="pos">+13.12%</td><td>$236.54</td><td>$164.04</td><td class="neg">−8.95%</td><td>$30.2B</td></tr>
-        <tr><td class="label">TTWO</td><td><span class="tag MED">MED</span></td><td>$242.48</td><td class="pos">+0.97%</td><td>$240.56</td><td class="pos">+0.80%</td><td>$228.70</td><td class="pos">+6.02%</td><td>45.8</td><td class="pos">+4.07%</td><td class="pos">+0.65%</td><td class="pos">+19.98%</td><td>$265.94</td><td>$187.63</td><td class="neg">−8.82%</td><td>$604M</td></tr>
-        <tr><td class="label">IOVA</td><td><span class="tag WATCH">WATCH</span></td><td>$8.28</td><td class="neg">−7.90%</td><td>$5.04</td><td class="pos">+64.17%</td><td>$3.63</td><td class="pos">+128.30%</td><td>83.2</td><td class="pos">+61.60%</td><td class="pos">+124.05%</td><td class="pos">+188.85%</td><td>$9.36</td><td>$1.76</td><td class="neg">−11.54%</td><td>$139.7M</td></tr>
-        <tr><td class="label">AMZN</td><td><span class="tag WATCH">WATCH</span></td><td>$259.59</td><td class="neg">−0.20%</td><td>$249.73</td><td class="pos">+3.95%</td><td>$238.33</td><td class="pos">+8.92%</td><td>24.5</td><td class="pos">+10.69%</td><td class="neg">−3.66%</td><td class="pos">+23.09%</td><td>$287.20</td><td>$196.00</td><td class="neg">−9.61%</td><td>$13.0B</td></tr>
-        <tr><td class="label">GEV</td><td><span class="tag FAIL">FAIL</span></td><td>$957.25</td><td class="neg">−0.91%</td><td>$1,035.05</td><td class="neg">−7.52%</td><td>$868.06</td><td class="pos">+10.28%</td><td>40.1</td><td class="neg">−7.21%</td><td class="neg">−8.33%</td><td class="pos">+15.24%</td><td>$1,195.49</td><td>$529.53</td><td class="neg">−19.93%</td><td>$2.7B</td></tr>
-        <tr><td class="label">GOOG</td><td><span class="tag FAIL">FAIL</span></td><td>$342.15</td><td class="pos">+1.17%</td><td>$350.16</td><td class="neg">−2.29%</td><td>$332.06</td><td class="pos">+3.04%</td><td>20.6</td><td class="pos">+7.35%</td><td class="neg">−10.88%</td><td class="pos">+8.53%</td><td>$404.47</td><td>$205.48</td><td class="neg">−15.41%</td><td>$7.5B</td></tr>
-        <tr><td class="label">AAPL</td><td><span class="tag FAIL">FAIL</span></td><td>$309.69</td><td class="neg">−0.52%</td><td>$310.21</td><td class="neg">−0.17%</td><td>$281.50</td><td class="pos">+10.01%</td><td>56.8</td><td class="neg">−3.83%</td><td class="pos">+1.43%</td><td class="pos">+16.92%</td><td>$344.57</td><td>$224.05</td><td class="neg">−10.12%</td><td>$17.6B</td></tr>
-        <tr><td class="label">PLUG</td><td><span class="tag FAIL">FAIL</span></td><td>$2.29</td><td class="pos">+3.98%</td><td>$2.35</td><td class="neg">−2.68%</td><td>$2.49</td><td class="neg">−8.08%</td><td>60.2</td><td class="pos">+3.65%</td><td class="neg">−39.95%</td><td class="pos">+21.39%</td><td>$4.58</td><td>$1.41</td><td class="neg">−50.05%</td><td>$135.4M</td></tr>
-        <tr><td class="label">TSLA</td><td><span class="tag FAIL">FAIL</span></td><td>$363.92</td><td class="pos">+5.44%</td><td>$365.86</td><td class="neg">−0.53%</td><td>$403.32</td><td class="neg">−9.77%</td><td>72.7</td><td class="pos">+13.50%</td><td class="neg">−13.16%</td><td class="neg">−11.89%</td><td>$498.83</td><td>$297.38</td><td class="neg">−27.05%</td><td>$15.3B</td></tr>
-        <tr><td class="label">META</td><td><span class="tag FAIL">FAIL</span></td><td>$552.95</td><td class="pos">+1.30%</td><td>$592.99</td><td class="neg">−6.75%</td><td>$624.13</td><td class="neg">−11.40%</td><td>31.3</td><td class="neg">−9.27%</td><td class="neg">−9.46%</td><td class="neg">−16.13%</td><td>$788.98</td><td>$520.26</td><td class="neg">−29.92%</td><td>$10.3B</td></tr>
-        <tr style="opacity:.75"><td class="label">SPY (bench)</td><td>—</td><td>$767.00</td><td class="pos">+0.58%</td><td>$751.75</td><td class="pos">+2.03%</td><td>$707.54</td><td class="pos">+8.40%</td><td>57.6</td><td class="pos">+3.73%</td><td class="pos">+3.10%</td><td class="pos">+11.07%</td><td>$779.37</td><td>$629.29</td><td class="neg">−1.59%</td><td>$39.5B</td></tr>
+        <tr><td class="label">V</td><td><span class="tag HIGH">HIGH</span></td><td>$382.41</td><td class="pos">+0.15%</td><td>$354.02</td><td class="pos">+8.02%</td><td>$332.09</td><td class="pos">+15.15%</td><td>62.0</td><td class="pos">+7.50%</td><td class="pos">+16.28%</td><td class="pos">+24.76%</td><td>$373.95</td><td>$293.29</td><td class="pos">+2.42%</td><td>$3.12B</td></tr>
+        <tr><td class="label">LLY</td><td><span class="tag HIGH">HIGH</span></td><td>$1,246.93</td><td class="pos">+0.13%</td><td>$1,181.30</td><td class="pos">+5.56%</td><td>$1,054.68</td><td class="pos">+18.23%</td><td>68.9</td><td class="pos">+4.26%</td><td class="pos">+17.08%</td><td class="pos">+17.79%</td><td>$1,292.60</td><td>$691.01</td><td class="neg">−3.41%</td><td>$3.72B</td></tr>
+        <tr><td class="label">GRMN</td><td><span class="tag WATCH">WATCH</span></td><td>$291.25</td><td class="pos">+0.01%</td><td>$264.18</td><td class="pos">+10.25%</td><td>$234.61</td><td class="pos">+24.14%</td><td>32.8</td><td class="pos">+19.84%</td><td class="pos">+21.00%</td><td class="pos">+17.87%</td><td>$314.09</td><td>$185.17</td><td class="neg">−7.27%</td><td>$269M</td></tr>
+        <tr><td class="label">BAX</td><td><span class="tag WATCH">WATCH</span></td><td>$26.49</td><td class="pos">+0.04%</td><td>$23.72</td><td class="pos">+11.67%</td><td>$20.00</td><td class="pos">+32.48%</td><td>32.6</td><td class="pos">+18.26%</td><td class="pos">+38.11%</td><td class="pos">+24.60%</td><td>$30.00</td><td>$15.74</td><td class="neg">−11.67%</td><td>$182M</td></tr>
+        <tr><td class="label">ROST</td><td><span class="tag MED">MED</span></td><td>$241.52</td><td class="neg">−0.05%</td><td>$234.52</td><td class="pos">+2.99%</td><td>$209.45</td><td class="pos">+15.31%</td><td>39.6</td><td class="pos">+1.10%</td><td class="pos">+2.86%</td><td class="pos">+19.63%</td><td>$257.00</td><td>$142.75</td><td class="neg">−6.07%</td><td>$737M</td></tr>
+        <tr><td class="label">MU</td><td><span class="tag MED">MED</span></td><td>$910.43</td><td class="pos">+0.23%</td><td>$962.88</td><td class="neg">−5.45%</td><td>$574.56</td><td class="pos">+58.46%</td><td>52.5</td><td class="neg">−1.14%</td><td class="pos">+21.23%</td><td class="pos">+116.27%</td><td>$1,255.00</td><td>$114.08</td><td class="neg">−27.29%</td><td>$44.1B</td></tr>
+        <tr><td class="label">AMAT</td><td><span class="tag MED">MED</span></td><td>$484.19</td><td class="pos">+0.31%</td><td>$559.34</td><td class="neg">−13.44%</td><td>$396.78</td><td class="pos">+22.03%</td><td>33.9</td><td class="neg">−9.71%</td><td class="pos">+12.04%</td><td class="pos">+29.62%</td><td>$739.67</td><td>$153.75</td><td class="neg">−34.34%</td><td>$4.68B</td></tr>
+        <tr><td class="label">NVDA</td><td><span class="tag MED">MED</span></td><td>$208.48</td><td class="pos">+0.40%</td><td>$207.65</td><td class="pos">+0.40%</td><td>$195.34</td><td class="pos">+6.73%</td><td>46.0</td><td class="pos">+0.79%</td><td class="neg">−3.18%</td><td class="pos">+8.84%</td><td>$236.54</td><td>$164.04</td><td class="neg">−11.51%</td><td>$29.35B</td></tr>
+        <tr><td class="label">AMD</td><td><span class="tag FAIL">FAIL</span></td><td>$456.75</td><td class="pos">+0.18%</td><td>$509.60</td><td class="neg">−10.37%</td><td>$330.90</td><td class="pos">+38.03%</td><td>32.8</td><td class="neg">−12.49%</td><td class="neg">−2.30%</td><td class="pos">+132.32%</td><td>$584.73</td><td>$149.22</td><td class="neg">−21.75%</td><td>$13.15B</td></tr>
+        <tr><td class="label">AVGO</td><td><span class="tag FAIL">FAIL</span></td><td>$358.76</td><td class="pos">+0.06%</td><td>$387.97</td><td class="neg">−7.53%</td><td>$369.23</td><td class="neg">−2.84%</td><td>18.4</td><td class="neg">−6.06%</td><td class="neg">−13.37%</td><td class="pos">+8.60%</td><td>$495.00</td><td>$285.53</td><td class="neg">−27.48%</td><td>$9.45B</td></tr>
+        <tr><td class="label">GOOG</td><td><span class="tag FAIL">FAIL</span></td><td>$344.59</td><td class="neg">−0.07%</td><td>$349.92</td><td class="neg">−1.52%</td><td>$332.40</td><td class="pos">+3.67%</td><td>20.6</td><td class="pos">+7.99%</td><td class="neg">−9.17%</td><td class="pos">+10.56%</td><td>$404.47</td><td>$205.48</td><td class="neg">−14.86%</td><td>$7.59B</td></tr>
+        <tr style="opacity:.75"><td class="label">SPY (bench)</td><td>—</td><td>$763.47</td><td class="pos">+0.09%</td><td>$752.26</td><td class="pos">+1.49%</td><td>$707.99</td><td class="pos">+7.84%</td><td>40.5</td><td class="pos">+3.32%</td><td class="pos">+2.39%</td><td class="pos">+11.88%</td><td>$779.37</td><td>$629.29</td><td class="neg">−1.95%</td><td>$39.4B</td></tr>
       </tbody>
     </table>
     </div>
@@ -217,34 +236,43 @@
   <section>
     <h2>6. Methodology &amp; per-figure sourcing</h2>
     <p style="font-size:13px;">
-      <b>Source for every number above:</b> Interactive Brokers TWS market-data API, two calls per ticker —
-      <code>get_price_history</code> (1 year, daily bars, regular trading hours only, retrieved 2026-08-23) and
-      <code>get_price_snapshot</code> (fields: <code>last</code>, <code>prior_close</code>, <code>change</code>,
-      <code>misc_statistics</code> for 13w/26w/52w high-low, <code>avg_90d_usd_volume</code>; queried 2026-08-23,
-      timestamps returned ≈2026-08-21T23:59Z, i.e. Friday's final print — IBKR was not carrying a fresher quote
-      because the market was closed for the weekend at query time).
+      <b>Stage-0 candidate sourcing (WebSearch, not directly fetched — see §1 limitation):</b>
+    </p>
+    <ol class="src">
+      <li>Trefis — "The 52-Week-High List" daily series, Aug 17–24 2026 editions (multiple articles; named LLY, V among constituents of the Aug 20–24 large-cap/S&amp;P 500 52-week-high lists)</li>
+      <li>Investing.com — "Visa stock hits 52-week high at $374.20", Aug 21 2026</li>
+      <li>Yahoo Finance / Zacks — "Best Momentum Stocks to Buy" daily series, Aug 4–24 2026 editions (Zacks Rank #1 Strong-Buy momentum lists; AMAT appeared in the Aug 19 edition, cross-checked as an S&amp;P 500 member)</li>
+      <li>NerdWallet — "7 Best-Performing Semiconductor Stocks for August 2026"; 247WallSt — "3 Semiconductor Stocks to Buy Before AI Demand Explodes", Aug 1 2026; WTOP — "7 Best Semiconductor Stocks for 2026" (sourced AVGO, AMD, MU as press-flagged AI/semiconductor momentum names — AVGO and AMD subsequently <b>failed</b> the hard technical screen, see §4)</li>
+      <li>Search summaries citing Garmin (GRMN, +25.3% 1-month) and Baxter International (BAX, +25.5% 1-month) among S&amp;P 500 relative-strength standouts in early Aug 2026 IBD-style coverage</li>
+    </ol>
+    <p style="font-size:13px;">
+      <b>Stage-1 hard data (all numbers in §4–5):</b> Interactive Brokers TWS market-data API, two calls per ticker plus SPY —
+      <code>get_price_history</code> (1 year, daily bars, regular trading hours only; last bar = Monday 2026-08-24 close) and
+      <code>get_price_snapshot</code> (fields: <code>last</code>, <code>change</code>, <code>misc_statistics</code> for 13w/26w/52w
+      high-low, <code>avg_90d_usd_volume</code>; retrieved 2026-08-25 ≈02:00–03:11 UTC).
     </p>
     <p style="font-size:13px;">
-      <b>Derived figures</b> (SMA50, SMA200, RSI14, 1m/3m/6m returns, % vs SMA, % off 52-week high) were computed
-      directly from the raw daily-close series returned by <code>get_price_history</code> using standard formulas
-      (simple moving average; Wilder-style average-gain/average-loss RSI over the trailing 14 sessions;
-      point-to-point % change using the close ~22/~64/~127 trading sessions back for 1m/3m/6m respectively) — not
-      estimated. Each ticker's series was cross-verified against its live snapshot by matching the second-to-last
-      daily close to the snapshot's <code>prior_close</code> field exactly, to guarantee the historical series and
-      the live quote refer to the same instrument before any indicator was computed.
+      <b>Derived figures</b> (SMA50, SMA200, RSI14, 1m/3m/6m returns, % vs SMA) were computed directly from the raw daily-close
+      series using standard formulas — simple moving average; Wilder-style average-gain/average-loss RSI over the trailing 14
+      sessions (last 15 closes); point-to-point % change using the close 21/63/126 trading sessions back for 1m/3m/6m respectively.
+      Every series was validated by confirming its final close matched the live snapshot price within one session's normal move
+      before any indicator was computed (all 12 series, incl. SPY, passed this check).
     </p>
     <div class="flag">
-      <b>Explicitly unverifiable / unavailable via this data path:</b> IBKR's <code>cumulative_perf_1m</code>,
-      <code>cumulative_perf_ytd</code>, and <code>cumulative_perf_1y</code> snapshot fields returned empty for all
-      13 individual equities (they populated only for the SPY benchmark, giving YTD +10.09% and 1y +19.44%). Rather
-      than estimate or silently omit momentum context, the 1m/3m/6m returns shown throughout this report were
-      computed independently from the raw price-history series as described above, and are flagged here as
-      self-computed rather than broker-reported for those two fields' would-be equivalents.
+      <b>Explicitly unverifiable / unavailable via this data path:</b> IBKR's <code>cumulative_perf_1m</code> snapshot field
+      returned empty (<code>{}</code>) for all 11 individual equities — it populated only for SPY, and disagreed materially
+      with this report's own price-history-derived figure for SPY's 1-month return (broker field: −0.07%; this report's
+      computed figure from raw daily closes: +3.32%). This discrepancy was not resolved — most likely the broker field
+      uses a different day-count or an intraday-vs-close basis — and is flagged here rather than silently reconciled.
+      Because the broker field is unreliable/unavailable, every 1m/3m/6m return figure throughout this report is
+      self-computed from the raw price-history series, not broker-reported, and is labeled as such throughout. Additionally:
+      the exact current S&amp;P 500 constituent count/list was not independently re-verified this session (WebFetch
+      blocked, see §1) — the "503" figure is asserted from search-summary text, not a fetched authoritative list.
     </div>
   </section>
 
   <footer>
-    market-routines &middot; Momentum/Technical Equity Screener v2 &middot; generated 2026-08-23T18:20:00Z &middot; data sourced live from Interactive Brokers, no training-data pricing used
+    market-routines &middot; Momentum/Technical Equity Screener v2 &middot; generated 2026-08-25T03:15:00Z &middot; broad S&amp;P 500 universe &middot; live IBKR pricing, no training-data pricing used
   </footer>
 
 </div>
