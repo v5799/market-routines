@@ -1,0 +1,63 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-26T05:40:00Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL",
+      "tag": "HIGH",
+      "detail": "These two LSE-listed S&P 500 ETFs together are 68.7% of the $493,515.43 NAV (SPY5 44.8% / $220,867, SPYL 24.0% / $118,423, per get_account_positions) and their daily returns correlate at r=0.996 over the trailing 56 trading days (computed from IBKR get_price_history), so this is effectively one oversized equity bet split across two wrappers.",
+      "recommendation": "Sell the SPYL lot and roll the proceeds into SPY5 (or vice versa) to collapse the redundant share class into one position, then redirect roughly 5% of NAV (~$25k) from the combined position into TLT and/or cash to actually reduce net equity beta."
+    },
+    {
+      "label": "Cash / liquidity buffer",
+      "tag": "HIGH",
+      "detail": "Available funds are $1,127.07 against a $493,515.43 NAV (0.23%, per get_account_summary and get_account_balances) -- the account is essentially fully invested with no buying power for a margin call, a market dip, or a forced sale.",
+      "recommendation": "Trim 2-3% of the SPY5 position (roughly $10k-$15k) to build a 2-3% NAV cash buffer."
+    },
+    {
+      "label": "CRWV / AI-capex cluster",
+      "tag": "MED",
+      "detail": "NVDA + CRWV + DELL + GOOG total 8.65% of NAV ($42,713). CoreWeave (CRWV, 2.7% of NAV, +3.6% unrealized) reportedly faces a ~$17.3B funding gap against a $2.27B cash balance and fell on Aug 18, 2026 as rising Treasury yields pressured its $33B-midpoint 2026 capex plan (Motley Fool, Aug 18 2026); Nvidia's own ~$750B 2026 AI spend is being called a bubble by critics (NPR, Aug 2 2026).",
+      "recommendation": "Trim CRWV toward a ~1.5% NAV cap now, banking the current unrealized gain, rather than waiting for CoreWeave's next capex/funding update."
+    },
+    {
+      "label": "Hard-assets / metals cluster",
+      "tag": "MED",
+      "detail": "IGLN + SSLV + CCJ + FCX + KGC + NEM + REMX total 19.7% of NAV ($97,275) and move together with gold/metals sentiment. Gold has already rallied ~10% in August 2026 to roughly $4,394-4,450/oz on Fed rate-cut bets (IG UK, goldsilver.com, Aug 17 2026), and JPMorgan and Bank of America have both cut 2026 price targets after the run (JPMorgan to a $4,300-4,500 Q3/Q4 range, down from a prior $6,000 path).",
+      "recommendation": "Take partial profits on the three smallest legs -- REMX ($7.7k), KGC ($5.9k), NEM ($6.3k), each roughly 1-1.5% of NAV -- to lock in gains ahead of a rate-cut-bet reversal."
+    },
+    {
+      "label": "REMX rare-earth policy risk",
+      "tag": "MED",
+      "detail": "China widened rare-earth export controls to 10 US firms in June 2026 and 14 EU firms in July 2026, and the NdPr alloy benchmark rose 21.4% in the month through July 1, 2026 (Morgan Lewis; China Trade Monitor) -- REMX's recent strength is policy-driven and reversible, as shown when Beijing paused its October 2025 rules for a year.",
+      "recommendation": "Set a trailing stop (e.g. 15% off the recent high) on the REMX position instead of holding it as a passive long."
+    },
+    {
+      "label": "Macro / geopolitical backdrop",
+      "tag": "LOW",
+      "detail": "The VIX sat at a 2026 low as of Aug 17, 2026 even as the Iran conflict escalated (oil above $91/barrel), the US-China trade war continued, and European political instability mounted (CNBC, tradingpedia, Aug 17-18 2026) -- cheap, complacent volatility pricing heading into the seasonally rougher Aug-Oct window.",
+      "recommendation": "With 68.7% of NAV in unhedged S&P 500 beta (SPY5+SPYL), consider a low-cost SPX/SPY put spread now while implied vol is cheap, rather than after a VIX spike repriced hedges higher."
+    },
+    {
+      "label": "August performance giveback",
+      "tag": "LOW",
+      "detail": "NAV peaked at +3.21% MTD ($497,525.75) on Aug 13, 2026 and has since given back about $6,058 (to +1.95% MTD, $491,467.07 on Aug 24, 2026, per get_pa_performance_all_periods), consistent with the Aug 18 rate/CoreWeave-led equity pullback; 1D return was -0.54%.",
+      "recommendation": "No new action beyond the hedges above; watch whether the pullback extends past the current +0.83% 7-day trend before adding fresh equity risk."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Consolidate SPYL into SPY5",
+      "rationale": "SPY5 and SPYL daily returns correlate at r=0.9961 over the trailing 56 sessions (computed from IBKR get_price_history closes) -- they are functionally the same S&P 500 exposure split across two LSE share classes, so merging them removes duplicate-wrapper risk without changing net equity beta."
+    },
+    {
+      "action": "Hedge SPY5 (44.8% of NAV) with TLT (iShares 20+ Year Treasury Bond)",
+      "rationale": "Of five real hedge candidates tested against SPY5's daily returns over the same 56-session window, TLT had the lowest correlation at r=0.086, versus r=0.130 (IEF), r=0.140 (AGG), r=0.311 (EFA), and r=0.399 (VXUS)."
+    },
+    {
+      "action": "Pair IGLN (gold, 8.5% of NAV) with TLT rather than adding more equity or ex-US funds",
+      "rationale": "IGLN vs TLT produced the only negative correlation found in the analysis, r=-0.019, compared with r=0.456 between IGLN and SPY5 -- TLT is the single most effective real diversifier against the gold position in the candidate set tested."
+    }
+  ],
+  "full_report_url": "data/risk-latest.html"
+}
