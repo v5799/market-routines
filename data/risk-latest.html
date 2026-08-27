@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Risk Review — 2026-08-27</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#121620; --panel2:#171c28; --border:#242b3a;
+    --text:#e6e9f0; --muted:#8a93a6; --accent:#5fb3ff;
+    --high:#ff6b6b; --med:#e8c547; --watch:#ff9f5a; --pass:#3ecf8e;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f5f6f9; --panel:#ffffff; --panel2:#f0f2f7; --border:#dde1ea;
+      --text:#1a1d27; --muted:#5b6373; }
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg); color:var(--text); font-family:var(--sans); margin:0; padding:0 0 60px 0; line-height:1.5;}
+  .wrap{max-width:1180px; margin:0 auto; padding:28px 20px;}
+  h1{font-size:22px; margin:0 0 4px 0;}
+  .subtitle{color:var(--muted); font-size:13px; margin-bottom:22px;}
+  .banner{background:var(--panel2); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:6px; padding:14px 16px; font-size:13px; color:var(--text); margin-bottom:22px;}
+  .banner b{color:var(--accent);}
+  section{margin-bottom:34px;}
+  h2{font-size:15px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  th,td{padding:7px 9px; text-align:right; border-bottom:1px solid var(--border); white-space:nowrap;}
+  th{color:var(--muted); font-weight:600; text-align:right; position:sticky; top:0; background:var(--panel);}
+  th:first-child, td:first-child{text-align:left;}
+  td.label{font-family:var(--mono); font-weight:600;}
+  .tablewrap{overflow-x:auto; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:4px 8px;}
+  .pos{color:var(--pass);} .neg{color:var(--high);}
+  .tag{display:inline-block; padding:2px 9px; border-radius:20px; font-size:10.5px; font-weight:700; letter-spacing:.03em;}
+  .tag.HIGH{background:rgba(255,107,107,.15); color:var(--high);}
+  .tag.MED{background:rgba(232,197,71,.15); color:var(--med);}
+  .tag.WATCH{background:rgba(255,159,90,.15); color:var(--watch);}
+  .tag.PASS{background:rgba(62,207,142,.15); color:var(--pass);}
+  .card{background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:16px 18px; margin-bottom:12px;}
+  .card .head{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; gap:12px; flex-wrap:wrap;}
+  .card .ticker{font-family:var(--mono); font-weight:700; font-size:15px;}
+  .card p{margin:6px 0 0 0; font-size:13px; color:var(--text);}
+  .card .rec{margin-top:8px; padding:9px 12px; background:var(--panel2); border-radius:6px; font-size:12.5px; border-left:3px solid var(--accent);}
+  .card .rec b{color:var(--accent);}
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin-bottom:6px;}
+  .kpi{background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px;}
+  .kpi .v{font-family:var(--mono); font-size:19px; font-weight:700;}
+  .kpi .l{color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.03em; margin-top:2px;}
+  .source-note{font-size:11.5px; color:var(--muted); margin-top:8px;}
+  footer{color:var(--muted); font-size:11px; text-align:center; margin-top:40px; border-top:1px solid var(--border); padding-top:16px;}
+  code{font-family:var(--mono); background:var(--panel2); padding:1px 5px; border-radius:3px; font-size:11.5px;}
+  a{color:var(--accent);}
+  .barwrap{background:var(--border); border-radius:4px; height:8px; overflow:hidden; width:120px; display:inline-block; vertical-align:middle;}
+  .barwrap > div{height:100%; background:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Portfolio Risk Review</h1>
+<div class="subtitle">Live Interactive Brokers account &middot; run 2026-08-27 05:34 UTC &middot; all figures sourced from IBKR connector calls or live web search (dated) unless marked ESTIMATED</div>
+
+<div class="banner"><b>Bottom line:</b> No margin risk (leverage 1.0x, cash-funded), but the book is a concentration story: 68.7% of NAV is effectively one S&amp;P 500 bet split across two near-identical ETFs (0.994 correlation, measured), cash buffer is 0.23% of NAV, and 17.6% of NAV rides a gold/metals complex that just rallied hard on Middle East risk. Three data-backed diversification moves and seven flagged risk items are below.</div>
+
+<section>
+<h2>Account Snapshot <span class="source-note">(get_account_summary, get_account_balances, get_pa_performance_all_periods)</span></h2>
+<div class="kpis">
+  <div class="kpi"><div class="v">$494,375</div><div class="l">Net Liquidation Value</div></div>
+  <div class="kpi"><div class="v">$1,127</div><div class="l">Cash (0.23% of NAV)</div></div>
+  <div class="kpi"><div class="v">1.0x</div><div class="l">Leverage (no margin used)</div></div>
+  <div class="kpi"><div class="v pos">+0.35%</div><div class="l">1-Day TWR</div></div>
+  <div class="kpi"><div class="v pos">+2.31%</div><div class="l">Month-to-Date TWR</div></div>
+  <div class="kpi"><div class="v pos">+3.16%</div><div class="l">Year-to-Date TWR</div></div>
+</div>
+</section>
+
+<section>
+<h2>Position Concentration <span class="source-note">(get_account_positions + get_pa_allocation, all live)</span></h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th style="text-align:left">Position</th><th>Mkt Value</th><th>% NAV</th><th>Unrealized P&amp;L</th><th>Today's P&amp;L</th><th style="text-align:left">Weight</th></tr></thead>
+<tbody>
+<tr><td class="label">SPY5 (S&amp;P 500 UCITS ETF, LSE)</td><td>$221,014</td><td><b>44.70%</b></td><td class="neg">-$2,912</td><td>~$0</td><td style="text-align:left"><span class="barwrap"><div style="width:100%"></div></span></td></tr>
+<tr><td class="label">SPYL (S&amp;P 500 UCITS ETF, LSE)</td><td>$118,448</td><td><b>23.96%</b></td><td class="neg">-$1,649</td><td>~$0</td><td style="text-align:left"><span class="barwrap"><div style="width:54%"></div></span></td></tr>
+<tr><td class="label">IGLN (Physical Gold ETC, LSE)</td><td>$41,661</td><td>8.43%</td><td class="pos">+$1,578</td><td>~$0</td><td style="text-align:left"><span class="barwrap"><div style="width:19%"></div></span></td></tr>
+<tr><td class="label">NVDA</td><td>$16,585</td><td>3.35%</td><td class="pos">+$380</td><td class="pos">+$860</td><td style="text-align:left"><span class="barwrap"><div style="width:8%"></div></span></td></tr>
+<tr><td class="label">CRWV</td><td>$13,798</td><td>2.79%</td><td class="pos">+$996</td><td class="pos">+$597</td><td style="text-align:left"><span class="barwrap"><div style="width:6%"></div></span></td></tr>
+<tr><td class="label">LLY</td><td>$11,920</td><td>2.41%</td><td class="neg">-$704</td><td class="pos">+$26</td><td style="text-align:left"><span class="barwrap"><div style="width:5%"></div></span></td></tr>
+<tr><td class="label">DELL</td><td>$11,793</td><td>2.39%</td><td class="pos">+$867</td><td class="pos">+$197</td><td style="text-align:left"><span class="barwrap"><div style="width:5%"></div></span></td></tr>
+<tr><td class="label">CCJ</td><td>$10,792</td><td>2.18%</td><td class="pos">+$645</td><td class="pos">+$56</td><td style="text-align:left"><span class="barwrap"><div style="width:5%"></div></span></td></tr>
+<tr><td class="label">GEV</td><td>$9,680</td><td>1.96%</td><td class="neg">-$69</td><td class="pos">+$149</td><td style="text-align:left"><span class="barwrap"><div style="width:4%"></div></span></td></tr>
+<tr><td class="label">REMX (Rare Earth/Strategic Metals ETF)</td><td>$7,650</td><td>1.55%</td><td class="neg">-$165</td><td>~$0</td><td style="text-align:left"><span class="barwrap"><div style="width:3%"></div></span></td></tr>
+<tr><td class="label">SSLV (Physical Silver ETC)</td><td>$7,635</td><td>1.54%</td><td class="pos">+$154</td><td>~$0</td><td style="text-align:left"><span class="barwrap"><div style="width:3%"></div></span></td></tr>
+<tr><td class="label">FCX</td><td>$7,455</td><td>1.51%</td><td class="pos">+$136</td><td class="pos">+$29</td><td style="text-align:left"><span class="barwrap"><div style="width:3%"></div></span></td></tr>
+<tr><td class="label">NEM</td><td>$6,191</td><td>1.25%</td><td class="pos">+$5</td><td class="pos">+$6</td><td style="text-align:left"><span class="barwrap"><div style="width:3%"></div></span></td></tr>
+<tr><td class="label">KGC</td><td>$5,688</td><td>1.15%</td><td class="neg">-$36</td><td class="pos">+$32</td><td style="text-align:left"><span class="barwrap"><div style="width:3%"></div></span></td></tr>
+<tr><td class="label">GOOG</td><td>$2,035</td><td>0.41%</td><td class="neg">-$38</td><td>$0</td><td style="text-align:left"><span class="barwrap"><div style="width:1%"></div></span></td></tr>
+<tr><td class="label">Cash</td><td>$1,127</td><td>0.23%</td><td>&mdash;</td><td>&mdash;</td><td style="text-align:left"><span class="barwrap"><div style="width:0%"></div></span></td></tr>
+</tbody>
+</table>
+</div>
+<p class="source-note">Cluster view: SPY5+SPYL = <b>68.7%</b> of NAV (S&amp;P 500 exposure, x2). Gold/metals complex (IGLN+KGC+NEM+SSLV+REMX+FCX+CCJ) = <b>17.6%</b> of NAV. AI-capex basket (NVDA+CRWV+DELL+GOOG) = <b>8.9%</b> of NAV.</p>
+</section>
+
+<section>
+<h2>Risk Flags &amp; Corrective Actions</h2>
+
+<div class="card">
+  <div class="head"><span class="ticker">SPY5 + SPYL</span><span class="tag HIGH">HIGH</span></div>
+  <p>Combined 68.7% of NAV ($339,462) sits in two S&amp;P 500-tracking UCITS ETFs whose daily returns correlated at <b>0.994</b> over the trailing 205 sessions (2025-10-27 to 2026-08-26, computed from IBKR <code>get_price_history</code> closes) &mdash; effectively one concentrated single-factor bet, not two diversified positions.</p>
+  <div class="rec"><b>Do this:</b> Trim SPYL (24.0% of NAV) by roughly half (~$59k) and redeploy into the UUP hedge / short-dated T-bills below, cutting duplicate S&amp;P 500 beta while fixing the cash shortfall.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">Cash / Liquidity</span><span class="tag HIGH">HIGH</span></div>
+  <p>Total cash is $1,127.06 against $494,375 NAV (0.23%); <code>get_account_summary</code> shows <code>available_funds</code> and <code>buying_power</code> both equal to cash-on-hand &mdash; no margin cushion, no dry powder.</p>
+  <div class="rec"><b>Do this:</b> Raise cash to at least 3% of NAV (~$14.8k) by trimming the smallest, most illiquid names first (KGC $5.7k, REMX $7.65k) rather than core holdings.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">NVDA / CRWV / DELL / GOOG</span><span class="tag MED">MED</span></div>
+  <p>8.9% of NAV ($44,210) sits directly in single AI-infrastructure names, on top of SPY5/SPYL's own mega-cap tech weighting. Goldman Sachs Research (Aug 26, 2026, "Are US Stock Market Valuations Outpacing Fundamentals?") flags a ~46-point growth gap between hyperscaler capex and revenue and ~25x EV/EBITDA multiples &mdash; near dot-com-era extremes.</p>
+  <div class="rec"><b>Do this:</b> Trim CRWV (the newest, most speculative pure-play, up ~4.5%/+$597 today per live positions) by 30-50% to lock in its $996 unrealized gain and cut single-name AI-capex correction risk.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">Gold / Metals Complex</span><span class="tag WATCH">WATCH</span></div>
+  <p>IGLN + KGC + NEM + SSLV + REMX + FCX + CCJ = 17.6% of NAV ($87,071) after a rally that took spot gold above $4,400/oz on Middle East risk and central-bank buying (GoldPrice.com, "Macro Drivers Behind the July-August 2026 Gold Rally"). A reversal in geopolitical risk premium would hit several of these positions at once.</p>
+  <div class="rec"><b>Do this:</b> Take partial profits in the smaller, higher-beta names (SSLV $7.6k, REMX $7.65k) rather than core IGLN, and reinvest toward the TLT pairing below instead of adding more commodity beta.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">Rate / Macro: September Fed Hike Risk</span><span class="tag WATCH">WATCH</span></div>
+  <p>CME FedWatch prices ~82% odds of a 25bp September hike (Chase, "September 2026 Rate Hike Now Expected"), driven by Iran-war-linked Strait of Hormuz oil-supply disruption (Morgan Stanley, "Iran Conflict: Oil Price Impacts and Inflation", Aug 2026). A hike pressures high-multiple growth names and long-duration assets simultaneously.</p>
+  <div class="rec"><b>Do this:</b> Reduce size in the names most exposed to a rate re-rating (LLY, NVDA, CRWV) or build a short-dated T-bill ladder with the raised cash buffer to earn the higher-rate environment instead of fighting it.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">LLY</span><span class="tag MED">MED</span></div>
+  <p>Largest single-name dollar loser in the book: -$704.20 unrealized (-5.6% vs. cost), average cost $1,262.42 vs. current $1,192.00 (<code>get_account_positions</code>).</p>
+  <div class="rec"><b>Do this:</b> Review the original thesis before adding; if unchanged, hold rather than average down into a single 2.4%-of-NAV name without a fresh catalyst.</div>
+</div>
+
+<div class="card">
+  <div class="head"><span class="ticker">Country Allocation Domicile Note</span><span class="tag PASS">PASS</span></div>
+  <p><code>get_pa_allocation</code> reports 80.5% of NAV under "Ireland" by country &mdash; this is the UCITS fund domicile of SPY5/SPYL/IGLN, not their economic exposure. Look-through geography is dominated by US equities and physical gold. No leverage either (1.0x per <code>get_account_summary</code>), so the risks above are concentration-driven, not margin-driven.</p>
+  <div class="rec"><b>Do this:</b> Nothing &mdash; just read SECTOR/ASSET_CLASS breakdowns for true geographic/asset risk, not the country view.</div>
+</div>
+
+</section>
+
+<section>
+<h2>Diversification Analysis: Real Computed Correlations</h2>
+<p style="font-size:13px; color:var(--muted); margin-top:-6px;">Methodology: daily log returns from IBKR <code>get_price_history</code> (ONE_YEAR, daily bars) for the account's 3 most concentrated positions (SPY5, SPYL, IGLN) against 5 candidate hedge instruments, aligned to the 205 trading days common to all 8 series (2025-10-27 to 2026-08-26). Pearson correlation of daily log returns.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th style="text-align:left">Holding</th><th>TLT (20+yr UST)</th><th>IEF (7-10yr UST)</th><th>EFA (MSCI EAFE)</th><th>VXUS (ex-US total)</th><th>UUP (USD Index)</th></tr></thead>
+<tbody>
+<tr><td class="label">SPY5</td><td>0.152</td><td>0.122</td><td>0.480</td><td>0.510</td><td class="pos"><b>-0.186</b></td></tr>
+<tr><td class="label">SPYL</td><td>0.145</td><td>0.113</td><td>0.484</td><td>0.522</td><td class="pos"><b>-0.201</b></td></tr>
+<tr><td class="label">IGLN</td><td class="pos"><b>0.049</b></td><td>0.130</td><td>0.325</td><td>0.368</td><td>-0.299</td></tr>
+</tbody>
+</table>
+</div>
+<p class="source-note">Bolded = best (lowest/most negative) hedge for that holding. SPY5 vs. SPYL cross-correlation: <b>0.994</b>. IGLN vs. SPY5: 0.372. Total returns over the same 205-day window: SPY5 +12.0%, SPYL +12.7%, IGLN +15.2%, TLT -9.2%, IEF -4.3%, EFA +13.1%, VXUS +16.3%, UUP +0.5%.</p>
+
+<h2 style="margin-top:26px;">3 Diversification Actions</h2>
+<div class="card">
+  <p><b>1. Trim the SPY5/SPYL overlap instead of treating them as two positions.</b><br>SPY5 (44.7% of NAV) and SPYL (24.0% of NAV) showed a 0.994 daily-return correlation over the trailing 205 sessions &mdash; together they are one 68.7%-of-NAV bet on the S&amp;P 500, not a diversified pair.</p>
+</div>
+<div class="card">
+  <p><b>2. Add a US Dollar Index (UUP) sleeve against the core SPY5 stake.</b><br>Of 5 candidate hedges tested against SPY5's actual daily returns, UUP was the only one with a negative correlation (-0.186); EFA (+0.480) and VXUS (+0.510) moved WITH the position, not against it, so ex-US equities are not diversifying this book right now.</p>
+</div>
+<div class="card">
+  <p><b>3. Pair the gold/metals cluster with long-duration Treasuries (TLT) rather than more commodity exposure.</b><br>IGLN's correlation to TLT was just 0.049 &mdash; the lowest-magnitude of any pair tested (vs. 0.372 to SPY5, -0.299 to UUP) &mdash; making TLT a genuinely uncorrelated ballast for the 17.6%-of-NAV gold/metals book.</p>
+</div>
+</section>
+
+<footer>
+Generated by an automated portfolio-risk routine. Position, balance, performance and allocation data via the IBKR connector (<code>get_account_positions</code>, <code>get_account_summary</code>, <code>get_account_balances</code>, <code>get_pa_performance_all_periods</code>, <code>get_pa_allocation</code>), all live as of 2026-08-27. Correlation figures computed from <code>get_price_history</code> daily closes. Macro/geopolitical claims sourced from live web search, dated inline above: Chase (Jul 31, 2026), Morgan Stanley (Aug 2026), GoldPrice.com (Aug 2026), Goldman Sachs Research (Aug 26, 2026). Not investment advice.
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-27T05:34:00Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL",
+      "tag": "HIGH",
+      "detail": "Combined 68.7% of NAV ($339,462 of $494,375) sits in two S&P 500-tracking UCITS ETFs whose daily returns correlated at 0.994 over the trailing 205 sessions (IBKR get_price_history, 2025-10-27 to 2026-08-26) -- effectively one concentrated single-factor bet, not two diversified positions.",
+      "recommendation": "Trim SPYL (24.0% of NAV) by roughly half (~$59k) and redeploy the proceeds into the UUP hedge and/or short-dated T-bills identified below, cutting duplicate S&P 500 beta while fixing the cash shortfall."
+    },
+    {
+      "label": "Cash / Liquidity",
+      "tag": "HIGH",
+      "detail": "Total cash is $1,127.06 against $494,375 NAV (0.23%); get_account_summary shows available_funds and buying_power both equal to cash-on-hand -- there is no margin cushion or dry powder for a drawdown or opportunity.",
+      "recommendation": "Raise cash to at least 3% of NAV (~$14.8k) by trimming the smallest, most illiquid names first (KGC $5.7k, REMX $7.65k) rather than core holdings, so the account isn't forced to sell into a falling market to raise funds."
+    },
+    {
+      "label": "NVDA / CRWV / DELL / GOOG (AI capex basket)",
+      "tag": "MED",
+      "detail": "8.9% of NAV ($44,210) sits directly in single AI-infrastructure names, on top of SPY5/SPYL's own mega-cap tech weighting. Goldman Sachs Research (Aug 26, 2026) flags a ~46-point growth gap between hyperscaler capex and revenue and ~25x EV/EBITDA multiples in the group -- near dot-com-era extremes.",
+      "recommendation": "Trim CRWV (the newest, most speculative pure-play, up ~4.5% / +$597 today per get_account_positions daily_pnl) by 30-50% to lock in its $996 unrealized gain and cut single-name exposure to an AI-capex growth-scare."
+    },
+    {
+      "label": "Gold / Metals Complex (IGLN, KGC, NEM, SSLV, REMX, FCX, CCJ)",
+      "tag": "WATCH",
+      "detail": "17.6% of NAV ($87,071) is concentrated in gold, silver, uranium, copper and rare-earth names after a rally that took spot gold above $4,400/oz on Middle East risk and central-bank buying (GoldPrice.com macro-drivers piece, dated for the Jul-Aug 2026 rally) -- a reversal in geopolitical risk premium would hit several of these positions at once.",
+      "recommendation": "Take partial profits in the smaller, higher-beta names (SSLV $7.6k, REMX $7.65k) rather than the core IGLN position, and reinvest proceeds toward the TLT pairing identified below rather than adding more commodity beta."
+    },
+    {
+      "label": "Rate / Macro: September Fed Hike Risk",
+      "tag": "WATCH",
+      "detail": "CME FedWatch prices roughly 82% odds of a 25bp September hike (Chase 'September 2026 Rate Hike Now Expected' article, citing CME FedWatch), driven by Iran-war-linked Strait of Hormuz oil-supply disruption (Morgan Stanley, Aug 2026 Iran-war piece). A hike pressures high-multiple growth names and long-duration assets at the same time.",
+      "recommendation": "Reduce position size in the names most exposed to a rate re-rating (LLY at 1,192/share, NVDA, CRWV) or build a short-dated T-bill ladder with the raised cash buffer to earn the higher-rate environment instead of fighting it."
+    },
+    {
+      "label": "LLY",
+      "tag": "MED",
+      "detail": "Largest single-name dollar loser in the book: -$704.20 unrealized (-5.6% vs. cost), average cost $1,262.42 vs. current $1,192.00 (IBKR get_account_positions).",
+      "recommendation": "Review the original thesis before adding to the position; if unchanged, hold rather than average down into a single 2.4%-of-NAV name without a fresh catalyst."
+    },
+    {
+      "label": "Country Allocation Domicile Note",
+      "tag": "PASS",
+      "detail": "get_pa_allocation reports 80.5% of NAV under 'Ireland' by country -- this is the UCITS fund-domicile of SPY5/SPYL/IGLN, not their economic exposure. Look-through geography is dominated by US equities and physical gold, not Irish assets. No leverage in the account either (leverage=1.0 per get_account_summary), so the risks above are concentration-driven, not margin-driven.",
+      "recommendation": "No action needed -- just don't read the country-allocation report as true geographic risk; use SECTOR/ASSET_CLASS breakdowns (or look-through holdings) for that instead."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Trim the SPY5/SPYL overlap instead of treating them as two positions",
+      "rationale": "SPY5 (44.7% of NAV) and SPYL (24.0% of NAV) showed a 0.994 correlation in daily log returns over the trailing 205 trading sessions (2025-10-27 to 2026-08-26, computed from IBKR get_price_history closes) -- together they are one 68.7%-of-NAV bet on the S&P 500, not a diversified pair."
+    },
+    {
+      "action": "Add a US Dollar Index (UUP) sleeve to offset the core SPY5 stake",
+      "rationale": "Tested against SPY5's actual daily returns over the same 205-day window, UUP was the only one of 5 candidate hedges with a negative correlation (-0.186), versus TLT +0.152, IEF +0.122, EFA +0.480 and VXUS +0.510 -- the ex-US equity ETFs actually moved WITH the S&P position rather than against it, so they don't diversify it the way conventional wisdom suggests right now."
+    },
+    {
+      "action": "Pair the gold/metals cluster (IGLN, KGC, NEM, SSLV, REMX, FCX -- 17.6% of NAV) with long-duration Treasuries (TLT) rather than more commodity exposure",
+      "rationale": "IGLN's correlation to TLT was just 0.049 over the same 205-day window -- the lowest-magnitude correlation of any pair tested (vs. 0.372 to SPY5 and -0.299 to UUP) -- making TLT a genuinely uncorrelated ballast for the gold/metals book instead of a second directional bet."
+    }
+  ],
+  "full_report_url": "data/risk-latest.html"
+}
