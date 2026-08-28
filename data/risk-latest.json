@@ -1,0 +1,69 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-28T04:36:31Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL",
+      "tag": "HIGH",
+      "detail": "Combined S&P 500 UCITS ETF exposure is 68.96% of NAV ($341,546.40 of $495,318.99 per get_account_positions/get_account_summary): SPY5 44.90% + SPYL 24.07%. 6-month daily-return correlation between the two, computed from IBKR get_price_history (2026-03-02 to 2026-08-27, n=124 trading days), is r=0.996 -- they move as one position, not two.",
+      "recommendation": "Trim SPYL by roughly half (~$60k) since it duplicates SPY5's exposure with almost zero diversification benefit, and redeploy into EFA (iShares MSCI EAFE), which showed the lowest correlation to SPY5 (r=0.487) of the hedge candidates tested, to cut single-index concentration below 50% of NAV."
+    },
+    {
+      "label": "Cash / buying power",
+      "tag": "HIGH",
+      "detail": "get_account_summary reports available_funds and buying_power of $211.32 against $495,318.99 net liquidation value (0.04%) -- the account is essentially fully invested with no liquidity buffer.",
+      "recommendation": "Raise cash to at least 2-3% of NAV (~$10k-$15k) via the SPYL trim above or by liquidating the smallest, most liquid-to-exit names (TTWO $956, GOOG $2,029.50) so a margin call or opportunity doesn't force a badly timed sale elsewhere."
+    },
+    {
+      "label": "Precious metals cluster (IGLN/SSLV/KGC/NEM/REMX)",
+      "tag": "MED",
+      "detail": "Combined gold/silver/mining exposure is $69,016.53 (13.93% of NAV) per get_account_positions: IGLN 8.41%, SSLV 1.56%, KGC 1.15%, NEM 1.25%, REMX 1.57% -- all substantially driven by the same gold-price/Fed-rate-cut narrative. Gold traded near $4,394-4,409/oz on Aug 17, 2026, with J.P. Morgan Global Research forecasting $6,000/oz by Q4 2026 as rate-cut bets build (CNBC, Aug 12 2026; jpmorgan.com/insights).",
+      "recommendation": "Cap the combined precious-metals sleeve at ~10% of NAV; trim KGC and NEM first since mining equities add operational/cost-inflation risk on top of the same gold-price beta that IGLN and SSLV already provide more directly."
+    },
+    {
+      "label": "AI infrastructure cluster (NVDA/CRWV/DELL/GEV)",
+      "tag": "MED",
+      "detail": "Combined AI-capex-linked exposure is $51,293.15 (10.36% of NAV) per get_account_positions. CRWV alone (2.62% of NAV) carries $35B in debt against a $104B contracted revenue backlog, with roughly 65% of Q1 2026 revenue concentrated in two customers (Anthropic, Jane Street) per Fitch, as reported by 24/7 Wall St on Aug 25, 2026.",
+      "recommendation": "Trim CRWV specifically rather than NVDA/DELL/GEV -- it carries the cluster's highest balance-sheet and customer-concentration risk -- and cap the combined AI-capex sleeve at 8% of NAV until CoreWeave's debt-to-backlog ratio improves."
+    },
+    {
+      "label": "CCJ",
+      "tag": "WATCH",
+      "detail": "Cameco is 2.16% of NAV and closed up 7.24% on a single day, Aug 21, 2026 (TradingKey), on decade-high long-term uranium contract prices after Kazakhstan trimmed its 2026 output plan -- a single-country supply shock, not a broad-based re-rating.",
+      "recommendation": "No trim needed at this size (2.16% of NAV), but set a price alert or trailing stop given the position's recent move was driven by one country's export policy and could reverse just as fast."
+    },
+    {
+      "label": "FCX",
+      "tag": "WATCH",
+      "detail": "Freeport-McMoRan (1.49% of NAV) faces a possible 25%+ Section 232 US copper tariff (Goldman Sachs Research, via fastmarkets.com) and its Grasberg mine restart has slipped from 2027 to 2028, with 2026 production guidance cut 35% (Alphastreet/Crux Investor, 2026).",
+      "recommendation": "Position is already small (1.49% of NAV) -- no action required beyond monitoring the Section 232 tariff ruling date."
+    },
+    {
+      "label": "LLY",
+      "tag": "WATCH",
+      "detail": "Eli Lilly is down 6.77% from its average cost basis ($1,262.42 to a $1,177.00 market price), an $854.20 unrealized loss on the $11,770.00 position (2.38% of NAV), per get_account_positions.",
+      "recommendation": "Revisit the original thesis before adding -- if unchanged, hold; if conviction has weakened, trim toward the cash-buffer target in the item above rather than selling a higher-conviction name."
+    },
+    {
+      "label": "S&P 500 index concentration (macro)",
+      "tag": "WATCH",
+      "detail": "Independent of this account's SPY5/SPYL duplication, the S&P 500 index itself is concentrated: its top 10 stocks are now ~40% of the index (double the weight of a decade ago) at roughly a 22x forward P/E vs ~16x for MSCI EAFE (VanEck; Seeking Alpha, Aug 2026) -- so the SPY5/SPYL sleeve carries embedded mega-cap/AI concentration on top of the account-level overlap flagged above.",
+      "recommendation": "When trimming SPY5/SPYL, redirect proceeds toward ex-US or equal-weight vehicles (e.g. the EFA hedge above) rather than another cap-weighted S&P 500 fund, to avoid re-concentrating in the same mega-cap names."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Trim SPYL, the duplicate S&P 500 ETF",
+      "rationale": "SPY5 (44.90% of NAV) and SPYL (24.07% of NAV) both track the S&P 500; computed 6-month daily-return correlation is r=0.996 (n=124 trading days, IBKR price history) -- together they are effectively one 68.96%-of-NAV position with no internal diversification benefit."
+    },
+    {
+      "action": "Add EFA (iShares MSCI EAFE, ex-US developed equities) against the SPY5 sleeve",
+      "rationale": "Of three hedge candidates tested against SPY5 over the same 6-month window (IBKR price history, n=124), EFA had the lowest correlation at r=0.487, versus r=0.577 for IUAA (iShares Core US Aggregate Bond USD Acc) and r=0.620 for AGGU (iShares Core Global Aggregate Bond USD-Hedged Acc) -- ex-US equities diversified better against SPY5 than either bond ETF did in this period."
+    },
+    {
+      "action": "Pair IGLN (gold) with AGGU (global aggregate bonds) rather than another equity or commodity",
+      "rationale": "IGLN's 6-month daily-return correlation was r=0.386 vs EFA, r=0.456 vs IUAA, and r=0.504 vs AGGU (n=124, IBKR price history). EFA scored numerically lowest, but adding it here would just stack more equity beta on top of the EFA position already recommended for SPY5 above; AGGU is the more genuinely differentiated pick since it adds duration/rate exposure the portfolio doesn't otherwise hold, at only a modestly higher measured correlation."
+    }
+  ],
+  "full_report_url": "data/risk-latest.html"
+}

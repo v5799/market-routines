@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio Risk Report — 2026-08-28</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f1216; --panel: #171b21; --border: #262c35; --text: #e7eaee; --muted: #93a0b1;
+    --high: #e5484d; --med: #f5a623; --watch: #4ea1f7; --good: #3fb950;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; padding: 2rem 1.25rem 4rem; line-height: 1.5; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.1rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  tr:hover td { background: #1b2028; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tag { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; }
+  .tag-HIGH { background: rgba(229,72,77,0.15); color: var(--high); }
+  .tag-MED { background: rgba(245,166,35,0.15); color: var(--med); }
+  .tag-WATCH { background: rgba(78,161,247,0.15); color: var(--watch); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; }
+  .card .label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .card .value { font-size: 1.25rem; font-weight: 700; margin-top: 0.2rem; }
+  .pos { color: var(--good); } .neg { color: var(--high); }
+  .detail { max-width: 420px; }
+  .rec { color: var(--muted); }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  a { color: var(--watch); }
+  .src { font-size: 0.8rem; color: var(--muted); }
+  .src a { color: inherit; text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Portfolio Risk Report</h1>
+  <div class="sub">Run 2026-08-28 04:36 UTC &middot; IBKR live account &middot; performance data as of 2026-08-26 close</div>
+
+  <div class="cards">
+    <div class="card"><div class="label">Net Liquidation</div><div class="value">$495,318.99</div></div>
+    <div class="card"><div class="label">Cash / Buying Power</div><div class="value neg">$211.32</div></div>
+    <div class="card"><div class="label">Leverage</div><div class="value">1.0x</div></div>
+    <div class="card"><div class="label">1D (TWR)</div><div class="value neg">-0.20%</div></div>
+    <div class="card"><div class="label">MTD (TWR)</div><div class="value pos">+2.10%</div></div>
+    <div class="card"><div class="label">YTD (TWR)</div><div class="value pos">+2.95%</div></div>
+  </div>
+
+  <h2>Positions</h2>
+  <table>
+    <thead><tr><th>Ticker</th><th>Asset class</th><th class="num">Market value</th><th class="num">% of NAV</th><th class="num">Unrealized P&amp;L</th></tr></thead>
+    <tbody>
+      <tr><td>SPY5</td><td>ETF — S&amp;P 500 (LSE, USD)</td><td class="num">$222,337.44</td><td class="num">44.90%</td><td class="num neg">-$1,588.93</td></tr>
+      <tr><td>SPYL</td><td>ETF — S&amp;P 500 (LSE, USD)</td><td class="num">$119,208.96</td><td class="num">24.07%</td><td class="num neg">-$887.57</td></tr>
+      <tr><td>IGLN</td><td>ETC — Gold (LSE, USD)</td><td class="num">$41,644.73</td><td class="num">8.41%</td><td class="num pos">+$1,561.60</td></tr>
+      <tr><td>NVDA</td><td>Stock — Semis</td><td class="num">$16,997.99</td><td class="num">3.43%</td><td class="num pos">+$792.99</td></tr>
+      <tr><td>CRWV</td><td>Stock — AI cloud infra</td><td class="num">$12,970.50</td><td class="num">2.62%</td><td class="num pos">+$168.50</td></tr>
+      <tr><td>DELL</td><td>Stock — Hardware</td><td class="num">$11,793.75</td><td class="num">2.38%</td><td class="num pos">+$867.75</td></tr>
+      <tr><td>LLY</td><td>Stock — Pharma</td><td class="num">$11,770.00</td><td class="num">2.38%</td><td class="num neg">-$854.20</td></tr>
+      <tr><td>CCJ</td><td>Stock — Uranium</td><td class="num">$10,691.00</td><td class="num">2.16%</td><td class="num pos">+$543.80</td></tr>
+      <tr><td>GEV</td><td>Stock — Power infra</td><td class="num">$9,530.90</td><td class="num">1.92%</td><td class="num neg">-$218.00</td></tr>
+      <tr><td>REMX</td><td>ETF — Rare earth / strategic metals</td><td class="num">$7,758.99</td><td class="num">1.57%</td><td class="num neg">-$56.00</td></tr>
+      <tr><td>SSLV</td><td>ETC — Silver (LSE, USD)</td><td class="num">$7,719.56</td><td class="num">1.56%</td><td class="num pos">+$239.09</td></tr>
+      <tr><td>FCX</td><td>Stock — Copper</td><td class="num">$7,369.60</td><td class="num">1.49%</td><td class="num pos">+$50.70</td></tr>
+      <tr><td>NEM</td><td>Stock — Gold mining</td><td class="num">$6,204.00</td><td class="num">1.25%</td><td class="num pos">+$18.27</td></tr>
+      <tr><td>KGC</td><td>Stock — Gold mining</td><td class="num">$5,689.25</td><td class="num">1.15%</td><td class="num neg">-$34.25</td></tr>
+      <tr><td>GOOG</td><td>Stock — Internet</td><td class="num">$2,029.50</td><td class="num">0.41%</td><td class="num neg">-$42.94</td></tr>
+      <tr><td>TTWO</td><td>Stock — Gaming</td><td class="num">$956.00</td><td class="num">0.19%</td><td class="num pos">+$40.26</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Risk flags &amp; recommended actions</h2>
+  <table>
+    <thead><tr><th>Position</th><th>Risk</th><th>Detail</th><th>Recommendation</th></tr></thead>
+    <tbody>
+      <tr><td>SPY5 + SPYL</td><td><span class="tag tag-HIGH">HIGH</span></td>
+        <td class="detail">Combined S&amp;P 500 exposure is 68.96% of NAV ($341,546.40). 6-month daily-return correlation (IBKR price history, 2026-03-02&ndash;08-27, n=124): <b>r=0.996</b>.</td>
+        <td class="rec">Trim SPYL ~half (~$60k); redeploy into EFA (r=0.487 vs SPY5, lowest tested) to cut single-index concentration below 50% of NAV.</td></tr>
+      <tr><td>Cash / buying power</td><td><span class="tag tag-HIGH">HIGH</span></td>
+        <td class="detail">available_funds/buying_power = $211.32 vs $495,318.99 NAV (0.04%) &mdash; no liquidity buffer.</td>
+        <td class="rec">Raise cash to 2&ndash;3% of NAV via the SPYL trim or by exiting TTWO ($956) / GOOG ($2,029.50).</td></tr>
+      <tr><td>Precious metals cluster</td><td><span class="tag tag-MED">MED</span></td>
+        <td class="detail">IGLN+SSLV+KGC+NEM+REMX = $69,016.53 (13.93% of NAV), one gold/silver-price factor. Gold ~$4,394&ndash;4,409/oz (Aug 17 2026); J.P. Morgan sees $6,000/oz by Q4 2026.</td>
+        <td class="rec">Cap the sleeve at ~10% of NAV; trim KGC/NEM first (mining-operational risk on top of the same gold beta).</td></tr>
+      <tr><td>AI infrastructure cluster</td><td><span class="tag tag-MED">MED</span></td>
+        <td class="detail">NVDA+CRWV+DELL+GEV = $51,293.15 (10.36% of NAV). CRWV: $35B debt vs $104B backlog, ~65% of Q1 2026 revenue from 2 customers (Fitch, via 24/7 Wall St, Aug 25 2026).</td>
+        <td class="rec">Trim CRWV specifically (highest balance-sheet/customer-concentration risk); cap cluster at 8% of NAV.</td></tr>
+      <tr><td>CCJ</td><td><span class="tag tag-WATCH">WATCH</span></td>
+        <td class="detail">2.16% of NAV, +7.24% on Aug 21 2026 alone on Kazakhstan 2026 output cuts &mdash; single-country supply shock.</td>
+        <td class="rec">No trim needed at this size; set a price alert given the move's single-country driver.</td></tr>
+      <tr><td>FCX</td><td><span class="tag tag-WATCH">WATCH</span></td>
+        <td class="detail">1.49% of NAV. Possible 25%+ Section 232 US copper tariff; Grasberg restart slipped to 2028, 2026 guidance cut 35%.</td>
+        <td class="rec">Position already small &mdash; monitor the Section 232 ruling date, no action required.</td></tr>
+      <tr><td>LLY</td><td><span class="tag tag-WATCH">WATCH</span></td>
+        <td class="detail">-6.77% vs average cost ($1,262.42 &rarr; $1,177.00), -$854.20 unrealized on $11,770.00 (2.38% of NAV).</td>
+        <td class="rec">Revisit thesis; hold if unchanged, else trim toward the cash-buffer target above.</td></tr>
+      <tr><td>S&amp;P 500 index (macro)</td><td><span class="tag tag-WATCH">WATCH</span></td>
+        <td class="detail">S&amp;P 500 top-10 names are ~40% of the index at ~22x forward P/E vs ~16x MSCI EAFE &mdash; embedded concentration inside the SPY5/SPYL sleeve itself.</td>
+        <td class="rec">Route SPY5/SPYL trim proceeds to ex-US/equal-weight vehicles, not another cap-weighted S&amp;P 500 fund.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Diversification actions (correlation-backed)</h2>
+  <table>
+    <thead><tr><th>Action</th><th>Rationale (computed correlations)</th></tr></thead>
+    <tbody>
+      <tr><td>Trim SPYL, the duplicate S&amp;P 500 ETF</td>
+        <td>SPY5 (44.90%) and SPYL (24.07%) both track the S&amp;P 500; r=0.996 (n=124) &mdash; effectively one 68.96%-of-NAV position.</td></tr>
+      <tr><td>Add EFA against the SPY5 sleeve</td>
+        <td>vs SPY5: EFA r=0.487, IUAA (US Agg Bond) r=0.577, AGGU (Global Agg Bond, USD-H) r=0.620 &mdash; ex-US equities diversified better than either bond ETF this period.</td></tr>
+      <tr><td>Pair IGLN with AGGU rather than another equity/commodity</td>
+        <td>vs IGLN: EFA r=0.386, IUAA r=0.456, AGGU r=0.504. EFA is lowest, but AGGU is picked to avoid stacking more equity beta on the EFA position above and to add duration/rate exposure the portfolio otherwise lacks.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Sources</h2>
+  <div class="src">
+    <p>IBKR connector: get_account_positions, get_account_summary, get_account_balances, get_pa_performance_all_periods, get_pa_allocation, get_price_history (SPY5/SPYL/IGLN/IUAA/AGGU contract ids on LSEETF; EFA on ARCA), search_contracts &mdash; all pulled live 2026-08-28.</p>
+    <p>Web (all accessed 2026-08-28):
+      <a href="https://www.cnbc.com/2026/08/12/gold-prices-metals-fed-rate-hike-inflation.html">CNBC &mdash; gold/Fed rate outlook</a>,
+      <a href="https://www.jpmorgan.com/insights/global-research/commodities/gold-prices">J.P. Morgan Global Research &mdash; gold price forecast</a>,
+      <a href="https://www.tradingkey.com/news/market-movers/262125359-market-movers-ccj-20260821">TradingKey &mdash; CCJ Aug 21 2026 move</a>,
+      <a href="https://247wallst.com/investing/2026/08/25/coreweaves-ai-data-center-capacity-is-exploding-its-35-billion-debt-load-still-makes-the-stock-untouchable/">24/7 Wall St &mdash; CoreWeave debt/backlog/customer concentration</a>,
+      <a href="https://www.vaneck.com/us/en/blogs/emerging-markets-equity/s-and-p-500-concentration-risk-what-to-know-now/">VanEck &mdash; S&amp;P 500 concentration risk</a>,
+      <a href="https://www.fastmarkets.com/insights/impact-tariffs-freeport-mcmorans-copper-production-andrea-hotter/">Fastmarkets &mdash; Freeport-McMoRan tariff impact</a>,
+      <a href="https://news.alphastreet.com/freeport-mcmoran-copper-tailwinds-clouded-by-grasberg-risks/">Alphastreet &mdash; Grasberg restart delay</a>.
+    </p>
+  </div>
+
+  <footer>Generated by the market-routines risk agent. Correlations computed from raw IBKR daily close prices (Pearson, daily simple returns); all other figures pulled live from the IBKR connector unless marked as a web source with date.</footer>
+</div>
+</body>
+</html>
