@@ -1,0 +1,50 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-29T04:37:16Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL",
+      "tag": "HIGH",
+      "detail": "Two separate S&P 500 UCITS ETFs (SPY5 45.3% / $223,474 and SPYL 24.3% / $119,858 of $493,735 NAV, both via get_account_positions) combine to 69.5% of the account, functioning as one undiversified equity-beta position.",
+      "recommendation": "Consolidate into a single S&P 500 vehicle and redeploy roughly 15-20% of the combined ~$343,332 stake (~$65-85k) into TLT (iShares 20+ Year Treasury Bond ETF), which showed only 0.18 correlation to SPY5 over the trailing 6 months (get_price_history, 123 daily obs) versus 0.24 for AGG and 0.53 for VXUS."
+    },
+    {
+      "label": "Cash / buying power",
+      "tag": "HIGH",
+      "detail": "get_account_summary and get_account_balances both show total_cash_value / available_funds of $211.32 against $493,734.54 net liquidation (0.04% cash), with leverage reported at 1.0 and buying_power also $211.32 - effectively zero dry powder.",
+      "recommendation": "Trim 2-3% of NAV (~$10-15k) from the SPY5/SPYL position or the AI-capex cluster to rebuild a cash buffer, so rebalancing trades or a margin/maintenance call don't force a sale at a bad time."
+    },
+    {
+      "label": "NVDA/CRWV/DELL AI-capex cluster",
+      "tag": "MED",
+      "detail": "NVDA ($16,341), CRWV ($12,635), DELL ($11,406) plus GOOG/TTWO total 8.8% of NAV ($43,379, get_account_positions) and share the same AI-datacenter capex trade; PIMCO estimates hyperscaler capex will consume ~94% of operating cash flow by 2026-27 and Moody's flags ~$662B of signed-but-not-started data-center leases sitting off balance sheet (Futurum/24-7wallst.com coverage, Aug 2026 - see sources).",
+      "recommendation": "Trim CRWV (the highest-beta, least-profitable name in the cluster) by 30-50% and rotate proceeds into TLT, which correlated only 0.19 with NVDA over the trailing 6 months versus 0.55 for VXUS and 0.44 for SPY5 itself (get_price_history)."
+    },
+    {
+      "label": "IGLN/SSLV/KGC/NEM precious-metals cluster",
+      "tag": "MED",
+      "detail": "IGLN ($41,294), SSLV ($7,771), KGC ($5,472) and NEM ($6,015) total 12.3% of NAV ($60,553, get_account_positions), all driven by the same gold/real-rate macro factor; gold hit ~$4,380/oz around Aug 14 2026 after central banks bought a record 288.9 tonnes net in Q2 2026, +62% YoY (GoldPrice.com / World Gold Council data cited Aug 2026 - see sources), leaving the rally extended.",
+      "recommendation": "Trim the equity-linked miner legs (KGC, NEM) by 30-50% given the extended rally, keep IGLN/SSLV as the physical-metal core hedge, and route proceeds to TLT - IGLN's correlation to TLT was just 0.067 over 6 months versus 0.18 to AGG and 0.41 to VXUS (get_price_history), the cleanest diversifier tested."
+    },
+    {
+      "label": "Rate-hike risk to the recommended TLT hedge",
+      "tag": "WATCH",
+      "detail": "Prediction-market pricing (Kalshi) and J.P. Morgan Wealth Management both flag a live chance of a 25bp Fed hike at the Sept 16 2026 FOMC (~31% hike odds vs ~70% hold), driven by Iran-linked energy-supply pressure on inflation (Chase/Kalshi/tradingeconomics.com, Aug 2026 - see sources); a hike would pressure the TLT hedge recommended above.",
+      "recommendation": "If building the TLT hedge, ladder the entry into 2-3 tranches around the Sept 16 FOMC decision instead of buying in one block, or split the allocation between TLT and the shorter-duration AGG (0.24-0.29 correlation to the concentrated clusters, vs TLT's 0.07-0.19) to cut rate-decision timing risk."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Hedge SPY5/SPYL S&P 500 concentration with TLT",
+      "rationale": "SPY5 and SPYL are 69.5% of NAV and move as one position; over the trailing 6 months (123 daily observations from get_price_history) SPY5's return correlation to TLT was just 0.18, versus 0.24 to AGG and 0.53 to VXUS, making TLT the strongest real diversifier of the three candidates tested."
+    },
+    {
+      "action": "Rotate gold-miner beta (KGC/NEM) into TLT, keep IGLN/SSLV as the metal hedge",
+      "rationale": "IGLN's 6-month daily-return correlation to TLT measured 0.067 (vs 0.18 to AGG and 0.41 to VXUS), confirming Treasuries are the cleanest diversifier for the 12.3%-of-NAV precious-metals cluster without stacking on more metal-price beta."
+    },
+    {
+      "action": "Trim the AI-capex cluster (NVDA/CRWV/DELL) into TLT",
+      "rationale": "NVDA's 6-month correlation to TLT was 0.19, materially lower than its 0.55 correlation to VXUS and 0.44 to SPY5 itself, so a TLT allocation cuts the AI-capex cluster's correlated drawdown risk more than an ex-US equity rotation would."
+    }
+  ]
+}
