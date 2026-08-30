@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scout Report — AI Datacenter Power Infrastructure — 2026-08-30</title>
+<style>
+  :root {
+    --bg: #0b0e14; --panel: #131826; --panel2: #1a2133; --border: #2a3348;
+    --text: #e6e9f0; --muted: #93a0bd; --accent: #4fd1c5; --accent2: #f6ad55;
+    --good: #48bb78; --warn: #f6ad55; --bad: #fc8181;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; padding: 0 0 60px; line-height: 1.5; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; }
+  h2 { font-size: 1.2rem; margin-top: 44px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--accent); }
+  h3 { font-size: 1.02rem; margin-top: 24px; color: var(--accent2); }
+  p { color: #cdd4e3; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+  .stat { background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+  .stat .num { font-size: 1.3rem; font-weight: 600; color: var(--accent); }
+  .stat .lbl { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .force { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--border); }
+  .force:last-child { border-bottom: none; }
+  .tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; }
+  .tag.high { background: rgba(252,129,129,0.15); color: var(--bad); }
+  .tag.med { background: rgba(246,173,85,0.15); color: var(--warn); }
+  .tag.low { background: rgba(72,187,120,0.15); color: var(--good); }
+  .opp { border-left: 3px solid var(--accent); padding-left: 16px; margin: 22px 0; }
+  .opp h4 { margin: 0 0 4px; font-size: 1.05rem; }
+  .opp .ticker { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .opp .price { color: var(--muted); font-size: 0.85rem; }
+  .held-badge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; background: rgba(79,209,197,0.15); color: var(--accent); font-size: 0.7rem; font-weight: 700; }
+  ul { color: #cdd4e3; padding-left: 20px; }
+  li { margin: 4px 0; }
+  .source-list { font-size: 0.78rem; color: var(--muted); }
+  .source-list a { color: var(--accent); text-decoration: none; }
+  .footer-note { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Scout: AI Datacenter Power Infrastructure</h1>
+  <div class="subtitle">Run 2026-08-30 &middot; Industry selected from active-conviction account holdings (IBKR positions)</div>
+
+  <div class="card">
+    <strong>Selection method: account-grounded.</strong> Of ~11 individual (non-broad-index) stock positions in the account, five cluster around one theme — AI compute driving electricity demand that existing grid infrastructure cannot fast enough supply: <strong>CCJ</strong> (uranium fuel), <strong>GEV</strong> (turbines/grid equipment), <strong>NVDA</strong> (the AI chips driving the load), <strong>CRWV</strong> (AI cloud compute, a power buyer), and <strong>DELL</strong> (AI server hardware). That is the largest single-theme cluster in the book outside of gold/silver hedges (KGC, NEM, SSLV) and broad index exposure (SPY5, SPYL, IGLN), so this run scouts the power-supply side of that theme: <em>AI Datacenter Power Infrastructure</em> — generation, transmission/distribution equipment, and nuclear fuel supply.
+  </div>
+
+  <h2>Market Landscape</h2>
+
+  <div class="grid">
+    <div class="stat"><div class="num">132 GW &rarr; 290 GW</div><div class="lbl">Global datacenter power demand, 2026 &rarr; 2030 (Gartner)</div></div>
+    <div class="stat"><div class="num">+27%</div><div class="lbl">Global datacenter power demand growth, 2026 y/y</div></div>
+    <div class="stat"><div class="num">41 GW &rarr; 134 GW</div><div class="lbl">US datacenter/AI power demand, 2026 &rarr; 2030</div></div>
+    <div class="stat"><div class="num">4&ndash;7 yrs</div><div class="lbl">Typical US grid interconnection queue wait (LBNL)</div></div>
+    <div class="stat"><div class="num">5 yrs</div><div class="lbl">Large power transformer lead times (up from ~1yr pre-2023)</div></div>
+    <div class="stat"><div class="num">8 yrs</div><div class="lbl">Gas turbine delivery backlog at top-3 OEMs (booked to 2028)</div></div>
+    <div class="stat"><div class="num">200M &rarr; 240M lbs</div><div class="lbl">Global uranium demand, 2026 &rarr; 2030 (IAEA), vs. supply running 30&ndash;40M lbs short</div></div>
+    <div class="stat"><div class="num">$2.7B / 10 yrs</div><div class="lbl">DOE commitment (Jan 2026) to expand domestic HALEU enrichment</div></div>
+  </div>
+
+  <p>This is a rare structural setup: demand (AI compute) is compounding at 20&ndash;30%+ a year while the physical supply chains that deliver power &mdash; heavy forgings, transformers, turbines, enrichment capacity &mdash; take 3&ndash;8 years to expand and were sized for a much slower-growing grid. The bottleneck has shifted from chips to electrons: Gartner estimates AI-optimized servers will draw 31% of all datacenter power in 2026, and hyperscalers are now capacity-constrained by power availability, not compute supply.</p>
+
+  <h3>Porter's Five Forces</h3>
+  <div class="card">
+    <div class="force"><div><strong>Supplier power</strong> &mdash; heavy equipment (turbines, transformers) and enriched uranium fuel are produced by a handful of qualified vendors booked years out; they are setting price and delivery terms, not buyers.</div><span class="tag high">HIGH</span></div>
+    <div class="force"><div><strong>Buyer power</strong> &mdash; hyperscalers are individually enormous, but aggregate demand so exceeds supply that buyers are locking in decade-long take-or-pay contracts (e.g., Meta's 6.6GW nuclear commitment through 2035) rather than negotiating price down.</div><span class="tag low">LOW</span></div>
+    <div class="force"><div><strong>Threat of new entrants</strong> &mdash; low in capital-intensive heavy equipment (forging capacity, decade-long qualification cycles); moderate-to-high in modular/behind-the-meter segments (SMR startups, fuel cells) where capital is flooding in.</div><span class="tag med">MIXED</span></div>
+    <div class="force"><div><strong>Threat of substitutes</strong> &mdash; there is no substitute for electricity itself; competition is between generation modes (grid, gas, nuclear, fuel cell), not away from the need for power.</div><span class="tag low">LOW</span></div>
+    <div class="force"><div><strong>Rivalry among incumbents</strong> &mdash; muted; every major turbine and transformer maker is sold out for years, so it is a sellers' market rather than a price war.</div><span class="tag med">MODERATE</span></div>
+  </div>
+  <p><strong>Net read:</strong> an unusually favorable structure for incumbent equipment and fuel suppliers &mdash; a supply-constrained sellers' market with multi-year visibility, which is the classic setup for pricing power and backlog-driven earnings upgrades.</p>
+
+  <h3>Technology disruption</h3>
+  <p>Two forces are reshaping how power reaches datacenters faster than the grid can: <strong>behind-the-meter generation</strong> (on-site gas turbines and fuel cells, deployable in 18&ndash;30 months vs. a 4&ndash;7 year grid interconnect &mdash; ERCOT alone has ~356GW of datacenter interconnection requests queued) and <strong>small modular reactors</strong> (Oklo/Meta's 1.2GW Ohio campus, NuScale/Standard Power), which are earlier-stage (first commercial units late-decade) but backed by hyperscaler balance sheets. Grid-software / demand-flexibility orchestration (virtual power plants, curtailable AI load) remains a comparatively underinvested niche relative to the hardware buildout.</p>
+
+  <h3>Regulatory environment</h3>
+  <p><strong>Tailwinds:</strong> the DOE's $2.7B/10-year domestic HALEU enrichment program (finalized Jan 2026) and Centrus's $900M contract extension; federal pushes to streamline NRC reactor licensing; state-level permitting reform for gas turbines and transmission siting.<br>
+  <strong>Risks:</strong> a growing political backlash over datacenter power draws being socialized onto residential ratepayers, with several states beginning to restrict or surcharge new large-load interconnects &mdash; a real tail risk to the demand assumption if it spreads.</p>
+
+  <h2>Emerging Opportunities</h2>
+  <ul>
+    <li><strong>Underserved niche &mdash; HALEU enrichment:</strong> Centrus is effectively the only qualified US producer at meaningful scale; DOE-backed, multi-year order book, near-monopoly dynamics domestically.</li>
+    <li><strong>Underserved niche &mdash; mid/high-voltage switchgear:</strong> the "last mile" of datacenter power distribution is capacity-constrained just like transformers, but has drawn far less investor attention than turbines/transformers themselves.</li>
+    <li><strong>Regulatory tailwind &mdash; behind-the-meter bridge power:</strong> fuel cells and on-site gas generation directly monetize the 4&ndash;7 year interconnection queue gap; not dependent on new legislation, already commercial today.</li>
+    <li><strong>Consolidation target profile:</strong> small/mid-cap electrical-equipment names with backlogs growing faster than capacity (e.g., Powell Industries) are natural roll-up targets for larger diversified electrical players (Eaton, nVent, Hubbell) chasing that backlog inorganically.</li>
+    <li><strong>Technology adoption gap:</strong> grid orchestration / demand-flexibility software lags the hardware buildout &mdash; flagged as a lead to research further, no position identified yet with sufficient scale.</li>
+  </ul>
+
+  <h2>Investment Thesis — Top Opportunities</h2>
+
+  <div class="opp">
+    <h4><span class="ticker">CCJ</span> — Cameco Corp <span class="held-badge">HELD</span></h4>
+    <div class="price">$100.01 (100 sh, existing position)</div>
+    <p><strong>Thesis:</strong> Global uranium demand (200M&rarr;240M lbs by 2030) is outrunning mined supply by 30&ndash;40M lbs/yr per the IAEA, and HALEU-grade fuel for SMRs adds a second, faster-growing demand layer on top of conventional reactor fuel. Cameco is one of the few tier-1 low-cost producers able to scale output. <strong>Moat:</strong> geologic (Tier-1 Saskatchewan assets) plus long-term utility contracts. <strong>Risk:</strong> commodity-price cyclicality; any slowdown in reactor restarts/new-build approvals.</p>
+  </div>
+
+  <div class="opp">
+    <h4><span class="ticker">GEV</span> — GE Vernova <span class="held-badge">HELD</span></h4>
+    <div class="price">$914.07 (10 sh, existing position)</div>
+    <p><strong>Thesis:</strong> One of three OEMs (with Siemens Energy, Mitsubishi Power) supplying ~two-thirds of gas turbines for plants under construction globally, with slots booked through 2028 and order backlogs up sharply (US gas turbine orders >14GW in 2024, highest since 2001). Grid-equipment arm benefits from the same transformer/substation shortage. <strong>Moat:</strong> oligopoly + years-long qualification barriers for new entrants. <strong>Risk:</strong> already priced for a lot of good news; execution risk on backlog delivery.</p>
+  </div>
+
+  <div class="opp">
+    <h4><span class="ticker">LEU</span> — Centrus Energy Corp <span class="price">(new — not held)</span></h4>
+    <div class="price">$176.59 last</div>
+    <p><strong>Thesis:</strong> Only US company currently licensed and producing HALEU at scale, backstopped by a $900M DOE award and $2.4B LEU backlog, inside a $2.7B/10-year federal program to expand domestic enrichment. Direct beneficiary of both conventional reactor fuel demand and the emerging SMR fleet. <strong>Moat:</strong> regulatory licensing + technical barriers make near-term domestic competition unlikely. <strong>Risk:</strong> execution on Piketon build-out to 12 MT/yr by 2029; policy dependency on continued DOE funding; single-customer concentration risk in early HALEU contracts.</p>
+  </div>
+
+  <div class="opp">
+    <h4><span class="ticker">POWL</span> — Powell Industries <span class="price">(new — not held)</span></h4>
+    <div class="price">$182.46 last</div>
+    <p><strong>Thesis:</strong> Manufactures medium/high-voltage switchgear and electrical distribution equipment — the "last mile" of datacenter and substation power delivery that is just as capacity-constrained as transformers, but a smaller, more overlooked name than GEV or the transformer majors. Backlog has scaled with datacenter and industrial electrification demand. <strong>Moat:</strong> UL/utility qualification cycles limit new entrants; niche scale advantage. <strong>Risk:</strong> smaller balance sheet, customer concentration, valuation has already re-rated on the theme.</p>
+  </div>
+
+  <div class="opp">
+    <h4><span class="ticker">BE</span> — Bloom Energy Corp <span class="price">(new — not held)</span></h4>
+    <div class="price">$210.73 last</div>
+    <p><strong>Thesis:</strong> Fuel-cell systems can be sited and commissioned in a fraction of the 4&ndash;7 year grid interconnection wait, directly monetizing the queue bottleneck; already has commercial deployments with hyperscaler customers today rather than a late-decade promise. <strong>Moat:</strong> installed base + service contracts; first-mover scale in commercial fuel cells. <strong>Risk:</strong> historically thin/negative margins and cash burn; higher levered cost of capital than the incumbent equipment makers; technology/cost-curve competition from SMRs and gas gensets longer-term.</p>
+  </div>
+
+  <h2>Key Risks Across the Theme</h2>
+  <ul>
+    <li><strong>Ratepayer/political backlash:</strong> if states move to cap or surcharge datacenter power draws, the demand curve underlying every name above gets pulled forward and then flattens.</li>
+    <li><strong>Capex cyclicality:</strong> hyperscaler capex plans can and do get revised; a pause in AI infrastructure spend would hit the whole power-supply chain, not just AI compute names.</li>
+    <li><strong>Concentration:</strong> the account already carries meaningful direct exposure to this exact theme (CCJ, GEV, NVDA, CRWV, DELL = ~$59.5k, ~12% of NAV) before adding any of the three new names above &mdash; size new positions with that existing exposure in mind, not in isolation.</li>
+    <li><strong>Execution/lead-time risk:</strong> the entire thesis rests on suppliers actually delivering against multi-year backlogs; any of the qualification, forging-capacity, or licensing bottlenecks discussed above could also delay revenue recognition for the equipment names themselves.</li>
+  </ul>
+
+  <div class="footer-note">
+    Sources: <span class="source-list">
+    <a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026">Gartner (Jun 2026)</a> &middot;
+    <a href="https://www.goldmansachs.com/insights/articles/ai-to-drive-165-increase-in-data-center-power-demand-by-2030">Goldman Sachs Research</a> &middot;
+    <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai">IEA Energy &amp; AI</a> &middot;
+    <a href="https://www.prnewswire.com/news-releases/uranium-demand-continues-to-rise-as-ai-power-demand-rewrites-the-nuclear-playbook-302692438.html">PR Newswire — uranium demand (IAEA figures)</a> &middot;
+    <a href="https://www.idtechex.com/en/research-article/data-centers-go-nuclear-why-ai-giants-are-investing-in-smrs/34846">IDTechEx — data centers go nuclear</a> &middot;
+    <a href="https://pv-magazine-usa.com/2026/05/11/u-s-transformer-market-faces-severe-supply-constraints-as-lead-times-extend-to-four-years/">PV Magazine USA — transformer supply constraints</a> &middot;
+    <a href="https://www.powermag.com/transformers-in-2026-shortage-scramble-or-self-inflicted-crisis/">POWER Magazine — transformer shortage</a> &middot;
+    <a href="https://www.ans.org/news/2026-07-06/article-8180/doe-contract-boosts-centruss-haleu-goals-as-urenco-continues-leu-expansion/">ANS Nuclear Newswire — Centrus/DOE HALEU</a> &middot;
+    <a href="https://investors.centrusenergy.com/news-releases/news-release-details/centrus-energy-secures-contract-extension-department-energy">Centrus Energy investor release</a> &middot;
+    <a href="https://www.enverus.com/blog/why-data-centers-are-looking-to-natural-gas-for-behind-the-meter-power/">Enverus — behind-the-meter natural gas</a> &middot;
+    <a href="https://www.rbccm.com/en/insights/2026/05/natural-gas-powers-the-data-center-boom">RBC Capital Markets — natural gas &amp; datacenters</a> &middot;
+    <a href="https://www.hitachienergy.com/us/en/news-and-events/press-releases/2026/04/hitachi-energy-expands-its-u-s-footprint-with-10-million-investment-in-north-carolina-to-meet-surging-electricity-demand">Hitachi Energy / Prolec capacity expansion</a>
+    </span>
+    <br><br>
+    Prices are IBKR account live snapshots as of run time (2026-08-30). This report is a research screen, not investment advice — position sizing should account for existing account concentration.
+  </div>
+
+</div>
+</body>
+</html>
