@@ -1,0 +1,50 @@
+{
+  "routine": "risk",
+  "run_at": "2026-08-30T04:42:23Z",
+  "items": [
+    {
+      "label": "SPY5 + SPYL",
+      "tag": "HIGH",
+      "detail": "SPY5 (45.26% of NAV, $223,473.60) and SPYL (24.28% of NAV, $119,857.92) are both SSGA SPDR S&P 500 UCITS ETFs tracking the identical index; their daily returns correlate at 0.993 (246 trading days, Sep 2025-Aug 2026, computed from IBKR get_price_history closes), so together they form a single 69.54%-of-NAV bet with no internal diversification (source: get_account_positions, get_account_summary NAV=$493,734.53).",
+      "recommendation": "Trim SPYL by ~25% (~1,560 of 6,240 shares, ~$29,960 at SPYL's Aug 28 close of $19.208, sourced from get_price_history) and rotate into ~323 shares of IEF (iShares 7-10Y Treasury, Aug 28 close $92.85) - IEF's correlation to SPYL is 0.096 and to SPY5 is 0.097, the lowest of every pair tested, so it converts duplicated equity risk into real ballast without touching the core SPY5 holding."
+    },
+    {
+      "label": "Hard-assets cluster (IGLN/SSLV/REMX/KGC/NEM/CCJ/FCX)",
+      "tag": "MED",
+      "detail": "Gold ETC (IGLN, 8.36%), silver ETC (SSLV, 1.57%), rare-earths ETF (REMX, 1.56%), gold miners KGC (1.11%) and NEM (1.22%), uranium miner CCJ (2.03%) and copper miner FCX (1.46%) total $85,454.57 = 17.31% of NAV (source: get_account_positions), all riding the same 2026 commodity-supercycle narrative - gold +14%, silver +18%, uranium +17% y/y per Bank of America commentary tied to US industrial policy, a weaker dollar, geopolitical tension and tariff uncertainty (sourced via web search, Aug 2026: skrillnetwork.com/copper-hits-record-high-as-gold-silver-uranium-stocks-rally-in-2026, kalkine.ca/news/general-news/top-canadian-gold-copper-and-uranium-stocks-to-watch-in-august-2026). A reversal of that macro driver would likely hit all seven positions together.",
+      "recommendation": "Trim NEM and KGC by ~50% each - both are gold-mining equities layering additional equity-market beta on top of IGLN's physical-gold exposure (source: get_account_positions unrealized P&L: NEM -$170.67, KGC -$251.25) - freeing roughly $5,744 to redeploy into the IEF/TLT hedge positions below."
+    },
+    {
+      "label": "Fed policy / September FOMC",
+      "tag": "MED",
+      "detail": "J.P. Morgan Wealth Management now expects a 25bp Fed hike at the September 2026 meeting (shift from a prior no-change base case), driven by Iran-linked energy-supply shocks and inflation concerns (sourced via web search, Aug 2026: chase.com/personal/investments/learning-and-insights/article/september-2026-rate-hike-now-expected-amid-energy-shocks). The portfolio is 89.88% equities / 9.94% commodities / 0.18% cash with 0% fixed income per IBKR's ASSET_CLASS allocation (source: get_pa_allocation), leaving no ballast if a hike triggers an equity drawdown.",
+      "recommendation": "Prioritize building the IEF position from the SPY5/SPYL trim above ahead of the September FOMC decision; IEF's trailing-year annualized volatility (4.9%, computed from daily returns) is roughly half of TLT's (9.6%), so its shorter 7-10Y duration limits rate-hike downside on the hedge itself relative to 20+Y Treasuries."
+    },
+    {
+      "label": "Cash buffer",
+      "tag": "MED",
+      "detail": "Total cash is $211.32, just 0.043% of the $493,734.53 NAV (source: get_account_balances), leaving zero capacity to average down, meet a margin call, or fund an opportunistic buy without forced selling elsewhere in the book.",
+      "recommendation": "Sell the full TTWO position (4 shares, $942.56 market value, 0.19% of NAV, source: get_account_positions) - it is the smallest and least material holding - to raise a modest standing cash buffer without disturbing any core allocation."
+    },
+    {
+      "label": "AI-datacenter capex cluster (NVDA/CRWV/DELL/GEV)",
+      "tag": "MED",
+      "detail": "NVDA ($16,341, 3.31%), CRWV ($12,634.50, 2.56%), DELL ($11,406.00, 2.31%) and GEV ($9,140.66, 1.85%) total $49,522.16 = 10.03% of NAV (source: get_account_positions), all correlated to continued AI-datacenter capex spend. GEV carries the single largest unrealized loss in the book: -$608.24, or -6.24% since its $974.89 average cost.",
+      "recommendation": "Trim GEV by 30-50% (3-5 of the 10 shares held, freeing roughly $2,740-$4,570 at the $914.07 last price) to cut the largest loser in the cluster and reduce single-theme concentration, redeploying proceeds toward the IEF/TLT ballast positions above."
+    }
+  ],
+  "diversification_actions": [
+    {
+      "action": "Hedge SPY5 (45.26% of NAV) with IEF, not more equities or gold",
+      "rationale": "Over 246 trading days (Sep 2025-Aug 2026, computed from IBKR get_price_history daily closes), SPY5's correlation to IEF (iShares 7-10Y Treasury) is 0.097 - the lowest of every candidate tested (TLT 0.126, VXUS 0.504, EEM 0.469, IGLN 0.341) - making IEF the most effective real diversifier for the single largest position in the book."
+    },
+    {
+      "action": "Hedge SPYL (24.28% of NAV) with IEF as well, confirming it diversifies the whole S&P 500 block",
+      "rationale": "SPYL is 99.3% correlated to SPY5 (both track the identical index) and its own correlation to IEF is 0.096, essentially matching SPY5's - confirming IEF diversifies the entire $343,331.52 combined S&P 500 position (69.54% of NAV), not just one leg of it, rather than the equity-correlated alternatives VXUS (0.495) or EEM (0.461)."
+    },
+    {
+      "action": "Hedge IGLN (8.36% of NAV, gold) with TLT rather than IEF or more precious metals",
+      "rationale": "IGLN's correlation to TLT (iShares 20+Y Treasury) is 0.051, the lowest correlation of any pair measured across the whole 7-asset test set (vs. IEF 0.124, SPY5 0.341, SPYL 0.328, VXUS 0.365, EEM 0.311), so TLT is the strongest real diversifier available for the gold position specifically."
+    }
+  ]
+}
