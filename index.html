@@ -222,10 +222,10 @@
 
   function tagClass(tag){
     var t = (tag || '').toUpperCase();
-    if (t === 'PASS' || t === 'LEAD') return 'tag-pass';
+    if (t === 'PASS' || t === 'LEAD' || t === 'NEW IDEA') return 'tag-pass';
     if (t === 'WATCH') return 'tag-watch';
-    if (t === 'HIGH') return 'tag-high';
-    if (t === 'MED') return 'tag-med';
+    if (t === 'HIGH' || t === 'STRONG CASE') return 'tag-high';
+    if (t === 'MED' || t === 'WORTH WATCHING') return 'tag-med';
     return 'tag-watch';
   }
 
