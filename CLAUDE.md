@@ -129,3 +129,37 @@ line (JSONL, not a JSON array), never rewriting earlier lines:
 
 Pull these five values from the same portfolio_snapshot computed this run, so
 they always agree with it.
+## Hedge analysis detail (Risk routine only)
+In addition to "diversification_actions" (which lists only the winning hedge
+per cluster), also populate a top-level "hedge_analysis" array in
+data/risk-latest.json listing every candidate tested for every concentrated
+cluster, not just the winner:
+
+{
+  "hedge_analysis": [
+    {
+      "cluster": "<short cluster name, matching a diversification_actions entry>",
+      "candidates": [
+        { "ticker": "<symbol>", "correlation": <number, -1 to 1> }
+      ],
+      "winner": "<ticker of the candidate actually recommended>"
+    }
+  ]
+}
+List every candidate you actually computed a correlation for, in the order
+tested, even the ones that lost.
+
+## Daily P&L attribution (Risk routine only)
+Populate a top-level "daily_pnl" object in data/risk-latest.json using this
+run's live per-position daily P&L data from IBKR:
+
+{
+  "daily_pnl": {
+    "as_of": "YYYY-MM-DD",
+    "movers": [
+      { "label": "<ticker>", "dollar_change": <number, signed>, "pct_change": <number, signed> }
+    ]
+  }
+}
+Include the account's top 5 gainers and top 5 losers by dollar change today
+(fewer if the account holds fewer than 10 positions).
