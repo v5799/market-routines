@@ -180,3 +180,40 @@ final result:
 Include every stage already reported in your funnel reconciliation prose
 (universe size, Stage 0 survivors, then each of C1 through C4 in order), so
 the dashboard can render it directly without re-deriving anything.
+
+## Track record (Risk routine only)
+Maintain data/track-record.json — a single JSON array, one object per tracked
+call, covering the outputs of Momentum (PASS/HIGH-tier items only) and Scout
+("New idea" tagged items only). On every run:
+
+1. NEW CALLS — read data/momentum-latest.json and data/scout-latest.json.
+   For any qualifying item not already present in data/track-record.json
+   (match on label + source_routine + called_at), add a new entry:
+   { "id": "<source_routine>-<label>-<called_at>", "source_routine": "momentum" or "scout",
+     "label": "<ticker>", "call_type": "<its tag at call time>",
+     "called_at": "<date the call was made>", "call_price": <price at call time,
+     from that routine's entry_price if present, else the close on that date>,
+     "acted_on": false, "status": "not_acted" }
+
+2. UPDATE EXISTING OPEN CALLS — for every entry NOT already "status": "closed":
+   - Pull today's price via IBKR. Set "last_checked" to today, "last_price" to
+     the current price, "return_since_call_pct" to the % change from
+     call_price to last_price.
+   - Check the account's real trade history (not current holdings) for a buy
+     order in this ticker dated after called_at. If found and "acted_on" is
+     still false, set "acted_on": true, add "entry_price" and "entry_date"
+     from that trade, "status": "open".
+   - If "acted_on" is true and the account no longer holds this ticker (a
+     matching sell order exists after entry), set "status": "closed", and add
+     "sold_price", "sold_date", "realized_return_pct" (sold_price vs
+     entry_price), and "realized_gain_dollar" (using the traded quantity).
+
+3. Entries with "acted_on": false must NOT include entry_price, entry_date,
+   sold_price, sold_date, realized_return_pct, or realized_gain_dollar — omit
+   these fields entirely rather than setting them to null.
+
+4. Never overwrite a closed entry's sold_price/sold_date once set.
+
+If a ticker has multiple overlapping calls or pre-existing holdings that make
+trade-attribution genuinely ambiguous, say so explicitly in your run summary
+rather than guessing silently which trade belongs to which call.
