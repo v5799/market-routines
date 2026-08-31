@@ -1,62 +1,46 @@
 {
   "routine": "scout",
-  "run_at": "2026-08-31T16:20:00Z",
+  "run_at": "2026-08-31T19:05:00Z",
   "items": [
     {
-      "label": "Industry: Critical Minerals & Precious Metals Mining",
-      "tag": "lead",
-      "detail": "Selected from active-conviction account holdings: with NVDA and DELL fully exited, the account's largest single-theme cluster is now CCJ, FCX, KGC, NEM, REMX, IGLN, and SSLV (~$85.0k, 17.4% of NAV) spanning uranium, copper, gold, silver, and rare earths, each running a structural multi-year supply deficit (copper 150k-600k t in 2026 alone; silver's 6th straight annual deficit; uranium mined supply covering <75% of reactor demand) except gold, which is investment-driven and currently the hottest M&A subsector in the cluster."
+      "label": "Industry: GLP-1 / Metabolic & Obesity Therapeutics",
+      "tag": "New idea",
+      "detail": "Selected from active-conviction account holdings: LLY (Eli Lilly, 10 sh, $11,575, 2.36% of NAV) is the account's sole Healthcare position and has pulled back roughly 5-9% from its July 2026 all-time high on a mix of profit-taking, GLP-1 pricing pressure, and competitive/legal crosscurrents -- worth a full thesis check rather than assuming the pullback is noise. This theme is distinct from the account's two most recent scout cycles (AI Datacenter Power Infrastructure on 2026-08-30, Critical Minerals & Precious Metals Mining on 2026-08-31 earlier today), avoiding repeat coverage."
     },
     {
-      "label": "CCJ",
-      "tag": "HIGH",
-      "detail": "Existing holding, thesis reinforced: spot uranium eased to ~$85.80/lb (Apr 2026) after topping $100/lb in January, but the deficit keeps widening -- a majority of surveyed investors expect mined uranium to cover under 75% of future reactor demand, and Sprott models a cumulative 197M-lb shortfall by 2040.",
-      "diversification_note": "Already the account's entire IBKR 'Energy' sector bucket (2.02% of NAV, $9,869) -- adding to this position increases concentration in a sector that is already the account's uranium sleeve, not a diversifier."
+      "label": "LLY",
+      "tag": "Strong case",
+      "detail": "Existing holding, thesis reinforced with real new evidence, but with genuine new headwinds: Lilly's oral pill Foundayo (orforglipron), launched April 2026, is projected to reach $19B in sales by 2035 (15% of total revenue) and command roughly 60% ($13.6B) of the 2030 daily-oral GLP-1 segment versus Novo's 21% ($4B) -- but Q2 2026 results showed realized US price on Zepbound/Mounjaro down ~9% amid intensifying competition, PepsiCo and other large employers dropping GLP-1 coverage, and Novo Nordisk's federal lawsuit alleging false comparative advertising. Lilly and Novo together still control ~87% of prescription weight-management revenue.",
+      "diversification_note": "Already the account's entire Healthcare sector bucket (2.36% of NAV, $11,575, sole holding) -- reinforcing here deepens an existing single-stock sector bet rather than diversifying it."
     },
     {
-      "label": "FCX",
-      "tag": "HIGH",
-      "detail": "Existing holding, thesis reinforced: the 2026 refined copper deficit (analyst range 150,000-600,000 tonnes) is on track to be the largest in 20+ years, and Freeport's own Grasberg restart slipping from 2027 to 2028 tightens supply further even as it caps Freeport's own near-term volume growth.",
-      "diversification_note": "Part of the account's 'Basic Materials' sector bucket (5.32% of NAV, $26,049 combined with KGC/NEM/REMX) -- adding here increases concentration in an already-large materials/metals sleeve."
+      "label": "VKTX",
+      "tag": "New idea",
+      "detail": "Viking Therapeutics -- not currently held. VK2735, a dual GLP-1/GIP agonist advancing in both injectable and oral formulations simultaneously, carries a widely cited 38.5% Polymarket-implied probability of being acquired before 2027; Pfizer (having appointed Morgan Stanley as an advisor per reports), Merck, and Amgen are named as potential suitors in the post-Vertex/Crinetics ($10B) M&A wave repricing third-tier obesity assets. Last price $32.42.",
+      "diversification_note": "Would land in the account's Healthcare bucket alongside LLY (2.36% of NAV) -- a second name in the same sector, but a structurally different bet (pre-revenue M&A-target biotech vs. Lilly's cash-generating franchise).",
+      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000); binary M&A-speculation risk means the position should be sized assuming the takeout never happens."
     },
     {
-      "label": "KGC / NEM",
-      "tag": "MED",
-      "detail": "Existing holdings, watch only: gold is the most active M&A subsector in this cluster right now -- Equinox Gold/Orla Mining ($5.13B deal, ~$18.5B combined), Agnico Eagle's 3-deal Lapland roll-up (~$2.8B), and Goldgroup/Gold Resource ($372M) all closed or announced in 2026. Neither has a confirmed catalyst; flagging the subsector's heat, not a specific action.",
-      "diversification_note": "Both sit in the same 'Basic Materials' bucket as FCX/REMX (5.32% of NAV combined) -- gold's investment/rate-driven demand is a different risk factor than copper/uranium's physical-shortage driver, so the pair is a partial macro diversifier within an otherwise concentrated sleeve."
+      "label": "GPCR",
+      "tag": "New idea",
+      "detail": "Structure Therapeutics -- not currently held. Its oral small-molecule GLP-1 candidate aleniglipron posted 16.3% placebo-adjusted weight loss at 44 weeks in Phase 2, with a pivotal Phase 3 study slated to start in H2 2026; multiple sources note Structure would inherit the scarcity premium in obesity-biotech M&A if Viking is taken out first. Last price $45.86.",
+      "diversification_note": "Would also land in the account's Healthcare bucket alongside LLY and VKTX -- differentiated within the sleeve by an all-oral (not injectable) delivery platform, but does not diversify outside the sector.",
+      "suggested_size": "Smallest scout tranche of the group, roughly 0.25-0.5% of account NAV (~$1,250-$2,500); one Phase 3 program away from a binary readout, no approved product yet."
     },
     {
-      "label": "UUUU",
-      "tag": "lead",
-      "detail": "Energy Fuels -- not currently held. Largest US conventional uranium producer and simultaneously the first US company producing heavy rare earth oxides (dysprosium, terbium) at meaningful purity from domestic ore, via its licensed White Mesa Mill -- a dual thesis on the uranium deficit already in the account (CCJ) plus the separate heavy-REE reshoring theme. Last price $14.60.",
-      "diversification_note": "Would sit alongside CCJ in the 'Energy' sector bucket -- adds to existing uranium exposure, but its heavy-REE segment is a genuinely new leg not represented elsewhere in the account except via the diversified REMX ETF.",
-      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000); heavy-REE output is still early-stage (tens of kg) and unproven at industrial scale."
+      "label": "AMGN",
+      "tag": "Worth watching",
+      "detail": "Amgen -- not currently held. MariTide (maridebart cafraglutide), a peptide-antibody conjugate combining GIP blockade with GLP-1 activation, showed up to ~20% weight loss with no plateau at 52 weeks in Phase 2 and enables monthly (not weekly) dosing -- a real differentiator on the adherence problem that limits weekly injectables. Phase 3 MARITIME data across obesity, type 2 diabetes, cardiovascular disease, heart failure, and sleep apnea are expected through 2027, so there is no near-term catalyst; flagging the dosing-frequency angle for the next scout cycle rather than a specific action now. Last price $431.01."
     },
     {
-      "label": "HBM",
-      "tag": "lead",
-      "detail": "Hudbay Minerals -- not currently held. Active copper-gold-zinc consolidator in the Americas (just acquired Arizona Sonoran for ~$1.48B at a 30% premium), a differentiated way to play the copper deficit versus the account's existing FCX (a major, not a consolidator). Last price $28.55.",
-      "diversification_note": "Would land in the account's 'Basic Materials' bucket alongside FCX (5.32% of NAV combined with KGC/NEM/REMX) -- adds a second copper name and increases single-commodity concentration, though its consolidator profile differs from FCX's major-producer profile.",
-      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000) given integration risk on its recent and pending acquisitions."
+      "label": "NVO",
+      "tag": "Worth watching",
+      "detail": "Novo Nordisk -- not currently held. The other half of the GLP-1 duopoly is trading near multi-year lows (ADR last $45.53, down sharply from 2024/2025 highs) after CagriSema trial disappointments and share loss to Lilly's oral pill; its own oral semaglutide is still projected to hold a real (if smaller, ~$4B) share of the 2030 oral segment, and it is the plaintiff, not the defendant, in the current advertising litigation with Lilly. A contrarian value angle on the same duopoly LLY sits in, but continued share-loss momentum is a real near-term risk worth watching before sizing a position."
     },
     {
-      "label": "ARA",
-      "tag": "lead",
-      "detail": "Aclara Resources -- not currently held. Heavy rare earth (dysprosium/terbium) pure-play developer targeting over 75% of US Dy/Tb demand once its Penco, Carina, and Vinton facilities operate together -- direct single-name exposure to the DOD-backed magnet-reshoring theme the account currently only holds via the diversified REMX ETF. Last price C$3.90 (TSE).",
-      "diversification_note": "Would land in 'Basic Materials' alongside REMX, but as the account's first single-name rare earth equity (vs. REMX's diversified basket) it is a genuine within-theme diversifier.",
-      "suggested_size": "Smallest scout tranche of the group, roughly 0.25-0.5% of account NAV (~$1,250-$2,500), given its pre-revenue/early development stage and multi-facility execution risk."
-    },
-    {
-      "label": "PAAS",
-      "tag": "lead",
-      "detail": "Pan American Silver -- not currently held. Operating silver (plus gold byproduct) miner across a diversified Americas portfolio, giving direct operating leverage to the structural silver deficit (6th consecutive annual shortfall in 2026) that the account's existing SSLV position, a physical-tracking ETF, cannot provide. Last price $51.47.",
-      "diversification_note": "Would be the account's first operating silver-mining equity -- distinct from SSLV (passive metal exposure) and from the gold miners (KGC/NEM), adding a fourth, structurally different leg to the precious-metals sleeve.",
-      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000); UBS projects the 2026 silver deficit to narrow versus prior years, a near-term headwind to monitor."
-    },
-    {
-      "label": "Silver/copper royalty & streaming vehicles",
-      "tag": "MED",
-      "detail": "Technology/portfolio adoption gap flagged for further research: royalty and streaming companies offer leveraged, lower-operating-risk exposure to the same silver and copper deficits without mine-execution risk; no specific name meets scale/quality bar yet -- carry to next scout cycle."
+      "label": "FDA compounding crackdown & indication expansion",
+      "tag": "Worth watching",
+      "detail": "Two structural theme-level signals, no specific ticker yet: (1) the FDA's April 2026 proposal to permanently exclude semaglutide/tirzepatide/liraglutide from the 503B Bulks List, plus 55+ warning letters issued to telehealth compounders in March and June 2026, is closing the generic-copy substitute channel and should structurally redirect volume back to branded drugs (LLY, NVO) over 2026-2027; (2) indication expansion into MASH/NASH, obstructive sleep apnea, and cardiovascular disease (already in Amgen's and others' pipelines) could expand the addressable market well beyond the $27.5B-$68.65B 2026 weight-loss-market estimates currently being modeled -- carry both to the next scout cycle for name-level follow-up."
     }
   ],
   "full_report_url": "data/scout-latest.html"
