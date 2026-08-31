@@ -152,6 +152,12 @@
     <div class="div-note">Every hedge candidate Risk actually computed a correlation for, not just the one recommended. More negative correlation = better hedge.</div>
   </div>
 
+  <div class="panel">
+    <div class="panel-title">Momentum funnel<span class="tag" id="funnelTag">no data yet</span></div>
+    <div style="height:200px;"><canvas id="funnelChart"></canvas></div>
+    <div class="div-note">How many of the screened universe survived each stage, from the most recent Momentum run.</div>
+  </div>
+
   <div class="grid-2">
     <div class="panel" style="margin-bottom:0;">
       <div class="panel-title">Momentum screener<span class="tag" id="momentumTag">real &middot; Aug 21 close</span></div>
@@ -367,6 +373,26 @@
     });
   }
 
+  function renderFunnel(funnel){
+    if (!funnel || !funnel.stages || !funnel.stages.length) return;
+    document.getElementById('funnelTag').textContent = funnel.stages.length + ' stages';
+    var stages = funnel.stages;
+    new Chart(document.getElementById('funnelChart'), {
+      type: 'bar',
+      data: { labels: stages.map(function(s){return s.label;}), datasets: [{
+        label: 'Tickers remaining',
+        data: stages.map(function(s){return s.count;}),
+        backgroundColor: stages.map(function(s,i){
+          return i === stages.length - 1 ? '#2F8F5B' : '#7FA0B8';
+        })
+      }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } }
+      }
+    });
+  }
+
   function renderHedgeAnalysis(hedgeArr){
     if (!hedgeArr || !hedgeArr.length) return;
     document.getElementById('hedgeTag').textContent = hedgeArr.length + ' cluster' + (hedgeArr.length === 1 ? '' : 's') + ' tested';
@@ -408,6 +434,7 @@
         document.getElementById('momentumReportLink').style.display = 'block';
         document.getElementById('momentumReportA').href = m.full_report_url;
       }
+      renderFunnel(m.funnel);
     }
 
     var r = await loadLatest('risk');
