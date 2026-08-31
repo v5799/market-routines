@@ -98,3 +98,15 @@ profit.total, .realized, and .unrealized should be sourced directly from IBKR
 account data. profit.interest_est is the only field allowed to be an estimate
 (IBKR exposes no direct interest ledger) — reconstruct it from cash-balance
 behavior, and it's fine for it to remain labeled "est."
+
+## Core capital constant (Risk routine only)
+"core_capital" in portfolio_snapshot.profit is a FIXED baseline, not derived
+from live NAV, cash, or any IBKR-reported figure — it does not change from
+run to run. Use exactly this value every time, unless the user has explicitly
+told you it changed (e.g. after a deposit or withdrawal):
+
+  core_capital: 480000
+
+profit.total = current NAV minus 480000 (adjusted for any deposits/withdrawals
+the user has told you about) — never current NAV itself.
+profit.pct_on_core = profit.total / 480000 * 100.
