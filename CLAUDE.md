@@ -60,3 +60,41 @@ error, a required review you can't satisfy, a merge conflict), do NOT report
 the run as a success. State clearly, as the first line of your summary to the
 user: " Data is on branch <branch-name> but could NOT be merged to main —
 manual merge required," and explain why it failed.
+## Portfolio snapshot (Risk routine only)
+In addition to the standard "items" and "diversification_actions" fields, the
+Risk routine must also populate a top-level "portfolio_snapshot" object in
+data/risk-latest.json, used to drive the dashboard's Diversification and
+Profit panels:
+
+{
+  "portfolio_snapshot": {
+    "nav": <current NAV, number>,
+    "as_of": "<YYYY-MM-DD>",
+    "concentration_score": <0-100 integer, see formula below>,
+    "buckets": [
+      { "label": "<short bucket name>", "amount": <number>, "pct": <number, 0-100> }
+    ],
+    "profit": {
+      "total": <number>,
+      "pct_on_core": <number>,
+      "core_capital": <number>,
+      "realized": <number>,
+      "unrealized": <number>,
+      "interest_est": <number, ESTIMATED from cash-balance behavior>
+    }
+  }
+}
+
+Group the account's full NAV into 4-6 human-readable buckets (e.g. "S&P 500
+(SPY5+SPYL)", "Cash", "Precious metals", "AI/tech capex cluster", "Other
+satellites") — every dollar of NAV must fall into exactly one bucket, and the
+pct values must sum to 100.
+
+concentration_score formula (Herfindahl-based): for each bucket, take its pct
+as a fraction of 1 (e.g. 69.55% -> 0.6955), square it, sum all the squared
+fractions, multiply by 100, and round to the nearest whole number.
+
+profit.total, .realized, and .unrealized should be sourced directly from IBKR
+account data. profit.interest_est is the only field allowed to be an estimate
+(IBKR exposes no direct interest ledger) — reconstruct it from cash-balance
+behavior, and it's fine for it to remain labeled "est."
