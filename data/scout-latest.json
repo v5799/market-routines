@@ -1,0 +1,50 @@
+{
+  "routine": "scout",
+  "run_at": "2026-08-30T12:35:00Z",
+  "items": [
+    {
+      "label": "Industry: AI Datacenter Power Infrastructure",
+      "tag": "lead",
+      "detail": "Selected from active-conviction account holdings: CCJ, GEV, NVDA, CRWV, and DELL are the largest single-theme cluster among the account's ~11 individual stock positions, all tied to AI compute driving electricity demand that grid/equipment supply chains cannot keep pace with -- global datacenter power demand is set to grow from 132GW in 2026 to 290GW by 2030 (Gartner) against 4-7 year grid interconnection queues and 5-year transformer lead times."
+    },
+    {
+      "label": "CCJ",
+      "tag": "HIGH",
+      "detail": "Existing holding, thesis reinforced: global uranium demand (200M lbs in 2026 to 240M by 2030 per IAEA) is outrunning mined supply by 30-40M lbs/yr, with HALEU-grade demand for SMRs layering on top of conventional reactor fuel; Cameco is one of the few Tier-1 low-cost producers able to scale output.",
+      "diversification_note": "Already the account's entire IBKR 'Energy' sector bucket (2.03% of NAV, $10,001) -- adding to this position increases concentration in a sector that is currently the account's single power-theme sleeve, not a diversifier."
+    },
+    {
+      "label": "GEV",
+      "tag": "HIGH",
+      "detail": "Existing holding, thesis reinforced: one of three OEMs (with Siemens Energy, Mitsubishi Power) supplying ~two-thirds of gas turbines under construction globally, booked through 2028, plus a grid-equipment arm exposed to the same multi-year transformer/substation shortage.",
+      "diversification_note": "Already the account's entire IBKR 'Utilities' sector bucket (1.85% of NAV, $9,141) -- a single-name sector concentration; further adds should be sized against that, not treated as new diversification."
+    },
+    {
+      "label": "LEU",
+      "tag": "lead",
+      "detail": "Centrus Energy -- not currently held. Only US company licensed and producing HALEU at scale, backed by a $900M DOE award inside a $2.7B/10-year federal program (finalized Jan 2026) to expand domestic enrichment; carries a $2.4B LEU backlog. Last price $176.59.",
+      "diversification_note": "Would sit in IBKR's 'Basic Materials' or 'Energy' sector bucket alongside CCJ/FCX/KGC/NEM/REMX (currently 5.33%/2.03% of NAV combined) -- adds fuel-cycle exposure distinct from mining, but stacks onto an already-large materials/energy sleeve.",
+      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000) pending deeper diligence on Piketon build-out execution risk."
+    },
+    {
+      "label": "POWL",
+      "tag": "lead",
+      "detail": "Powell Industries -- not currently held. Manufactures medium/high-voltage switchgear, the 'last mile' of datacenter power distribution facing the same capacity constraints as transformers, but a smaller and more overlooked name than GEV or the transformer majors; a plausible consolidation target for larger diversified electrical players (Eaton, nVent, Hubbell) chasing backlog. Last price $182.46.",
+      "diversification_note": "Would land in IBKR's 'Technology' or a new 'Industrials' bucket -- the account currently has zero dedicated industrial-electrical-equipment exposure outside GEV's Utilities classification, making this a genuine sector diversifier within the power theme.",
+      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000); smaller balance sheet and customer concentration warrant a lighter initial size than the HALEU lead."
+    },
+    {
+      "label": "BE",
+      "tag": "lead",
+      "detail": "Bloom Energy -- not currently held. Fuel-cell systems deployable in a fraction of the 4-7 year grid interconnection wait, already in commercial service with hyperscaler customers rather than a late-decade promise; direct monetization of the interconnection-queue bottleneck. Last price $210.73.",
+      "diversification_note": "Would be the account's first behind-the-meter/on-site generation name, distinct from mining (CCJ/FCX/KGC/NEM), heavy equipment (GEV), and compute (NVDA/CRWV/DELL) -- adds a fourth, structurally different leg to the existing AI-power cluster.",
+      "suggested_size": "Smallest scout tranche of the group, roughly 0.25-0.5% of account NAV (~$1,250-$2,500), given historically thin margins and higher cash-burn risk relative to the other leads."
+    },
+    {
+      "label": "Grid orchestration / demand-flexibility software",
+      "tag": "MED",
+      "detail": "Technology adoption gap flagged for further research: virtual power plant and curtailable-load software remains comparatively underinvested relative to the hardware buildout (turbines, transformers, fuel); no specific ticker meets scale/quality bar yet -- carry to next scout cycle."
+    }
+  ],
+  "full_report_url": "data/scout-latest.html"
+}
