@@ -1,0 +1,1 @@
+# Equity Deep dive Changelog
