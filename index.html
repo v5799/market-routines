@@ -76,21 +76,21 @@
       <div class="wordmark">PABLO PAWTASTIC TREATS<span>.</span><br>FUND OVERVIEW</div>
       <div class="subline">PORTFOLIO INTELLIGENCE &mdash; IBKR LINKED</div>
     </div>
-    <div class="status-row">
-      <div class="status-pill"><span class="dot ok"></span>MOMENTUM</div>
-      <div class="status-pill"><span class="dot ok"></span>RISK</div>
-      <div class="status-pill"><span class="dot"></span>SCOUT</div>
+        <div class="status-row">
+      <div class="status-pill"><span class="dot" id="dotMomentum"></span>MOMENTUM</div>
+      <div class="status-pill"><span class="dot" id="dotRisk"></span>RISK</div>
+      <div class="status-pill"><span class="dot" id="dotScout"></span>SCOUT</div>
     </div>
   </div>
 
-  <div class="banner"><b>Live as of Aug 23, 2026.</b> Entry prices, corrective actions, and diversification notes below appear once Momentum, Risk, and Scout have run again with the updated instructions.</div>
+  <div class="banner" id="topBanner"><b>Live as of Aug 23, 2026.</b> Entry prices, corrective actions, and diversification notes below appear once Momentum, Risk, and Scout have run again with the updated instructions.</div>
 
   <div class="grid-2">
     <div class="panel" style="margin-bottom:0;">
-      <div class="panel-title">Diversification<span class="tag">real &middot; Aug 23</span></div>
+      <div class="panel-title">Diversification<span class="tag" id="divTag">real &middot; Aug 23</span></div>
       <div class="div-hero">
         <div class="div-wheel-box">
-          <canvas id="divWheel" role="img" aria-label="Donut chart of portfolio allocation across five asset classes, with a concentration score in the center">Allocation: S&amp;P 500 68.7%, cash 10.7%, precious metals 10%, memory/semis cluster 4.6%, other satellites 5.8%. Concentration score 50 out of 100.</canvas>
+          <canvas id="divWheel" role="img" aria-label="Donut chart of portfolio allocation">Allocation chart</canvas>
           <div class="div-score">
             <div class="div-score-num" id="divScoreNum">50</div>
             <div class="div-score-label">SCORE / 100</div>
@@ -100,16 +100,16 @@
           <div id="divDetail"></div>
         </div>
       </div>
-      <div class="div-note">Herfindahl-based concentration read. Driven almost entirely by SPY5 + SPYL, both S&amp;P 500 ETFs, 68.7% of NAV combined.</div>
+      <div class="div-note" id="divNote">Herfindahl-based concentration read.</div>
     </div>
     <div class="panel" style="margin-bottom:0;">
-      <div class="panel-title">Profit<span class="tag">real &mdash; Aug 23, 2026</span></div>
-      <div class="profit-value">+$14,328.94</div>
-      <div class="profit-sub">+2.98% on $480,000 core capital</div>
+      <div class="panel-title">Profit<span class="tag" id="profitTag">real &mdash; Aug 23, 2026</span></div>
+      <div class="profit-value" id="profitValue">+$14,328.94</div>
+      <div class="profit-sub" id="profitSub">+2.98% on $480,000 core capital</div>
       <div class="profit-legend">
-        <span><span class="sw" style="background:var(--green);"></span>Realized $8,184</span>
-        <span><span class="sw" style="background:#8AA9C4;"></span>Unrealized $1,463</span>
-        <span><span class="sw" style="background:#C9915A;"></span>Interest (est.) $4,681</span>
+        <span><span class="sw" style="background:var(--green);"></span>Realized <span id="profitRealized">$8,184</span></span>
+        <span><span class="sw" style="background:#8AA9C4;"></span>Unrealized <span id="profitUnrealized">$1,463</span></span>
+        <span><span class="sw" style="background:#C9915A;"></span>Interest (est.) <span id="profitInterest">$4,681</span></span>
       </div>
       <div class="div-note">Interest is estimated from cash-balance behavior; IBKR exposes no direct interest ledger via the connector. Unrealized gains are open, not yet secured.</div>
     </div>
@@ -160,24 +160,65 @@
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.color = "#6E6C63";
 
-  var divLabels = ["S&P 500 (SPY5+SPYL)","Cash","Precious metals","Memory/semis cluster","Other satellites"];
-  var divValues = [68.7,10.7,10.0,4.6,5.8];
-  var divColors = ['#7FA0B8','#C7C4B8','#C9915A','#C0453B','#2F8F5B'];
-  var divAmounts = [339848,52740,49542,22982,28688];
+  var PALETTE = ['#7FA0B8','#C7C4B8','#C9915A','#C0453B','#2F8F5B','#B08A2E'];
 
-  new Chart(document.getElementById('divWheel'), {
-    type: 'doughnut',
-    data: { labels: divLabels, datasets: [{ data: divValues, backgroundColor: divColors, borderColor: '#FFFFFF', borderWidth: 2 }] },
-    options: { responsive: true, maintainAspectRatio: false, cutout: '72%', plugins: { legend: { display: false }, tooltip: { enabled: true } } }
-  });
+  var fallbackSnapshot = {
+    as_of: "Aug 23", concentration_score: 50,
+    buckets: [
+      { label:"S&P 500 (SPY5+SPYL)", amount:339848, pct:68.7 },
+      { label:"Cash", amount:52740, pct:10.7 },
+      { label:"Precious metals", amount:49542, pct:10.0 },
+      { label:"Memory/semis cluster", amount:22982, pct:4.6 },
+      { label:"Other satellites", amount:28688, pct:5.8 }
+    ],
+    profit: { total:14328.94, pct_on_core:2.98, core_capital:480000, realized:8184, unrealized:1463, interest_est:4681 }
+  };
 
-  var detail = document.getElementById('divDetail');
-  divLabels.forEach(function(l,i){
-    var row = document.createElement('div'); row.className = 'div-detail-row';
-    row.innerHTML = '<span class="div-detail-left"><span class="sw" style="background:' + divColors[i] + '"></span>' + l + '</span>' +
-      '<span class="div-detail-right"><span class="amt">$' + divAmounts[i].toLocaleString() + '</span><span>' + divValues[i] + '%</span></span>';
-    detail.appendChild(row);
-  });
+  function isFresh(iso, maxDays){
+    if (!iso) return false;
+    var t = new Date(iso).getTime();
+    if (isNaN(t)) return false;
+    return (Date.now() - t) <= maxDays*24*60*60*1000;
+  }
+
+  function fmtMoney(n){
+    var sign = n < 0 ? '-' : '';
+    return sign + '$' + Math.abs(Math.round(n)).toLocaleString();
+  }
+
+  function renderDiversification(snap){
+    var s = snap || fallbackSnapshot;
+    var labels = s.buckets.map(function(b){return b.label;});
+    var values = s.buckets.map(function(b){return b.pct;});
+    var amounts = s.buckets.map(function(b){return b.amount;});
+    var colors = s.buckets.map(function(b,i){return PALETTE[i % PALETTE.length];});
+
+    new Chart(document.getElementById('divWheel'), {
+      type: 'doughnut',
+      data: { labels: labels, datasets: [{ data: values, backgroundColor: colors, borderColor: '#FFFFFF', borderWidth: 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, cutout: '72%', plugins: { legend: { display: false }, tooltip: { enabled: true } } }
+    });
+
+    document.getElementById('divScoreNum').textContent = s.concentration_score;
+    var detail = document.getElementById('divDetail');
+    detail.innerHTML = '';
+    labels.forEach(function(l,i){
+      var row = document.createElement('div'); row.className = 'div-detail-row';
+      row.innerHTML = '<span class="div-detail-left"><span class="sw" style="background:' + colors[i] + '"></span>' + l + '</span>' +
+        '<span class="div-detail-right"><span class="amt">$' + Math.round(amounts[i]).toLocaleString() + '</span><span>' + values[i] + '%</span></span>';
+      detail.appendChild(row);
+    });
+    document.getElementById('divNote').textContent = 'Herfindahl-based concentration read, as of ' + s.as_of + '.';
+  }
+
+  function renderProfit(snap){
+    var s = (snap || fallbackSnapshot).profit;
+    document.getElementById('profitValue').textContent = (s.total >= 0 ? '+' : '') + fmtMoney(s.total);
+    document.getElementById('profitSub').textContent = (s.pct_on_core >= 0 ? '+' : '') + s.pct_on_core + '% on $' + s.core_capital.toLocaleString() + ' core capital';
+    document.getElementById('profitRealized').textContent = fmtMoney(s.realized);
+    document.getElementById('profitUnrealized').textContent = fmtMoney(s.unrealized);
+    document.getElementById('profitInterest').textContent = fmtMoney(s.interest_est);
+  }
 
   function tagClass(tag){
     var t = (tag || '').toUpperCase();
@@ -227,8 +268,12 @@
   }
 
   (async function hydrate(){
+    var runDates = [];
+
     var m = await loadLatest('momentum');
+    document.getElementById('dotMomentum').className = 'dot' + (isFresh(m && m.run_at, 2) ? ' ok' : '');
     if (m) {
+      runDates.push(m.run_at);
       document.getElementById('momentumTag').textContent = 'live \u00b7 ' + (m.run_at || '');
       renderList('momentumList', m.items);
       if (m.full_report_url) {
@@ -236,17 +281,41 @@
         document.getElementById('momentumReportA').href = m.full_report_url;
       }
     }
+
     var r = await loadLatest('risk');
+    document.getElementById('dotRisk').className = 'dot' + (isFresh(r && r.run_at, 2) ? ' ok' : '');
     if (r) {
+      runDates.push(r.run_at);
       document.getElementById('riskTag').textContent = 'live \u00b7 ' + (r.run_at || '');
       renderList('riskList', r.items);
       if (r.diversification_actions && r.diversification_actions.length) {
         document.getElementById('actionsTag').textContent = 'live \u00b7 ' + (r.run_at || '');
         renderActions(r.diversification_actions);
       }
+      renderDiversification(r.portfolio_snapshot);
+      renderProfit(r.portfolio_snapshot);
+      if (r.portfolio_snapshot) {
+        document.getElementById('divTag').textContent = 'live \u00b7 ' + (r.run_at || '');
+        document.getElementById('profitTag').textContent = 'live \u00b7 ' + (r.run_at || '');
+      }
+    } else {
+      renderDiversification(null);
+      renderProfit(null);
     }
+
     var s = await loadLatest('scout');
-    if (s) { document.getElementById('scoutTag').textContent = 'live \u00b7 ' + (s.run_at || ''); renderList('scoutList', s.items); }
+    document.getElementById('dotScout').className = 'dot' + (isFresh(s && s.run_at, 8) ? ' ok' : '');
+    if (s) {
+      runDates.push(s.run_at);
+      document.getElementById('scoutTag').textContent = 'live \u00b7 ' + (s.run_at || '');
+      renderList('scoutList', s.items);
+    }
+
+    var validDates = runDates.filter(function(d){return d;}).map(function(d){return new Date(d);}).filter(function(d){return !isNaN(d);});
+    if (validDates.length) {
+      var latest = new Date(Math.max.apply(null, validDates));
+      document.getElementById('topBanner').innerHTML = '<b>Last updated ' + latest.toLocaleString() + '.</b> Each panel above shows its own routine\'s most recent run \u2014 check the colored dot next to MOMENTUM / RISK / SCOUT for whether that routine\'s data is current.';
+    }
   })();
 </script>
 </body>
