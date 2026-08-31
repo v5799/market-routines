@@ -119,3 +119,13 @@ doesn't exist yet):
 YYYY-MM-DD HH:MM UTC | duration: <e.g. 6m 40s> | tool_calls: <approx count> | notes: <e.g. "Stage 0 filter used" or "full 503-ticker scan">
 
 One line per run, plain text — no JSON needed for this file.
+
+## Portfolio trend history (Risk routine only)
+In addition to portfolio_snapshot, append one line to data/risk-history.jsonl
+on every run (create the file if it doesn't exist yet) — one JSON object per
+line (JSONL, not a JSON array), never rewriting earlier lines:
+
+{"date":"YYYY-MM-DD","nav":<number>,"concentration_score":<0-100>,"profit_total":<number>,"cash_pct":<number>}
+
+Pull these five values from the same portfolio_snapshot computed this run, so
+they always agree with it.
