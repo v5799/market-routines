@@ -1,20 +1,623 @@
 {
   "routine": "momentum",
-  "run_at": "2026-08-23T18:20:00Z",
+  "run_at": "2026-08-31T18:30:00Z",
   "items": [
-    { "label": "MSFT", "tag": "HIGH", "detail": "Only ticker to clear the full 4-stage momentum funnel: +15.2% above its 50-day SMA, +12.1% above its 200-day SMA, RSI(14)=47 (healthy, not overbought), and a +15.3% 3-month return vs SPY's +3.1%.", "entry_price": "$483.49 (Fri close)" },
-    { "label": "MU", "tag": "MED", "detail": "Long-term uptrend intact (+68.7% above 200-day SMA, +26.9% 3-month vs SPY +3.1%) but price is essentially flat against its 50-day SMA and 23.3% off its $1,255 52-week high after the AI-memory rally cooled.", "entry_price": "$963.20 (Fri close), watch 50-day SMA $964.59 for support" },
-    { "label": "SNDK", "tag": "MED", "detail": "200-day SMA confirms a powerful long-term uptrend (+69.6%), but price is 3.7% below its 50-day SMA and 32.3% off its 52-week high, indicating short-term momentum has stalled.", "entry_price": "$1,593.20 (Fri close)" },
-    { "label": "NVDA", "tag": "MED", "detail": "Clean technical uptrend (+3.8% vs 50-day SMA, +10.3% vs 200-day SMA, RSI 59.5) but its -2.2% 3-month return trails SPY's +3.1%, missing the relative-strength bar despite intact trend.", "entry_price": "$215.38 (Fri close)" },
-    { "label": "TTWO", "tag": "MED", "detail": "Price holds just above both moving averages (+0.8%/+6.0%) with a neutral RSI of 46, but its +0.7% 3-month return badly trails SPY's +3.1% -- hold, not a fresh momentum entry.", "entry_price": "$242.48 (Fri close)" },
-    { "label": "IOVA", "tag": "WATCH", "detail": "Explosive momentum (+124% 3-month, +61.6% 1-month) but RSI(14) is an extreme 83 and the stock fell 7.9% Friday (to $8.28 from $8.99) -- flagged for blow-off-top/reversal risk, not a fresh entry.", "entry_price": "no entry recommended -- await RSI cooldown below ~70" },
-    { "label": "AMZN", "tag": "WATCH", "detail": "Trend structure is bullish (+4.0% vs 50-day SMA, +8.9% vs 200-day SMA) but RSI(14) has dropped to 24.5 -- an oversold reading that contradicts a clean momentum breakout; stalling, not accelerating.", "entry_price": "no entry recommended -- await RSI reclaim above ~40" },
-    { "label": "GEV", "tag": "FAIL", "detail": "Below its 50-day SMA (-7.5%) with RSI 40 and a -8.3% 3-month return vs SPY's +3.1%; 19.9% off its 52-week high -- momentum has broken down despite a still-positive 200-day trend." },
-    { "label": "GOOG", "tag": "FAIL", "detail": "RSI(14) at 21 and a -10.9% 3-month return (vs SPY +3.1%) signal a sharp momentum breakdown even though price remains marginally above its 200-day SMA (+3.0%)." },
-    { "label": "AAPL", "tag": "FAIL", "detail": "Essentially flat against its 50-day SMA (-0.2%, a borderline miss) with a +1.4% 3-month return trailing SPY's +3.1% -- no meaningful relative strength despite an intact 200-day uptrend." },
-    { "label": "PLUG", "tag": "FAIL", "detail": "Below both the 50-day (-2.7%) and 200-day (-8.1%) SMAs with a -40.0% 3-month return; 50.1% off its 52-week high -- no momentum case." },
-    { "label": "TSLA", "tag": "FAIL", "detail": "Friday's +5.4% single-session pop is not read as a trend signal (no-single-print guard): price stays below both the 50-day (-0.5%) and 200-day (-9.8%) SMAs, 3-month return -13.2% vs SPY +3.1%." },
-    { "label": "META", "tag": "FAIL", "detail": "Below both moving averages (-6.8% vs 50-day, -11.4% vs 200-day) with RSI 31 and a -9.5% 3-month return vs SPY's +3.1% -- a clear downtrend." }
+    {
+      "label": "TECH",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $72.31 is above both the 50-day SMA ($70.89) and 200-day SMA ($60.76), RSI(14)=55.4 (healthy, not overbought), 0.2% off its 52-week high ($72.48), with a 3-month return of +42.2% vs SPY's +1.51% (+40.7pp relative strength).",
+      "entry_price": "$72.31 now, or better on a pullback to the 50-day SMA (~$70.89)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "IQV",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $258.33 is above both the 50-day SMA ($223.06) and 200-day SMA ($200.97), RSI(14)=67.7 (healthy, not overbought), 2.6% off its 52-week high ($265.25), with a 3-month return of +41.9% vs SPY's +1.51% (+40.4pp relative strength).",
+      "entry_price": "$258.33 now, or better on a pullback to the 50-day SMA (~$223.06)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "EXPE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $319.47 is above both the 50-day SMA ($290.43) and 200-day SMA ($257.89), RSI(14)=49.2 (healthy, not overbought), 5.8% off its 52-week high ($339.13), with a 3-month return of +42.2% vs SPY's +1.51% (+40.2pp relative strength).",
+      "entry_price": "$319.47 now, or better on a pullback to the 50-day SMA (~$290.43)",
+      "diversification_note": "This account has zero Consumer Discretionary exposure, so this would add a genuinely new, uncorrelated sector to the mix."
+    },
+    {
+      "label": "GPC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $136.39 is above both the 50-day SMA ($127.05) and 200-day SMA ($119.66), RSI(14)=53.0 (healthy, not overbought), 8.6% off its 52-week high ($149.26), with a 3-month return of +39.2% vs SPY's +1.51% (+37.3pp relative strength).",
+      "entry_price": "$136.39 now, or better on a pullback to the 50-day SMA (~$127.05)",
+      "diversification_note": "This account has zero Consumer Discretionary exposure, so this would add a genuinely new, uncorrelated sector to the mix."
+    },
+    {
+      "label": "ABNB",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $183.22 is above both the 50-day SMA ($159.59) and 200-day SMA ($138.16), RSI(14)=48.1 (healthy, not overbought), 3.8% off its 52-week high ($190.50), with a 3-month return of +38.3% vs SPY's +1.51% (+35.6pp relative strength).",
+      "entry_price": "$183.22 now, or better on a pullback to the 50-day SMA (~$159.59)",
+      "diversification_note": "This account has zero Consumer Discretionary exposure, so this would add a genuinely new, uncorrelated sector to the mix."
+    },
+    {
+      "label": "WDAY",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $198.64 is above both the 50-day SMA ($158.97) and 200-day SMA ($160.70), RSI(14)=59.3 (healthy, not overbought), 19.8% off its 52-week high ($247.69), with a 3-month return of +34.6% vs SPY's +1.51% (+33.7pp relative strength).",
+      "entry_price": "$198.64 now, or better on a pullback to the 50-day SMA (~$158.97)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "WTW",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $338.46 is above both the 50-day SMA ($309.64) and 200-day SMA ($299.91), RSI(14)=46.8 (healthy, not overbought), 3.5% off its 52-week high ($350.75), with a 3-month return of +34.9% vs SPY's +1.51% (+33.4pp relative strength).",
+      "entry_price": "$338.46 now, or better on a pullback to the 50-day SMA (~$309.64)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "PANW",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $377.33 is above both the 50-day SMA ($345.21) and 200-day SMA ($230.38), RSI(14)=47.8 (healthy, not overbought), 4.7% off its 52-week high ($396.00), with a 3-month return of +33.5% vs SPY's +1.51% (+33.0pp relative strength).",
+      "entry_price": "$377.33 now, or better on a pullback to the 50-day SMA (~$345.21)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "PLTR",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $186.28 is above both the 50-day SMA ($144.90) and 200-day SMA ($151.35), RSI(14)=61.1 (healthy, not overbought), 10.1% off its 52-week high ($207.18), with a 3-month return of +30.6% vs SPY's +1.51% (+29.5pp relative strength).",
+      "entry_price": "$186.28 now, or better on a pullback to the 50-day SMA (~$144.90)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "TGT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $161.68 is above both the 50-day SMA ($144.83) and 200-day SMA ($121.03), RSI(14)=61.3 (healthy, not overbought), 5.3% off its 52-week high ($170.75), with a 3-month return of +29.5% vs SPY's +1.51% (+29.1pp relative strength).",
+      "entry_price": "$161.68 now, or better on a pullback to the 50-day SMA (~$144.83)",
+      "diversification_note": "This account has zero Consumer Staples exposure; adding a defensive name like this would usefully offset the growth/commodity tilt in the rest of the portfolio."
+    },
+    {
+      "label": "TMO",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $614.72 is above both the 50-day SMA ($560.49) and 200-day SMA ($535.42), RSI(14)=55.5 (healthy, not overbought), 4.5% off its 52-week high ($643.99), with a 3-month return of +29.7% vs SPY's +1.51% (+28.2pp relative strength).",
+      "entry_price": "$614.72 now, or better on a pullback to the 50-day SMA (~$560.49)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "BDX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $188.37 is above both the 50-day SMA ($166.74) and 200-day SMA ($159.93), RSI(14)=63.2 (healthy, not overbought), 1.9% off its 52-week high ($192.00), with a 3-month return of +29.4% vs SPY's +1.51% (+27.9pp relative strength).",
+      "entry_price": "$188.37 now, or better on a pullback to the 50-day SMA (~$166.74)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "MRK",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $147.91 is above both the 50-day SMA ($132.13) and 200-day SMA ($117.24), RSI(14)=68.9 (healthy, not overbought), 5.7% off its 52-week high ($156.92), with a 3-month return of +28.9% vs SPY's +1.51% (+27.4pp relative strength).",
+      "entry_price": "$147.91 now, or better on a pullback to the 50-day SMA (~$132.13)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "PAYX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $126.88 is above both the 50-day SMA ($114.17) and 200-day SMA ($103.77), RSI(14)=62.0 (healthy, not overbought), 7.6% off its 52-week high ($137.32), with a 3-month return of +28.8% vs SPY's +1.51% (+27.4pp relative strength).",
+      "entry_price": "$126.88 now, or better on a pullback to the 50-day SMA (~$114.17)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "LH",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $333.64 is above both the 50-day SMA ($301.09) and 200-day SMA ($274.30), RSI(14)=65.0 (healthy, not overbought), 2.4% off its 52-week high ($341.80), with a 3-month return of +28.8% vs SPY's +1.51% (+27.3pp relative strength).",
+      "entry_price": "$333.64 now, or better on a pullback to the 50-day SMA (~$301.09)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "REGN",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $797.04 is above both the 50-day SMA ($720.36) and 200-day SMA ($729.30), RSI(14)=50.0 (healthy, not overbought), 5.9% off its 52-week high ($847.00), with a 3-month return of +28.8% vs SPY's +1.51% (+27.3pp relative strength).",
+      "entry_price": "$797.04 now, or better on a pullback to the 50-day SMA (~$720.36)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "AMGN",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $430.88 is above both the 50-day SMA ($389.75) and 200-day SMA ($356.39), RSI(14)=62.7 (healthy, not overbought), 2.9% off its 52-week high ($443.84), with a 3-month return of +27.4% vs SPY's +1.51% (+25.9pp relative strength).",
+      "entry_price": "$430.88 now, or better on a pullback to the 50-day SMA (~$389.75)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "AJG",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $262.38 is above both the 50-day SMA ($249.85) and 200-day SMA ($233.81), RSI(14)=57.7 (healthy, not overbought), 15.5% off its 52-week high ($310.48), with a 3-month return of +27.3% vs SPY's +1.51% (+25.8pp relative strength).",
+      "entry_price": "$262.38 now, or better on a pullback to the 50-day SMA (~$249.85)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "BRO",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $72.17 is above both the 50-day SMA ($69.10) and 200-day SMA ($69.61), RSI(14)=52.3 (healthy, not overbought), 24.8% off its 52-week high ($95.96), with a 3-month return of +26.7% vs SPY's +1.51% (+25.2pp relative strength).",
+      "entry_price": "$72.17 now, or better on a pullback to the 50-day SMA (~$69.10)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "VRTX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $542.23 is above both the 50-day SMA ($502.36) and 200-day SMA ($463.79), RSI(14)=55.8 (healthy, not overbought), 2.4% off its 52-week high ($555.69), with a 3-month return of +26.6% vs SPY's +1.51% (+25.1pp relative strength).",
+      "entry_price": "$542.23 now, or better on a pullback to the 50-day SMA (~$502.36)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "ABT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $110.06 is above both the 50-day SMA ($102.88) and 200-day SMA ($106.71), RSI(14)=51.0 (healthy, not overbought), 19.4% off its 52-week high ($136.62), with a 3-month return of +26.5% vs SPY's +1.51% (+25.0pp relative strength).",
+      "entry_price": "$110.06 now, or better on a pullback to the 50-day SMA (~$102.88)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "JKHY",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $167.70 is above both the 50-day SMA ($151.87) and 200-day SMA ($159.89), RSI(14)=67.3 (healthy, not overbought), 12.9% off its 52-week high ($192.60), with a 3-month return of +26.1% vs SPY's +1.51% (+24.6pp relative strength).",
+      "entry_price": "$167.70 now, or better on a pullback to the 50-day SMA (~$151.87)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "ADP",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $286.26 is above both the 50-day SMA ($256.91) and 200-day SMA ($236.48), RSI(14)=67.0 (healthy, not overbought), 3.5% off its 52-week high ($296.80), with a 3-month return of +25.8% vs SPY's +1.51% (+24.2pp relative strength).",
+      "entry_price": "$286.26 now, or better on a pullback to the 50-day SMA (~$256.91)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "NOW",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $147.43 is above both the 50-day SMA ($113.12) and 200-day SMA ($119.15), RSI(14)=69.1 (healthy, not overbought), 23.3% off its 52-week high ($192.23), with a 3-month return of +25.0% vs SPY's +1.51% (+23.5pp relative strength).",
+      "entry_price": "$147.43 now, or better on a pullback to the 50-day SMA (~$113.12)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "ALL",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $258.57 is above both the 50-day SMA ($254.31) and 200-day SMA ($220.77), RSI(14)=46.2 (healthy, not overbought), 6.0% off its 52-week high ($275.11), with a 3-month return of +24.8% vs SPY's +1.51% (+23.3pp relative strength).",
+      "entry_price": "$258.57 now, or better on a pullback to the 50-day SMA (~$254.31)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "J",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $150.89 is above both the 50-day SMA ($136.47) and 200-day SMA ($132.85), RSI(14)=58.0 (healthy, not overbought), 8.2% off its 52-week high ($164.44), with a 3-month return of +7.6% vs SPY's +1.51% (+22.9pp relative strength).",
+      "entry_price": "$150.89 now, or better on a pullback to the 50-day SMA (~$136.47)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "DGX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $240.79 is above both the 50-day SMA ($224.48) and 200-day SMA ($200.06), RSI(14)=58.1 (healthy, not overbought), 2.6% off its 52-week high ($247.19), with a 3-month return of +24.3% vs SPY's +1.51% (+22.8pp relative strength).",
+      "entry_price": "$240.79 now, or better on a pullback to the 50-day SMA (~$224.48)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "AMP",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $555.42 is above both the 50-day SMA ($528.11) and 200-day SMA ($485.62), RSI(14)=43.6 (healthy, not overbought), 2.7% off its 52-week high ($570.68), with a 3-month return of +24.2% vs SPY's +1.51% (+22.7pp relative strength).",
+      "entry_price": "$555.42 now, or better on a pullback to the 50-day SMA (~$528.11)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "DXCM",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $90.26 is above both the 50-day SMA ($79.59) and 200-day SMA ($70.29), RSI(14)=52.6 (healthy, not overbought), 2.3% off its 52-week high ($92.34), with a 3-month return of +24.1% vs SPY's +1.51% (+22.6pp relative strength).",
+      "entry_price": "$90.26 now, or better on a pullback to the 50-day SMA (~$79.59)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "SCHW",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $110.07 is above both the 50-day SMA ($103.68) and 200-day SMA ($97.15), RSI(14)=56.4 (healthy, not overbought), 3.2% off its 52-week high ($113.65), with a 3-month return of +24.0% vs SPY's +1.51% (+22.5pp relative strength).",
+      "entry_price": "$110.07 now, or better on a pullback to the 50-day SMA (~$103.68)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "RJF",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $178.85 is above both the 50-day SMA ($170.55) and 200-day SMA ($160.01), RSI(14)=47.4 (healthy, not overbought), 1.3% off its 52-week high ($181.18), with a 3-month return of +22.1% vs SPY's +1.51% (+20.6pp relative strength).",
+      "entry_price": "$178.85 now, or better on a pullback to the 50-day SMA (~$170.55)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "STT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $192.15 is above both the 50-day SMA ($182.87) and 200-day SMA ($147.50), RSI(14)=58.7 (healthy, not overbought), 0.8% off its 52-week high ($193.62), with a 3-month return of +22.1% vs SPY's +1.51% (+20.6pp relative strength).",
+      "entry_price": "$192.15 now, or better on a pullback to the 50-day SMA (~$182.87)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "V",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $380.83 is above both the 50-day SMA ($359.48) and 200-day SMA ($333.21), RSI(14)=68.6 (healthy, not overbought), 0.9% off its 52-week high ($384.14), with a 3-month return of +22.0% vs SPY's +1.51% (+20.5pp relative strength).",
+      "entry_price": "$380.83 now, or better on a pullback to the 50-day SMA (~$359.48)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "BMY",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $66.59 is above both the 50-day SMA ($61.92) and 200-day SMA ($57.74), RSI(14)=62.9 (healthy, not overbought), 2.0% off its 52-week high ($67.92), with a 3-month return of +21.7% vs SPY's +1.51% (+20.2pp relative strength).",
+      "entry_price": "$66.59 now, or better on a pullback to the 50-day SMA (~$61.92)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "IVZ",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $32.64 is above both the 50-day SMA ($29.99) and 200-day SMA ($27.06), RSI(14)=62.7 (healthy, not overbought), 2.0% off its 52-week high ($33.31), with a 3-month return of +21.6% vs SPY's +1.51% (+20.1pp relative strength).",
+      "entry_price": "$32.64 now, or better on a pullback to the 50-day SMA (~$29.99)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "AMCR",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $46.05 is above both the 50-day SMA ($44.98) and 200-day SMA ($42.68), RSI(14)=41.3 (healthy, not overbought), 9.6% off its 52-week high ($50.94), with a 3-month return of +22.5% vs SPY's +1.51% (+20.1pp relative strength).",
+      "entry_price": "$46.05 now, or better on a pullback to the 50-day SMA (~$44.98)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding AMCR would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "BX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $142.06 is above both the 50-day SMA ($131.03) and 200-day SMA ($130.90), RSI(14)=40.0 (healthy, not overbought), 24.7% off its 52-week high ($188.68), with a 3-month return of +21.5% vs SPY's +1.51% (+20.0pp relative strength).",
+      "entry_price": "$142.06 now, or better on a pullback to the 50-day SMA (~$131.03)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "CRWD",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $227.12 is above both the 50-day SMA ($197.34) and 200-day SMA ($140.92), RSI(14)=52.4 (healthy, not overbought), 0.4% off its 52-week high ($227.96), with a 3-month return of +15.6% vs SPY's +1.51% (+20.0pp relative strength).",
+      "entry_price": "$227.12 now, or better on a pullback to the 50-day SMA (~$197.34)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "IT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $198.48 is above both the 50-day SMA ($158.98) and 200-day SMA ($178.39), RSI(14)=60.2 (healthy, not overbought), 24.8% off its 52-week high ($264.09), with a 3-month return of +19.6% vs SPY's +1.51% (+19.0pp relative strength).",
+      "entry_price": "$198.48 now, or better on a pullback to the 50-day SMA (~$158.98)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "DHR",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $213.82 is above both the 50-day SMA ($199.71) and 200-day SMA ($203.06), RSI(14)=58.9 (healthy, not overbought), 11.7% off its 52-week high ($242.05), with a 3-month return of +20.1% vs SPY's +1.51% (+18.6pp relative strength).",
+      "entry_price": "$213.82 now, or better on a pullback to the 50-day SMA (~$199.71)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "VLTO",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $99.02 is above both the 50-day SMA ($94.06) and 200-day SMA ($93.50), RSI(14)=58.0 (healthy, not overbought), 9.5% off its 52-week high ($109.45), with a 3-month return of +16.9% vs SPY's +1.51% (+18.6pp relative strength).",
+      "entry_price": "$99.02 now, or better on a pullback to the 50-day SMA (~$94.06)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "MCK",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $885.18 is above both the 50-day SMA ($834.81) and 200-day SMA ($841.84), RSI(14)=45.8 (healthy, not overbought), 11.4% off its 52-week high ($999.00), with a 3-month return of +19.7% vs SPY's +1.51% (+18.2pp relative strength).",
+      "entry_price": "$885.18 now, or better on a pullback to the 50-day SMA (~$834.81)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "MSFT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $511.40 is above both the 50-day SMA ($433.29) and 200-day SMA ($431.19), RSI(14)=55.1 (healthy, not overbought), 5.7% off its 52-week high ($542.07), with a 3-month return of +19.4% vs SPY's +1.51% (+18.2pp relative strength).",
+      "entry_price": "$511.40 now, or better on a pullback to the 50-day SMA (~$433.29)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "BR",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $182.58 is above both the 50-day SMA ($157.81) and 200-day SMA ($178.08), RSI(14)=67.7 (healthy, not overbought), 27.9% off its 52-week high ($253.21), with a 3-month return of +20.1% vs SPY's +1.51% (+18.1pp relative strength).",
+      "entry_price": "$182.58 now, or better on a pullback to the 50-day SMA (~$157.81)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "GPN",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $90.16 is above both the 50-day SMA ($82.57) and 200-day SMA ($75.33), RSI(14)=60.0 (healthy, not overbought), 4.9% off its 52-week high ($94.83), with a 3-month return of +19.5% vs SPY's +1.51% (+18.0pp relative strength).",
+      "entry_price": "$90.16 now, or better on a pullback to the 50-day SMA (~$82.57)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "BALL",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $63.15 is above both the 50-day SMA ($62.70) and 200-day SMA ($58.79), RSI(14)=51.8 (healthy, not overbought), 7.5% off its 52-week high ($68.29), with a 3-month return of +19.8% vs SPY's +1.51% (+18.0pp relative strength).",
+      "entry_price": "$63.15 now, or better on a pullback to the 50-day SMA (~$62.70)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding BALL would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "MSI",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $484.53 is above both the 50-day SMA ($437.99) and 200-day SMA ($420.77), RSI(14)=63.4 (healthy, not overbought), 1.2% off its 52-week high ($490.30), with a 3-month return of +19.0% vs SPY's +1.51% (+17.1pp relative strength).",
+      "entry_price": "$484.53 now, or better on a pullback to the 50-day SMA (~$437.99)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "ABBV",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $256.00 is above both the 50-day SMA ($252.56) and 200-day SMA ($227.80), RSI(14)=57.2 (healthy, not overbought), 3.8% off its 52-week high ($265.97), with a 3-month return of +17.9% vs SPY's +1.51% (+16.4pp relative strength).",
+      "entry_price": "$256.00 now, or better on a pullback to the 50-day SMA (~$252.56)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "HSIC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $89.24 is above both the 50-day SMA ($86.74) and 200-day SMA ($78.73), RSI(14)=50.4 (healthy, not overbought), 1.7% off its 52-week high ($90.74), with a 3-month return of +17.8% vs SPY's +1.51% (+16.3pp relative strength).",
+      "entry_price": "$89.24 now, or better on a pullback to the 50-day SMA (~$86.74)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "IFF",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $86.50 is above both the 50-day SMA ($80.62) and 200-day SMA ($74.24), RSI(14)=55.5 (healthy, not overbought), 3.2% off its 52-week high ($89.32), with a 3-month return of +17.4% vs SPY's +1.51% (+16.1pp relative strength).",
+      "entry_price": "$86.50 now, or better on a pullback to the 50-day SMA (~$80.62)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding IFF would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "ZBH",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $99.82 is above both the 50-day SMA ($94.13) and 200-day SMA ($91.18), RSI(14)=57.0 (healthy, not overbought), 6.6% off its 52-week high ($106.88), with a 3-month return of +17.5% vs SPY's +1.51% (+16.0pp relative strength).",
+      "entry_price": "$99.82 now, or better on a pullback to the 50-day SMA (~$94.13)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "CBRE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $147.68 is above both the 50-day SMA ($143.79) and 200-day SMA ($147.33), RSI(14)=50.3 (healthy, not overbought), 15.3% off its 52-week high ($174.27), with a 3-month return of +17.9% vs SPY's +1.51% (+15.7pp relative strength).",
+      "entry_price": "$147.68 now, or better on a pullback to the 50-day SMA (~$143.79)",
+      "diversification_note": "This account has zero Real Estate exposure, so this would add a genuinely new asset class not otherwise represented."
+    },
+    {
+      "label": "NEM",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $125.86 is above both the 50-day SMA ($104.80) and 200-day SMA ($107.76), RSI(14)=59.7 (healthy, not overbought), 7.0% off its 52-week high ($135.29), with a 3-month return of +17.0% vs SPY's +1.51% (+15.6pp relative strength).",
+      "entry_price": "$125.86 now, or better on a pullback to the 50-day SMA (~$104.80)",
+      "diversification_note": "NEM is already a current holding in this account; adding more would deepen an already-large Materials/precious-metals concentration (roughly 18% of visible NAV across FCX, NEM, KGC, CCJ, IGLN, REMX and SSLV combined) rather than diversify it."
+    },
+    {
+      "label": "HPQ",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $30.40 is above both the 50-day SMA ($26.53) and 200-day SMA ($22.72), RSI(14)=56.4 (healthy, not overbought), 2.9% off its 52-week high ($31.30), with a 3-month return of +16.8% vs SPY's +1.51% (+15.2pp relative strength).",
+      "entry_price": "$30.40 now, or better on a pullback to the 50-day SMA (~$26.53)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "GEN",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $30.82 is above both the 50-day SMA ($27.14) and 200-day SMA ($24.52), RSI(14)=62.1 (healthy, not overbought), 0.6% off its 52-week high ($31.02), with a 3-month return of +16.4% vs SPY's +1.51% (+14.8pp relative strength).",
+      "entry_price": "$30.82 now, or better on a pullback to the 50-day SMA (~$27.14)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "FTNT",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $169.91 is above both the 50-day SMA ($157.95) and 200-day SMA ($108.54), RSI(14)=56.6 (healthy, not overbought), 1.7% off its 52-week high ($172.78), with a 3-month return of +15.1% vs SPY's +1.51% (+14.5pp relative strength).",
+      "entry_price": "$169.91 now, or better on a pullback to the 50-day SMA (~$157.95)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "CTAS",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $202.06 is above both the 50-day SMA ($194.84) and 200-day SMA ($186.56), RSI(14)=43.4 (healthy, not overbought), 7.8% off its 52-week high ($219.17), with a 3-month return of +17.3% vs SPY's +1.51% (+14.1pp relative strength).",
+      "entry_price": "$202.06 now, or better on a pullback to the 50-day SMA (~$194.84)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "GDDY",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $97.05 is above both the 50-day SMA ($91.52) and 200-day SMA ($96.73), RSI(14)=58.7 (healthy, not overbought), 34.8% off its 52-week high ($148.88), with a 3-month return of +15.6% vs SPY's +1.51% (+14.1pp relative strength).",
+      "entry_price": "$97.05 now, or better on a pullback to the 50-day SMA (~$91.52)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "OMC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $87.65 is above both the 50-day SMA ($81.85) and 200-day SMA ($77.81), RSI(14)=56.8 (healthy, not overbought), 2.1% off its 52-week high ($89.57), with a 3-month return of +15.4% vs SPY's +1.51% (+13.9pp relative strength).",
+      "entry_price": "$87.65 now, or better on a pullback to the 50-day SMA (~$81.85)",
+      "diversification_note": "The account already holds GOOG and TTWO in Communication Services (a small ~0.6% combined position), so this adds modestly to an already-represented sector rather than a new one."
+    },
+    {
+      "label": "DG",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $126.15 is above both the 50-day SMA ($121.56) and 200-day SMA ($125.55), RSI(14)=61.5 (healthy, not overbought), 20.3% off its 52-week high ($158.23), with a 3-month return of +18.6% vs SPY's +1.51% (+13.8pp relative strength).",
+      "entry_price": "$126.15 now, or better on a pullback to the 50-day SMA (~$121.56)",
+      "diversification_note": "This account has zero Consumer Staples exposure; adding a defensive name like this would usefully offset the growth/commodity tilt in the rest of the portfolio."
+    },
+    {
+      "label": "UNP",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $301.68 is above both the 50-day SMA ($291.34) and 200-day SMA ($258.93), RSI(14)=62.0 (healthy, not overbought), 2.9% off its 52-week high ($310.62), with a 3-month return of +15.5% vs SPY's +1.51% (+13.6pp relative strength).",
+      "entry_price": "$301.68 now, or better on a pullback to the 50-day SMA (~$291.34)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "COP",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $132.41 is above both the 50-day SMA ($117.96) and 200-day SMA ($111.81), RSI(14)=64.2 (healthy, not overbought), 2.5% off its 52-week high ($135.88), with a 3-month return of +14.6% vs SPY's +1.51% (+13.1pp relative strength).",
+      "entry_price": "$132.41 now, or better on a pullback to the 50-day SMA (~$117.96)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "AWK",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $138.75 is above both the 50-day SMA ($134.16) and 200-day SMA ($131.37), RSI(14)=55.6 (healthy, not overbought), 4.7% off its 52-week high ($145.64), with a 3-month return of +12.0% vs SPY's +1.51% (+12.9pp relative strength).",
+      "entry_price": "$138.75 now, or better on a pullback to the 50-day SMA (~$134.16)",
+      "diversification_note": "This account has zero Utilities exposure; adding this defensive, low-beta name would diversify away from the portfolio's growth and commodity concentration."
+    },
+    {
+      "label": "ADBE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $291.22 is above both the 50-day SMA ($242.10) and 200-day SMA ($268.97), RSI(14)=67.9 (healthy, not overbought), 20.8% off its 52-week high ($367.46), with a 3-month return of +13.9% vs SPY's +1.51% (+12.1pp relative strength).",
+      "entry_price": "$291.22 now, or better on a pullback to the 50-day SMA (~$242.10)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "APA",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $42.90 is above both the 50-day SMA ($37.01) and 200-day SMA ($33.18), RSI(14)=61.4 (healthy, not overbought), 6.0% off its 52-week high ($45.66), with a 3-month return of +13.6% vs SPY's +1.51% (+12.1pp relative strength).",
+      "entry_price": "$42.90 now, or better on a pullback to the 50-day SMA (~$37.01)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "KO",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $89.09 is above both the 50-day SMA ($85.43) and 200-day SMA ($78.10), RSI(14)=61.7 (healthy, not overbought), 3.7% off its 52-week high ($92.49), with a 3-month return of +13.2% vs SPY's +1.51% (+11.8pp relative strength).",
+      "entry_price": "$89.09 now, or better on a pullback to the 50-day SMA (~$85.43)",
+      "diversification_note": "This account has zero Consumer Staples exposure; adding a defensive name like this would usefully offset the growth/commodity tilt in the rest of the portfolio."
+    },
+    {
+      "label": "NSC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $344.69 is above both the 50-day SMA ($333.26) and 200-day SMA ($308.02), RSI(14)=62.0 (healthy, not overbought), 2.3% off its 52-week high ($352.98), with a 3-month return of +13.2% vs SPY's +1.51% (+11.5pp relative strength).",
+      "entry_price": "$344.69 now, or better on a pullback to the 50-day SMA (~$333.26)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "AVY",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $176.20 is above both the 50-day SMA ($169.07) and 200-day SMA ($173.09), RSI(14)=43.2 (healthy, not overbought), 11.7% off its 52-week high ($199.54), with a 3-month return of +13.6% vs SPY's +1.51% (+11.5pp relative strength).",
+      "entry_price": "$176.20 now, or better on a pullback to the 50-day SMA (~$169.07)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding AVY would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "ADSK",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $259.30 is above both the 50-day SMA ($226.97) and 200-day SMA ($248.23), RSI(14)=55.2 (healthy, not overbought), 20.6% off its 52-week high ($326.79), with a 3-month return of +13.0% vs SPY's +1.51% (+11.4pp relative strength).",
+      "entry_price": "$259.30 now, or better on a pullback to the 50-day SMA (~$226.97)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "MCO",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $504.54 is above both the 50-day SMA ($485.18) and 200-day SMA ($472.81), RSI(14)=67.0 (healthy, not overbought), 6.5% off its 52-week high ($539.61), with a 3-month return of +12.7% vs SPY's +1.51% (+11.2pp relative strength).",
+      "entry_price": "$504.54 now, or better on a pullback to the 50-day SMA (~$485.18)",
+      "diversification_note": "This account currently has zero direct Financials exposure, so adding this name would genuinely diversify away from its dominant S&P-tracker (SPY5/SPYL, ~74% of visible NAV) and precious-metals positions."
+    },
+    {
+      "label": "PTC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $157.37 is above both the 50-day SMA ($133.74) and 200-day SMA ($149.29), RSI(14)=59.0 (healthy, not overbought), 26.4% off its 52-week high ($213.90), with a 3-month return of +11.9% vs SPY's +1.51% (+11.1pp relative strength).",
+      "entry_price": "$157.37 now, or better on a pullback to the 50-day SMA (~$133.74)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "NWS",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $34.46 is above both the 50-day SMA ($31.77) and 200-day SMA ($29.76), RSI(14)=69.9 (healthy, not overbought), 3.6% off its 52-week high ($35.76), with a 3-month return of +12.3% vs SPY's +1.51% (+10.8pp relative strength).",
+      "entry_price": "$34.46 now, or better on a pullback to the 50-day SMA (~$31.77)",
+      "diversification_note": "The account already holds GOOG and TTWO in Communication Services (a small ~0.6% combined position), so this adds modestly to an already-represented sector rather than a new one."
+    },
+    {
+      "label": "TRGP",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $290.82 is above both the 50-day SMA ($275.70) and 200-day SMA ($235.49), RSI(14)=67.3 (healthy, not overbought), 5.6% off its 52-week high ($307.94), with a 3-month return of +12.2% vs SPY's +1.51% (+10.7pp relative strength).",
+      "entry_price": "$290.82 now, or better on a pullback to the 50-day SMA (~$275.70)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "OKE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $95.24 is above both the 50-day SMA ($91.03) and 200-day SMA ($84.40), RSI(14)=62.6 (healthy, not overbought), 2.7% off its 52-week high ($97.90), with a 3-month return of +12.1% vs SPY's +1.51% (+10.6pp relative strength).",
+      "entry_price": "$95.24 now, or better on a pullback to the 50-day SMA (~$91.03)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "PFE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $28.33 is above both the 50-day SMA ($25.63) and 200-day SMA ($26.10), RSI(14)=68.3 (healthy, not overbought), 1.5% off its 52-week high ($28.75), with a 3-month return of +11.8% vs SPY's +1.51% (+10.3pp relative strength).",
+      "entry_price": "$28.33 now, or better on a pullback to the 50-day SMA (~$25.63)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "ANET",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $194.81 is above both the 50-day SMA ($180.98) and 200-day SMA ($150.75), RSI(14)=47.9 (healthy, not overbought), 7.5% off its 52-week high ($210.50), with a 3-month return of +11.8% vs SPY's +1.51% (+10.2pp relative strength).",
+      "entry_price": "$194.81 now, or better on a pullback to the 50-day SMA (~$180.98)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "NDSN",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $322.53 is above both the 50-day SMA ($303.28) and 200-day SMA ($277.49), RSI(14)=60.0 (healthy, not overbought), 3.6% off its 52-week high ($334.70), with a 3-month return of +11.9% vs SPY's +1.51% (+9.9pp relative strength).",
+      "entry_price": "$322.53 now, or better on a pullback to the 50-day SMA (~$303.28)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "DE",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $653.06 is above both the 50-day SMA ($611.97) and 200-day SMA ($563.89), RSI(14)=60.1 (healthy, not overbought), 2.8% off its 52-week high ($672.08), with a 3-month return of +10.5% vs SPY's +1.51% (+9.5pp relative strength).",
+      "entry_price": "$653.06 now, or better on a pullback to the 50-day SMA (~$611.97)",
+      "diversification_note": "Industrials exposure here is minimal (only GEV, ~1.9% of visible NAV), so this would improve diversification away from the account's index-tracker and metals concentration."
+    },
+    {
+      "label": "A",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $152.35 is above both the 50-day SMA ($140.67) and 200-day SMA ($131.52), RSI(14)=55.0 (healthy, not overbought), 4.2% off its 52-week high ($159.00), with a 3-month return of +10.9% vs SPY's +1.51% (+9.4pp relative strength).",
+      "entry_price": "$152.35 now, or better on a pullback to the 50-day SMA (~$140.67)",
+      "diversification_note": "Health Care is thin in this account (only LLY, ~2.5% of visible NAV), so adding this name would meaningfully improve sector diversification."
+    },
+    {
+      "label": "DELL",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $464.37 is above both the 50-day SMA ($434.26) and 200-day SMA ($246.36), RSI(14)=56.1 (healthy, not overbought), 6.1% off its 52-week high ($494.51), with a 3-month return of +9.7% vs SPY's +1.51% (+8.8pp relative strength).",
+      "entry_price": "$464.37 now, or better on a pullback to the 50-day SMA (~$434.26)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "PM",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $189.82 is above both the 50-day SMA ($187.29) and 200-day SMA ($173.79), RSI(14)=55.1 (healthy, not overbought), 8.6% off its 52-week high ($207.76), with a 3-month return of +7.4% vs SPY's +1.51% (+8.3pp relative strength).",
+      "entry_price": "$189.82 now, or better on a pullback to the 50-day SMA (~$187.29)",
+      "diversification_note": "This account has zero Consumer Staples exposure; adding a defensive name like this would usefully offset the growth/commodity tilt in the rest of the portfolio."
+    },
+    {
+      "label": "CDW",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $150.38 is above both the 50-day SMA ($138.06) and 200-day SMA ($131.63), RSI(14)=65.1 (healthy, not overbought), 11.9% off its 52-week high ($170.77), with a 3-month return of +8.8% vs SPY's +1.51% (+8.0pp relative strength).",
+      "entry_price": "$150.38 now, or better on a pullback to the 50-day SMA (~$138.06)",
+      "diversification_note": "The account has only a small direct IT position (CRWV, ~2.7%), but tech is already a large implicit component of the SPY5/SPYL holdings \u2014 this adds some diversification versus the metals/commodity tilt but doesn't reduce overall market/tech correlation much."
+    },
+    {
+      "label": "CF",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $127.74 is above both the 50-day SMA ($118.51) and 200-day SMA ($107.01), RSI(14)=69.0 (healthy, not overbought), 10.0% off its 52-week high ($141.96), with a 3-month return of +9.3% vs SPY's +1.51% (+8.0pp relative strength).",
+      "entry_price": "$127.74 now, or better on a pullback to the 50-day SMA (~$118.51)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding CF would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "KHC",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $25.69 is above both the 50-day SMA ($25.20) and 200-day SMA ($24.01), RSI(14)=61.0 (healthy, not overbought), 8.5% off its 52-week high ($28.09), with a 3-month return of +14.2% vs SPY's +1.51% (+7.3pp relative strength).",
+      "entry_price": "$25.69 now, or better on a pullback to the 50-day SMA (~$25.20)",
+      "diversification_note": "This account has zero Consumer Staples exposure; adding a defensive name like this would usefully offset the growth/commodity tilt in the rest of the portfolio."
+    },
+    {
+      "label": "APD",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $307.24 is above both the 50-day SMA ($298.21) and 200-day SMA ($281.58), RSI(14)=47.4 (healthy, not overbought), 2.4% off its 52-week high ($314.87), with a 3-month return of +9.3% vs SPY's +1.51% (+7.3pp relative strength).",
+      "entry_price": "$307.24 now, or better on a pullback to the 50-day SMA (~$298.21)",
+      "diversification_note": "This account already carries a heavy ~18% Materials/mining and precious-metals tilt (FCX, NEM, KGC, CCJ, IGLN, REMX, SSLV); adding APD would add to that concentration rather than diversify away from it."
+    },
+    {
+      "label": "XOM",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $160.24 is above both the 50-day SMA ($150.99) and 200-day SMA ($143.85), RSI(14)=50.9 (healthy, not overbought), 9.2% off its 52-week high ($176.41), with a 3-month return of +7.3% vs SPY's +1.51% (+5.8pp relative strength).",
+      "entry_price": "$160.24 now, or better on a pullback to the 50-day SMA (~$150.99)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "WMB",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $75.05 is above both the 50-day SMA ($73.48) and 200-day SMA ($69.86), RSI(14)=57.5 (healthy, not overbought), 6.3% off its 52-week high ($80.08), with a 3-month return of +7.2% vs SPY's +1.51% (+5.6pp relative strength).",
+      "entry_price": "$75.05 now, or better on a pullback to the 50-day SMA (~$73.48)",
+      "diversification_note": "This account has no pure-play Energy exposure (CCJ is a uranium miner, not oil & gas), so this would add real sector diversification."
+    },
+    {
+      "label": "FCX",
+      "tag": "HIGH",
+      "detail": "Clears the full momentum funnel: $75.62 is above both the 50-day SMA ($65.76) and 200-day SMA ($60.28), RSI(14)=63.5 (healthy, not overbought), 5.8% off its 52-week high ($80.24), with a 3-month return of +7.1% vs SPY's +1.51% (+5.5pp relative strength).",
+      "entry_price": "$75.62 now, or better on a pullback to the 50-day SMA (~$65.76)",
+      "diversification_note": "FCX is already a current holding in this account; adding more would deepen an already-large Materials/precious-metals concentration (roughly 18% of visible NAV across FCX, NEM, KGC, CCJ, IGLN, REMX and SSLV combined) rather than diversify it."
+    }
   ],
   "full_report_url": "data/momentum-latest.html"
 }
