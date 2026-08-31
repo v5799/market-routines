@@ -66,6 +66,10 @@
   .action-num{font-family:var(--font-display);font-size:19px;font-weight:600;color:var(--green);flex-shrink:0;width:22px;}
   .action-title{font-size:13px;color:var(--ink-0);font-weight:600;}
   .action-body{font-size:11.5px;color:var(--ink-1);margin-top:4px;line-height:1.6;}
+  .hedge-cluster{border:1px solid var(--line);background:var(--bg-2);border-radius:8px;padding:12px 14px;margin-bottom:9px;}
+  .hedge-cluster:last-child{margin-bottom:0;}
+  .hedge-cluster-title{font-size:12.5px;font-weight:600;color:var(--ink-0);margin-bottom:8px;}
+  .hedge-chart-box{height:120px;}
 </style>
 </head>
 <body>
@@ -116,9 +120,21 @@
   </div>
 
   <div class="panel">
-    <div class="panel-title">Concentration trend<span class="tag" id="trendTag">accumulating history</span></div>
+    <div class="panel-title">Today's movers<span class="tag" id="pnlTag">no data yet</span></div>
+    <div style="height:220px;"><canvas id="pnlChart"></canvas></div>
+    <div class="div-note">Top gainers and losers by dollar change, from today's Risk run.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Concentration &amp; cash trend<span class="tag" id="trendTag">accumulating history</span></div>
     <div style="height:160px;"><canvas id="trendChart"></canvas></div>
-    <div class="div-note">Builds up from each day's Risk run &mdash; expect a single dot until a few runs accumulate.</div>
+    <div class="div-note">Concentration score and cash % over time &mdash; expect a single dot until a few runs accumulate.</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">NAV trend<span class="tag" id="navTrendTag">accumulating history</span></div>
+    <div style="height:160px;"><canvas id="navTrendChart"></canvas></div>
+    <div class="div-note">Account net liquidation value over time, from each day's Risk run.</div>
   </div>
 
   <div class="panel">
@@ -128,6 +144,12 @@
       <div class="action-item"><div class="action-num">2</div><div><div class="action-title">Consolidate SPY5 + SPYL into one line</div><div class="action-body">Correlation between these two is effectively 1.0 &mdash; freeing that redundant weight lowers variance without changing market exposure.</div></div></div>
       <div class="action-item"><div class="action-num">3</div><div><div class="action-title">Add ex-US or EM equity exposure</div><div class="action-body">Zero non-US developed or emerging-market exposure right now.</div></div></div>
     </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Hedge candidates tested<span class="tag" id="hedgeTag">no data yet</span></div>
+    <div id="hedgeContainer" class="card-list"></div>
+    <div class="div-note">Every hedge candidate Risk actually computed a correlation for, not just the one recommended. More negative correlation = better hedge.</div>
   </div>
 
   <div class="grid-2">
@@ -282,17 +304,94 @@
     } catch (e) { return []; }
   }
 
+  var cachedHistory = null;
+  async function getHistory(){
+    if (cachedHistory === null) cachedHistory = await loadHistory();
+    return cachedHistory;
+  }
+
   async function renderTrend(){
-    var rows = await loadHistory();
+    var rows = await getHistory();
     if (!rows.length) return;
     document.getElementById('trendTag').textContent = rows.length + (rows.length === 1 ? ' data point' : ' data points');
     new Chart(document.getElementById('trendChart'), {
       type: 'line',
+      data: { labels: rows.map(function(r){return r.date;}), datasets: [
+        {
+          label: 'Concentration score', data: rows.map(function(r){return r.concentration_score;}),
+          borderColor: '#2F8F5B', backgroundColor: 'rgba(47,143,91,0.08)', tension: 0.25, fill: true
+        },
+        {
+          label: 'Cash %', data: rows.map(function(r){return r.cash_pct;}),
+          borderColor: '#7FA0B8', backgroundColor: 'rgba(127,160,184,0.08)', tension: 0.25, fill: true
+        }
+      ] },
+      options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 0, max: 100 } }, plugins: { legend: { display: true, labels: { boxWidth: 10, font: { size: 10 } } } } }
+    });
+  }
+
+  async function renderNavTrend(){
+    var rows = await getHistory();
+    if (!rows.length) return;
+    document.getElementById('navTrendTag').textContent = rows.length + (rows.length === 1 ? ' data point' : ' data points');
+    new Chart(document.getElementById('navTrendChart'), {
+      type: 'line',
       data: { labels: rows.map(function(r){return r.date;}), datasets: [{
-        label: 'Concentration score', data: rows.map(function(r){return r.concentration_score;}),
-        borderColor: '#2F8F5B', backgroundColor: 'rgba(47,143,91,0.08)', tension: 0.25, fill: true
+        label: 'NAV', data: rows.map(function(r){return r.nav;}),
+        borderColor: '#211F1B', backgroundColor: 'rgba(33,31,27,0.05)', tension: 0.25, fill: true
       }] },
-      options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 0, max: 100 } }, plugins: { legend: { display: false } } }
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { y: { ticks: { callback: function(v){ return '$' + Math.round(v).toLocaleString(); } } } } }
+    });
+  }
+
+  function renderDailyPnl(pnl){
+    if (!pnl || !pnl.movers || !pnl.movers.length) return;
+    document.getElementById('pnlTag').textContent = 'live \u00b7 ' + (pnl.as_of || '');
+    var sorted = pnl.movers.slice().sort(function(a,b){ return b.dollar_change - a.dollar_change; });
+    new Chart(document.getElementById('pnlChart'), {
+      type: 'bar',
+      data: { labels: sorted.map(function(m){return m.label;}), datasets: [{
+        label: 'Dollar change today',
+        data: sorted.map(function(m){return m.dollar_change;}),
+        backgroundColor: sorted.map(function(m){return m.dollar_change >= 0 ? '#2F8F5B' : '#C0453B';})
+      }] },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(ctx){
+          var m = sorted[ctx.dataIndex];
+          return fmtMoney(m.dollar_change) + ' (' + (m.pct_change >= 0 ? '+' : '') + m.pct_change + '%)';
+        } } } },
+        scales: { x: { ticks: { callback: function(v){ return fmtMoney(v); } } } }
+      }
+    });
+  }
+
+  function renderHedgeAnalysis(hedgeArr){
+    if (!hedgeArr || !hedgeArr.length) return;
+    document.getElementById('hedgeTag').textContent = hedgeArr.length + ' cluster' + (hedgeArr.length === 1 ? '' : 's') + ' tested';
+    var container = document.getElementById('hedgeContainer');
+    container.innerHTML = '';
+    hedgeArr.forEach(function(cluster, i){
+      var wrap = document.createElement('div'); wrap.className = 'hedge-cluster';
+      var canvasId = 'hedgeChart' + i;
+      wrap.innerHTML = '<div class="hedge-cluster-title">' + cluster.cluster + '</div>' +
+        '<div class="hedge-chart-box"><canvas id="' + canvasId + '"></canvas></div>';
+      container.appendChild(wrap);
+      var candidates = cluster.candidates.slice().sort(function(a,b){ return a.correlation - b.correlation; });
+      new Chart(document.getElementById(canvasId), {
+        type: 'bar',
+        data: { labels: candidates.map(function(c){return c.ticker;}), datasets: [{
+          label: 'Correlation',
+          data: candidates.map(function(c){return c.correlation;}),
+          backgroundColor: candidates.map(function(c){return c.ticker === cluster.winner ? '#2F8F5B' : '#C7C4B8';})
+        }] },
+        options: {
+          indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { x: { min: -1, max: 1 } }
+        }
+      });
     });
   }
 
@@ -327,6 +426,8 @@
         document.getElementById('divTag').textContent = 'live \u00b7 ' + (r.run_at || '');
         document.getElementById('profitTag').textContent = 'live \u00b7 ' + (r.run_at || '');
       }
+      renderDailyPnl(r.daily_pnl);
+      renderHedgeAnalysis(r.hedge_analysis);
     } else {
       renderDiversification(null);
       renderProfit(null);
@@ -341,6 +442,7 @@
     }
 
     renderTrend();
+    renderNavTrend();
 
     var validDates = runDates.filter(function(d){return d;}).map(function(d){return new Date(d);}).filter(function(d){return !isNaN(d);});
     if (validDates.length) {
