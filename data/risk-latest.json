@@ -1,56 +1,77 @@
 {
   "routine": "risk",
-  "run_at": "2026-08-31T16:05:00Z",
+  "run_at": "2026-08-31T15:35:00Z",
   "items": [
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
       "tag": "HIGH",
-      "detail": "SPY5 ($223,473.60, 45.65% of NAV) and SPYL ($119,857.92, 24.48% of NAV) both track the S&P 500 and together total $343,331.52 = 70.13% of the $489,544.45 NAV (source: get_account_positions, get_account_summary, live 2026-08-31). Computed 1-year daily-return correlation between the two is 0.9929 (n=252, get_price_history closes Aug 2025-Aug 2026).",
-      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly half -- approx. 3,120 of 6,240 shares (~$59,929 at the $19.208 last price) -- and redeploy into SHY (iShares 1-3Y Treasury), which showed the lowest correlation to both SPY5 (-0.0402) and SPYL (-0.0456) of six hedge candidates tested (IEF +0.087, TLT +0.113, AGG +0.150, EFA +0.463, VXUS +0.498)."
+      "detail": "SPY5 ($223,473.60, 45.65% of NAV) and SPYL ($119,857.92, 24.49% of NAV) both track the S&P 500 and together total $343,331.52 = 70.14% of the $489,492.21 NAV (source: get_account_positions, get_account_summary, live 2026-08-31 15:31 UTC). Computed 1-year daily-return correlation between the two is +0.9929 (n=253, get_price_history closes Aug 2025-Aug 2026).",
+      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly half -- approx. 3,120 of 6,240 shares (~$59,929 at the $19.208 last price) -- and redeploy into SHY (iShares 1-3Y Treasury), which showed the lowest correlation to both SPY5 (-0.0471) and SPYL (-0.0358) of six hedge candidates tested (IEF +0.007/+0.014, TLT +0.026/+0.025, AGG +0.031/+0.037, EFA +0.267/+0.267, VXUS +0.261/+0.263)."
     },
     {
-      "label": "Zero fixed-income ballast ahead of a hawkish Fed repricing",
+      "label": "Zero fixed-income ballast ahead of a possible September Fed hike",
       "tag": "HIGH",
-      "detail": "get_pa_allocation (live) shows 0% of NAV in bonds -- allocation is 81.0% ETFs (equity/commodity), 13.1% direct equities, 5.9% cash, with no duration exposure anywhere. Chase Wealth Management now expects a 25bp Fed rate HIKE at the Sept 15-16, 2026 FOMC meeting (reversing prior rate-cut expectations), citing Iran-conflict energy shocks keeping inflation elevated; the 30-year Treasury yield hit 5.32% on Aug 18, 2026 -- its highest since early 2024 -- triggering a broad selloff in rate-sensitive growth names that day (sources: chase.com Sept-2026 rate outlook; Motley Fool/CNBC Aug 18 2026 market reports).",
-      "recommendation": "Establish a Treasury ballast (SHY and/or IEF) sized at roughly 5% of NAV (~$24,500); both showed near-zero to low correlation to the account's largest equity holding (SHY -0.04, IEF +0.09 vs SPY5), making them the most effective portfolio-level shock absorbers identified in this analysis."
+      "detail": "get_pa_allocation (live) shows 0% of NAV in bonds -- 80.98% ETFs, 13.10% direct equities, 5.92% cash, no duration exposure anywhere. The Fed held rates at 3.50-3.75% on Jul 29, 2026 in a divided 9-3 vote (three officials wanted a hike); Fed Chair Kevin Warsh's Aug 28, 2026 remarks that inflation 'remains too high' pushed market-implied odds of a September 16 hike to roughly 57%, up from about 40% pre-speech (sources: cambridgecurrencies.com Fed calendar; CBS News Fed outlook; Yahoo Finance Aug 28 2026 market recap).",
+      "recommendation": "Establish a Treasury ballast (SHY and/or IEF) sized at roughly 5% of NAV (~$24,500); both showed near-zero correlation to the account's largest equity holdings (SHY -0.047 vs SPY5, IEF +0.007 vs SPY5), making them the most effective shock absorbers identified in this analysis if the Fed surprises hawkish on Sept 16."
     },
     {
       "label": "Available trading funds ($208.72) vs. reported cash balance ($28,311.97)",
       "tag": "HIGH",
       "detail": "get_account_summary (live) reports total_cash_value $28,311.97 (5.78% of NAV) but available_funds and buying_power of only $208.72; excess_liquidity is separately reported at $28,311.97 -- an inconsistency in the raw IBKR data worth confirming directly in the platform before placing new orders.",
-      "recommendation": "Verify true buying power in the IBKR client before funding any hedge position with fresh cash. If available funds are genuinely near-zero, fund the SHY/TLT/IEF additions recommended here by trimming SPYL and/or the gold cluster rather than deploying new capital."
+      "recommendation": "Verify true buying power in the IBKR client before funding any hedge position with fresh cash. If available funds are genuinely near-zero, fund the SHY/IEF additions recommended here by trimming SPYL and/or the precious-metals cluster rather than deploying new capital."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
       "tag": "MED",
-      "detail": "IGLN ($41,294.48, 8.43%), SSLV ($7,771.48, 1.59%), KGC ($5,341.00, 1.09%) and NEM ($5,896.15, 1.20%) total $60,303.11 = 12.32% of NAV (get_account_positions, live). Gold traded near $4,380/oz in mid-August 2026 (Yahoo Finance/JPMorgan reporting), its strongest monthly gain since January's record run; the next major catalysts are the Sept 10 CPI print and the Sept 15-16 FOMC meeting, where hike odds have risen materially (sources: chase.com, goldsilver.com, Aug 2026).",
-      "recommendation": "Add TLT (20+Y Treasury) as the cluster hedge: IGLN's 1-year correlation to TLT is 0.0455, the lowest of six candidates tested (SHY 0.117, IEF 0.121, AGG 0.125, EFA 0.325, VXUS 0.370) -- a smaller, targeted TLT position offsets the cluster without abandoning it ahead of still-bullish bank targets (Goldman $4,900, JPMorgan $4,500 for Q4-2026)."
+      "detail": "IGLN ($41,294.48, 8.44%), SSLV ($7,771.48, 1.59%), KGC ($5,356.57, 1.09%) and NEM ($5,909.31, 1.21%) total $60,331.84 = 12.33% of NAV (get_account_positions, live). Gold trades near $4,452/oz as of late Aug 2026, well off its Jan 29, 2026 all-time high of $5,595; Goldman Sachs, HSBC, JPMorgan and StoneX have all cut year-end 2026 gold targets to a $4,000-$4,900 range on dollar strength and a hawkish Fed, with ING projecting just a $4,300 average for Q3 2026 (sources: goldrepublic.com, jpmorgan.com gold research, Aug 2026).",
+      "recommendation": "Add IEF (iShares 7-10Y Treasury) as the cluster hedge: IGLN's 1-year correlation to IEF is +0.072, the lowest of six candidates tested (SHY +0.075, TLT +0.083, AGG +0.079, EFA +0.139, VXUS +0.153) -- pairing the metals cluster with a rate-sensitive Treasury bucket offsets a hawkish-Fed / stronger-dollar shock to gold without abandoning the position."
     },
     {
       "label": "AI-infrastructure pair (CRWV, GEV) trades as one factor",
       "tag": "MED",
-      "detail": "CRWV ($12,490.50, 2.55% of NAV, -$311.50 unrealized, -$144.00 today) and GEV ($8,918.30, 1.82% of NAV, -$830.60 unrealized, -$200.99 today) sold off together on Aug 18, 2026 (CRWV -12.10%, GEV roughly -6%, per Motley Fool/CNBC) when the 30-year yield spiked to 5.32% and Middle East tensions resurfaced -- despite CRWV beating Q2 revenue estimates with +112% YoY growth that same week. Source: get_account_positions (live); CNBC/Motley Fool Aug 2026 reporting.",
-      "recommendation": "Trim CRWV specifically (the pair's higher-volatility, debt-financing-cost-sensitive leg) by 30-50%, or lean on the SHY/IEF Treasury ballast above -- both showed low correlation to the account's broad equity factor in this analysis."
+      "detail": "CRWV ($12,523.50, 2.56% of NAV, -$278.50 unrealized) and GEV ($8,924.80, 1.82% of NAV, -$824.10 unrealized) show a 1-year daily-return correlation of +0.43 (n=250, get_price_history closes) -- both are geared to AI-datacenter capex. NVIDIA's Aug 27, 2026 blowout Q2 (EPS $2.22 vs $2.09 est., revenue $96.22B, FY28 growth guidance raised to 70%) drove an 8.7% NVDA rally the next session and lifted the broader AI trade, underscoring how tightly this pair rides the same single-stock catalyst (source: get_account_positions live; Yahoo Finance/Zacks Aug 28 2026 market recap).",
+      "recommendation": "Trim CRWV specifically (the pair's higher-volatility, less rate-insulated leg) by 30-50%, or lean on the SHY ballast above: a dollar-weighted CRWV/GEV blend (58.4%/41.6%) shows a -0.057 correlation to SHY, the lowest of six hedge candidates tested for this pair (IEF +0.005, TLT +0.015, AGG +0.061, EFA +0.425, VXUS +0.482)."
     },
     {
       "label": "Leverage / margin",
       "tag": "PASS",
-      "detail": "Account carries 0.94x leverage (gross_position_value $460,557.15 / NAV $489,544.45) with $0 initial and $0 maintenance margin required (source: get_account_summary, live) -- no forced-selling risk from a margin call.",
+      "detail": "Account carries 0.94x leverage (gross_position_value $460,504.90 / NAV $489,492.21) with $0 initial and $0 maintenance margin required (source: get_account_summary, live) -- no forced-selling risk from a margin call.",
       "recommendation": "None needed -- maintain the current no-leverage posture."
     }
   ],
   "diversification_actions": [
     {
       "action": "Fund a SHY (iShares 1-3Y Treasury) position by trimming roughly half of SPYL",
-      "rationale": "SPY5 and SPYL are 99.29% correlated on 1-year daily returns (Pearson correlation computed from get_price_history closes, n=252) yet together make up 70.13% of NAV; SHY showed the lowest correlation to both (SPY5 -0.0402, SPYL -0.0456) of six hedge candidates tested (TLT, IEF, AGG, EFA, VXUS, SHY)."
+      "rationale": "SPY5 and SPYL are +0.9929 correlated on 1-year daily returns (Pearson correlation computed from get_price_history closes, n=253) yet together make up 70.14% of NAV; SHY showed the lowest correlation to both (SPY5 -0.047, SPYL -0.036) of six hedge candidates tested (SHY, IEF, TLT, AGG, EFA, VXUS)."
     },
     {
-      "action": "Add TLT (iShares 20+Y Treasury) sized to roughly 15-20% of the gold/mining cluster's value (~$9,000-$12,000)",
-      "rationale": "IGLN's 1-year correlation to TLT is 0.0455 -- the lowest of six candidates tested (SHY 0.117, IEF 0.121, AGG 0.125, EFA 0.325, VXUS 0.370) -- against the $60,303.11 (12.32% of NAV) gold/precious-metals cluster (IGLN+SSLV+KGC+NEM)."
+      "action": "Add IEF (iShares 7-10Y Treasury) sized to roughly 15-20% of the precious-metals cluster's value (~$9,000-$12,000)",
+      "rationale": "IGLN's 1-year correlation to IEF is +0.072 -- the lowest of six candidates tested (SHY +0.075, TLT +0.083, AGG +0.079, EFA +0.139, VXUS +0.153) -- against the $60,331.84 (12.33% of NAV) precious-metals cluster (IGLN+SSLV+KGC+NEM)."
     },
     {
-      "action": "Layer in IEF (iShares 7-10Y Treasury) alongside SHY as a complementary intermediate-duration hedge",
-      "rationale": "IEF's 1-year correlation to SPY5 (+0.087) and SPYL (+0.087) is the second-lowest of six candidates tested, well below EFA (+0.46/+0.45) and VXUS (+0.50/+0.49); pairing SHY's near-zero correlation with IEF's longer duration spreads the equity hedge across more of the yield curve instead of concentrating it in one maturity bucket."
+      "action": "Layer in SHY alongside the CRWV/GEV AI-infrastructure pair, or trim CRWV toward GEV's weight",
+      "rationale": "A dollar-weighted CRWV/GEV blend (58.4% CRWV / 41.6% GEV) shows a -0.057 correlation to SHY, the lowest of six hedge candidates tested (IEF +0.005, TLT +0.015, AGG +0.061, EFA +0.425, VXUS +0.482); CRWV and GEV are themselves +0.43 correlated to each other, confirming they trade as a single AI-capex factor rather than a diversified pair."
     }
-  ]
+  ],
+  "portfolio_snapshot": {
+    "nav": 489492.21,
+    "as_of": "2026-08-31",
+    "concentration_score": 52,
+    "buckets": [
+      { "label": "S&P 500 (SPY5+SPYL)", "amount": 343331.52, "pct": 70.14 },
+      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 60331.84, "pct": 12.33 },
+      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 23456.56, "pct": 4.79 },
+      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 24657.92, "pct": 5.04 },
+      { "label": "Other satellites (LLY+TTWO)", "amount": 12457.24, "pct": 2.54 },
+      { "label": "Cash", "amount": 25257.12, "pct": 5.16 }
+    ],
+    "profit": {
+      "total": -5465.54,
+      "pct_on_core": -1.10,
+      "core_capital": 494957.75,
+      "realized": 969.65,
+      "unrealized": -6435.19,
+      "interest_est": 353.83
+    }
+  }
 }
