@@ -110,3 +110,12 @@ told you it changed (e.g. after a deposit or withdrawal):
 profit.total = current NAV minus 480000 (adjusted for any deposits/withdrawals
 the user has told you about) — never current NAV itself.
 profit.pct_on_core = profit.total / 480000 * 100.
+
+## Cost logging (all routines)
+At the end of every run, append one line to data/cost-log-<routine>.md in
+this exact plain-text format (create the file with a one-line header if it
+doesn't exist yet):
+
+YYYY-MM-DD HH:MM UTC | duration: <e.g. 6m 40s> | tool_calls: <approx count> | notes: <e.g. "Stage 0 filter used" or "full 503-ticker scan">
+
+One line per run, plain text — no JSON needed for this file.
