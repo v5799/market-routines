@@ -1,3 +1,4 @@
 # Portfolio risk overview Changelog
 
 - 2026-08-31: NAV $489,544; flagged SPY5+SPYL S&P 500 duplication (70.1% of NAV, corr 0.9929) with SHY as best hedge, zero fixed-income ballast ahead of a possible Sept FOMC hike, a $208.72-vs-$28,312 available-funds discrepancy to verify, gold/mining cluster (12.3% NAV) hedged via TLT (lowest corr 0.0455), and CRWV/GEV AI-infra pair correlated to the same Aug 18 yield-spike selloff.
+- 2026-08-31: NAV $489,492, concentration score 52; re-run with fresh live data confirms SPY5+SPYL duplication (70.14% NAV, corr 0.9929) hedged via SHY, precious-metals cluster (12.33% NAV) best hedged via IEF (corr 0.072, edging out TLT), and CRWV/GEV AI-infra pair (corr 0.43) best offset via SHY (blend corr -0.057); September hike odds rose to ~57% after Fed Chair Warsh's Aug 28 Jackson Hole remarks; added portfolio_snapshot with profit/interest_est breakdown.
