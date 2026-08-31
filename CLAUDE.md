@@ -163,3 +163,20 @@ run's live per-position daily P&L data from IBKR:
 }
 Include the account's top 5 gainers and top 5 losers by dollar change today
 (fewer if the account holds fewer than 10 positions).
+
+## Momentum funnel detail (Momentum routine only)
+Populate a top-level "funnel" object in data/momentum-latest.json with the
+full stage-by-stage reconciliation, in order, from full universe down to
+final result:
+
+{
+  "funnel": {
+    "stages": [
+      { "label": "<stage name>", "count": <integer> }
+    ]
+  }
+}
+
+Include every stage already reported in your funnel reconciliation prose
+(universe size, Stage 0 survivors, then each of C1 through C4 in order), so
+the dashboard can render it directly without re-deriving anything.
