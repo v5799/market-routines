@@ -76,7 +76,7 @@
       <div class="wordmark">PABLO PAWTASTIC TREATS<span>.</span><br>FUND OVERVIEW</div>
       <div class="subline">PORTFOLIO INTELLIGENCE &mdash; IBKR LINKED</div>
     </div>
-        <div class="status-row">
+    <div class="status-row">
       <div class="status-pill"><span class="dot" id="dotMomentum"></span>MOMENTUM</div>
       <div class="status-pill"><span class="dot" id="dotRisk"></span>RISK</div>
       <div class="status-pill"><span class="dot" id="dotScout"></span>SCOUT</div>
@@ -113,6 +113,12 @@
       </div>
       <div class="div-note">Interest is estimated from cash-balance behavior; IBKR exposes no direct interest ledger via the connector. Unrealized gains are open, not yet secured.</div>
     </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Concentration trend<span class="tag" id="trendTag">accumulating history</span></div>
+    <div style="height:160px;"><canvas id="trendChart"></canvas></div>
+    <div class="div-note">Builds up from each day's Risk run &mdash; expect a single dot until a few runs accumulate.</div>
   </div>
 
   <div class="panel">
@@ -267,6 +273,29 @@
     } catch (e) { return null; }
   }
 
+  async function loadHistory(){
+    try {
+      var res = await fetch('data/risk-history.jsonl', { cache: 'no-store' });
+      if (!res.ok) return [];
+      var text = await res.text();
+      return text.split('\n').filter(function(l){return l.trim();}).map(function(l){return JSON.parse(l);});
+    } catch (e) { return []; }
+  }
+
+  async function renderTrend(){
+    var rows = await loadHistory();
+    if (!rows.length) return;
+    document.getElementById('trendTag').textContent = rows.length + (rows.length === 1 ? ' data point' : ' data points');
+    new Chart(document.getElementById('trendChart'), {
+      type: 'line',
+      data: { labels: rows.map(function(r){return r.date;}), datasets: [{
+        label: 'Concentration score', data: rows.map(function(r){return r.concentration_score;}),
+        borderColor: '#2F8F5B', backgroundColor: 'rgba(47,143,91,0.08)', tension: 0.25, fill: true
+      }] },
+      options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 0, max: 100 } }, plugins: { legend: { display: false } } }
+    });
+  }
+
   (async function hydrate(){
     var runDates = [];
 
@@ -310,6 +339,8 @@
       document.getElementById('scoutTag').textContent = 'live \u00b7 ' + (s.run_at || '');
       renderList('scoutList', s.items);
     }
+
+    renderTrend();
 
     var validDates = runDates.filter(function(d){return d;}).map(function(d){return new Date(d);}).filter(function(d){return !isNaN(d);});
     if (validDates.length) {
