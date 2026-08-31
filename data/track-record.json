@@ -1,0 +1,32 @@
+[
+  {
+    "id": "momentum-MSFT-2026-08-23",
+    "source_routine": "momentum",
+    "label": "MSFT",
+    "call_type": "HIGH",
+    "called_at": "2026-08-23",
+    "call_price": 483.49,
+    "acted_on": false,
+    "status": "not_acted"
+  },
+  {
+    "id": "scout-VKTX-2026-08-31",
+    "source_routine": "scout",
+    "label": "VKTX",
+    "call_type": "New idea",
+    "called_at": "2026-08-31",
+    "call_price": 32.42,
+    "acted_on": false,
+    "status": "not_acted"
+  },
+  {
+    "id": "scout-GPCR-2026-08-31",
+    "source_routine": "scout",
+    "label": "GPCR",
+    "call_type": "New idea",
+    "called_at": "2026-08-31",
+    "call_price": 45.86,
+    "acted_on": false,
+    "status": "not_acted"
+  }
+]
