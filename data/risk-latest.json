@@ -1,109 +1,109 @@
 {
   "routine": "risk",
-  "run_at": "2026-08-31T18:15:00Z",
+  "run_at": "2026-09-01T05:50:00Z",
   "items": [
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
       "tag": "HIGH",
-      "detail": "SPY5 ($223,473.60, live get_account_positions) and SPYL ($119,857.92) both track the S&P 500 and together total $343,331.52 = 69.70% of NAV. Fresh 1-year daily-return correlation between the two (n=252, get_price_history closes Aug 2025-Aug 2026) is +0.9929 -- effectively one position split across two tickers.",
-      "recommendation": "Trim SPYL (the smaller, more redundant leg, currently 6,240 shares) by roughly a third (~2,080 shares, ~$39,970 at $19.208) and redeploy into DBC (Invesco DB Commodity Index): this run's fresh correlation test found DBC to be the single best diversifier against both SPY5 (-0.1972) and SPYL (-0.2076) of seven candidates tested -- lower than SHY (-0.0382/-0.0443), which was the prior pick. Note DBC is itself a volatile, inflation-linked asset, not a low-vol ballast, so size it as a genuine diversifier, not a safety cushion (use the fixed-income ballast below for that)."
+      "detail": "SPY5 ($223,473.60, live get_account_positions) and SPYL ($118,497.60) both track the S&P 500 and together total $341,971.20 = 69.80% of NAV ($489,923.80, live get_account_summary). Fresh 1-year daily-return correlation between the two (n=212, get_price_history closes through 2026-08-31; SPYL's history only starts 2025-10-27) is +0.9894 -- effectively one position split across two tickers.",
+      "recommendation": "Trim SPYL (the smaller, more redundant leg, 6,240 shares) by roughly a third (~2,080 shares, ~$39,500 at $18.99) and redeploy into DBC (Invesco DB Commodity Index): this run's fresh correlation test found DBC the single best diversifier against the SPY5+SPYL blend (-0.2391) of seven candidates tested (SHY -0.0206, IEF +0.1168, TLT +0.1480, AGG +0.1758, EFA +0.4798, VWO +0.5538). Note DBC is itself a volatile, inflation-linked asset, not a low-vol ballast -- size it as a genuine diversifier, not a safety cushion (use the SHY ballast below for that)."
     },
     {
       "label": "Zero fixed-income ballast ahead of a live-repricing September FOMC",
       "tag": "HIGH",
-      "detail": "get_pa_allocation (live) shows 0% of NAV in bonds -- 80.97% ETFs, 13.10% direct equities, 5.92% cash. CME FedWatch-derived odds of a 25bp September 16 hike stand near 60%, up from roughly 35% before Fed Chair Kevin Warsh's hawkish Aug 28 Jackson Hole remarks (source: Reuters via CNBC, 'Jackson Hole analyst roundup,' Aug 31, 2026; CNBC 'September Fed decision is now a coin flip,' Aug 28, 2026).",
-      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,500) in SHY (1-3Y): SHY showed the lowest correlation to the account's CRWV/GEV AI-infrastructure pair (-0.0573 of 7 candidates tested) and stayed in an extremely tight 81.35-83.20 range all year (2.2% total swing, confirming genuine duration ballast behavior), making it the most defensible shock absorber if the Fed surprises hawkish on Sept 16."
-    },
-    {
-      "label": "Available trading funds ($208.72) vs. reported cash balance ($28,311.97)",
-      "tag": "HIGH",
-      "detail": "get_account_summary (live) reports total_cash_value $28,311.97 (5.75% of NAV) but available_funds and buying_power of only $208.72; excess_liquidity is separately reported at $28,311.97 -- the same inconsistency in raw IBKR data flagged in this run's earlier passes today, still unresolved as of 18:15 UTC.",
-      "recommendation": "Verify true buying power in the IBKR client before funding the DBC/SHY additions recommended here. If available funds are genuinely near-zero, fund them by trimming SPYL and the precious-metals cluster as sized above rather than deploying fresh cash."
-    },
-    {
-      "label": "Live position-value sum vs. reported net liquidation value",
-      "tag": "MED",
-      "detail": "Summing get_account_positions market values ($464,255.85) plus get_account_balances total_cash_value ($28,311.97) yields $492,567.82, which is $3,088.76 (0.63%) higher than get_account_summary's net_liquidation ($489,479.06) -- the latter figure is corroborated independently by get_pa_performance_all_periods' same-day 1D print of $489,491.48, so this run treats net_liquidation as the authoritative NAV and scales the bucket table below to it.",
-      "recommendation": "No portfolio action needed -- this is a live-quote-vs-snapshot timing artifact (positions API appears to reflect a slightly fresher tick than the summary/balances snapshot). Worth a one-time check in the IBKR desktop client if it persists across future runs."
+      "detail": "get_pa_allocation (ESTIMATED -- returned realtime:false, dated 2026-08-28, three days stale) shows 0% of NAV in bonds -- 81.01% ETFs, 18.81% direct equities, 0.18% cash by that snapshot's own accounting; live get_account_positions confirms no bond ETF is currently held. CME FedWatch-derived odds of a 25bp September 16 hike stand at 66% as of Aug 31, 2026 (source: Forbes, 'CME FedWatch Provides A 66% Chance Fed Will Hike Rates In September,' Aug 31, 2026), up from roughly 56% shortly after Fed Chair Kevin Warsh's hawkish Aug 28 Jackson Hole remarks and from ~35% before them.",
+      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,500) in SHY (1-3Y): SHY showed the lowest correlation to the account's CRWV/GEV AI-infrastructure pair (-0.0573 of 7 candidates tested this run) and stayed in an extremely tight 81.26-83.20 range all year (~2.3% total swing), confirming genuine duration-ballast behavior -- the most defensible shock absorber if the Fed surprises hawkish on Sept 16."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
       "tag": "MED",
-      "detail": "IGLN ($41,294.48, 8.44%), SSLV ($7,771.48, 1.59%), KGC ($5,368.12, 1.10%) and NEM ($5,905.55, 1.21%) total $60,339.63 = 12.25% of NAV (get_account_positions, live). Gold traded near $4,380-4,410/oz in mid-to-late August 2026 -- still up sharply on the year but off January's all-time high -- with the Sept 10 CPI print and Sept 15-16 FOMC meeting flagged as the next decisive catalysts (sources: Yahoo Finance 'Gold prices today,' Aug 24, 2026; goldsilver.com 'Gold Price Outlook August 2026').",
-      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: this run's fresh correlation test puts IGLN's 1-year correlation to TLT at +0.0506, the lowest of seven candidates tested (SHY +0.121, AGG +0.128, EFA +0.124, DBC +0.230, IEF +0.321, VWO +0.347) -- a shift from the IEF pick in earlier runs today, reflecting updated live data. Size at roughly 15-20% of the cluster's value (~$9,000-$12,000)."
+      "detail": "IGLN ($41,294.48, 8.43%), SSLV ($7,771.48, 1.59%), KGC ($5,369.00, 1.10%) and NEM ($5,874.06, 1.20%) total $60,309.02 = 12.31% of NAV (get_account_positions, live). Gold closed near $4,450.95/oz on Aug 31, 2026, up 9.6% in August -- its best month since January -- with the Sept 10 CPI print and the Sept 15-16 FOMC meeting flagged as the next decisive catalysts as rising rate-hike odds clash with safe-haven demand (source: TradingEconomics, 'Gold - Price - Chart,' accessed Aug 31, 2026 data).",
+      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: this run's fresh dollar-weighted correlation test puts the IGLN+SSLV+KGC+NEM blend's 1-year correlation to TLT at +0.0816, the lowest of seven candidates tested (SHY +0.1526, IEF +0.1581, AGG +0.1716, DBC +0.2109, EFA +0.4240, VWO +0.4425). Size at roughly 15-20% of the cluster's value (~$9,000-$12,000)."
     },
     {
       "label": "AI-infrastructure pair (CRWV, GEV) trades as one factor",
       "tag": "MED",
-      "detail": "CRWV ($12,604.50, 2.57% of NAV, -$197.50 unrealized) and GEV ($8,920.20, 1.82% of NAV, -$828.70 unrealized) show a fresh 1-year daily-return correlation of +0.4291 (n=250, get_price_history closes) -- both remain geared to the same AI-datacenter capex cycle that drove NVIDIA's Aug 27 blowout Q2 print and the subsequent AI-trade rally.",
-      "recommendation": "Trim CRWV specifically (the pair's higher-volatility leg, 58.6% of the pair's dollar value) by 30-50%, or lean on the SHY ballast above: a dollar-weighted CRWV/GEV blend (58.6%/41.4%) shows a -0.0573 correlation to SHY, the lowest of seven candidates tested this run (DBC -0.003, EFA +0.005, TLT +0.015, AGG +0.061, IEF +0.425, VWO +0.496)."
+      "detail": "CRWV ($12,726.00, 2.60% of NAV, -$76.00 unrealized) and GEV ($8,979.30, 1.83% of NAV, -$769.60 unrealized) show a fresh 1-year daily-return correlation of +0.4289 (n=250, get_price_history closes) -- both remain geared to the same AI-datacenter capex cycle: CoreWeave's Q2 2026 revenue backlog reached $104.2B on new Anthropic and Meta contracts, while GE Vernova supplies the power infrastructure for the same buildout (source: CNBC, 'CoreWeave counters a key bear case on the AI trade,' Aug 12, 2026).",
+      "recommendation": "Trim CRWV specifically (the pair's higher-dollar leg, 58.6% of the pair's value) toward GEV's weight, or lean on the SHY ballast above: a dollar-weighted CRWV/GEV blend (58.6%/41.4%) shows a -0.0573 correlation to SHY, the lowest of seven candidates tested this run (IEF +0.0041, TLT +0.0136, DBC -0.0025, AGG +0.0603, EFA +0.4246, VWO +0.4958)."
+    },
+    {
+      "label": "Live position-value sum vs. reported net liquidation value",
+      "tag": "MED",
+      "detail": "Summing get_account_positions market values ($463,257.14) plus get_account_balances cash_balance ($28,311.97) yields $491,569.11, which is $1,645.31 (0.34%) higher than get_account_summary's net_liquidation ($489,923.80) -- the same live-quote-vs-snapshot timing artifact flagged in prior runs. This run treats net_liquidation as the authoritative NAV and scales the bucket table below to it.",
+      "recommendation": "No portfolio action needed -- worth a one-time check in the IBKR desktop client if it persists across future runs."
+    },
+    {
+      "label": "Available trading funds now reconciled with reported cash",
+      "tag": "PASS",
+      "detail": "get_account_summary (live) reports available_funds, buying_power, and excess_liquidity all equal to total_cash_value ($28,311.97) -- the $208.72-vs-$28,312 discrepancy flagged in the prior run's earlier passes is not present in this run's live pull.",
+      "recommendation": "None needed -- continue monitoring on future runs since the prior gap was unexplained."
     },
     {
       "label": "Leverage / margin",
       "tag": "PASS",
-      "detail": "Account carries 0.94x leverage (gross_position_value $460,491.76 / net_liquidation $489,479.06) with $0 initial and $0 maintenance margin required (source: get_account_summary, live) -- no forced-selling risk from a margin call.",
+      "detail": "Account carries 0.94x leverage (gross_position_value $460,936.49 / net_liquidation $489,923.80) with $0 initial and $0 maintenance margin required (source: get_account_summary, live) -- no forced-selling risk from a margin call.",
       "recommendation": "None needed -- maintain the current no-leverage posture."
     }
   ],
   "diversification_actions": [
     {
       "action": "Fund a DBC (Invesco DB Commodity Index) position by trimming roughly a third of SPYL",
-      "rationale": "SPY5 and SPYL are +0.9929 correlated on 1-year daily returns (n=252) yet together make up 69.70% of NAV; of seven hedge candidates tested (SHY, IEF, TLT, AGG, EFA, VWO, DBC), DBC showed the lowest correlation to both (SPY5 -0.1972, SPYL -0.2076)."
+      "rationale": "SPY5 and SPYL are +0.9894 correlated on 1-year daily returns (n=212) yet together make up 69.80% of NAV; of seven hedge candidates tested (SHY, IEF, TLT, AGG, EFA, VWO, DBC), DBC showed the lowest correlation to the combined SPY5+SPYL blend (-0.2391)."
     },
     {
       "action": "Add TLT (iShares 20+ Year Treasury) sized to roughly 15-20% of the precious-metals cluster's value (~$9,000-$12,000)",
-      "rationale": "IGLN's 1-year correlation to TLT is +0.0506 -- the lowest of seven candidates tested (SHY +0.121, EFA +0.124, AGG +0.128, DBC +0.230, IEF +0.321, VWO +0.347) -- against the $60,339.63 (12.25% of NAV) precious-metals cluster (IGLN+SSLV+KGC+NEM)."
+      "rationale": "The dollar-weighted IGLN+SSLV+KGC+NEM blend's 1-year correlation to TLT is +0.0816 -- the lowest of seven candidates tested (SHY +0.1526, IEF +0.1581, AGG +0.1716, DBC +0.2109, EFA +0.4240, VWO +0.4425) -- against the $60,309.02 (12.31% of NAV) precious-metals cluster."
     },
     {
       "action": "Layer in SHY alongside the CRWV/GEV AI-infrastructure pair, or trim CRWV toward GEV's weight",
-      "rationale": "A dollar-weighted CRWV/GEV blend (58.6% CRWV / 41.4% GEV) shows a -0.0573 correlation to SHY, the lowest of seven candidates tested (DBC -0.0034, EFA +0.0047, TLT +0.0147, AGG +0.0610, IEF +0.4251, VWO +0.4962); CRWV and GEV are themselves +0.4291 correlated to each other, confirming they trade as a single AI-capex factor."
+      "rationale": "A dollar-weighted CRWV/GEV blend (58.6% CRWV / 41.4% GEV) shows a -0.0573 correlation to SHY, the lowest of seven candidates tested (DBC -0.0025, IEF +0.0041, TLT +0.0136, AGG +0.0603, EFA +0.4246, VWO +0.4958); CRWV and GEV are themselves +0.4289 correlated to each other, confirming they trade as a single AI-capex factor."
     }
   ],
   "portfolio_snapshot": {
-    "nav": 489479.06,
-    "as_of": "2026-08-31",
+    "nav": 489923.8,
+    "as_of": "2026-09-01",
     "concentration_score": 51,
     "buckets": [
-      { "label": "S&P 500 (SPY5+SPYL)", "amount": 341193.90, "pct": 69.70 },
-      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 59961.19, "pct": 12.25 },
-      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 23397.10, "pct": 4.78 },
-      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 24425.00, "pct": 4.99 },
-      { "label": "Other satellites (LLY+TTWO)", "amount": 12383.82, "pct": 2.53 },
-      { "label": "Cash", "amount": 28118.05, "pct": 5.75 }
+      { "label": "S&P 500 (SPY5+SPYL)", "amount": 340826.61, "pct": 69.57 },
+      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 60107.16, "pct": 12.27 },
+      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 23640.89, "pct": 4.83 },
+      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 24707.03, "pct": 5.04 },
+      { "label": "Other satellites (LLY+TTWO)", "amount": 12424.91, "pct": 2.54 },
+      { "label": "Cash", "amount": 28217.21, "pct": 5.76 }
     ],
     "profit": {
-      "total": 9479.06,
-      "pct_on_core": 1.97,
+      "total": 9923.8,
+      "pct_on_core": 2.07,
       "core_capital": 480000,
       "realized": 969.65,
-      "unrealized": -6448.34,
-      "interest_est": 498
+      "unrealized": -6003.6,
+      "interest_est": 505
     }
   },
   "hedge_analysis": [
     {
       "cluster": "S&P 500 duplication (SPY5+SPYL)",
       "candidates": [
-        { "ticker": "SHY", "correlation": -0.0382 },
-        { "ticker": "IEF", "correlation": 0.4722 },
-        { "ticker": "TLT", "correlation": 0.1260 },
-        { "ticker": "AGG", "correlation": 0.1605 },
-        { "ticker": "EFA", "correlation": 0.0965 },
-        { "ticker": "VWO", "correlation": 0.5376 },
-        { "ticker": "DBC", "correlation": -0.1972 }
+        { "ticker": "SHY", "correlation": -0.0206 },
+        { "ticker": "IEF", "correlation": 0.1168 },
+        { "ticker": "TLT", "correlation": 0.1480 },
+        { "ticker": "AGG", "correlation": 0.1758 },
+        { "ticker": "EFA", "correlation": 0.4798 },
+        { "ticker": "VWO", "correlation": 0.5538 },
+        { "ticker": "DBC", "correlation": -0.2391 }
       ],
       "winner": "DBC"
     },
     {
       "cluster": "Precious metals cluster (IGLN+SSLV+KGC+NEM)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.1214 },
-        { "ticker": "IEF", "correlation": 0.3208 },
-        { "ticker": "TLT", "correlation": 0.0506 },
-        { "ticker": "AGG", "correlation": 0.1276 },
-        { "ticker": "EFA", "correlation": 0.1236 },
-        { "ticker": "VWO", "correlation": 0.3470 },
-        { "ticker": "DBC", "correlation": 0.2298 }
+        { "ticker": "SHY", "correlation": 0.1526 },
+        { "ticker": "IEF", "correlation": 0.1581 },
+        { "ticker": "TLT", "correlation": 0.0816 },
+        { "ticker": "AGG", "correlation": 0.1716 },
+        { "ticker": "EFA", "correlation": 0.4240 },
+        { "ticker": "VWO", "correlation": 0.4425 },
+        { "ticker": "DBC", "correlation": 0.2109 }
       ],
       "winner": "TLT"
     },
@@ -111,29 +111,29 @@
       "cluster": "AI-infrastructure pair (CRWV+GEV)",
       "candidates": [
         { "ticker": "SHY", "correlation": -0.0573 },
-        { "ticker": "IEF", "correlation": 0.4251 },
-        { "ticker": "TLT", "correlation": 0.0147 },
-        { "ticker": "AGG", "correlation": 0.0610 },
-        { "ticker": "EFA", "correlation": 0.0047 },
-        { "ticker": "VWO", "correlation": 0.4962 },
-        { "ticker": "DBC", "correlation": -0.0034 }
+        { "ticker": "IEF", "correlation": 0.0041 },
+        { "ticker": "TLT", "correlation": 0.0136 },
+        { "ticker": "AGG", "correlation": 0.0603 },
+        { "ticker": "EFA", "correlation": 0.4246 },
+        { "ticker": "VWO", "correlation": 0.4958 },
+        { "ticker": "DBC", "correlation": -0.0025 }
       ],
       "winner": "SHY"
     }
   ],
   "daily_pnl": {
-    "as_of": "2026-08-31",
+    "as_of": "2026-09-01",
     "movers": [
-      { "label": "SPY5", "dollar_change": 1136.16, "pct_change": 0.51 },
-      { "label": "SPYL", "dollar_change": 648.96, "pct_change": 0.54 },
-      { "label": "DELL", "dollar_change": 230.88, "pct_change": 2.03 },
-      { "label": "NVDA", "dollar_change": 147.52, "pct_change": 0.90 },
-      { "label": "SSLV", "dollar_change": 51.92, "pct_change": 0.67 },
-      { "label": "IGLN", "dollar_change": -350.25, "pct_change": -0.84 },
-      { "label": "CCJ", "dollar_change": -215.50, "pct_change": -2.15 },
-      { "label": "GEV", "dollar_change": -199.10, "pct_change": -2.18 },
-      { "label": "LLY", "dollar_change": -180.70, "pct_change": -1.54 },
-      { "label": "NEM", "dollar_change": -109.51, "pct_change": -1.82 }
+      { "label": "FCX", "dollar_change": 71.44, "pct_change": 0.99 },
+      { "label": "LLY", "dollar_change": 12.70, "pct_change": 0.11 },
+      { "label": "CCJ", "dollar_change": 9.00, "pct_change": 0.09 },
+      { "label": "TTWO", "dollar_change": 7.84, "pct_change": 0.88 },
+      { "label": "GOOG", "dollar_change": 2.52, "pct_change": 0.13 },
+      { "label": "NEM", "dollar_change": -50.76, "pct_change": -0.86 },
+      { "label": "CRWV", "dollar_change": -7.50, "pct_change": -0.06 },
+      { "label": "GEV", "dollar_change": -6.00, "pct_change": -0.07 },
+      { "label": "SPYL", "dollar_change": -0.0001, "pct_change": 0.00 },
+      { "label": "KGC", "dollar_change": 0.0000, "pct_change": 0.00 }
     ]
   }
 }
