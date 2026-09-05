@@ -723,9 +723,9 @@
     "call_price": 125.86,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-09-04",
-    "last_price": 128.96,
-    "return_since_call_pct": 2.463
+    "last_checked": "2026-09-05",
+    "last_price": 128.09,
+    "return_since_call_pct": 1.772
   },
   {
     "id": "momentum-HPQ-2026-08-31",
@@ -1178,8 +1178,8 @@
     "call_price": 75.62,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-09-04",
-    "last_price": 72.26,
-    "return_since_call_pct": -4.443
+    "last_checked": "2026-09-05",
+    "last_price": 72.73,
+    "return_since_call_pct": -3.822
   }
 ]
