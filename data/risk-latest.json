@@ -1,94 +1,94 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-04T04:32:00Z",
+  "run_at": "2026-09-05T05:25:00Z",
   "items": [
+    {
+      "label": "IBKR account-service outage this run: get_account_summary, get_account_balances, get_account_trades, and search_contracts all down",
+      "tag": "HIGH",
+      "detail": "Every call to get_account_summary, get_account_balances, get_account_trades, and search_contracts returned an error on every retry across 8 attempts spanning roughly 20 minutes (immediate retries, then 60s/90s/180s/240s backoff waits) between approximately 2026-09-05 04:50-05:15 UTC. get_account_positions, get_pa_performance_all_periods, get_pa_allocation, get_price_history, and whats_new all worked normally throughout (get_price_history succeeded on the first attempt for all 12 tickers used below), so this is a partial outage of specific account-service endpoints, not a full connector failure. Consequences for this run: NAV/cash had to be derived indirectly rather than read directly from get_account_summary (see the reconciliation item below); margin/leverage could not be checked at all; get_account_trades could not confirm or deny new trade activity for track-record.json (every position's share count today matches yesterday's run exactly, which is suggestive of no new trades but not conclusive); and search_contracts could not resolve contract_ids for the hedge-candidate ETFs (SHY/IEF/TLT/AGG/EFA/VWO/DBC), so hedge_analysis and diversification_actions below carry forward the 2026-09-04 run's correlation numbers unchanged rather than being recomputed today.",
+      "recommendation": "No portfolio action needed here -- this is a data-availability issue, not a market risk. Re-run the risk review once get_account_summary/get_account_balances/get_account_trades/search_contracts are confirmed healthy to get a fully live NAV/margin check and fresh hedge-candidate correlations; until then, treat this run's leverage/margin status as unconfirmed rather than assumed safe."
+    },
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
       "tag": "HIGH",
-      "detail": "SPY5 ($223,126.56, 288 sh, live get_account_positions) and SPYL ($119,670.72, 6,240 sh) both track the S&P 500 and together total $342,797.28 = 69.60% of NAV ($492,625.78, live get_account_summary). Fresh 1-year daily-return correlation between the two (n=251 aligned trading days, the fullest overlap window seen in recent runs, get_price_history closes through 2026-09-03) is +0.9931 -- effectively one position split across two tickers, treated as a single combined position for concentration purposes.",
-      "recommendation": "Trim SPYL (the smaller, more redundant leg, 6,240 shares) by roughly a third (~2,080 shares, ~$39,890 at $19.18) and redeploy into DBC (Invesco DB Commodity Index): this run's fresh correlation test found DBC the single best diversifier against the SPY5+SPYL blend (-0.2422) of seven candidates tested (SHY +0.0061, IEF +0.1228, TLT +0.1420, AGG +0.1813, EFA +0.4764, VWO +0.5461). DBC is itself a volatile, inflation-linked asset, not a low-vol ballast -- size it as a genuine diversifier, not a safety cushion (use the SHY ballast below for that)."
+      "detail": "SPY5 (288 sh, $221,961.60, live get_account_positions) and SPYL (6,240 sh, $119,046.71) both track the S&P 500 and together total $341,008.32 = 69.54% of this run's estimated NAV ($490,352.61 -- see reconciliation item below for how NAV was derived while get_account_summary is down). Fresh 1-year daily-return correlation (n=251 aligned trading days, 2025-09-08 to 2026-09-04, live get_price_history via a background subagent using the account's own contract_ids, so search_contracts was not needed for this pair) is +0.9931 -- unchanged to 4 decimal places from the 2026-09-04 run -- effectively one position split across two tickers.",
+      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly a third (~2,080 shares, ~$39,690 at today's $19.08) and redeploy into DBC (Invesco DB Commodity Index): DBC was the best of 7 hedge candidates tested against the SPY5+SPYL blend in the 2026-09-04 run (correlation -0.2422) -- NOT recomputed today since search_contracts (needed to resolve DBC's contract_id) is down. Treat this as directionally reliable but re-verify the correlation once the connector recovers before executing a large trim."
+    },
+    {
+      "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM) -- fresh internal correlation is the tightest of any cluster in the account",
+      "tag": "HIGH",
+      "detail": "IGLN ($40,218.04, 8.20% of est. NAV), SSLV ($7,432.82, 1.52%), KGC ($8,489.25, 1.73%) and NEM ($6,020.23, 1.23%) total $62,160.34 = 12.68% of NAV (live get_account_positions). This run computed the cluster's own internal pairwise correlations for the first time (previous runs only tested its blended correlation against hedge candidates): 1-year daily returns (n=247, 2025-09-05 to 2026-09-04, live get_price_history) show IGLN/SSLV +0.8165, IGLN/KGC +0.6924, IGLN/NEM +0.6805, SSLV/KGC +0.6464, SSLV/NEM +0.6253, KGC/NEM +0.8885 -- average pairwise +0.7249, the tightest internal cohesion of any multi-ticker cluster in the account this run (vs. materials satellites' +0.4872 and the AI/tech cluster's +0.2638, both also refreshed today). All four names moved together today too: IGLN -$576.74, KGC -$198.00, SSLV -$128.62, NEM -$109.98, a combined -$1,013.34 single-day move in the same direction. Upgraded to HIGH from MED on this fresh evidence.",
+      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: TLT was the best of 7 candidates tested against this blend in the 2026-09-04 run (correlation +0.0914) -- not recomputed today because search_contracts is down, so re-verify before sizing. Size at roughly 15-20% of the cluster's value (~$9,320-$12,430 at today's live cluster value)."
+    },
+    {
+      "label": "Materials & mining satellites (CCJ, FCX, REMX)",
+      "tag": "HIGH",
+      "detail": "CCJ ($10,074.00, 100 sh, 2.05% of NAV), FCX ($6,836.62, 94 sh, 1.39%) and REMX ($7,465.00, 500 sh, 1.52%) total $24,375.62 = 4.97% of NAV (live get_account_positions). Fresh pairwise correlation (1-year daily returns, n=247, live get_price_history) shows CCJ/FCX +0.5566, CCJ/REMX +0.4239, FCX/REMX +0.4811 -- average +0.4872, down from last run's +0.5485 but still well above the AI/tech cluster's +0.2638 (also refreshed this run: CRWV/GEV +0.4325, CRWV/GOOG +0.1512, GEV/GOOG +0.2078). Remains the account's 3rd most internally-correlated multi-ticker cluster, behind precious metals (+0.7249, above) and the literal SPY5/SPYL duplication (+0.9931).",
+      "recommendation": "Add DBC as the cluster hedge: DBC was the best of 7 candidates tested against this blend in the 2026-09-04 run (correlation +0.0289) -- not recomputed today (search_contracts down). Size at roughly 15-20% of the cluster's value (~$3,656-$4,875)."
     },
     {
       "label": "Zero fixed-income ballast ahead of a live-repricing September FOMC",
       "tag": "HIGH",
-      "detail": "get_pa_allocation (ESTIMATED -- returned realtime:false, dated 2026-09-02) shows 0% of NAV in bonds by ASSET_CLASS (Commodities 9.64%, Equities 85.02%, Cash 5.34%); live get_account_positions confirms no bond ETF is currently held. CME FedWatch-derived odds of a 25bp September 16 hike stood at roughly 65-68% as of Sept 1-3, 2026 (sources: Forbes, 'CME FedWatch Provides A 66% Chance Fed Will Hike Rates In September,' Aug 31, 2026; Tech Times, Sept 1, citing 68% odds), essentially unchanged from the prior run's read. This run also brought a sharp escalation in the Iran conflict (see below), adding a second live source of rate/inflation uncertainty into the same Sept 16 window.",
-      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,631) in SHY (1-3Y): SHY showed the lowest correlation to the account's dominant SPY5+SPYL position of any low-volatility hedge candidate tested this run (+0.0061 of 7 tested, second only to DBC's -0.2422 which is a commodity play, not a ballast) -- the most defensible shock absorber if the Fed surprises hawkish on Sept 16."
+      "detail": "get_pa_allocation (dated 2026-09-03, the most recent successful pull -- get_account_summary/balances are down this run, see outage item above) shows 0% of NAV in bonds by ASSET_CLASS; live get_account_positions confirms no bond ETF is held. September 16 FOMC hike-odds readings diverge by source this week: Forbes cited CME FedWatch at 66% on Aug 31 and a separate source cited 70.2% 'a few days ago,' while CNBC described the decision as 'now a coin flip' after Fed Chair Warsh's Aug 28 remarks, and another read on Sept 3 put it at 53% -- the spread itself (53-70%) reflects real, unresolved uncertainty into the Sept 15-16 meeting, on top of the Iran conflict adding a second live inflation/rate wildcard (below).",
+      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,500) in SHY (1-3Y): SHY showed the lowest correlation to the SPY5+SPYL blend of any low-volatility candidate tested in the 2026-09-04 run (+0.0061 of 7) -- not recomputed today, re-verify once search_contracts recovers before establishing the position."
     },
     {
-      "label": "Materials & mining satellites (CCJ, FCX, REMX) -- now more internally correlated than at any point this cycle",
+      "label": "Iran conflict escalates further -- US strikes on Iranian air-defense/radar/maritime sites, controversial wedding strike, Strait of Hormuz blockade at 87 vessels",
       "tag": "HIGH",
-      "detail": "CCJ ($10,072.00, 100 sh, 2.04% of NAV), FCX ($6,792.44, 94 sh, 1.38%) and REMX ($7,545.00, 500 sh, 1.53%) total $24,409.44 = 4.95% of NAV (get_account_positions, live). This run's fresh pairwise correlation test (1-year daily returns, n=250, delegated to a background subagent) shows CCJ/FCX +0.5533, CCJ/REMX +0.5691, FCX/REMX +0.5232 -- average +0.5485, up sharply from last run's +0.3443 and now well above the CRWV/GEV/GOOG AI-infrastructure cluster's average pairwise correlation of +0.2651 (CRWV/GEV +0.1540, CRWV/GOOG +0.4335, GEV/GOOG +0.2078), also tested fresh this run. Materials satellites remains the account's 3rd most concentrated/correlated cluster, and the jump in average pairwise correlation (a margin of +0.2834 over AI/tech this run, vs +0.0740 last run) is itself the notable development -- upgraded to HIGH from MED.",
-      "recommendation": "Add DBC (Invesco DB Commodity Index) as the cluster hedge: this run's fresh dollar-weighted correlation test puts the CCJ+FCX+REMX blend's correlation to DBC at just +0.0289, the lowest of seven candidates tested (SHY +0.1829, IEF +0.2174, TLT +0.1656, AGG +0.2822, EFA +0.6509, VWO +0.6942). Size at roughly 15-20% of the cluster's value (~$3,661-$4,882)."
+      "detail": "US Central Command struck Iranian air-defense sites, radar systems and maritime assets on Sept 2, in retaliation for Iran attempting to lay new sea mines in the Strait of Hormuz and for an earlier Iranian strike on a US base in Jordan (source: NPR, 'U.S. military strikes Iran, while Trump vows more for Tehran's retaliation,' Sept 2, 2026). One US strike reportedly hit a home hosting a wedding, killing 5 and wounding dozens -- VP Vance said he is 'extremely skeptical' of the reports. CENTCOM's Strait of Hormuz blockade count reached 87 vessels, and Trump called the war 'small potatoes' for the US on Sept 4 (source: ABC News live updates, accessed 2026-09-05). The account holds no pure-play oil & gas exposure (CCJ is a uranium miner, not oil & gas), so direct hit is limited, but a broad equity selloff or an inflation surprise complicating the Sept 16 Fed decision either way would still pressure SPY5/SPYL (69.54% of NAV).",
+      "recommendation": "No new energy-specific position -- the DBC hedges recommended above already carry meaningful commodity/energy exposure and would partially cushion an oil/inflation-driven shock. Given the magnitude of this week's escalation (wedding-strike controversy, 87-vessel blockade) and this run's inability to confirm live cash/margin (outage above), hold off on new discretionary purchases until both the IBKR connector and the acute escalation risk clarify."
     },
     {
-      "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
+      "label": "Cash buffer -- ESTIMATED this run, roughly flat versus 2026-09-04",
       "tag": "MED",
-      "detail": "IGLN ($40,794.79, 8.28% of NAV), SSLV ($7,561.44, 1.53%), KGC ($8,615.75, 1.75%) and NEM ($6,061.12, 1.23%) total $63,033.10 = 12.80% of NAV (get_account_positions, live). Gold traded around $4,436-$4,491/oz on Sept 3, 2026, up on hopes that the fresh Iran re-escalation would be short-lived (source: Yahoo Finance, 'Gold price today, Thursday, September 3, 2026,' accessed 2026-09-04).",
-      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: this run's fresh dollar-weighted correlation test puts the IGLN+SSLV+KGC+NEM blend's 1-year correlation to TLT at +0.0914, the lowest of seven candidates tested (SHY +0.1794, IEF +0.1792, AGG +0.1975, DBC +0.1911, EFA +0.4513, VWO +0.4584). Size at roughly 15-20% of the cluster's value (~$9,455-$12,607)."
+      "detail": "Cash is ESTIMATED at $9,516.40 (1.94% of this run's estimated NAV) because get_account_balances/get_account_summary are down this run -- carried forward from the last successful get_pa_allocation pull (dated 2026-09-03), essentially flat versus last run's live reading of $9,504.06 (1.93%). No evidence of new trade activity this week: every position's share count today matches yesterday's run exactly (e.g. TTWO still 79 sh, KGC still 275 sh, SPY5 still 288 sh), consistent with an unchanged cash balance, though this can't be fully confirmed without get_account_trades (also down).",
+      "recommendation": "Continue working toward a 4-5% of NAV cash/T-bill buffer (~$14,700 more) before making further discretionary purchases -- the SHY ballast recommended above would serve this purpose directly if implemented. Re-confirm the exact live cash figure once get_account_balances recovers."
     },
     {
-      "label": "Iran conflict sharply re-escalated -- US strikes on Iranian sites, Iranian retaliation on US bases in Bahrain/Jordan/Iraq",
-      "tag": "HIGH",
-      "detail": "Upgraded from MED last run: the US launched a new wave of strikes on southern Iran, and Iran retaliated with strikes on US bases in Bahrain, Jordan, and Iraq -- the heaviest exchange of fire in over a month (sources: Al Jazeera, 'Iran claims attacks on Bahrain, Jordan, Iraq after US strikes kill 11,' Sept 1, 2026; NPR, 'Iran fires on its Gulf neighbors,' Sept 2, 2026). Trump publicly confirmed a 'very heavy attack' on Sept 3 and threatened a 'much harder and higher level' response if Iran retaliates further. US average diesel prices hit a record $5.820/gal as of Sept 4, 2026, up 55% since the war began Feb 28 (source: live web search, accessed 2026-09-04). Brent eased slightly to ~$95.25/bbl on Sept 3 (down 0.4% day-over-day, snapping a 3-day rally) on hopes the latest exchange stays contained, but remains near a multi-month high. The account holds no pure-play oil & gas exposure -- CCJ is a uranium miner, not oil & gas -- so direct hit is limited, but a broad equity selloff, a fresh spike in energy/refined-product prices, or an inflation surprise (complicating the Fed's Sept 16 decision either way) would still pressure SPY5/SPYL (69.60% of NAV) and the newly-enlarged TTWO/LLY satellite sleeve.",
-      "recommendation": "No new energy-specific position -- the DBC hedges recommended above (SPY5+SPYL and materials-satellites clusters, ~$43,500-$44,800 combined if both are implemented) already carry meaningful energy-commodity exposure and would partially cushion an oil/diesel-driven inflation or growth shock. Given the magnitude of this week's escalation (base strikes, casualties, an explicit threat of a larger US response) and this run's sharp cash-buffer drawdown (below), hold off on deploying further discretionary capital into new equity positions until the acute escalation risk clarifies."
-    },
-    {
-      "label": "Cash buffer fell sharply this run (5.27% to 1.93% of NAV)",
+      "label": "Leverage / margin -- unable to verify this run",
       "tag": "MED",
-      "detail": "get_account_summary (live) shows total_cash_value of $9,504.06 (1.93% of $492,625.78 NAV), down from $25,298.98 (5.27% of NAV) in the prior run. get_account_trades (DAYS_7, live) attributes essentially all of the drop to a same-day TTWO purchase on 2026-09-03 (75 sh @ $219.59, $16,468.66 total including the earlier 1-share fill) -- TTWO's position value grew from prior levels to $16,985.00 (79 sh, 3.45% of NAV) as a result. This is a deliberate trade, not an error, but it leaves the account with less dry powder heading into a month with both a live FOMC decision (Sept 16) and an actively escalating Iran conflict (above).",
-      "recommendation": "Rebuild the cash/T-bill buffer back toward roughly 4-5% of NAV (~$14,700 more) before making further discretionary purchases this month -- the SHY ballast recommended above would serve this purpose directly if implemented."
+      "detail": "get_account_summary is down this run, so initial margin, maintenance margin, leverage, and buying power could not be checked at all -- there is no substitute data source for these fields. The last confirmed reading (2026-09-04, live) was 0.98x leverage (gross_position_value $483,109.98 / net_liquidation $492,625.78) with $0 initial and $0 maintenance margin required.",
+      "recommendation": "Treat margin/leverage status as unconfirmed, not assumed safe, until get_account_summary recovers -- re-run this specific check as soon as the endpoint is back, ideally before any new leveraged or large discretionary trade this week."
     },
     {
-      "label": "Live position-value sum vs. reported net liquidation value",
+      "label": "NAV derivation and cross-validation while get_account_summary/get_account_balances are down",
       "tag": "PASS",
-      "detail": "Summing get_account_positions market values ($483,043.93) plus get_account_balances cash_balance ($9,504.06) yields $492,547.99, which is $77.79 (0.016%) lower than get_account_summary's net_liquidation ($492,625.78) -- the same live-quote-vs-snapshot timing artifact flagged in prior runs, and the smallest gap observed yet (prior run: $363.64 / 0.07%). This run treats net_liquidation as the authoritative NAV and scales the bucket table below to it.",
-      "recommendation": "No portfolio action needed -- the gap continues to shrink run over run and remains immaterial."
-    },
-    {
-      "label": "Available trading funds reconciled with reported cash",
-      "tag": "PASS",
-      "detail": "get_account_summary (live) reports available_funds, buying_power, and excess_liquidity all equal to total_cash_value ($9,504.06) -- no discrepancy present in this run's live pull.",
-      "recommendation": "None needed -- continue monitoring on future runs."
-    },
-    {
-      "label": "Leverage / margin",
-      "tag": "PASS",
-      "detail": "Account carries 0.98x leverage (gross_position_value $483,109.98 / net_liquidation $492,625.78) with $0 initial and $0 maintenance margin required (source: get_account_summary, live) -- no forced-selling risk from a margin call, though leverage ticked up from 0.95x last run as the TTWO purchase drew down cash.",
-      "recommendation": "None needed -- maintain the current no-leverage posture, but avoid further cash-funded purchases until the buffer (above) is rebuilt."
+      "detail": "With get_account_summary/get_account_balances unavailable, this run derived NAV two independent ways and cross-checked them: (1) live get_account_positions position sum ($480,836.22) + cash carried forward from the 2026-09-03 get_pa_allocation pull ($9,516.40, ESTIMATED) = $490,352.61; (2) the 2026-09-03 get_pa_allocation/get_pa_performance NAV ($492,564.16) plus today's aggregate live position daily_pnl (-$2,210.22, summed from get_account_positions) = $490,353.94. The two estimates agree to within $1.32 (0.0003%), giving good confidence that get_account_positions reflects Friday 2026-09-04's close (one session ahead of the account-summary/allocation pipeline, which appears stuck at Thursday 2026-09-03 -- consistent with the broader outage above), and that $490,352.61 is a reasonable current NAV estimate. This run's portfolio_snapshot uses that estimate, dated 2026-09-04.",
+      "recommendation": "None needed for the portfolio itself -- this is a data-methodology note. Confirm this estimate against a live get_account_summary figure once the connector recovers."
     }
   ],
   "diversification_actions": [
     {
-      "action": "Fund a DBC (Invesco DB Commodity Index) position by trimming roughly a third of SPYL (~2,080 shares, ~$39,890 at $19.18)",
-      "rationale": "SPY5 and SPYL are +0.9931 correlated on 1-year daily returns (n=251, the fullest aligned window yet) yet together make up 69.60% of NAV; of seven hedge candidates tested (SHY, IEF, TLT, AGG, EFA, VWO, DBC), DBC showed the lowest correlation to the combined SPY5+SPYL blend (-0.2422)."
+      "action": "Fund a DBC (Invesco DB Commodity Index) position by trimming roughly a third of SPYL (~2,080 shares, ~$39,690 at today's $19.08)",
+      "rationale": "SPY5 and SPYL are +0.9931 correlated on 1-year daily returns (n=251, refreshed live this run) and together make up 69.54% of NAV; DBC was the best of 7 hedge candidates tested against the blend in the 2026-09-04 run (correlation -0.2422) -- not recomputed today because search_contracts (needed to resolve hedge-ETF contract IDs) is down this run, so this figure is carried forward unchanged."
     },
     {
-      "action": "Add TLT (iShares 20+ Year Treasury) sized to roughly 15-20% of the precious-metals cluster's value (~$9,455-$12,607)",
-      "rationale": "The dollar-weighted IGLN+SSLV+KGC+NEM blend's 1-year correlation to TLT is +0.0914 -- the lowest of seven candidates tested (SHY +0.1794, IEF +0.1792, AGG +0.1975, DBC +0.1911, EFA +0.4513, VWO +0.4584) -- against the $63,033.10 (12.80% of NAV) precious-metals cluster."
+      "action": "Add TLT (iShares 20+ Year Treasury) sized to roughly 15-20% of the precious-metals cluster's value (~$9,320-$12,430)",
+      "rationale": "Fresh internal correlation testing this run found IGLN+SSLV+KGC+NEM averaging +0.7249 pairwise correlation (n=247, live get_price_history) -- the tightest internal cohesion of any cluster in the account -- against a $62,160.34 (12.68% of NAV) position. TLT was the best of 7 hedge candidates tested against the dollar-weighted blend in the 2026-09-04 run (correlation +0.0914); not recomputed today (search_contracts down), so carried forward unchanged."
     },
     {
-      "action": "Add DBC sized to roughly 15-20% of the materials-satellites cluster's value (~$3,661-$4,882)",
-      "rationale": "This run's fresh correlation test found CCJ+FCX+REMX (average pairwise correlation +0.5485, n=250) more internally correlated than the CRWV/GEV/GOOG AI-infrastructure cluster (+0.2651) by an even wider margin than last run, confirming it as the account's third most correlated cluster. The dollar-weighted CCJ+FCX+REMX blend's correlation to DBC is just +0.0289, the lowest of seven candidates tested (SHY +0.1829, IEF +0.2174, TLT +0.1656, AGG +0.2822, EFA +0.6509, VWO +0.6942)."
+      "action": "Add DBC sized to roughly 15-20% of the materials-satellites cluster's value (~$3,656-$4,875)",
+      "rationale": "CCJ+FCX+REMX averaged +0.4872 pairwise correlation this run (n=247, live get_price_history), down from +0.5485 last run but still above the AI/tech cluster's +0.2638. DBC was the best of 7 hedge candidates tested against the dollar-weighted blend in the 2026-09-04 run (correlation +0.0289); not recomputed today (search_contracts down), so carried forward unchanged."
     }
   ],
   "portfolio_snapshot": {
-    "nav": 492625.78,
+    "nav": 490352.61,
     "as_of": "2026-09-04",
     "concentration_score": 51,
     "buckets": [
-      { "label": "S&P 500 (SPY5+SPYL)", "amount": 342797.28, "pct": 69.60 },
-      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 63033.10, "pct": 12.80 },
-      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 24209.12, "pct": 4.91 },
-      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 24409.44, "pct": 4.95 },
-      { "label": "Other satellites (LLY+TTWO)", "amount": 28595.00, "pct": 5.81 },
-      { "label": "Cash", "amount": 9504.06, "pct": 1.93 }
+      { "label": "S&P 500 (SPY5+SPYL)", "amount": 341008.32, "pct": 69.54 },
+      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 62160.34, "pct": 12.68 },
+      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 24837.83, "pct": 5.07 },
+      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 24375.62, "pct": 4.97 },
+      { "label": "Other satellites (LLY+TTWO)", "amount": 28454.11, "pct": 5.80 },
+      { "label": "Cash (ESTIMATED -- get_account_balances down this run)", "amount": 9516.40, "pct": 1.94 }
     ],
     "profit": {
-      "total": 12625.78,
-      "pct_on_core": 2.63,
+      "total": 10352.61,
+      "pct_on_core": 2.16,
       "core_capital": 480000,
       "realized": 0,
-      "unrealized": -3313.37,
+      "unrealized": -5587.13,
       "interest_est": 513
     }
   },
@@ -136,16 +136,16 @@
   "daily_pnl": {
     "as_of": "2026-09-04",
     "movers": [
-      { "label": "TTWO", "dollar_change": 68.73, "pct_change": 0.406 },
-      { "label": "CRWV", "dollar_change": 55.50, "pct_change": 0.438 },
-      { "label": "LLY", "dollar_change": 14.00, "pct_change": 0.121 },
-      { "label": "GEV", "dollar_change": 10.50, "pct_change": 0.111 },
-      { "label": "CCJ", "dollar_change": 10.00, "pct_change": 0.099 },
-      { "label": "KGC", "dollar_change": -71.50, "pct_change": -0.823 },
-      { "label": "NEM", "dollar_change": -69.09, "pct_change": -1.127 },
-      { "label": "FCX", "dollar_change": -28.20, "pct_change": -0.413 },
-      { "label": "SPY5", "dollar_change": 0.00, "pct_change": 0.000 },
-      { "label": "IGLN", "dollar_change": 0.00, "pct_change": 0.000 }
+      { "label": "CRWV", "dollar_change": 720.00, "pct_change": 5.676 },
+      { "label": "TTWO", "dollar_change": 44.24, "pct_change": 0.262 },
+      { "label": "FCX", "dollar_change": 15.98, "pct_change": 0.234 },
+      { "label": "CCJ", "dollar_change": 12.00, "pct_change": 0.119 },
+      { "label": "GEV", "dollar_change": 1.10, "pct_change": 0.012 },
+      { "label": "SPY5", "dollar_change": -1164.96, "pct_change": -0.522 },
+      { "label": "SPYL", "dollar_change": -624.01, "pct_change": -0.521 },
+      { "label": "IGLN", "dollar_change": -576.74, "pct_change": -1.414 },
+      { "label": "KGC", "dollar_change": -198.00, "pct_change": -2.279 },
+      { "label": "SSLV", "dollar_change": -128.62, "pct_change": -1.701 }
     ]
   }
 }
