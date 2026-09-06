@@ -1,46 +1,45 @@
 {
   "routine": "scout",
-  "run_at": "2026-08-31T19:05:00Z",
+  "run_at": "2026-09-06T13:10:00Z",
   "items": [
     {
-      "label": "Industry: GLP-1 / Metabolic & Obesity Therapeutics",
+      "label": "Industry: Video Games & Interactive Entertainment",
       "tag": "New idea",
-      "detail": "Selected from active-conviction account holdings: LLY (Eli Lilly, 10 sh, $11,575, 2.36% of NAV) is the account's sole Healthcare position and has pulled back roughly 5-9% from its July 2026 all-time high on a mix of profit-taking, GLP-1 pricing pressure, and competitive/legal crosscurrents -- worth a full thesis check rather than assuming the pullback is noise. This theme is distinct from the account's two most recent scout cycles (AI Datacenter Power Infrastructure on 2026-08-30, Critical Minerals & Precious Metals Mining on 2026-08-31 earlier today), avoiding repeat coverage."
+      "detail": "Selected from active-conviction account holdings: TTWO (Take-Two Interactive, 79 sh, $16,960.51, 3.46% of NAV) is the account's only video-game holding and, together with GOOG, makes up the account's entire Telecomm/Communication-Services sector sleeve (3.87% of NAV) -- it has never been the subject of a dedicated scout cycle, unlike the account's other names (LLY covered 2026-08-31 under GLP-1/Metabolic; CCJ/FCX/KGC/NEM/REMX covered 2026-08-31 under Critical Minerals & Precious Metals Mining; CRWV/GEV covered 2026-08-30 under AI Datacenter Power Infrastructure). The industry has also seen a landscape-altering event since the last scout cycle: Electronic Arts, one of the sector's largest public pure-plays, completed a $55B take-private by Saudi PIF/Silver Lake/Affinity Partners on 2026-08-04, removing a major public comparable right as GTA 6's reaffirmed November 19, 2026 launch approaches."
     },
     {
-      "label": "LLY",
+      "label": "TTWO",
       "tag": "Strong case",
-      "detail": "Existing holding, thesis reinforced with real new evidence, but with genuine new headwinds: Lilly's oral pill Foundayo (orforglipron), launched April 2026, is projected to reach $19B in sales by 2035 (15% of total revenue) and command roughly 60% ($13.6B) of the 2030 daily-oral GLP-1 segment versus Novo's 21% ($4B) -- but Q2 2026 results showed realized US price on Zepbound/Mounjaro down ~9% amid intensifying competition, PepsiCo and other large employers dropping GLP-1 coverage, and Novo Nordisk's federal lawsuit alleging false comparative advertising. Lilly and Novo together still control ~87% of prescription weight-management revenue.",
-      "diversification_note": "Already the account's entire Healthcare sector bucket (2.36% of NAV, $11,575, sole holding) -- reinforcing here deepens an existing single-stock sector bet rather than diversifying it."
+      "detail": "Existing holding, thesis reinforced with real new evidence: Take-Two/Rockstar and CEO Strauss Zelnick have reaffirmed GTA 6 will launch November 19, 2026 and 'won't be delayed again' (after two prior delays, from fall 2025 to May 2026 to November 2026); separately, EA's $55B take-private (completed 2026-08-04, $210/share cash) removes a major public AAA comparable from the market right as industry M&A hit $7.7B across 52 deals in Q1 2026 and $2.3B across 54 deals in Q2 2026, evidence that strategic and financial buyers are actively re-rating game-industry IP upward. Genuine risk: the investment case now rests heavily on single-title execution risk for a game that has already slipped twice.",
+      "diversification_note": "TTWO is already the account's entire Telecomm/Communication-Services sector sleeve alongside GOOG (3.87% of NAV combined, $18,998.96) -- reinforcing here deepens an existing concentrated sector bet rather than diversifying it."
     },
     {
-      "label": "VKTX",
+      "label": "RBLX",
       "tag": "New idea",
-      "detail": "Viking Therapeutics -- not currently held. VK2735, a dual GLP-1/GIP agonist advancing in both injectable and oral formulations simultaneously, carries a widely cited 38.5% Polymarket-implied probability of being acquired before 2027; Pfizer (having appointed Morgan Stanley as an advisor per reports), Merck, and Amgen are named as potential suitors in the post-Vertex/Crinetics ($10B) M&A wave repricing third-tier obesity assets. Last price $32.42.",
-      "diversification_note": "Would land in the account's Healthcare bucket alongside LLY (2.36% of NAV) -- a second name in the same sector, but a structurally different bet (pre-revenue M&A-target biotech vs. Lilly's cash-generating franchise).",
-      "suggested_size": "Starter/scout position, roughly 0.5-1% of account NAV (~$2,500-$5,000); binary M&A-speculation risk means the position should be sized assuming the takeout never happens."
+      "detail": "Roblox -- not currently held. The UGC/creator-economy platform posted 132M daily active users in Q1 2026 (+35% YoY) and $1.442B revenue (+39% YoY), with an all-time gaming concurrency record of 47.4M simultaneous players set August 2025 -- a structurally different growth engine than TTWO's traditional AAA publishing model. Real, unresolved overhang: 162 child-safety lawsuits have been consolidated into a single federal case with a settlement tab approaching $36M, plus an active Senate child-safety probe, even after Roblox rolled out its Sentinel real-time detection model and a rebuilt parental-control suite. Last price $43.48 (+4.75% on the day).",
+      "suggested_size": "Modest starter given the litigation/regulatory overhang, roughly 0.5-1% of account NAV (~$2,500-$5,000).",
+      "diversification_note": "Would land in the account's Telecomm/Communication-Services sleeve alongside TTWO and GOOG, but on a structurally different UGC-platform/creator-economy model rather than TTWO's AAA-title-driven revenue -- partial intra-sector differentiation, not true sector diversification."
     },
     {
-      "label": "GPCR",
+      "label": "U",
       "tag": "New idea",
-      "detail": "Structure Therapeutics -- not currently held. Its oral small-molecule GLP-1 candidate aleniglipron posted 16.3% placebo-adjusted weight loss at 44 weeks in Phase 2, with a pivotal Phase 3 study slated to start in H2 2026; multiple sources note Structure would inherit the scarcity premium in obesity-biotech M&A if Viking is taken out first. Last price $45.86.",
-      "diversification_note": "Would also land in the account's Healthcare bucket alongside LLY and VKTX -- differentiated within the sleeve by an all-oral (not injectable) delivery platform, but does not diversify outside the sector.",
-      "suggested_size": "Smallest scout tranche of the group, roughly 0.25-0.5% of account NAV (~$1,250-$2,500); one Phase 3 program away from a binary readout, no approved product yet."
+      "detail": "Unity Software -- not currently held. Functions as industry infrastructure ('picks-and-shovels') via its game engine, used across a large share of mobile and indie titles, and sits at the center of the industry's generative-AI tooling shift (28% of studios now use generative AI to draft initial game design documents, per GDC's 2026 State of the Industry survey). Trading at $41.55 (-1.26% on the day), well off prior highs after the 2023 Runtime Fee pricing fiasco damaged developer trust -- a real turnaround/re-rating candidate if new leadership executes, but Epic's free-for-most-use-cases Unreal Engine is a genuine competitive ceiling on pricing power.",
+      "suggested_size": "Small starter tranche, roughly 0.25-0.5% of account NAV (~$1,250-$2,500); turnaround thesis carries real execution uncertainty."
     },
     {
-      "label": "AMGN",
+      "label": "UBSFY",
       "tag": "Worth watching",
-      "detail": "Amgen -- not currently held. MariTide (maridebart cafraglutide), a peptide-antibody conjugate combining GIP blockade with GLP-1 activation, showed up to ~20% weight loss with no plateau at 52 weeks in Phase 2 and enables monthly (not weekly) dosing -- a real differentiator on the adherence problem that limits weekly injectables. Phase 3 MARITIME data across obesity, type 2 diabetes, cardiovascular disease, heart failure, and sleep apnea are expected through 2027, so there is no near-term catalyst; flagging the dosing-frequency angle for the next scout cycle rather than a specific action now. Last price $431.01."
+      "detail": "Ubisoft (US unsponsored ADR) -- not currently held. Tencent completed a EUR1.16B investment for a 26.32% stake in Vantage Studios, the new Ubisoft subsidiary holding the Assassin's Creed, Far Cry, and Tom Clancy's Rainbow Six franchises (deal closed November 2025, EUR3.8B pre-money EV for Vantage) -- a capital-injection template that, following the EA-goes-private precedent, raises real (if unconfirmed) speculation about a fuller buyout down the line. The US ADR (UBSFY, pink sheets) last traded $1.08 (-3.87% on the day) and is thin/illiquid; worth tracking via a cleaner entry point (e.g. the primary Paris listing) rather than acting on the US ADR directly."
     },
     {
-      "label": "NVO",
+      "label": "NTDOY",
       "tag": "Worth watching",
-      "detail": "Novo Nordisk -- not currently held. The other half of the GLP-1 duopoly is trading near multi-year lows (ADR last $45.53, down sharply from 2024/2025 highs) after CagriSema trial disappointments and share loss to Lilly's oral pill; its own oral semaglutide is still projected to hold a real (if smaller, ~$4B) share of the 2030 oral segment, and it is the plaintiff, not the defendant, in the current advertising litigation with Lilly. A contrarian value angle on the same duopoly LLY sits in, but continued share-loss momentum is a real near-term risk worth watching before sizing a position."
+      "detail": "Nintendo (US unsponsored ADR) -- not currently held. Switch 2 has sold 23.68M units through June 30, 2026 -- already exceeding the original GameCube's full lifetime total (21.74M) -- and was the fastest hardware launch in Nintendo history (3.5M units in 4 days) and fastest to 10M units (4 months); software attach rate is running roughly 2.46 games per console. Real structural hardware-cycle strength, but the only US-accessible line found (NTDOY, pink sheets, unsponsored) last traded $14.07 (-1.26% on the day) and is an illiquid ADR, not a clean proxy for the primary Tokyo listing -- flagging for a future cycle once a better-access vehicle is confirmed rather than acting today."
     },
     {
-      "label": "FDA compounding crackdown & indication expansion",
+      "label": "EU Digital Fairness Act / loot-box regulation",
       "tag": "Worth watching",
-      "detail": "Two structural theme-level signals, no specific ticker yet: (1) the FDA's April 2026 proposal to permanently exclude semaglutide/tirzepatide/liraglutide from the 503B Bulks List, plus 55+ warning letters issued to telehealth compounders in March and June 2026, is closing the generic-copy substitute channel and should structurally redirect volume back to branded drugs (LLY, NVO) over 2026-2027; (2) indication expansion into MASH/NASH, obstructive sleep apnea, and cardiovascular disease (already in Amgen's and others' pipelines) could expand the addressable market well beyond the $27.5B-$68.65B 2026 weight-loss-market estimates currently being modeled -- carry both to the next scout cycle for name-level follow-up."
+      "detail": "No specific ticker yet, theme-level signal: the EU's Digital Fairness Act, expected as a formal proposal in Q4 2026, could ban loot boxes outright or mandate parental consent for in-game purchases by minors; separately, PEGI's March 2026 ratings overhaul already reclassifies any game with paid random items as PEGI 16+ minimum for new submissions from June 2026, and the UK's ASA has moved to active enforcement on loot-box disclosure in app-store listings. The US still has no federal loot-box law, but this is a genuine, live monetization-model risk across the live-service/free-to-play segment of the whole industry (affecting TTWO's NBA 2K and mobile titles as well as RBLX's virtual-item economy) -- carry forward to the next scout cycle for name-level follow-up as the EU proposal firms up."
     }
   ],
   "full_report_url": "data/scout-latest.html"
