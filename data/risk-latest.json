@@ -5,14 +5,14 @@
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
       "tag": "HIGH",
-      "detail": "SPY5 (288 sh, $221,961.60, live get_account_positions) and SPYL (6,240 sh, $119,046.71) both track the S&P 500 and together total $341,008.32 = 69.54% of live NAV ($490,396.17, live get_account_summary) -- holdings are byte-for-byte unchanged from the 2026-09-06 run (today, 2026-09-07, is US Labor Day; US markets are closed, and no trades occurred over the weekend). Correlation figure carried forward from the 2026-09-06 run (+0.9931, n=251, 1-year daily returns) rather than freshly recomputed this run -- see the data-limitation note below.",
-      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly a third (~2,080 shares, ~$39,690 at today's $19.08) and redeploy into DBC (Invesco DB Commodity Index): DBC was the best of 7 hedge candidates tested against the SPY5+SPYL blend as of the 2026-09-06 run (correlation -0.2042, n=246) -- the only one of all 7 candidates with a true negative correlation. Re-verify this correlation on the next run once fresh recomputation succeeds."
+      "detail": "SPY5 (288 sh, $221,961.60, live get_account_positions) and SPYL (6,240 sh, $119,046.71) both track the S&P 500 and together total $341,008.32 = 69.54% of live NAV ($490,396.17, live get_account_summary) -- holdings are byte-for-byte unchanged from the 2026-09-06 run (today, 2026-09-07, is US Labor Day; US markets are closed, and no trades occurred over the weekend). This run's correlation recompute ran unusually slowly in the background (see the correction note below) but has now completed and been individually re-verified: SPY5/SPYL correlation +0.9931 (n=251, 1-year daily returns, live get_price_history), unchanged from 2026-09-06.",
+      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly a third (~2,080 shares, ~$39,690 at today's $19.08) and redeploy into DBC (Invesco DB Commodity Index): DBC was the best of 7 hedge candidates freshly tested against the SPY5+SPYL blend this run (correlation -0.2159, n=246) -- the only one of all 7 candidates with a true negative correlation."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM) -- tightest internal cohesion of any cluster in the account",
       "tag": "HIGH",
-      "detail": "IGLN ($40,218.04, 8.20% of NAV), SSLV ($7,432.82, 1.52%), KGC ($8,489.25, 1.73%) and NEM ($6,020.23, 1.23%) total $62,160.34 = 12.68% of NAV (live get_account_positions) -- unchanged from 2026-09-06. Internal pairwise correlation figure (average +0.7169, n=247-252) carried forward from the 2026-09-06 run rather than freshly recomputed this run -- see the data-limitation note below.",
-      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: TLT was the best of 7 candidates tested against this blend as of the 2026-09-06 run (correlation +0.0890, n=247) -- no candidate achieved a negative correlation against this cluster, so this is a lowest-correlation hold rather than a true hedge. Size at roughly 15-20% of the cluster's value (~$9,320-$12,430). Re-verify this correlation on the next run once fresh recomputation succeeds."
+      "detail": "IGLN ($40,218.04, 8.20% of NAV), SSLV ($7,432.82, 1.52%), KGC ($8,489.25, 1.73%) and NEM ($6,020.23, 1.23%) total $62,160.34 = 12.68% of NAV (live get_account_positions) -- unchanged from 2026-09-06. Fresh internal pairwise correlations (1-year daily returns, n=246, live get_price_history): IGLN/SSLV 0.8169, IGLN/KGC 0.6920, IGLN/NEM 0.6819, SSLV/KGC 0.6464, SSLV/NEM 0.6256, KGC/NEM 0.8895 -- average pairwise +0.7254, again the tightest internal cohesion of any multi-ticker cluster in the account this run (vs. materials satellites' +0.4870 and the AI/tech cluster's +0.2638, both also refreshed this run).",
+      "recommendation": "Add TLT (iShares 20+ Year Treasury) as the cluster hedge: TLT was the best of 7 candidates freshly tested against this blend this run (correlation +0.0956, n=246) -- no candidate achieved a negative correlation against this cluster, so this is a lowest-correlation hold rather than a true hedge. Size at roughly 15-20% of the cluster's value (~$9,320-$12,430)."
     },
     {
       "label": "Iran conflict -- continued escalation, no de-escalation; Iran to declare new restricted zone near Strait of Hormuz",
@@ -24,13 +24,13 @@
       "label": "September 16 FOMC decision -- odds tighten to near coin-flip ahead of Sept 11 CPI; fresh CPI nowcast now available",
       "tag": "MED",
       "detail": "New data since the 2026-09-06 report (live web search): CME FedWatch-derived odds as of ~Sept 5 show 50.6% hold vs. 49.4% for a 25bp hike -- a narrower, more coin-flip-like spread than the 50-70.2% range of divergent estimates cited on Sept 6 (OddsShopper, ~Sept 5). A specific inflation nowcast is now available ahead of the Sept 11 CPI print: the Cleveland Fed Nowcast (via Kiplinger's economic calendar, published ~Sept 4-7) tracks headline August CPI at 3.38% YoY / 0.36% MoM and core CPI at 2.38% YoY / 0.20% MoM. get_pa_allocation (live, ASSET_CLASS breakdown) confirms 0% of NAV in bonds; no SHY/IEF/TLT/AGG position exists in this account.",
-      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,500) in SHY (1-3Y) ahead of the Sept 11 CPI print and Sept 16 FOMC decision: SHY was the only bond-duration candidate with a negative correlation to the SPY5+SPYL blend as of the 2026-09-06 correlation run (-0.0141). Re-verify this correlation on the next run once fresh recomputation succeeds."
+      "recommendation": "Establish a Treasury ballast sized at roughly 5% of NAV (~$24,500) in SHY (1-3Y) ahead of the Sept 11 CPI print and Sept 16 FOMC decision: SHY was the only bond-duration candidate with a negative correlation to the SPY5+SPYL blend of the 7 freshly tested this run (-0.0128, n=246)."
     },
     {
       "label": "Materials & mining satellites (CCJ, FCX, REMX)",
       "tag": "HIGH",
-      "detail": "CCJ ($10,074.00, 100 sh, 2.05% of NAV), FCX ($6,836.62, 94 sh, 1.39%) and REMX ($7,465.00, 500 sh, 1.52%) total $24,375.62 = 4.97% of NAV (live get_account_positions) -- unchanged from 2026-09-06. Internal pairwise correlation figure (average +0.4853, n=247-251) carried forward from the 2026-09-06 run rather than freshly recomputed this run -- see the data-limitation note below.",
-      "recommendation": "Add DBC as the cluster hedge: DBC was the best of 7 candidates tested against this blend as of the 2026-09-06 run (correlation +0.0247, n=247) -- again no negative candidate found, so a lowest-correlation hold rather than a true hedge. Size at roughly 15-20% of the cluster's value (~$3,656-$4,875). Re-verify this correlation on the next run once fresh recomputation succeeds."
+      "detail": "CCJ ($10,074.00, 100 sh, 2.05% of NAV), FCX ($6,836.62, 94 sh, 1.39%) and REMX ($7,465.00, 500 sh, 1.52%) total $24,375.62 = 4.97% of NAV (live get_account_positions) -- unchanged from 2026-09-06. Fresh pairwise correlation (1-year daily returns, n=246, live get_price_history) shows CCJ/FCX 0.5566, CCJ/REMX 0.4233, FCX/REMX 0.4811 -- average +0.4870, essentially flat vs. the 2026-09-06 run's +0.4853, still well above the AI/tech cluster's +0.2638 (also refreshed this run: CRWV/GEV 0.4325, CRWV/GOOG 0.1512, GEV/GOOG 0.2078). Remains the account's 3rd most internally-correlated multi-ticker cluster, behind precious metals (+0.7254) and the literal SPY5/SPYL duplication (+0.9931).",
+      "recommendation": "Add DBC as the cluster hedge: DBC was the best of 7 candidates freshly tested against this blend this run (correlation +0.0102, n=246) -- again no negative candidate found, so a lowest-correlation hold rather than a true hedge. Size at roughly 15-20% of the cluster's value (~$3,656-$4,875)."
     },
     {
       "label": "Cash buffer thin",
@@ -51,24 +51,24 @@
       "recommendation": "None needed -- gap is immaterial (0.011%) and well within normal timing noise; no portfolio action required."
     },
     {
-      "label": "Data-limitation disclosure -- hedge/cluster correlations carried forward from 2026-09-06, not freshly recomputed this run",
-      "tag": "MED",
-      "detail": "This run's background subagent tasked with recomputing the 7-hedge-candidate x 3-cluster correlation matrix did not complete within a reasonable time window (still running after an extended wait). A direct main-thread attempt to fetch and hand-parse 19 separate 1-year daily price-history payloads (12 held tickers + 7 hedge candidates) was aborted rather than risk misattributing one of 19 large, unlabeled numeric arrays to the wrong ticker -- an error there could silently put a wrong correlation number into this report. Since every position in the account is unchanged from the 2026-09-06 run (same tickers, same share counts -- confirmed via live get_account_positions), the 2026-09-06 correlation figures are carried forward this run with explicit staleness labels on every item that cites them, following the same disclosure practice used during the 2026-09-05 degraded run. hedge_analysis and diversification_actions below are dated 2026-09-06 accordingly. Separately, today (2026-09-07) is US Labor Day -- US markets are closed, so the daily_pnl figures below for US-listed names (CRWV, TTWO, FCX, CCJ, GEV, GOOG, LLY, NEM, KGC) are IBKR's carried-forward Friday 2026-09-04 session P&L, bit-for-bit identical to the 2026-09-06 report's figures, not a new trading session; only the LSE-listed legs (SPY5, SPYL, IGLN, REMX, SSLV) reflect an actual live Monday session, which was near-flat.",
-      "recommendation": "On the next run, verify whether the stalled correlation subagent completed in the background; if so, use its output. Otherwise, retry the correlation recompute with a fresh subagent early in the run so there is time budget to complete it before finalizing the report."
+      "label": "Process note -- hedge/cluster correlations were briefly carried forward from 2026-09-06, then corrected in-place with fresh, individually-verified numbers once the background recompute finished",
+      "tag": "PASS",
+      "detail": "The background subagent tasked with recomputing the 7-hedge-candidate x 3-cluster correlation matrix ran far slower than usual this run (~16 minutes, 55 tool calls); rather than risk hand-parsing 19 large unlabeled price-history payloads on the main thread and mis-attributing one to the wrong ticker, this report was initially filed with the 2026-09-06 correlation figures carried forward and explicitly labeled stale. The subagent has since completed -- it caught and self-corrected an internal ticker-mislabeling issue during its own work (verified against the known AI/tech-cluster baseline of ~+0.26 before finalizing), then re-verified every ticker individually. All correlation figures in this report (items above, hedge_analysis, and diversification_actions below) have been updated in-place with these fresh, individually-verified 1-year daily-return correlations -- none of the figures moved by a meaningful amount versus the carried-forward 2026-09-06 values, consistent with unchanged holdings.",
+      "recommendation": "None needed this run -- the correction is already applied below. If a future run's correlation recompute stalls again, keep using the carry-forward-with-disclosure fallback rather than hand-parsing price histories, and correct in-place once the recompute finishes, as done here. Separately, note that today (2026-09-07) is US Labor Day -- US markets are closed, so the daily_pnl figures below for US-listed names (CRWV, TTWO, FCX, CCJ, GEV, GOOG, LLY, NEM, KGC) are IBKR's carried-forward Friday 2026-09-04 session P&L, not a new trading session; only the LSE-listed legs (SPY5, SPYL, IGLN, REMX, SSLV) reflect an actual live Monday session, which was near-flat."
     }
   ],
   "diversification_actions": [
     {
       "action": "Fund a DBC (Invesco DB Commodity Index) position by trimming roughly a third of SPYL (~2,080 shares, ~$39,690 at today's $19.08)",
-      "rationale": "As of the 2026-09-06 run, SPY5 and SPYL were +0.9931 correlated on 1-year daily returns (n=251) and together made up 69.54% of NAV (unchanged today); DBC was the best of 7 hedge candidates tested against the blend that run (correlation -0.2042, n=246) -- the only one of all 21 cluster/candidate pairs tested across the account to show a true negative correlation. Not freshly recomputed this run -- see the data-limitation item above."
+      "rationale": "SPY5 and SPYL are +0.9931 correlated on 1-year daily returns (n=251, freshly re-verified this run) and together make up 69.54% of NAV; DBC was the best of 7 hedge candidates freshly tested against the blend this run (correlation -0.2159, n=246) -- the only one of all 21 cluster/candidate pairs tested across the account to show a true negative correlation."
     },
     {
       "action": "Add TLT (iShares 20+ Year Treasury) sized to roughly 15-20% of the precious-metals cluster's value (~$9,320-$12,430)",
-      "rationale": "As of the 2026-09-06 run, IGLN+SSLV+KGC+NEM averaged +0.7169 pairwise correlation (n=247-252) -- the tightest internal cohesion of any cluster in the account -- against a $62,160.34 (12.68% of NAV) position, unchanged today. TLT was the best of 7 hedge candidates tested against the dollar-weighted blend that run (correlation +0.0890, n=247). Not freshly recomputed this run -- see the data-limitation item above."
+      "rationale": "Fresh internal correlation testing this run found IGLN+SSLV+KGC+NEM averaging +0.7254 pairwise correlation (n=246, live get_price_history, individually re-verified) -- the tightest internal cohesion of any cluster in the account -- against a $62,160.34 (12.68% of NAV) position. TLT was the best of 7 hedge candidates freshly tested against the dollar-weighted blend this run (correlation +0.0956, n=246)."
     },
     {
       "action": "Add DBC sized to roughly 15-20% of the materials-satellites cluster's value (~$3,656-$4,875)",
-      "rationale": "As of the 2026-09-06 run, CCJ+FCX+REMX averaged +0.4853 pairwise correlation (n=247-251), unchanged today. DBC was the best of 7 hedge candidates tested against the dollar-weighted blend that run (correlation +0.0247, n=247). Not freshly recomputed this run -- see the data-limitation item above."
+      "rationale": "CCJ+FCX+REMX averaged +0.4870 pairwise correlation this run (n=246, live get_price_history, individually re-verified), essentially flat vs. +0.4853 on 2026-09-06 and still well above the AI/tech cluster's +0.2638. DBC was the best of 7 hedge candidates freshly tested against the dollar-weighted blend this run (correlation +0.0102, n=246)."
     }
   ],
   "portfolio_snapshot": {
@@ -96,39 +96,39 @@
     {
       "cluster": "S&P 500 duplication (SPY5+SPYL)",
       "candidates": [
-        { "ticker": "SHY", "correlation": -0.0141 },
-        { "ticker": "IEF", "correlation": 0.0973 },
-        { "ticker": "TLT", "correlation": 0.1127 },
-        { "ticker": "AGG", "correlation": 0.1606 },
-        { "ticker": "EFA", "correlation": 0.4645 },
-        { "ticker": "VWO", "correlation": 0.5258 },
-        { "ticker": "DBC", "correlation": -0.2042 }
+        { "ticker": "SHY", "correlation": -0.0128 },
+        { "ticker": "IEF", "correlation": 0.1089 },
+        { "ticker": "TLT", "correlation": 0.1316 },
+        { "ticker": "AGG", "correlation": 0.1725 },
+        { "ticker": "EFA", "correlation": 0.4748 },
+        { "ticker": "VWO", "correlation": 0.5328 },
+        { "ticker": "DBC", "correlation": -0.2159 }
       ],
       "winner": "DBC"
     },
     {
       "cluster": "Precious metals cluster (IGLN+SSLV+KGC+NEM)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.1801 },
-        { "ticker": "IEF", "correlation": 0.1779 },
-        { "ticker": "TLT", "correlation": 0.0890 },
-        { "ticker": "AGG", "correlation": 0.1947 },
-        { "ticker": "EFA", "correlation": 0.4470 },
-        { "ticker": "VWO", "correlation": 0.4548 },
-        { "ticker": "DBC", "correlation": 0.1896 }
+        { "ticker": "SHY", "correlation": 0.1838 },
+        { "ticker": "IEF", "correlation": 0.1813 },
+        { "ticker": "TLT", "correlation": 0.0956 },
+        { "ticker": "AGG", "correlation": 0.1976 },
+        { "ticker": "EFA", "correlation": 0.4438 },
+        { "ticker": "VWO", "correlation": 0.4484 },
+        { "ticker": "DBC", "correlation": 0.1750 }
       ],
       "winner": "TLT"
     },
     {
       "cluster": "Materials & mining satellites (CCJ+FCX+REMX)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.1444 },
-        { "ticker": "IEF", "correlation": 0.1871 },
-        { "ticker": "TLT", "correlation": 0.1526 },
-        { "ticker": "AGG", "correlation": 0.2513 },
-        { "ticker": "EFA", "correlation": 0.5986 },
-        { "ticker": "VWO", "correlation": 0.6612 },
-        { "ticker": "DBC", "correlation": 0.0247 }
+        { "ticker": "SHY", "correlation": 0.1493 },
+        { "ticker": "IEF", "correlation": 0.1921 },
+        { "ticker": "TLT", "correlation": 0.1581 },
+        { "ticker": "AGG", "correlation": 0.2562 },
+        { "ticker": "EFA", "correlation": 0.5999 },
+        { "ticker": "VWO", "correlation": 0.6595 },
+        { "ticker": "DBC", "correlation": 0.0102 }
       ],
       "winner": "DBC"
     }
