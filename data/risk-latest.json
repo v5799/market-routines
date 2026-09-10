@@ -1,24 +1,24 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-10T15:30:04Z",
+  "run_at": "2026-09-10T15:46:08Z",
   "items": [
     {
-      "label": "SPY5 + SPYL (S&P 500 duplication) -- rotation IN PROGRESS, partially executed",
+      "label": "SPY5 + SPYL (S&P 500 duplication) -- rotation sells now fully working, unfilled",
       "tag": "HIGH",
-      "detail": "User submitted the full-rotation SELL orders (106, 107) themselves. Live get_account_trades TODAY confirms only PARTIAL fills: SPY5 sold 130 of 288 shares (158 remain, $120,217.46 at current price), SPYL sold 5,250 of 6,240 shares (990 remain, $18,637.74). No live orders remain open (get_account_orders is empty) -- the unfilled remainder simply didn't execute, it wasn't left working. Root cause unconfirmed (possibly a manual size edit on submission); the NEM sell (104) executed as MIDPRICE rather than the LIMIT order type staged, confirmed by the user as an intentional manual choice for better fill price, so some divergence between staged instructions and what's actually submitted is expected and not itself an error.",
-      "recommendation": "Draft completion orders staged this run: SELL 158 SPY5 (ID 110) and SELL 990 SPYL (ID 111), both LIMIT at current price, to finish the rotation as originally sized. User has said they will review and execute these tomorrow, not today -- confirmed correct on a final check (right tickers, right remaining quantities, matches the 288/6,240 originals minus what already filled). CORRECTION to this run's earlier math: an earlier statement that rotation proceeds would 'comfortably cover' the DBC/TLT/IGLN buys (101/102/103/105) in addition to VWRA/VHYL (108/109) was wrong -- the 85/15 VWRA/VHYL split consumes essentially all rotation proceeds (~$336k in, ~$336k out, ~$96 residual), leaving a real ~$41,100 shortfall against 101+102+103 if all are submitted the same day as the rotation. See the cash-buffer item below for what can actually be funded today."
+      "detail": "User submitted the completion sell instructions (110, 111) themselves. Live get_account_orders now shows 3 working orders covering the full remainder: SELL 130 SPY5 @ $760.36 (order 1139911967) + SELL 28 SPY5 @ $761.14 (order 1139911970) = 158 total, matching instruction 110 exactly (split into two orders at two limit prices by the submission process, not an error -- sums correctly, no over/under-sell risk); SELL 990 SPYL @ $18.83 (order 1139911964), matching instruction 111 exactly. Live get_account_trades TODAY confirms zero new fills since the earlier partial executions (130/288 SPY5, 5,250/6,240 SPYL, 16/16 NEM already filled) -- all three new orders are status NEW, 0 filled, as the user reported.",
+      "recommendation": "Verified correct on final check: right tickers, right quantities, together they complete the intended 288-share SPY5 / 6,240-share SPYL rotation sell. Once filled, resubmit VWRA (108) and VHYL (109) to complete the rotation -- those remain drafts (not yet live orders), correctly held back today since they need the sale proceeds to settle first. CORRECTION (carried from earlier this run): an earlier statement that rotation proceeds would 'comfortably cover' the DBC/TLT/IGLN buys (101/102/103/105) in addition to VWRA/VHYL was wrong -- the 85/15 split consumes essentially all rotation proceeds (~$336k in, ~$336k out, ~$96 residual)."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
       "tag": "HIGH",
       "detail": "IGLN ($39,528.05, 8.17% of NAV), SSLV ($7,255.82, 1.50%), KGC ($8,018.31, 1.66%) and NEM ($3,919.33, 0.81% -- down from $5,913.54 after the 16-share trim executed this run) total $58,721.51 = 12.13% of NAV (live get_account_positions, post-trade). Freshly recomputed internal pairwise correlations earlier this run (1-year daily log returns, live get_price_history, background-verified): IGLN/SSLV +0.8153 (n=252), IGLN/KGC +0.6833 (n=246), IGLN/NEM +0.4021 (n=246), SSLV/KGC +0.6339 (n=246), SSLV/NEM +0.3684 (n=246), KGC/NEM +0.5203 (n=250) -- average pairwise +0.5706, a meaningful drop from this morning's +0.7197. This mirrors the 2026-09-08 dip (+0.5639) that fully reversed the next run and was attributed to an LSE/US trading-calendar-mismatch artifact rather than a real regime change -- flagged the same way here, to be re-checked next run rather than treated as confirmed.",
-      "recommendation": "Within-pillar rebalance EXECUTED this run: SELL 16 NEM / BUY 24 IGLN (instruction 104 fully filled at $125.43-126.45; instruction 105, BUY 24 IGLN, still pending -- not yet submitted). Gold/silver/miner exposure remains a deliberate strategic pillar (not an accidental concentration), so no reduction of overall gold exposure is recommended. TLT diversifier (10-15% of cluster value, 93 shares ~$7,548, instruction 103) remains staged and pending -- see cash-buffer item for today's funding constraints."
+      "recommendation": "Within-pillar rebalance EXECUTED this run: SELL 16 NEM (instruction 104) fully filled at $125.43-126.45; BUY 24 IGLN (instruction 105) now submitted and working as live order 1139912043 @ $84.68, unfilled. Gold/silver/miner exposure remains a deliberate strategic pillar (not an accidental concentration), so no reduction of overall gold exposure is recommended. TLT diversifier (10-15% of cluster value, 93 shares ~$7,548, instruction 103) remains a draft, correctly held back -- see cash-buffer item for today's funding constraints."
     },
     {
       "label": "Materials & mining satellites (CCJ, FCX, REMX)",
       "tag": "HIGH",
       "detail": "CCJ ($9,946.50, 100 sh, 2.06% of NAV), FCX ($6,652.38, 94 sh, 1.37%) and REMX ($7,230.00, 500 sh, 1.49%) total $23,829.88 = 4.92% of NAV (live get_account_positions, post-trade, little changed). Pairwise correlations from earlier this run: CCJ/FCX +0.5934 (n=250), CCJ/REMX +0.3922 (n=246), FCX/REMX +0.4785 (n=246) -- average +0.4880.",
-      "recommendation": "DBC diversifier (125 shares, ~$4,139, instruction 102) remains staged and pending -- see cash-buffer item for today's funding constraints. No change to the underlying analysis from earlier this run."
+      "recommendation": "DBC diversifier (125 shares, instruction 102) now submitted and working as live order 1139912041 @ $33.11, unfilled. No change to the underlying analysis from earlier this run."
     },
     {
       "label": "Iran/Hormuz conflict -- no ceasefire, Trump floats talks, Brent above $100/bbl",
@@ -42,7 +42,7 @@
       "label": "Cash buffer -- large TODAY due to mid-rotation sale proceeds, but most is not yet usable",
       "tag": "MED",
       "detail": "get_account_balances shows total_cash_value/settled_cash of $209,138.06 (43.2% of NAV) after today's partial SPY5/SPYL/NEM sales -- but get_account_summary's available_funds/buying_power is only $9,404.17, essentially unchanged from the $9,504.06 pre-trade figure (the ~$99.89 difference matches today's total trading commissions exactly). This confirms today's ~$197,612 of net sale proceeds are NOT yet usable buying power -- consistent with T+1/T+2 settlement (this account shows 0 margin usage, 0.57x leverage, looking like a cash account or one respecting strict settlement) -- confirm exact settlement timing for LSEETF-listed (SPY5/SPYL, likely T+2) vs NYSE-listed (NEM, likely T+1) fills directly in the IBKR UI, which this connector cannot see.",
-      "recommendation": "What can be completed TODAY with the $9,404.17 currently available: BUY 24 IGLN (105, $2,032.32) + BUY 125 DBC (102, $4,138.75) = $6,171.07 combined, leaving ~$3,233 of buying power unused as a small same-day buffer. TLT (103, $7,548) does not fit alongside both of those (105+103 alone = $9,580, already over budget), and the large rotation buys (108 VWRA $285,845, 109 VHYL $50,450) and the large DBC buy (101, $39,037) all require the SPY5/SPYL sale proceeds to actually settle first -- not available today regardless of combination. Recommended today: submit 105 and 102 only; hold 103, 101, 108, 109 until proceeds settle (likely 1-2 business days). Separately, once the full rotation completes and settles, the account's cash buffer returns to roughly its pre-rotation level (~$9,500-9,700) since the rotation is designed to be self-funding -- the current 43.2% cash bucket is a TRANSIENT mid-rotation state, not the target allocation, and should not be read as a new large cash cushion."
+      "recommendation": "User submitted exactly the recommended combination: BUY 24 IGLN (105, live order 1139912043 @ $84.68) + BUY 125 DBC (102, live order 1139912041 @ $33.11), both unfilled as of this check -- confirmed correct, matches the $6,171.07 that fits within the $9,404.17 available. TLT (103), the large DBC (101), VWRA (108) and VHYL (109) correctly remain drafts, not submitted -- still require the SPY5/SPYL sale proceeds to settle. Once the rotation completes and settles, the account's cash buffer is expected to return to roughly its pre-rotation level (~$9,500-9,700) since the rotation is designed to be self-funding -- the current 43.2% cash bucket is a TRANSIENT mid-rotation state, not the target allocation."
     },
     {
       "label": "Leverage / margin -- confirmed low, connector fully healthy this run",
@@ -167,21 +167,9 @@
       "status": "pending_review"
     },
     {
-      "id": "102",
-      "description": "BUY 125 DBC @ $33.11 limit -- materials-satellites low-conviction diversifier -- RECOMMENDED FOR TODAY, fits current available buying power",
-      "created_at": "2026-09-10T14:27:40Z",
-      "status": "pending_review"
-    },
-    {
       "id": "103",
       "description": "BUY 93 TLT @ $81.16 limit -- precious-metals cluster low-conviction diversifier -- PENDING, does not fit today's available buying power alongside 102+105, hold until proceeds settle",
       "created_at": "2026-09-10T14:27:40Z",
-      "status": "pending_review"
-    },
-    {
-      "id": "105",
-      "description": "BUY 24 IGLN @ $84.68 limit -- within-gold-pillar rebalance, pairs with the already-executed NEM trim (instruction 104) -- RECOMMENDED FOR TODAY, fits current available buying power",
-      "created_at": "2026-09-10T14:55:55Z",
       "status": "pending_review"
     },
     {
@@ -194,18 +182,6 @@
       "id": "109",
       "description": "BUY 728 VHYL @ $69.30 limit -- income-satellite leg of rotation -- PENDING, requires SPY5/SPYL sale proceeds to settle first, not available today",
       "created_at": "2026-09-10T15:09:39Z",
-      "status": "pending_review"
-    },
-    {
-      "id": "110",
-      "description": "SELL 158 SPY5 (remaining balance) @ $760.36 limit -- completes the rotation sell that instruction 106 only partially filled (130/288). User will review and execute tomorrow.",
-      "created_at": "2026-09-10T15:23:05Z",
-      "status": "pending_review"
-    },
-    {
-      "id": "111",
-      "description": "SELL 990 SPYL (remaining balance) @ $18.83 limit -- completes the rotation sell that instruction 107 only partially filled (5,250/6,240). User will review and execute tomorrow.",
-      "created_at": "2026-09-10T15:23:05Z",
       "status": "pending_review"
     },
     {
