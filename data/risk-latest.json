@@ -1,12 +1,12 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-10T14:55:55Z",
+  "run_at": "2026-09-10T15:09:39Z",
   "items": [
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
       "tag": "HIGH",
       "detail": "SPY5 (288 sh, $218,462.40, live get_account_positions) and SPYL (6,240 sh, $117,137.28) both track the S&P 500 and together total $335,599.67 = 69.60% of live NAV ($482,170.22, live get_account_summary), down further intraday from this morning's 06:50 UTC run (NAV $487,035.69, 69.38%) on continued broad-market weakness -- no trades today (live get_account_trades TODAY confirms zero). Freshly recomputed 1-year daily log-return correlation (live get_price_history, background-verified): SPY5/SPYL +0.9932 (n=252), essentially unchanged from this morning.",
-      "recommendation": "Trim SPYL (the smaller, more redundant leg) by roughly a third (2,080 shares, ~$39,042 at today's $18.77) and redeploy into DBC (Invesco DB Commodity Index): DBC was the best of 7 hedge candidates freshly tested against the SPY5+SPYL blend this run (correlation -0.2079, n=246) -- the only true negative correlation found across all 21 cluster/candidate pairs tested this run. A draft (unsubmitted) SELL 2,080 SPYL / BUY 1,179 DBC instruction pair has been staged in IBKR this run (instruction IDs 100 and 101) for manual review and submission."
+      "recommendation": "UPDATED after user follow-up: the user confirmed they are not a US taxpayer (Indian tax resident, IBKR account opened from India, no options/derivatives permissions), so PFIC is not a concern and UCITS-domiciled funds are in fact the correct choice for them (avoids US estate-tax exposure on US-situs assets and gets the better US-Ireland treaty withholding rate on US-source dividends) -- consistent with the account's existing all-UCITS holdings. The partial SPYL-trim-into-DBC idea (previously staged as IDs 100/101) has been superseded: instruction 100 was deleted and replaced with a FULL rotation of the entire SPY5+SPYL position into VWRA (Vanguard FTSE All-World UCITS ETF USD Acc, LSEETF, ~62% US weight vs SPY5/SPYL's 100%, 0.14% TER, 49 countries incl. EM) as the new global core (85% of proceeds) plus VHYL (Vanguard FTSE All-World High Dividend Yield UCITS ETF, LSEETF, 0.29% TER) as the income-generating satellite (15% of proceeds). Draft (unsubmitted) instructions staged: SELL 288 SPY5 (ID 106), SELL 6,240 SPYL (ID 107), BUY 1,488 VWRA (ID 108), BUY 728 VHYL (ID 109) -- total proceeds ~$336,484 at today's prices, split ~85/15. The DBC hedge idea is preserved separately (still staged as ID 101, now funded by the larger rotation proceeds instead of the partial trim) since it addresses a different risk (commodity/inflation hedge) than the domicile/concentration rotation. Concentration-score impact of the two-bucket 85/15 split alone: -12.35 points (50.91 -> 38.55); a like-for-like 1-bucket swap of SPY5/SPYL into a single fund of the same size would move the score by exactly zero -- the benefit comes from splitting into core+satellite, not from the fund choice itself."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
@@ -59,8 +59,8 @@
   ],
   "diversification_actions": [
     {
-      "action": "Fund a DBC (Invesco DB Commodity Index) position by trimming roughly a third of SPYL (2,080 shares, ~$39,042 at today's $18.77) -- staged as draft instructions IDs 100 (SELL SPYL) and 101 (BUY DBC)",
-      "rationale": "SPY5 and SPYL are +0.9932 correlated on 1-year daily returns (n=252, freshly computed this run) and together make up 69.60% of NAV; DBC was the best of 7 hedge candidates freshly tested against the blend this run (correlation -0.2079, n=246) -- the only true negative correlation found across all 21 cluster/candidate pairs tested across the account this run."
+      "action": "Full rotation of SPY5+SPYL into VWRA (global core, 85%) + VHYL (income satellite, 15%) -- staged as draft instructions IDs 106 (SELL 288 SPY5), 107 (SELL 6,240 SPYL), 108 (BUY 1,488 VWRA), 109 (BUY 728 VHYL); separately, still fund a DBC position via instruction ID 101 (BUY 1,179 DBC, now funded by the larger rotation proceeds instead of a partial trim)",
+      "rationale": "SPY5 and SPYL are +0.9932 correlated on 1-year daily returns (n=252, freshly computed this run) and together make up 69.60% of NAV, all in a single US S&P 500 index tracked twice over. User confirmed non-US-taxpayer status this run, removing the PFIC concern that had paused this trade -- UCITS domicile (VWRA/VHYL) is consistent with the account's existing holdings and the objectively better choice for a non-US investor. Separately, DBC remains the best of 7 hedge candidates freshly tested against the SPY5+SPYL blend this run (correlation -0.2079, n=246) -- the only true negative correlation found across all 21 cluster/candidate pairs tested across the account this run -- so that diversification idea is kept as an independent action alongside the rotation, not replaced by it."
     },
     {
       "action": "Add TLT (iShares 20+ Year Treasury Bond) sized to roughly 10-15% of the precious-metals cluster's value (93 shares, ~$7,548 at today's $81.16) -- low conviction, not a true hedge -- staged as draft instruction ID 103",
@@ -154,14 +154,8 @@
   },
   "staged_instructions": [
     {
-      "id": "100",
-      "description": "SELL 2,080 SPYL @ $18.77 limit -- core rotation trim (fund DBC purchase)",
-      "created_at": "2026-09-10T14:27:40Z",
-      "status": "pending_review"
-    },
-    {
       "id": "101",
-      "description": "BUY 1,179 DBC @ $33.11 limit -- SPY5+SPYL diversification hedge, funded by SPYL trim proceeds",
+      "description": "BUY 1,179 DBC @ $33.11 limit -- SPY5+SPYL commodity/inflation diversification hedge, funded by the full rotation proceeds (106+107) rather than a partial trim now that the rotation is staged",
       "created_at": "2026-09-10T14:27:40Z",
       "status": "pending_review"
     },
@@ -187,6 +181,30 @@
       "id": "105",
       "description": "BUY 24 IGLN @ $84.68 limit -- within-gold-pillar rebalance, funded by NEM trim (104), same total pillar size",
       "created_at": "2026-09-10T14:55:55Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "106",
+      "description": "SELL 288 SPY5 (full position) @ $760.36 limit -- step 1 of core-sleeve rotation into VWRA+VHYL",
+      "created_at": "2026-09-10T15:09:39Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "107",
+      "description": "SELL 6,240 SPYL (full position) @ $18.83 limit -- step 2 of core-sleeve rotation into VWRA+VHYL (supersedes deleted partial-trim instruction 100)",
+      "created_at": "2026-09-10T15:09:39Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "108",
+      "description": "BUY 1,488 VWRA (Vanguard FTSE All-World UCITS ETF Acc) @ $192.10 limit -- global-core leg of rotation, ~85% of SPY5+SPYL sale proceeds, funded by 106+107",
+      "created_at": "2026-09-10T15:09:39Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "109",
+      "description": "BUY 728 VHYL (Vanguard FTSE All-World High Dividend Yield UCITS ETF) @ $69.30 limit -- income-satellite leg of rotation, ~15% of SPY5+SPYL sale proceeds, funded by 106+107",
+      "created_at": "2026-09-10T15:09:39Z",
       "status": "pending_review"
     }
   ]
