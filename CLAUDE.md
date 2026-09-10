@@ -217,3 +217,22 @@ call, covering the outputs of Momentum (PASS/HIGH-tier items only) and Scout
 If a ticker has multiple overlapping calls or pre-existing holdings that make
 trade-attribution genuinely ambiguous, say so explicitly in your run summary
 rather than guessing silently which trade belongs to which call.
+
+## Portfolio sleeves (Risk routine only)
+This account is conceptually divided into three sleeves, maintained here
+explicitly since IBKR has no native tagging. Update only when the user
+explicitly tells you a new position's sleeve — never auto-classify.
+
+TRADING SLEEVE (~$100-110k target, active US-focused conviction bets):
+CCJ, CRWV, FCX, GEV, GOOG, LLY, TTWO, and any new Momentum/Scout-sourced
+positions the user acts on going forward.
+
+CORE SLEEVE (~$180k target, global, defensive, mostly accumulating):
+IGLN, SSLV, REMX, KGC, NEM (leveraged gold-price exposure via miners), plus
+SPY5 and SPYL — currently 100% US equity index exposure, being gradually
+rotated toward a majority globally-diversified accumulating equity fund
+plus a smaller regional/income-generating satellite (see rotation section
+below).
+
+TAIL-HEDGE KITTY (target $[CONFIRM AMOUNT]), NOT currently funded — a
+reserved budget, not a held position. See tail-hedge section below.
