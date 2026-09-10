@@ -236,3 +236,14 @@ below).
 
 TAIL-HEDGE KITTY (target $[CONFIRM AMOUNT]), NOT currently funded — a
 reserved budget, not a held position. See tail-hedge section below.
+
+
+### staged_instructions (Risk only)
+Array of trade instructions Risk staged this run via IBKR's
+create_order_instruction (draft only — not submitted). Each item:
+{
+  "id": string,              // instruction ID returned by IBKR
+  "description": string,     // e.g. "SELL 20 SPY5 @ market — core rotation trim"
+  "created_at": ISO date,
+  "status": "pending_review" // always this value; user submits manually in IBKR
+}
