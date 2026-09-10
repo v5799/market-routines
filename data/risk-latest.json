@@ -1,6 +1,6 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-10T14:27:40Z",
+  "run_at": "2026-09-10T14:55:55Z",
   "items": [
     {
       "label": "SPY5 + SPYL (S&P 500 duplication)",
@@ -12,7 +12,7 @@
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
       "tag": "HIGH",
       "detail": "IGLN ($39,521.04, 8.20% of NAV), SSLV ($7,239.30, 1.50%), KGC ($7,963.86, 1.65%) and NEM ($5,913.54, 1.23%) total $60,637.75 = 12.58% of NAV (live get_account_positions). Freshly recomputed internal pairwise correlations (1-year daily log returns, live get_price_history, background-verified): IGLN/SSLV +0.8153 (n=252), IGLN/KGC +0.6833 (n=246), IGLN/NEM +0.4021 (n=246), SSLV/KGC +0.6339 (n=246), SSLV/NEM +0.3684 (n=246), KGC/NEM +0.5203 (n=250) -- average pairwise +0.5706, a meaningful drop from this morning's +0.7197, driven mainly by NEM's correlation to IGLN/SSLV falling sharply. This mirrors the 2026-09-08 dip (+0.5639) that fully reversed the next run and was attributed to an LSE/US trading-calendar-mismatch artifact rather than a real regime change -- flagged the same way here, to be re-checked next run rather than treated as confirmed.",
-      "recommendation": "No candidate tested this run achieved a negative correlation against this cluster -- TLT was again the least-positive of 7 (+0.0980, n=246), edging out DBC (+0.1782) and SHY (+0.1833). This remains a low-conviction diversifier rather than a real hedge, so size any addition conservatively: roughly 10-15% of the cluster's value (~$6,064-$9,096) in TLT (iShares 20+ Year Treasury Bond). A draft (unsubmitted) BUY 93 TLT instruction (~$7,548 at today's $81.16, the midpoint of that range) has been staged in IBKR this run (instruction ID 103) for manual review. A more effective risk reduction would be trimming the cluster itself given its 12.58% weight."
+      "recommendation": "No candidate tested this run achieved a negative correlation against this cluster -- TLT was again the least-positive of 7 (+0.0980, n=246), edging out DBC (+0.1782) and SHY (+0.1833). This remains a low-conviction diversifier rather than a real hedge, so size any addition conservatively: roughly 10-15% of the cluster's value (~$6,064-$9,096) in TLT (iShares 20+ Year Treasury Bond). A draft (unsubmitted) BUY 93 TLT instruction (~$7,548 at today's $81.16, the midpoint of that range) has been staged in IBKR this run (instruction ID 103) for manual review. NOTE: gold/silver/miner exposure together is a deliberate strategic pillar of this portfolio (not an accidental concentration), so trimming the cluster's overall size is explicitly NOT recommended. Instead, a within-pillar composition check found: physical bullion/ETC (IGLN+SSLV) is already 77.1% of the pillar vs miners (KGC+NEM) at 22.9% -- not overweight leveraged miners. But NEM's correlation to the physical legs is notably weaker than KGC's (NEM/IGLN +0.4021, NEM/SSLV +0.3684 vs KGC/IGLN +0.6833, KGC/SSLV +0.6339) -- NEM is the pillar's weakest link to actual gold-price exposure, more driven by company-specific/idiosyncratic risk. CAVEAT: this exact pattern (NEM's correlation to IGLN/SSLV dropping sharply) was also seen on 2026-09-08 and fully reversed the next run, attributed then to an LSE/US trading-calendar-mismatch artifact -- so treat this as a moderate-confidence finding worth re-checking next run, not a confirmed structural issue. A modest, dollar-neutral within-pillar rebalance (SELL 16 NEM / BUY 24 IGLN, ~$2,007 notional, staged as draft instructions IDs 104-105) has been staged for review regardless, since it tightens the pillar's fidelity to pure gold-price exposure without changing the pillar's total size."
     },
     {
       "label": "Materials & mining satellites (CCJ, FCX, REMX)",
@@ -69,6 +69,10 @@
     {
       "action": "Add DBC sized to roughly 15-20% of the materials-satellites cluster's value (125 shares, ~$4,139 at today's $33.11) -- low conviction, not a true hedge -- staged as draft instruction ID 102",
       "rationale": "CCJ+FCX+REMX averaged +0.4880 pairwise correlation this run (n=246-250, live get_price_history), essentially flat vs +0.4926 this morning. DBC was the least-positively-correlated of 7 hedge candidates freshly tested against the dollar-weighted blend this run (correlation -0.0035, n=246) -- essentially zero rather than a genuine negative hedge, so this is a lowest-correlation hold rather than a true hedge; the background analysis also flagged a possible data artifact in this run's EFA price series (near-identical to CCJ's), so EFA's 0.7133 reading in the same test should not be over-interpreted."
+    },
+    {
+      "action": "Within the gold pillar (not a reduction of overall gold exposure): trim NEM by 16 shares and redeploy into IGLN by 24 shares (~$2,007 notional, dollar-neutral) -- staged as draft instructions IDs 104 (SELL NEM) and 105 (BUY IGLN)",
+      "rationale": "Gold/silver/miner exposure (IGLN+SSLV+KGC+NEM) is an intentional strategic hedge pillar, so this is a composition rebalance within the pillar, not a size cut. Fresh correlations this run show NEM's linkage to the physical legs is the pillar's weakest: NEM/IGLN +0.4021 and NEM/SSLV +0.3684 (n=246), vs KGC/IGLN +0.6833 and KGC/SSLV +0.6339 -- meaning NEM's price action is currently the most idiosyncratic (least gold-price-driven) of the four holdings. Moderate confidence only: this same NEM-correlation dip appeared on 2026-09-08 and fully reversed by the next run, previously attributed to an LSE/US trading-calendar artifact -- flagged for re-verification next run before treating as structural."
     }
   ],
   "portfolio_snapshot": {
@@ -171,6 +175,18 @@
       "id": "103",
       "description": "BUY 93 TLT @ $81.16 limit -- precious-metals cluster low-conviction diversifier / rate-decision ballast",
       "created_at": "2026-09-10T14:27:40Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "104",
+      "description": "SELL 16 NEM @ $125.43 limit -- within-gold-pillar rebalance (weakest correlation to physical gold), paired with 105",
+      "created_at": "2026-09-10T14:55:55Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "105",
+      "description": "BUY 24 IGLN @ $84.68 limit -- within-gold-pillar rebalance, funded by NEM trim (104), same total pillar size",
+      "created_at": "2026-09-10T14:55:55Z",
       "status": "pending_review"
     }
   ]
