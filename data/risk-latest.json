@@ -1,217 +1,250 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-10T15:46:08Z",
+  "run_at": "2026-09-11T06:50:00Z",
   "items": [
     {
-      "label": "SPY5 + SPYL (S&P 500 duplication) -- rotation sells now fully working, unfilled",
+      "label": "SPY5 + SPYL (S&P 500 duplication) -- rotation stalled a second day, completion sells re-staged as GTC",
       "tag": "HIGH",
-      "detail": "User submitted the completion sell instructions (110, 111) themselves. Live get_account_orders now shows 3 working orders covering the full remainder: SELL 130 SPY5 @ $760.36 (order 1139911967) + SELL 28 SPY5 @ $761.14 (order 1139911970) = 158 total, matching instruction 110 exactly (split into two orders at two limit prices by the submission process, not an error -- sums correctly, no over/under-sell risk); SELL 990 SPYL @ $18.83 (order 1139911964), matching instruction 111 exactly. Live get_account_trades TODAY confirms zero new fills since the earlier partial executions (130/288 SPY5, 5,250/6,240 SPYL, 16/16 NEM already filled) -- all three new orders are status NEW, 0 filled, as the user reported.",
-      "recommendation": "Verified correct on final check: right tickers, right quantities, together they complete the intended 288-share SPY5 / 6,240-share SPYL rotation sell. Once filled, resubmit VWRA (108) and VHYL (109) to complete the rotation -- those remain drafts (not yet live orders), correctly held back today since they need the sale proceeds to settle first. CORRECTION (carried from earlier this run): an earlier statement that rotation proceeds would 'comfortably cover' the DBC/TLT/IGLN buys (101/102/103/105) in addition to VWRA/VHYL was wrong -- the 85/15 split consumes essentially all rotation proceeds (~$336k in, ~$336k out, ~$96 residual)."
+      "detail": "Live get_account_positions confirms 158 SPY5 ($120,207.19) + 990 SPYL ($18,645.66) = $138,852.85 = 28.71% of NAV, unchanged since the last run -- the completion sell orders the user submitted yesterday (110 SELL 158 SPY5, 111 SELL 990 SPYL) expired unfilled overnight (DAY time-in-force, no fills per live get_account_trades TODAY = empty) and no longer appear in get_account_orders. This is the second consecutive day these sells have lapsed before completion. Fresh correlation recompute (1-year daily log returns, live get_price_history, background-verified): SPY5/SPYL +0.9932 (n=251), essentially unchanged.",
+      "recommendation": "Re-staged the completion sells as fresh instructions 120 (SELL 158 SPY5 @ $760.80 limit) and 121 (SELL 990 SPYL @ $18.83 limit) -- this time with GTC time-in-force instead of DAY, specifically to stop the repeated overnight expiration now that the pattern has recurred twice. The VWRA (108) and VHYL (109) buy drafts remain valid, unexpired drafts (good through 2026-09-17) and still require these sale proceeds to settle before they can be submitted."
     },
     {
       "label": "Precious-metals / mining cluster (IGLN, SSLV, KGC, NEM)",
       "tag": "HIGH",
-      "detail": "IGLN ($39,528.05, 8.17% of NAV), SSLV ($7,255.82, 1.50%), KGC ($8,018.31, 1.66%) and NEM ($3,919.33, 0.81% -- down from $5,913.54 after the 16-share trim executed this run) total $58,721.51 = 12.13% of NAV (live get_account_positions, post-trade). Freshly recomputed internal pairwise correlations earlier this run (1-year daily log returns, live get_price_history, background-verified): IGLN/SSLV +0.8153 (n=252), IGLN/KGC +0.6833 (n=246), IGLN/NEM +0.4021 (n=246), SSLV/KGC +0.6339 (n=246), SSLV/NEM +0.3684 (n=246), KGC/NEM +0.5203 (n=250) -- average pairwise +0.5706, a meaningful drop from this morning's +0.7197. This mirrors the 2026-09-08 dip (+0.5639) that fully reversed the next run and was attributed to an LSE/US trading-calendar-mismatch artifact rather than a real regime change -- flagged the same way here, to be re-checked next run rather than treated as confirmed.",
-      "recommendation": "Within-pillar rebalance EXECUTED this run: SELL 16 NEM (instruction 104) fully filled at $125.43-126.45; BUY 24 IGLN (instruction 105) now submitted and working as live order 1139912043 @ $84.68, unfilled. Gold/silver/miner exposure remains a deliberate strategic pillar (not an accidental concentration), so no reduction of overall gold exposure is recommended. TLT diversifier (10-15% of cluster value, 93 shares ~$7,548, instruction 103) remains a draft, correctly held back -- see cash-buffer item for today's funding constraints."
+      "detail": "IGLN ($39,584.09, 467 sh, 8.18% of NAV), SSLV ($7,238.12, 118 sh, 1.50%), KGC ($8,076.75, 275 sh, 1.67%) and NEM ($3,910.34, 31 sh, 0.81%) total $58,809.30 = 12.16% of NAV. Fresh pairwise correlations (1-year daily, live get_price_history, background-verified): IGLN/SSLV +0.8152 (n=251), IGLN/KGC +0.6834 (n=245), IGLN/NEM +0.6762 (n=245), SSLV/KGC +0.6347 (n=245), SSLV/NEM +0.6197 (n=245), KGC/NEM +0.8925 (n=249) -- average pairwise +0.7203, the highest reading in the recent series and confirming the 2026-09-08/09-10 dips (to +0.56-0.57) were indeed the LSE/US trading-calendar-mismatch artifact flagged in those runs, not a real regime change. Separately, live web search today found spot gold has fallen to ~$4,325/oz, a third straight weekly decline, on rising Sept-16 rate-hike odds -- a headwind to this cluster's thesis at the margin, though still historically elevated in absolute terms.",
+      "recommendation": "TLT remains the best (still low-conviction) hedge of 7 tested (r=+0.0853, n=245; SHY/IEF/AGG/DBC all cluster 0.18-0.19, EFA/VWO 0.44-0.45) -- BUY 93 TLT (instruction 103, ~$7,516 at current $80.82) remains a valid pending draft. Today's available buying power (~$11,427) cannot fund both TLT and the materials-cluster DBC hedge together (~$11,719 combined) -- recommend funding the smaller, cleaner-correlated DBC materials hedge (below) first and holding TLT for the next settlement tranche."
     },
     {
       "label": "Materials & mining satellites (CCJ, FCX, REMX)",
       "tag": "HIGH",
-      "detail": "CCJ ($9,946.50, 100 sh, 2.06% of NAV), FCX ($6,652.38, 94 sh, 1.37%) and REMX ($7,230.00, 500 sh, 1.49%) total $23,829.88 = 4.92% of NAV (live get_account_positions, post-trade, little changed). Pairwise correlations from earlier this run: CCJ/FCX +0.5934 (n=250), CCJ/REMX +0.3922 (n=246), FCX/REMX +0.4785 (n=246) -- average +0.4880.",
-      "recommendation": "DBC diversifier (125 shares, instruction 102) now submitted and working as live order 1139912041 @ $33.11, unfilled. No change to the underlying analysis from earlier this run."
+      "detail": "CCJ ($9,751.00, 100 sh, 2.02% of NAV), FCX ($6,742.62, 94 sh, 1.40%) and REMX ($7,196.00, 500 sh, 1.49%) total $23,689.62 = 4.90% of NAV. Fresh pairwise correlations: CCJ/FCX +0.5632 (n=249), CCJ/REMX +0.4448 (n=245), FCX/REMX +0.4792 (n=245) -- average +0.4957, essentially flat vs recent runs (+0.49-0.50). Live web search found FCX fell 6.9% intraday on 2026-09-10 on broad rate-hike jitters plus a pending, undecided White House review of broader refined-copper tariffs -- a name-specific catalyst worth watching given FCX's weight within this already-concentrated satellite cluster.",
+      "recommendation": "DBC remains by far the best hedge of 7 tested (r=+0.0191, n=245, essentially uncorrelated; next best SHY at +0.1522). The prior submitted order (102, live last run) expired unfilled overnight with no DBC position resulting -- re-staged fresh as instruction 119 (BUY 125 DBC @ $33.62 limit, ~$4,203), which fits comfortably within today's ~$11,427 available buying power. Recommend prioritizing this fill today over the TLT precious-metals hedge given the cash constraint noted above."
     },
     {
-      "label": "Iran/Hormuz conflict -- no ceasefire, Trump floats talks, Brent above $100/bbl",
+      "label": "Iran/Hormuz conflict -- no ceasefire, active escalation continues, Brent still elevated",
       "tag": "HIGH",
-      "detail": "Unchanged from earlier this run (live web search, Sept 9-10 sources): Iran's IRGC struck Jordan's Al-Azraq air base again on Sept 9; Trump floated possible talks while saying fighting 'will not last long'; Qatar warned of an 'industrial catastrophe'; Brent quoted $101-105/bbl depending on source/time. Broader market fell in sympathy Sept 9; GOOG carries an added youth-addiction-litigation overhang.",
-      "recommendation": "Unchanged: do not add further to equity risk while the conflict is unresolved. The SPY5/SPYL rotation in progress this run reduces single-index concentration but does not change net equity exposure, so this caution still applies to the account as a whole."
+      "detail": "Live web search (2026-09-09 to 09-11 sources): no ceasefire in effect -- Iran's foreign minister confirmed there is 'not anything like a ceasefire.' CENTCOM destroyed 5 Iranian tankers Sept 8-9; Iran retaliated with a 20-missile strike on Jordan's Al-Azraq air base (first direct strike on a third-country US-ally base); Houthis separately struck Saudi oil facilities, wounding 73. Brent spiked to $101.21/bbl (Sept 9 close) then $107.63/bbl (Sept 10 close, +5.9%); a live check today (Sept 11) found inconsistent quotes of $102.59-$106.74 across sources -- still elevated, range not resolved lower. Hormuz shipping transit is down to ~12 vessels/day from ~130/day pre-war. Goldman Sachs still projects Brent easing to $85/bbl by December, but not imminently.",
+      "recommendation": "Unchanged: do not add further to equity risk while the conflict is unresolved. The DBC hedges staged this run (materials cluster, and the pending SPY5/SPYL-cluster DBC tranche in instruction 101) double as partial ballast against oil-driven inflation shocks from this conflict."
     },
     {
-      "label": "US-Canada trade war -- no new escalation since Sept 8, still no deal",
+      "label": "US-Canada trade war -- escalated further (tariffs to outright import bans)",
       "tag": "MED",
-      "detail": "Unchanged from earlier this run. CCJ ($9,946.50, 2.06% of NAV) and KGC ($8,018.31, 1.66% of NAV) combined $17,964.81 = 3.71% of NAV.",
-      "recommendation": "No action needed at the current exposure level."
+      "detail": "Live web search: Trump signed proclamations on 2026-09-08 banning (not just tariffing) Canadian dairy/whey, alcohol, motorcycles and mopeds, effective 2026-09-29, replacing the prior 50% tariffs on those goods with an outright import ban under Section 338 of the Tariff Act of 1930; a further tariff-schedule change (adding ATVs and animal hides) takes effect 2026-09-15. Canada's Sept 8 retaliatory tariffs (15-50% on 700+ US products) remain in effect, and Canada doubled steel/aluminum duties to 50% to match. No uranium- or gold-mining-specific tariff action was found. CCJ ($9,751.00, 2.02% of NAV) + KGC ($8,076.75, 1.67% of NAV) = $17,827.75 = 3.69% of NAV.",
+      "recommendation": "No direct action needed at the current exposure level -- neither CCJ's uranium nor KGC's gold-mining lines are named in the new bans/tariffs. Continue monitoring for any extension of the ban list toward metals/mining inputs, which would warrant revisiting this exposure."
     },
     {
-      "label": "September 16 FOMC decision -- odds steady, August CPI print still pending (tomorrow, Sept 11)",
+      "label": "September 16 FOMC decision -- hike odds have risen sharply, today's CPI print unconfirmed",
       "tag": "MED",
-      "detail": "Unchanged from earlier this run: rate-hike odds 49-66% across trackers; August CPI print still scheduled for tomorrow, Sept 11, 8:30am ET.",
-      "recommendation": "TLT (instruction 103) and the account's growing cash position both serve as partial ballast ahead of this; see cash-buffer item for today's actual funding capacity."
+      "detail": "August CPI was scheduled for release today (2026-09-11, 8:30am ET) -- live web search could NOT confirm the actual released figure; results still showed pre-release consensus (headline +0.4% m/m/+3.4% y/y) and BLS's own indexed page still showing July data at query time. This is a genuine data gap, not a 'no news' finding. Separately, September-16 rate-hike odds have risen materially: from the 49-66% range cited in recent runs to ~71-73% per CME FedWatch as of 2026-09-10, driven by a hotter-than-expected August PPI print (+5.4% y/y, released Sept 10).",
+      "recommendation": "Verify the actual CPI print directly against BLS.gov (or IBKR's own economic calendar) before any FOMC-timing-sensitive trade -- do not rely on this report's unconfirmed figure. The TLT (103) and DBC (101, 119) hedges staged this run provide partial ballast regardless of the eventual outcome."
     },
     {
-      "label": "Cash buffer -- large TODAY due to mid-rotation sale proceeds, but most is not yet usable",
+      "label": "GOOG -- youth-addiction litigation overhang continues to pressure the stock",
       "tag": "MED",
-      "detail": "get_account_balances shows total_cash_value/settled_cash of $209,138.06 (43.2% of NAV) after today's partial SPY5/SPYL/NEM sales -- but get_account_summary's available_funds/buying_power is only $9,404.17, essentially unchanged from the $9,504.06 pre-trade figure (the ~$99.89 difference matches today's total trading commissions exactly). This confirms today's ~$197,612 of net sale proceeds are NOT yet usable buying power -- consistent with T+1/T+2 settlement (this account shows 0 margin usage, 0.57x leverage, looking like a cash account or one respecting strict settlement) -- confirm exact settlement timing for LSEETF-listed (SPY5/SPYL, likely T+2) vs NYSE-listed (NEM, likely T+1) fills directly in the IBKR UI, which this connector cannot see.",
-      "recommendation": "User submitted exactly the recommended combination: BUY 24 IGLN (105, live order 1139912043 @ $84.68) + BUY 125 DBC (102, live order 1139912041 @ $33.11), both unfilled as of this check -- confirmed correct, matches the $6,171.07 that fits within the $9,404.17 available. TLT (103), the large DBC (101), VWRA (108) and VHYL (109) correctly remain drafts, not submitted -- still require the SPY5/SPYL sale proceeds to settle. Once the rotation completes and settles, the account's cash buffer is expected to return to roughly its pre-rotation level (~$9,500-9,700) since the rotation is designed to be self-funding -- the current 43.2% cash bucket is a TRANSIENT mid-rotation state, not the target allocation."
+      "detail": "Live web search: the 9th Circuit's Aug 10, 2026 ruling allowing 3,000+ youth-addiction product-liability suits against Alphabet/Meta/Snap/TikTok to proceed (rejecting a blanket Section 230 immunity defense) continues to weigh on the stock per a Sept 9, 2026 follow-up report. GOOG is a small position: 6 sh, $1,979.40, 0.41% of NAV.",
+      "recommendation": "Position size is already small enough that no specific trim is warranted purely on this overhang. Continue monitoring for settlement or trial-date news that could reprice the litigation risk more sharply."
+    },
+    {
+      "label": "Cash buffer -- still large, mid-rotation stall now in its second day",
+      "tag": "MED",
+      "detail": "get_account_balances shows total_cash_value/settled_cash of $209,138.06 (43.23% of NAV) -- but get_account_summary's available_funds/buying_power is only $11,427.36, up modestly from $9,404-9,504 across the last two runs, consistent with further T+1/T+2 settlement trickling in from the Sept 10 partial SPY5/SPYL/NEM sales. The completion sells needed to realize the remaining ~$138,853 of SPY5/SPYL into cash have now expired unfilled twice running (see the first item above).",
+      "recommendation": "Fund the DBC materials hedge (119, ~$4,203) today; hold TLT (103, ~$7,516) for the next settlement tranche. Once the full rotation proceeds eventually settle, remember the user's standing (currently unfunded) intention to deploy up to $50,000 toward a manually-triggered tail-risk hedge -- fully routing all freed cash into VWRA/VHYL without reserving that amount would reduce readiness to fund the kitty if triggered."
     },
     {
       "label": "Leverage / margin -- confirmed low, connector fully healthy this run",
       "tag": "PASS",
-      "detail": "Live get_account_summary shows leverage 0.57x post-trade (down from 0.98x pre-trade as stock exposure fell), $0 initial margin and $0 maintenance margin required.",
+      "detail": "Live get_account_summary shows leverage 0.57x, $0 initial margin and $0 maintenance margin required -- unchanged from recent runs.",
       "recommendation": "None needed -- continue monitoring at each run."
     },
     {
-      "label": "NAV reconciliation -- small internal gap this run",
+      "label": "NAV reconciliation -- gap somewhat wider than recent norm, not alarming",
       "tag": "PASS",
-      "detail": "Post-trade bucket sum ($483,940.47) vs. live net_liquidation ($483,942.65) gap of $2.18 -- negligible, within normal noise.",
-      "recommendation": "None needed this run."
+      "detail": "Live position-value sum ($274,623.26) + settled cash ($209,138.06) = $483,761.32 vs. live net_liquidation ($483,234.39) -- a gap of $526.93 (0.109%), wider than the <0.05% noise seen in the last few runs. Plausibly reflects price ticks between the sequential get_account_positions and get_account_summary calls (several seconds apart) rather than a genuine data problem.",
+      "recommendation": "None needed this run; worth a closer look only if a gap this size recurs next run."
     },
     {
-      "label": "Momentum/Scout draft trades -- new this run, at explicit user request, outside Risk's normal per-run scope",
+      "label": "Data note: get_account_balances' realized_pnl field appears to be a daily (not cumulative) figure",
+      "tag": "PASS",
+      "detail": "This run's realized_pnl read $0.00 (2026-09-11, zero trades today) versus -$4,592.41 reported on 2026-09-10 (a day with multiple sells: the NEM trim and the partial SPY5/SPYL rotation sells). With zero trades today, a cumulative since-inception figure would not plausibly jump from -$4,592.41 to $0 -- this strongly suggests the field resets daily rather than accumulating.",
+      "recommendation": "For future runs, treat portfolio_snapshot.profit.realized as today's realized P&L only (zero on no-trade days), not a running total. A genuine cumulative realized figure would need a different IBKR endpoint or a manually-maintained running sum in risk-history.jsonl -- flagging for awareness rather than changing the schema unilaterally."
+    },
+    {
+      "label": "Momentum/Scout draft trades -- unchanged, still pending",
       "tag": "MED",
-      "detail": "User asked this run to also stage draft order instructions for the top ideas from the Momentum and Scout routines' latest output, not just Risk's own diversification actions. Momentum top 3 by relative-strength outperformance (2026-09-07 run, all tagged HIGH): DELL (+319.88% 1yr, FLAGGED in that run for an unusually large return worth verifying against corporate actions before acting), MPC (+136.47%, FLAGGED for an anomalous 3-month return), CRWD (+95.46%, FLAGGED for an unusually large 1yr return). Scout's only two ticker-level 'New idea' entries (2026-09-06 run): RBLX and U (Unity Software) -- Scout provided suggested_size for both; a third Scout 'New idea' entry exists but is an industry-theme note (Video Games & Interactive Entertainment) with no ticker, so not tradeable.",
-      "recommendation": "Sized conservatively as starter positions: DELL 4 sh (~$2,080, 0.5% NAV -- no suggested_size from Momentum, this is a default absent specific guidance), MPC 6 sh (~$2,401, 0.5% NAV, same caveat), CRWD 11 sh (~$2,341, 0.5% NAV, same caveat), RBLX 80 sh (~$3,626, ~0.75% NAV, within Scout's own 0.5-1% suggested range), U 43 sh (~$1,806, ~0.375% NAV, within Scout's own 0.25-0.5% suggested range). All five staged as draft instructions (112-116). IMPORTANT: three of the five Momentum picks carry the routine's own FLAGGED anomalous-return warnings -- verify against corporate actions/splits before submitting, this has not been independently re-verified this run. None of these are backed by Risk's own correlation/diversification analysis the way the hedge picks above are -- they are unvetted momentum/scout signals staged as drafts only per explicit instruction, not a Risk recommendation in the usual sense."
+      "detail": "Instructions 112 (DELL), 113 (MPC), 114 (CRWD), 115 (RBLX) and 116 (U) -- staged last run at explicit user request from Momentum's 2026-09-07 top-3 and Scout's 2026-09-06 'New idea' entries -- remain pending_review, unsubmitted, and unexpired (through 2026-09-17). No new Momentum or Scout output has landed since the last run to reassess against.",
+      "recommendation": "No action needed this run; these remain outside Risk's normal per-run scope, staged only at prior explicit user request and still unvetted by Risk's own correlation/diversification analysis."
+    },
+    {
+      "label": "Core-sleeve rotation fund research -- standing thesis unchanged this run",
+      "tag": "WATCH",
+      "detail": "VWRA (Vanguard FTSE All-World UCITS Acc, ~0.22% TER, Ireland-domiciled) remains the lead global-core candidate for the SPY5/SPYL rotation, with VHYL (income satellite) as the secondary leg. Live web search today found no expense-ratio, distribution-policy, or domicile/tax-rule changes to VWRA/VHYL/SWDA/EIMI since 2026-09-10. Domicile/PFIC tax treatment remains an open question the user should verify with a tax professional -- the user's prior confirmation of non-US-taxpayer (Indian tax resident) status supports UCITS domicile as the right general direction, but this is not a substitute for professional tax advice.",
+      "recommendation": "No new action needed -- continue holding VWRA (108) and VHYL (109) as pending drafts, to be submitted once the SPY5/SPYL sale proceeds fully settle."
     }
   ],
   "diversification_actions": [
     {
-      "action": "Full rotation of SPY5+SPYL into VWRA (global core, 85%) + VHYL (income satellite, 15%) -- IN PROGRESS: sells 106/107 partially filled (130/288 SPY5, 5,250/6,240 SPYL), completion sells staged as 110 (SELL 158 SPY5) and 111 (SELL 990 SPYL) for user to execute tomorrow; buys 108 (BUY 1,488 VWRA) and 109 (BUY 728 VHYL) remain staged pending settlement of sale proceeds",
-      "rationale": "SPY5 and SPYL are +0.9932 correlated (n=252) and together were 69.60% of NAV, all in a single US S&P 500 index tracked twice over. User confirmed non-US-taxpayer status this run (Indian tax resident, India-opened IBKR account), removing the PFIC concern -- UCITS domicile (VWRA/VHYL) is consistent with the account's existing holdings and the correct choice for a non-US investor."
+      "action": "S&P 500 duplication cluster (SPY5+SPYL) -- best available hedge is DBC; a 1,179-share tranche remains staged as instruction 101 (funded by rotation proceeds, still pending settlement)",
+      "rationale": "SPY5 and SPYL are +0.9932 correlated (n=251) and together 28.71% of NAV, both tracking the S&P 500. Of 7 hedge candidates tested (SHY, IEF, TLT, AGG, EFA, VWO, DBC), DBC was the only one with a negative correlation (r=-0.2054, n=245)."
     },
     {
-      "action": "Add TLT sized to roughly 10-15% of the precious-metals cluster's value (93 shares, ~$7,548) -- staged as draft instruction 103, PENDING (does not fit today's available buying power alongside 102+105)",
-      "rationale": "TLT was the least-positively-correlated of 7 hedge candidates tested against the precious-metals blend this run (correlation +0.0980, n=246) -- low conviction, no candidate was negatively correlated."
+      "action": "Precious-metals cluster (IGLN+SSLV+KGC+NEM) -- add TLT, staged as draft instruction 103 (93 shares, ~$7,516), PENDING -- does not fit today's available buying power alongside the DBC buy below",
+      "rationale": "Cluster internal cohesion is +0.7203 average pairwise (n=245-251) this run. Of 7 hedge candidates tested, TLT was the lowest-positive correlation (r=+0.0853, n=245); no candidate tested negative, so this remains a low-conviction hedge."
     },
     {
-      "action": "Add DBC sized to roughly 15-20% of the materials-satellites cluster's value (125 shares, ~$4,139) -- staged as draft instruction 102, RECOMMENDED FOR TODAY (fits current available buying power)",
-      "rationale": "DBC was the least-positively-correlated of 7 hedge candidates tested against the materials-satellites blend this run (correlation -0.0035, n=246) -- essentially zero, not a genuine hedge, but the best available."
-    },
-    {
-      "action": "Within the gold pillar: trim NEM by 16 shares (EXECUTED, filled at $126.45/$125.45) and redeploy into IGLN by 24 shares (staged as draft instruction 105, RECOMMENDED FOR TODAY -- fits current available buying power)",
-      "rationale": "NEM's correlation to the physical legs (IGLN +0.4021, SSLV +0.3684) was notably weaker than KGC's (IGLN +0.6833, SSLV +0.6339) -- NEM was the pillar's weakest link to actual gold-price exposure. Moderate confidence only, per the recurring calendar-artifact caveat noted in the items above."
+      "action": "Materials & mining satellites (CCJ+FCX+REMX) -- add DBC, re-staged as fresh draft instruction 119 (125 shares, ~$4,203), RECOMMENDED FOR TODAY -- fits current available buying power",
+      "rationale": "Cluster internal cohesion is +0.4957 average pairwise (n=245-249). Of 7 hedge candidates tested, DBC was by far the best (r=+0.0191, n=245, essentially uncorrelated) -- next best was SHY at +0.1522. The prior order (102) expired unfilled overnight, hence the re-stage."
     }
   ],
   "portfolio_snapshot": {
-    "nav": 483942.65,
-    "as_of": "2026-09-10",
+    "nav": 483234.39,
+    "as_of": "2026-09-11",
     "concentration_score": 29,
     "buckets": [
-      { "label": "S&P 500 (SPY5+SPYL, mid-rotation)", "amount": 138855.20, "pct": 28.69 },
-      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 58721.51, "pct": 12.13 },
-      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 25009.21, "pct": 5.17 },
-      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 23829.88, "pct": 4.92 },
-      { "label": "Other satellites (LLY+TTWO)", "amount": 28386.61, "pct": 5.87 },
-      { "label": "Cash (incl. unsettled sale proceeds pending redeployment)", "amount": 209138.06, "pct": 43.22 }
+      { "label": "S&P 500 (SPY5+SPYL, mid-rotation)", "amount": 138852.85, "pct": 28.706 },
+      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 58809.30, "pct": 12.155 },
+      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 24793.20, "pct": 5.125 },
+      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 23689.62, "pct": 4.897 },
+      { "label": "Other satellites (LLY+TTWO)", "amount": 28478.29, "pct": 5.887 },
+      { "label": "Cash (incl. unsettled sale proceeds pending redeployment)", "amount": 209138.06, "pct": 43.230 }
     ],
     "profit": {
-      "total": 3942.65,
-      "pct_on_core": 0.82,
+      "total": 3234.39,
+      "pct_on_core": 0.674,
       "core_capital": 480000,
-      "realized": -4592.41,
-      "unrealized": -7407.07,
-      "interest_est": 524
+      "realized": 0,
+      "unrealized": -8122.15,
+      "interest_est": 546
     },
-    "note": "This snapshot is a TRANSIENT mid-rotation state: the 43.22% cash bucket and 29 concentration_score reflect today's partial SPY5/SPYL/NEM sale proceeds sitting in cash, not yet redeployed into VWRA/VHYL/IGLN. Once the rotation completes and settles, cash is expected to return to roughly its pre-rotation ~2% level. Do not read this run's low concentration_score as the achieved/target state."
+    "note": "This snapshot remains a TRANSIENT mid-rotation state for the second consecutive run: the 43.23% cash bucket and concentration_score of 29 reflect the Sept 10 partial SPY5/SPYL/NEM sale proceeds still sitting in cash, not yet redeployed into VWRA/VHYL/IGLN. The completion sells needed to finish realizing the remaining SPY5/SPYL proceeds have now expired unfilled twice running (re-staged this run as GTC instructions 120/121 instead of DAY, to break the pattern). Do not read this run's low concentration_score as the achieved/target state. profit.realized is $0 this run because get_account_balances' realized_pnl field appears to report today's (not cumulative) realized P&L, and no trades occurred today -- see the dedicated data-note item above."
   },
   "hedge_analysis": [
     {
-      "cluster": "S&P 500 duplication (SPY5+SPYL)",
+      "cluster": "S&P 500 duplication cluster (SPY5+SPYL)",
       "candidates": [
-        { "ticker": "SHY", "correlation": -0.0107 },
-        { "ticker": "IEF", "correlation": 0.1012 },
-        { "ticker": "TLT", "correlation": 0.1131 },
-        { "ticker": "AGG", "correlation": 0.1632 },
-        { "ticker": "EFA", "correlation": 0.4668 },
-        { "ticker": "VWO", "correlation": 0.5267 },
-        { "ticker": "DBC", "correlation": -0.2079 }
+        { "ticker": "SHY", "correlation": -0.0101 },
+        { "ticker": "IEF", "correlation": 0.0992 },
+        { "ticker": "TLT", "correlation": 0.1109 },
+        { "ticker": "AGG", "correlation": 0.1610 },
+        { "ticker": "EFA", "correlation": 0.4690 },
+        { "ticker": "VWO", "correlation": 0.5263 },
+        { "ticker": "DBC", "correlation": -0.2054 }
       ],
       "winner": "DBC"
     },
     {
-      "cluster": "Precious metals cluster (IGLN+SSLV+KGC+NEM)",
+      "cluster": "Precious-metals cluster (IGLN+SSLV+KGC+NEM)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.1833 },
-        { "ticker": "IEF", "correlation": 0.1859 },
-        { "ticker": "TLT", "correlation": 0.0980 },
-        { "ticker": "AGG", "correlation": 0.2069 },
-        { "ticker": "EFA", "correlation": 0.4584 },
-        { "ticker": "VWO", "correlation": 0.4771 },
-        { "ticker": "DBC", "correlation": 0.1782 }
+        { "ticker": "SHY", "correlation": 0.1821 },
+        { "ticker": "IEF", "correlation": 0.1776 },
+        { "ticker": "TLT", "correlation": 0.0853 },
+        { "ticker": "AGG", "correlation": 0.1926 },
+        { "ticker": "EFA", "correlation": 0.4378 },
+        { "ticker": "VWO", "correlation": 0.4486 },
+        { "ticker": "DBC", "correlation": 0.1877 }
       ],
       "winner": "TLT"
     },
     {
       "cluster": "Materials & mining satellites (CCJ+FCX+REMX)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.1844 },
-        { "ticker": "IEF", "correlation": 0.2214 },
-        { "ticker": "TLT", "correlation": 0.1616 },
-        { "ticker": "AGG", "correlation": 0.2849 },
-        { "ticker": "EFA", "correlation": 0.7133 },
-        { "ticker": "VWO", "correlation": 0.7493 },
-        { "ticker": "DBC", "correlation": -0.0035 }
+        { "ticker": "SHY", "correlation": 0.1522 },
+        { "ticker": "IEF", "correlation": 0.1952 },
+        { "ticker": "TLT", "correlation": 0.1566 },
+        { "ticker": "AGG", "correlation": 0.2590 },
+        { "ticker": "EFA", "correlation": 0.5996 },
+        { "ticker": "VWO", "correlation": 0.6683 },
+        { "ticker": "DBC", "correlation": 0.0191 }
       ],
       "winner": "DBC"
     }
   ],
   "daily_pnl": {
-    "as_of": "2026-09-10",
+    "as_of": "2026-09-11",
     "movers": [
-      { "label": "TTWO", "dollar_change": 190.39, "pct_change": 1.141 },
-      { "label": "LLY", "dollar_change": 22.90, "pct_change": 0.204 },
-      { "label": "GOOG", "dollar_change": -11.76, "pct_change": -0.597 },
-      { "label": "NEM", "dollar_change": -135.83, "pct_change": -2.245 },
-      { "label": "CCJ", "dollar_change": -217.50, "pct_change": -2.166 },
-      { "label": "SPY5", "dollar_change": -1494.72, "pct_change": -0.680 },
-      { "label": "SPYL", "dollar_change": -798.72, "pct_change": -0.677 },
-      { "label": "CRWV", "dollar_change": -779.99, "pct_change": -5.477 },
-      { "label": "FCX", "dollar_change": -539.09, "pct_change": -7.522 },
-      { "label": "IGLN", "dollar_change": -351.42, "pct_change": -0.882 }
-    ]
+      { "label": "CRWV", "dollar_change": 195.00, "pct_change": 1.459 },
+      { "label": "KGC", "dollar_change": 121.00, "pct_change": 1.521 },
+      { "label": "TTWO", "dollar_change": 82.95, "pct_change": 0.484 },
+      { "label": "FCX", "dollar_change": 48.88, "pct_change": 0.730 },
+      { "label": "LLY", "dollar_change": 25.50, "pct_change": 0.227 },
+      { "label": "GOOG", "dollar_change": -2.94, "pct_change": -0.148 },
+      { "label": "NEM", "dollar_change": -0.00, "pct_change": -0.000 },
+      { "label": "SSLV", "dollar_change": -0.00, "pct_change": -0.000 },
+      { "label": "IGLN", "dollar_change": 0.00, "pct_change": 0.000 },
+      { "label": "SPY5", "dollar_change": 0.00, "pct_change": 0.000 }
+    ],
+    "note": "The 5 LSE-listed positions (SPY5, SPYL, IGLN, SSLV, REMX) showed ~$0.00 daily P&L in this run's live get_account_positions pull -- LSE session data had not yet updated at query time. Only GOOG among the 'losers' above reflects a genuine intraday decline; NEM/SSLV/IGLN/SPY5 are effectively flat, included only to fill the 5-loser slot since fewer than 5 positions showed a real decline today."
   },
   "staged_instructions": [
     {
       "id": "101",
-      "description": "BUY 1,179 DBC @ $33.11 limit -- SPY5+SPYL commodity/inflation diversification hedge, funded by rotation proceeds -- PENDING, does not fit today's available buying power, hold until proceeds settle",
-      "created_at": "2026-09-10T14:27:40Z",
+      "description": "BUY 1,179 DBC @ $33.11 limit -- SPY5+SPYL cluster commodity hedge, funded by rotation proceeds -- PENDING, price slightly stale (DBC now ~$33.62) but still a valid unexpired draft; hold until rotation proceeds settle",
+      "created_at": "2026-09-10T14:27:35.153Z",
       "status": "pending_review"
     },
     {
       "id": "103",
-      "description": "BUY 93 TLT @ $81.16 limit -- precious-metals cluster low-conviction diversifier -- PENDING, does not fit today's available buying power alongside 102+105, hold until proceeds settle",
-      "created_at": "2026-09-10T14:27:40Z",
+      "description": "BUY 93 TLT @ $81.16 limit -- precious-metals cluster low-conviction diversifier (best of 7 tested, r=+0.0853) -- PENDING, does not fit today's available buying power alongside 119, hold until proceeds settle",
+      "created_at": "2026-09-10T14:27:37.467Z",
       "status": "pending_review"
     },
     {
       "id": "108",
-      "description": "BUY 1,488 VWRA @ $192.10 limit -- global-core leg of rotation -- PENDING, requires SPY5/SPYL sale proceeds to settle first, not available today",
-      "created_at": "2026-09-10T15:09:39Z",
+      "description": "BUY 1,488 VWRA @ $192.10 limit -- global-core leg of SPY5/SPYL rotation -- PENDING, requires sale proceeds to settle first",
+      "created_at": "2026-09-10T15:09:29.710Z",
       "status": "pending_review"
     },
     {
       "id": "109",
-      "description": "BUY 728 VHYL @ $69.30 limit -- income-satellite leg of rotation -- PENDING, requires SPY5/SPYL sale proceeds to settle first, not available today",
-      "created_at": "2026-09-10T15:09:39Z",
+      "description": "BUY 728 VHYL @ $69.30 limit -- income-satellite leg of rotation -- PENDING, requires sale proceeds to settle first",
+      "created_at": "2026-09-10T15:09:30.593Z",
       "status": "pending_review"
     },
     {
       "id": "112",
-      "description": "BUY 4 DELL @ $520.00 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +319.88% 1yr -- routine's own output FLAGGED this as an unusually large return to verify against corporate actions before acting). Draft only, unvetted by Risk's own analysis, staged at explicit user request this session.",
-      "created_at": "2026-09-10T15:26:00Z",
+      "description": "BUY 4 DELL @ $520.00 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +319.88% 1yr -- routine's own output FLAGGED as unusually large, verify against corporate actions before acting). Draft only, unvetted by Risk's own analysis, staged at prior explicit user request.",
+      "created_at": "2026-09-10T15:29:58.020Z",
       "status": "pending_review"
     },
     {
       "id": "113",
-      "description": "BUY 6 MPC @ $400.20 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +136.47% 1yr -- routine's own output FLAGGED an anomalous 3-month return to verify). Draft only, unvetted by Risk's own analysis, staged at explicit user request this session.",
-      "created_at": "2026-09-10T15:26:00Z",
+      "description": "BUY 6 MPC @ $400.20 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +136.47% 1yr -- routine's own output FLAGGED an anomalous 3-month return). Draft only, unvetted by Risk's own analysis, staged at prior explicit user request.",
+      "created_at": "2026-09-10T15:29:59.204Z",
       "status": "pending_review"
     },
     {
       "id": "114",
-      "description": "BUY 11 CRWD @ $212.83 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +95.46% 1yr -- routine's own output FLAGGED this as an unusually large return to verify). Draft only, unvetted by Risk's own analysis, staged at explicit user request this session.",
-      "created_at": "2026-09-10T15:26:00Z",
+      "description": "BUY 11 CRWD @ $212.83 limit -- Momentum top-3 idea (2026-09-07 run, HIGH, +95.46% 1yr -- routine's own output FLAGGED as unusually large, verify before acting). Draft only, unvetted by Risk's own analysis, staged at prior explicit user request.",
+      "created_at": "2026-09-10T15:30:00.445Z",
       "status": "pending_review"
     },
     {
       "id": "115",
-      "description": "BUY 80 RBLX @ $45.32 limit -- Scout 'New idea' (2026-09-06 run, ~0.75% NAV, within Scout's own 0.5-1% suggested_size range). Draft only, unvetted by Risk's own analysis, staged at explicit user request this session.",
-      "created_at": "2026-09-10T15:26:00Z",
+      "description": "BUY 80 RBLX @ $45.32 limit -- Scout 'New idea' (2026-09-06 run, ~0.75% NAV, within Scout's own 0.5-1% suggested_size range). Draft only, unvetted by Risk's own analysis, staged at prior explicit user request.",
+      "created_at": "2026-09-10T15:30:01.531Z",
       "status": "pending_review"
     },
     {
       "id": "116",
-      "description": "BUY 43 U (Unity Software) @ $42.00 limit -- Scout 'New idea' (2026-09-06 run, ~0.375% NAV, within Scout's own 0.25-0.5% suggested_size range). Draft only, unvetted by Risk's own analysis, staged at explicit user request this session.",
-      "created_at": "2026-09-10T15:26:00Z",
+      "description": "BUY 43 U (Unity Software) @ $42.00 limit -- Scout 'New idea' (2026-09-06 run, ~0.375% NAV, within Scout's own 0.25-0.5% suggested_size range). Draft only, unvetted by Risk's own analysis, staged at prior explicit user request.",
+      "created_at": "2026-09-10T15:30:02.368Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "119",
+      "description": "BUY 125 DBC @ $33.62 limit -- materials-satellites cluster hedge (best of 7 tested, r=+0.0191) -- RECOMMENDED FOR TODAY, fits available buying power; re-staged after original instruction 102 expired unfilled overnight",
+      "created_at": "2026-09-11T06:37:04.450Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "120",
+      "description": "SELL 158 SPY5 @ $760.80 limit, GTC -- SPY5/SPYL rotation completion sell, re-staged with GTC time-in-force (was DAY, expired unfilled two days running) to avoid a third consecutive lapse",
+      "created_at": "2026-09-11T06:48:21.160Z",
+      "status": "pending_review"
+    },
+    {
+      "id": "121",
+      "description": "SELL 990 SPYL @ $18.83 limit, GTC -- SPY5/SPYL rotation completion sell, re-staged with GTC time-in-force for the same reason as 120",
+      "created_at": "2026-09-11T06:48:21.998Z",
       "status": "pending_review"
     }
   ]
