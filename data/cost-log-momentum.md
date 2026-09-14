@@ -1,3 +1,4 @@
 # Momentum Screener cost log
 
 2026-09-07 16:40 UTC | duration: ~100m | tool_calls: ~1350 | notes: full 503-ticker Stage 0 scan (no shortcuts, WebSearch-sourced universe, 500/503 classified, 3 unresolvable) + Stage 1-4 technical funnel run on top-100-by-momentum subset of the 250 Stage-0 survivors (weekly-bar SMA/RSI proxies, disclosed in report); resumed once from a mid-run compaction.
+2026-09-14 16:30 UTC | duration: ~50m | tool_calls: ~1900 | notes: full 503-ticker Stage 0 scan, 0 unresolved (best resolution rate yet), fanned out across 14 bounded parallel sub-tasks of ~36 tickers each plus 5 parallel Stage 1-4 sub-tasks of 20 tickers each to keep wall-clock down; two earlier full-session attempts at this run stalled/refused before this approach succeeded (first gave up mid-scan citing scale, second refused citing pressure concerns in its own briefing) and are reflected in the tool-call total.
