@@ -1,193 +1,215 @@
 {
   "routine": "momentum",
-  "run_at": "2026-09-07T16:35:00Z",
+  "run_at": "2026-09-14T16:30:00Z",
   "items": [
     {
       "label": "DELL",
       "tag": "HIGH",
-      "detail": "Price $524.14 is 2.03% off its 52-week high, RSI14(weekly)=62.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 319.88% beating SPY's 18.99% by 300.89pp. FLAGGED: 1-year return of 319.88% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "524.14",
-      "diversification_note": "Portfolio holds CRWV (AI infra); this IT name is a different subsector but still raises tech-sector weight."
+      "detail": "Price $539.55 is 4.97% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 308.94% beating SPY's 14.62% by 294.32pp. FLAGGED: 1-year return of 308.94% is unusually large -- verify against corporate actions/splits before acting.",
+      "entry_price": "539.55",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding DELL raises single-sector concentration risk."
     },
     {
-      "label": "MPC",
+      "label": "HPE",
       "tag": "HIGH",
-      "detail": "Price $370.72 is 1.17% off its 52-week high, RSI14(weekly)=79.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 136.47% beating SPY's 18.99% by 117.48pp. FLAGGED: Stage-0 3-month return exceeded +40% (FLAG_ANOMALOUS_PRICE) -- verify against corporate actions/splits before acting.",
-      "entry_price": "370.72",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $56.22 is 12.50% off its 52-week high, RSI14(weekly)=57.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 125.01% beating SPY's 14.62% by 110.39pp. FLAGGED: 1-year return of 125.01% is unusually large -- verify against corporate actions/splits before acting.",
+      "entry_price": "56.22",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPE raises single-sector concentration risk."
+    },
+    {
+      "label": "APA",
+      "tag": "HIGH",
+      "detail": "Price $46.37 is 0.15% off its 52-week high, RSI14(weekly)=73.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 97.49% beating SPY's 14.62% by 82.87pp. FLAGGED: 1-year return of 97.49% is unusually large -- verify against corporate actions/splits before acting.",
+      "entry_price": "46.37",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding APA raises single-sector concentration risk."
     },
     {
       "label": "CRWD",
       "tag": "HIGH",
-      "detail": "Price $213.1 is 8.88% off its 52-week high, RSI14(weekly)=58.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 95.46% beating SPY's 18.99% by 76.47pp. FLAGGED: 1-year return of 95.46% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "213.1",
-      "diversification_note": "Portfolio holds CRWV (AI infra); this IT name is a different subsector but still raises tech-sector weight."
+      "detail": "Price $230.79 is 1.32% off its 52-week high, RSI14(weekly)=66.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 83.70% beating SPY's 14.62% by 69.08pp. FLAGGED: 1-year return of 83.70% is unusually large -- verify against corporate actions/splits before acting.",
+      "entry_price": "230.79",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRWD raises single-sector concentration risk."
+    },
+    {
+      "label": "TGT",
+      "tag": "HIGH",
+      "detail": "Price $157.57 is 7.72% off its 52-week high, RSI14(weekly)=64.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 78.79% beating SPY's 14.62% by 64.17pp.",
+      "entry_price": "157.57",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."
     },
     {
       "label": "MRK",
       "tag": "HIGH",
-      "detail": "Price $150.33 is 4.2% off its 52-week high, RSI14(weekly)=72.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 77.46% beating SPY's 18.99% by 58.47pp.",
-      "entry_price": "150.33",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $144.54 is -1.82% off its 52-week high, RSI14(weekly)=67.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 77.33% beating SPY's 14.62% by 62.71pp. NOTE: pct-off-52wk-high computed as negative (current price exceeds the max weekly 'high' bar in the returned series, likely a lagging partial-week high field) -- data quality caveat, not excluded.",
+      "entry_price": "144.54",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding MRK raises single-sector concentration risk."
+    },
+    {
+      "label": "PANW",
+      "tag": "HIGH",
+      "detail": "Price $366.32 is 8.16% off its 52-week high, RSI14(weekly)=62.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 75.95% beating SPY's 14.62% by 61.33pp.",
+      "entry_price": "366.32",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding PANW raises single-sector concentration risk."
+    },
+    {
+      "label": "CRL",
+      "tag": "HIGH",
+      "detail": "Price $270.56 is 10.80% off its 52-week high, RSI14(weekly)=76.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 74.12% beating SPY's 14.62% by 59.50pp.",
+      "entry_price": "270.56",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding CRL raises single-sector concentration risk."
+    },
+    {
+      "label": "EXPD",
+      "tag": "HIGH",
+      "detail": "Price $191.61 is 1.12% off its 52-week high, RSI14(weekly)=67.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 59.48% beating SPY's 14.62% by 44.86pp.",
+      "entry_price": "191.61",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding EXPD raises single-sector concentration risk."
     },
     {
       "label": "CF",
       "tag": "HIGH",
-      "detail": "Price $133.35 is 6.07% off its 52-week high, RSI14(weekly)=64.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 57.85% beating SPY's 18.99% by 38.86pp.",
-      "entry_price": "133.35",
-      "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM/REMX in Materials/mining; this adds further sector concentration."
+      "detail": "Price $134.46 is 5.28% off its 52-week high, RSI14(weekly)=68.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 58.02% beating SPY's 14.62% by 43.40pp.",
+      "entry_price": "134.46",
+      "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (Materials); adding CF raises single-sector concentration risk."
     },
     {
-      "label": "AMGN",
+      "label": "NTAP",
       "tag": "HIGH",
-      "detail": "Price $437.23 is 2.19% off its 52-week high, RSI14(weekly)=79.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 54.15% beating SPY's 18.99% by 35.16pp.",
-      "entry_price": "437.23",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $192.41 is 7.97% off its 52-week high, RSI14(weekly)=63.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 53.74% beating SPY's 14.62% by 39.12pp.",
+      "entry_price": "192.41",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NTAP raises single-sector concentration risk."
     },
     {
-      "label": "RVTY",
+      "label": "BBY",
       "tag": "HIGH",
-      "detail": "Price $130.22 is 2.09% off its 52-week high, RSI14(weekly)=78.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 50.3% beating SPY's 18.99% by 31.31pp.",
-      "entry_price": "130.22",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $139.12 is 0.28% off its 52-week high, RSI14(weekly)=68.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 51.35% beating SPY's 14.62% by 36.73pp.",
+      "entry_price": "139.12",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Discretionary sector diversification."
+    },
+    {
+      "label": "DVN",
+      "tag": "HIGH",
+      "detail": "Price $51.27 is 2.73% off its 52-week high, RSI14(weekly)=62.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 50.97% beating SPY's 14.62% by 36.35pp.",
+      "entry_price": "51.27",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding DVN raises single-sector concentration risk."
+    },
+    {
+      "label": "NEM",
+      "tag": "HIGH",
+      "detail": "Price $122.17 is 9.70% off its 52-week high, RSI14(weekly)=65.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.49% beating SPY's 14.62% by 34.87pp.",
+      "entry_price": "122.17",
+      "diversification_note": "NEM is already a current position in this account (31 sh) -- this signals adding to an existing holding, not new diversification."
+    },
+    {
+      "label": "XOM",
+      "tag": "HIGH",
+      "detail": "Price $168.12 is 4.70% off its 52-week high, RSI14(weekly)=65.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.02% beating SPY's 14.62% by 34.40pp.",
+      "entry_price": "168.12",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding XOM raises single-sector concentration risk."
     },
     {
       "label": "DE",
       "tag": "HIGH",
-      "detail": "Price $693.53 is 1.75% off its 52-week high, RSI14(weekly)=70.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 46.54% beating SPY's 18.99% by 27.55pp.",
-      "entry_price": "693.53",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $681.70 is 3.43% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 45.16% beating SPY's 14.62% by 30.54pp.",
+      "entry_price": "681.70",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding DE raises single-sector concentration risk."
     },
     {
-      "label": "INCY",
+      "label": "RVTY",
       "tag": "HIGH",
-      "detail": "Price $126.75 is 4.41% off its 52-week high, RSI14(weekly)=75.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 46.3% beating SPY's 18.99% by 27.31pp.",
-      "entry_price": "126.75",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $125.02 is 6.00% off its 52-week high, RSI14(weekly)=78.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 44.17% beating SPY's 14.62% by 29.55pp.",
+      "entry_price": "125.02",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding RVTY raises single-sector concentration risk."
     },
     {
-      "label": "REGN",
+      "label": "CVX",
       "tag": "HIGH",
-      "detail": "Price $827.72 is 3.68% off its 52-week high, RSI14(weekly)=77.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 44.36% beating SPY's 18.99% by 25.37pp.",
-      "entry_price": "827.72",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
-    },
-    {
-      "label": "BMY",
-      "tag": "HIGH",
-      "detail": "Price $66.82 is 2.65% off its 52-week high, RSI14(weekly)=72.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 41.75% beating SPY's 18.99% by 22.76pp.",
-      "entry_price": "66.82",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
-    },
-    {
-      "label": "EXPE",
-      "tag": "HIGH",
-      "detail": "Price $298.04 is 12.85% off its 52-week high, RSI14(weekly)=69.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 38.66% beating SPY's 18.99% by 19.67pp.",
-      "entry_price": "298.04",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
-    },
-    {
-      "label": "LH",
-      "tag": "HIGH",
-      "detail": "Price $546.12 is 2.52% off its 52-week high, RSI14(weekly)=72.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 37.87% beating SPY's 18.99% by 18.88pp.",
-      "entry_price": "546.12",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
-    },
-    {
-      "label": "ANET",
-      "tag": "HIGH",
-      "detail": "Price $193.78 is 9.82% off its 52-week high, RSI14(weekly)=63.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 35.65% beating SPY's 18.99% by 16.66pp.",
-      "entry_price": "193.78",
-      "diversification_note": "Portfolio holds CRWV (AI infra); this IT name is a different subsector but still raises tech-sector weight."
+      "detail": "Price $216.19 is 0.62% off its 52-week high, RSI14(weekly)=65.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 38.40% beating SPY's 14.62% by 23.78pp.",
+      "entry_price": "216.19",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding CVX raises single-sector concentration risk."
     },
     {
       "label": "TRV",
       "tag": "HIGH",
-      "detail": "Price $369.35 is 7.36% off its 52-week high, RSI14(weekly)=75.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 34.2% beating SPY's 18.99% by 15.21pp.",
-      "entry_price": "369.35",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $379.16 is 4.90% off its 52-week high, RSI14(weekly)=74.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.88% beating SPY's 14.62% by 22.26pp.",
+      "entry_price": "379.16",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
     },
     {
       "label": "CPAY",
       "tag": "HIGH",
-      "detail": "Price $416.37 is 2.59% off its 52-week high, RSI14(weekly)=68.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 31.49% beating SPY's 18.99% by 12.5pp.",
-      "entry_price": "416.37",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $411.25 is 3.79% off its 52-week high, RSI14(weekly)=70.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.21% beating SPY's 14.62% by 21.59pp.",
+      "entry_price": "411.25",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
     },
     {
-      "label": "GILD",
+      "label": "OXY",
       "tag": "HIGH",
-      "detail": "Price $151 is 4.0% off its 52-week high, RSI14(weekly)=66.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 31.25% beating SPY's 18.99% by 12.26pp.",
-      "entry_price": "151",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $62.74 is 6.98% off its 52-week high, RSI14(weekly)=60.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.10% beating SPY's 14.62% by 21.48pp.",
+      "entry_price": "62.74",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding OXY raises single-sector concentration risk."
     },
     {
-      "label": "DLTR",
+      "label": "REGN",
       "tag": "HIGH",
-      "detail": "Price $131.42 is 7.71% off its 52-week high, RSI14(weekly)=63.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 29.96% beating SPY's 18.99% by 10.97pp.",
-      "entry_price": "131.42",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $782.04 is 9.00% off its 52-week high, RSI14(weekly)=71.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 32.10% beating SPY's 14.62% by 17.48pp.",
+      "entry_price": "782.04",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding REGN raises single-sector concentration risk."
     },
     {
       "label": "DGX",
       "tag": "HIGH",
-      "detail": "Price $237.14 is 4.07% off its 52-week high, RSI14(weekly)=71.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 29.24% beating SPY's 18.99% by 10.25pp.",
-      "entry_price": "237.14",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $236.59 is 4.29% off its 52-week high, RSI14(weekly)=68.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.86% beating SPY's 14.62% by 14.24pp.",
+      "entry_price": "236.59",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding DGX raises single-sector concentration risk."
+    },
+    {
+      "label": "COP",
+      "tag": "HIGH",
+      "detail": "Price $92.70 is 0.16% off its 52-week high, RSI14(weekly)=68.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.34% beating SPY's 14.62% by 13.72pp.",
+      "entry_price": "92.70",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding COP raises single-sector concentration risk."
+    },
+    {
+      "label": "GILD",
+      "tag": "HIGH",
+      "detail": "Price $144.82 is 7.93% off its 52-week high, RSI14(weekly)=68.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 26.94% beating SPY's 14.62% by 12.32pp.",
+      "entry_price": "144.82",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding GILD raises single-sector concentration risk."
     },
     {
       "label": "SOLV",
       "tag": "HIGH",
-      "detail": "Price $91.69 is 2.62% off its 52-week high, RSI14(weekly)=68.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 26.09% beating SPY's 18.99% by 7.1pp.",
-      "entry_price": "91.69",
-      "diversification_note": "Portfolio already holds LLY (pharma); adding another Health Care name raises single-sector concentration risk."
+      "detail": "Price $89.24 is 5.23% off its 52-week high, RSI14(weekly)=62.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 21.05% beating SPY's 14.62% by 6.43pp.",
+      "entry_price": "89.24",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding SOLV raises single-sector concentration risk."
     },
     {
-      "label": "SWK",
+      "label": "HPQ",
       "tag": "HIGH",
-      "detail": "Price $97.36 is 6.99% off its 52-week high, RSI14(weekly)=72.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 24.15% beating SPY's 18.99% by 5.16pp.",
-      "entry_price": "97.36",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, IGLN, KGC, LLY, NEM, REMX, SPY5/SPYL, SSLV, TTWO); adds sector diversification."
+      "detail": "Price $34.07 is 5.96% off its 52-week high, RSI14(weekly)=73.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.99% beating SPY's 14.62% by 6.37pp.",
+      "entry_price": "34.07",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPQ raises single-sector concentration risk."
+    },
+    {
+      "label": "BDX",
+      "tag": "HIGH",
+      "detail": "Price $180.69 is 6.41% off its 52-week high, RSI14(weekly)=70.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.71% beating SPY's 14.62% by 6.09pp.",
+      "entry_price": "180.69",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding BDX raises single-sector concentration risk."
     }
   ],
   "funnel": {
     "stages": [
-      {
-        "label": "S&P 500 universe (sourced fresh)",
-        "count": 503
-      },
-      {
-        "label": "Stage 0 classified (return vs SPY 3-month benchmark)",
-        "count": 500
-      },
-      {
-        "label": "Stage 0 unresolved / excluded (BRK.B, BF.B, ECHO)",
-        "count": 3
-      },
-      {
-        "label": "Stage 0 survivors (3mo return >= SPY-2.19pp)",
-        "count": 250
-      },
-      {
-        "label": "Prioritized subset carried into Stage 1-4 (top 100 by Stage-0 3mo return)",
-        "count": 100
-      },
-      {
-        "label": "C1: price above 40-week SMA (long-term uptrend)",
-        "count": 91
-      },
-      {
-        "label": "C2: also above 10-week SMA with golden cross (10w>40w)",
-        "count": 70
-      },
-      {
-        "label": "C3: also RSI14(weekly) in healthy 45-80 band",
-        "count": 57
-      },
-      {
-        "label": "C4/HIGH: also within 15% of 52wk high AND relative strength >= SPY+5pp",
-        "count": 21
-      }
+      { "label": "S&P 500 universe (sourced fresh via public constituents list, verified against 2026-09-21 pending rebalance)", "count": 503 },
+      { "label": "Stage 0 classified (3-month return vs SPY benchmark)", "count": 503 },
+      { "label": "Stage 0 unresolved / excluded", "count": 0 },
+      { "label": "Stage 0 survivors (3mo return >= SPY-2pp, i.e. >= 0.61%)", "count": 264 },
+      { "label": "Prioritized subset carried into Stage 1-4 (top 100 by Stage-0 3mo return)", "count": 100 },
+      { "label": "C1: price above 40-week SMA (long-term uptrend)", "count": 88 },
+      { "label": "C2: also above 10-week SMA with golden cross (10w>40w)", "count": 63 },
+      { "label": "C3: also RSI14(weekly) in healthy 45-80 band", "count": 55 },
+      { "label": "C4/HIGH: also within 15% of 52wk high AND relative strength >= SPY+5pp", "count": 28 }
     ]
   },
   "full_report_url": "data/momentum-latest.html"
