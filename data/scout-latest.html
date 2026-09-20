@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scout Report — Search, Digital Advertising &amp; Cloud/AI Infrastructure — 2026-09-13</title>
+<title>Scout Report — Nuclear Power &amp; SMRs for AI Data Centers — 2026-09-20</title>
 <style>
   :root {
     --bg: #0b0e14; --panel: #131826; --panel2: #1a2133; --border: #2a3348;
@@ -19,24 +19,28 @@
   h3 { font-size: 1.02rem; margin-top: 24px; color: var(--accent2); }
   p { color: #cdd4e3; }
   .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+  .warn-card { background: rgba(246,173,85,0.08); border: 1px solid var(--warn); border-radius: 10px; padding: 14px 18px; margin: 14px 0; color: #f0c896; font-size: 0.92rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
   .stat { background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
-  .stat .num { font-size: 1.3rem; font-weight: 600; color: var(--accent); }
+  .stat .num { font-size: 1.25rem; font-weight: 600; color: var(--accent); }
   .stat .lbl { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
   table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
-  .force { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--border); }
+  .force { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--border); gap: 16px; }
   .force:last-child { border-bottom: none; }
-  .tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; }
+  .tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; white-space: nowrap; }
   .tag.high { background: rgba(252,129,129,0.15); color: var(--bad); }
   .tag.med { background: rgba(246,173,85,0.15); color: var(--warn); }
   .tag.low { background: rgba(72,187,120,0.15); color: var(--good); }
   .opp { border-left: 3px solid var(--accent); padding-left: 16px; margin: 22px 0; }
+  .opp.watch { border-left-color: var(--warn); }
   .opp h4 { margin: 0 0 4px; font-size: 1.05rem; }
   .opp .ticker { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
   .opp .price { color: var(--muted); font-size: 0.85rem; }
-  .held-badge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; background: rgba(79,209,197,0.15); color: var(--accent); font-size: 0.7rem; font-weight: 700; }
+  .badge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; }
+  .badge.new { background: rgba(79,209,197,0.15); color: var(--accent); }
+  .badge.watch { background: rgba(246,173,85,0.15); color: var(--warn); }
   ul { color: #cdd4e3; padding-left: 20px; }
   li { margin: 4px 0; }
   .source-list { font-size: 0.78rem; color: var(--muted); }
@@ -47,103 +51,125 @@
 <body>
 <div class="wrap">
 
-  <h1>Scout: Search, Digital Advertising &amp; Cloud/AI Infrastructure</h1>
-  <div class="subtitle">Run 2026-09-13 &middot; Industry selected from active-conviction account holdings (IBKR positions)</div>
+  <h1>Scout: Nuclear Power &amp; Small Modular Reactors for AI Data Centers</h1>
+  <div class="subtitle">Run 2026-09-20 &middot; Industry selected from a live-searched, news-prevalent theme</div>
+
+  <div class="warn-card">
+    <strong>Data source note:</strong> the IBKR connector was not authenticated for this session (a non-interactive scheduled run cannot complete OAuth), so this cycle could not be grounded in the account's current active-conviction holdings and no live position, NAV, or holding-overlap data was available. Every ticker below is therefore tagged as a candidate to evaluate against the account independently &mdash; treat "not confirmed held" as exactly that, not as a claim the account has no exposure. All prices below are open-web snapshots near the run date, not IBKR account/market data.
+  </div>
 
   <div class="card">
-    <strong>Selection method: account-grounded.</strong> <strong>GOOG</strong> (Alphabet, 6 shares, $2,012.28 market value) shares the account's entire Telecomm/Communication-Services sleeve with TTWO (3.93% of NAV combined) but has never itself been the anchor of a dedicated scout cycle &mdash; the 2026-09-06 cycle was grounded in TTWO and covered gaming, mentioning GOOG only in passing as the sleeve-mate. The theme is also live and fast-moving right now: Google's search-monopoly remedies judgment took effect February 2026 (narrower than the DOJ sought, and now cross-appealed by both sides), Google Cloud grew 63% YoY to $20B on a $462B backlog, and Gemini 3/AI Mode has become a real two-sided story for the core Search business &mdash; a genuine growth driver but also the entry point for real AI-answer-engine disintermediation risk.
+    <strong>Selection method: live-searched, news-prevalent theme.</strong> Nuclear power and small modular reactors (SMRs) for AI data centers is one of the most consistently cited investment themes across September 2026 market outlooks. Hyperscalers (Amazon, Microsoft, Google, Meta) have collectively committed more than 9.8 GW across 13 announced nuclear projects and over $50B directly into nuclear power deals; the NRC finalized "Part 53," its first new reactor-licensing framework since 1989, effective March 30, 2026; and a September 17, 2026 House vote on data-center power policy moved uranium/SMR stocks double digits in a single session. The theme has not been covered by any prior scout cycle (critical minerals 2026-08-31, GLP-1/metabolic 2026-08-31, gaming 2026-09-06, search/ads/cloud 2026-09-13).
   </div>
 
   <h2>Market Landscape</h2>
 
   <div class="grid">
-    <div class="stat"><div class="num">$354.9B &rarr; $588.9B</div><div class="lbl">Global digital advertising market, 2026 &rarr; 2030 (13.5% CAGR, one estimate; others range $662B-$1.08T by methodology)</div></div>
-    <div class="stat"><div class="num">$20B (+63% YoY)</div><div class="lbl">Google Cloud Q2 2026 revenue; $462B backlog</div></div>
-    <div class="stat"><div class="num">30% / 25% / 13%</div><div class="lbl">Global cloud infra share: AWS / Azure / Google Cloud (Synergy Research, Q1 2026); Big Three ~67% combined</div></div>
-    <div class="stat"><div class="num">82% vs 19%</div><div class="lbl">Google Cloud YoY growth vs AWS YoY growth, Q2 2026 &mdash; the fastest-growing of the Big Three</div></div>
-    <div class="stat"><div class="num">$77.3B (70% of revenue)</div><div class="lbl">Alphabet's Search/YouTube/Network ad revenue, most recent quarter</div></div>
-    <div class="stat"><div class="num">1B+ MAU / ~45M MAU</div><div class="lbl">ChatGPT Search (May 2026) / Perplexity, on a $20B valuation</div></div>
-    <div class="stat"><div class="num">61% CTR drop</div><div class="lbl">Click-through-rate decline on queries where Google's AI Overviews appear</div></div>
-    <div class="stat"><div class="num">$8.4B (+106% YoY)</div><div class="lbl">Broadcom AI-semiconductor revenue, most recent quarter; $73B AI backlog</div></div>
+    <div class="stat"><div class="num">$45.7B &rarr; $60.75B</div><div class="lbl">Global nuclear power market, 2026 &rarr; 2030 (5.86% CAGR, one estimate; others range from $38.8B by 2030 to $292B by 2034 depending on scope)</div></div>
+    <div class="stat"><div class="num">$6.34B &rarr; $18.76B</div><div class="lbl">Global SMR market, 2026 &rarr; 2035 (12.8% CAGR, one estimate; a second puts it at $3.5B in 2025 &rarr; $14.1B by 2035, 14.8% CAGR)</div></div>
+    <div class="stat"><div class="num">9.8 GW / 13 projects</div><div class="lbl">Hyperscaler-committed nuclear capacity, mid-2026; &gt;$100B total associated investment</div></div>
+    <div class="stat"><div class="num">+160% by 2030</div><div class="lbl">Goldman Sachs estimate: rise in data-center electricity demand; hyperscale DCs now need up to 80 MW each (vs. 32 MW a few years ago)</div></div>
+    <div class="stat"><div class="num">30M lb/yr shortfall</div><div class="lbl">Industry-wide uranium production deficit against 70 GW of new global reactor capacity under construction</div></div>
+    <div class="stat"><div class="num">&lt;1% of global capacity</div><div class="lbl">US share of global uranium-enrichment capacity; DOE committed $2.7B over 10 years to expand domestic enrichment</div></div>
+    <div class="stat"><div class="num">Part 53, March 2026</div><div class="lbl">NRC's first new reactor-licensing framework since 1989, aimed at faster/cheaper advanced-reactor licensing</div></div>
+    <div class="stat"><div class="num">+13% / +10%</div><div class="lbl">Single-day moves in OKLO / NuScale on Sept 17, 2026 after a House data-center power vote</div></div>
   </div>
 
-  <p>Estimates of digital-ad market size vary sharply by methodology, but the growth drivers agree: AI-driven ad targeting/automation (Performance Max, Smart Bidding), cloud/AI infrastructure spend running at its fastest pace in years (cloud market +43% YoY in Q2 2026, "AI demand has lit a fire under the cloud market" per Synergy's chief analyst), and a genuine bifurcation in how users find information (traditional search results pages vs. AI-native answer engines). The most consequential structural shift this cycle isn't ad-market sizing &mdash; it's where the query goes: Google still carries roughly 80% of global query volume, but the fastest-growing referral sources (ChatGPT Search, Perplexity) sit entirely outside Google's ecosystem and, in Perplexity's case, reject advertising as a business model altogether.</p>
+  <p>As with prior cycles' market-size estimates, methodology drives wide dispersion in headline nuclear/SMR market figures, but the demand drivers are consistent across sources: AI data-center power consumption is growing far faster than the traditional grid-interconnection queue can absorb, hyperscalers are responding by contracting directly for nuclear capacity (both from existing utility fleets and from pre-commercial SMR/microreactor developers), and the entire chain is bottlenecked upstream by uranium mining and, more acutely, uranium enrichment &mdash; especially the HALEU fuel that most advanced-reactor designs require and that the US currently sources almost entirely from a handful of suppliers.</p>
 
   <h3>Porter's Five Forces</h3>
   <div class="card">
-    <div class="force"><div><strong>Threat of new entrants</strong> &mdash; low at the infrastructure layer (hyperscale cloud/search requires hundreds of billions in capex), but genuinely high at the interface layer: AI-native answer engines (ChatGPT Search, Perplexity) have entered and taken real referral share within roughly two years without owning any search index or ad network of their own.</div><span class="tag high">HIGH (interface) / LOW (infra)</span></div>
-    <div class="force"><div><strong>Buyer power</strong> &mdash; rising: advertisers can now shift budget between Google, Amazon's DSP, and independent platforms like The Trade Desk with fewer switching costs than a decade ago, and Amazon's aggressive ad-tech pricing is visibly compressing take rates industry-wide.</div><span class="tag high">HIGH</span></div>
-    <div class="force"><div><strong>Supplier power</strong> (compute, custom silicon, talent) &mdash; high and rising: Nvidia GPUs remain the default, but custom-ASIC suppliers (Broadcom for Google's TPUs, Meta's MTIA, Amazon's Trainium) now co-design multi-year, multi-gigawatt capacity commitments that lock in supplier relationships years in advance.</div><span class="tag high">HIGH</span></div>
-    <div class="force"><div><strong>Threat of substitutes</strong> &mdash; high and growing fastest of all five forces: AI chatbots increasingly substitute for the traditional ten-blue-links search results page on informational/research queries, the exact segment that has historically monetized best via ads.</div><span class="tag high">HIGH</span></div>
-    <div class="force"><div><strong>Rivalry among incumbents</strong> &mdash; intensifying on two fronts simultaneously: cloud (AWS/Azure/Google Cloud all growing double-digits, Google Cloud fastest at 82% YoY) and search/answer-engines (Google's own Gemini app competing with its own AI Overviews, plus OpenAI and Perplexity as new-category rivals).</div><span class="tag high">HIGH</span></div>
+    <div class="force"><div><strong>Threat of new entrants</strong> &mdash; low at the incumbent-utility layer (owning/operating existing reactor fleets requires decades of accumulated regulatory approval and capital), but genuinely high at the SMR/microreactor developer layer: Oklo, NuScale, NANO Nuclear, and others are all well-funded, competing for the same hyperscaler PPAs before any has a commercially operating unit.</div><span class="tag high">HIGH (developer) / LOW (incumbent)</span></div>
+    <div class="force"><div><strong>Buyer power</strong> &mdash; high: the buyers are Microsoft, Amazon, Google, and Meta, sophisticated counterparties that can multi-source power across nuclear, gas, and renewables-plus-storage, and can structure long-dated PPAs (or prepayments, as with Oklo/Equinix) on their own terms.</div><span class="tag high">HIGH</span></div>
+    <div class="force"><div><strong>Supplier power</strong> (uranium mining and, especially, enrichment) &mdash; high and rising: a 30M-lb/yr structural production deficit plus a US enrichment capacity under 1% of global supply gives the handful of Western HALEU suppliers (Centrus, Urenco) real pricing power, reinforced by $2.7B in DOE backing meant to reduce foreign dependence.</div><span class="tag high">HIGH</span></div>
+    <div class="force"><div><strong>Threat of substitutes</strong> &mdash; medium-to-high: natural-gas peaker/combined-cycle plants and renewables-plus-storage remain faster to permit and build than any new nuclear capacity, and most SMR/microreactor designs will not reach commercial operation until the early-to-mid 2030s &mdash; a real risk that hyperscalers lean harder on gas in the interim.</div><span class="tag med">MEDIUM-HIGH</span></div>
+    <div class="force"><div><strong>Rivalry among incumbents</strong> &mdash; high and intensifying on two fronts: incumbent nuclear utilities (Constellation, Vistra, Talen) are competing for the same hyperscaler PPAs, while SMR/microreactor pure-plays (Oklo, NuScale, NANO Nuclear) are racing for first-mover commercial-operation status.</div><span class="tag high">HIGH</span></div>
   </div>
-  <p><strong>Net read:</strong> Google is winning the infrastructure fight (Google Cloud's growth rate now leads AWS and Azure) while facing a genuine, still-early disintermediation fight at the interface layer it invented (search). The regulatory overhang (DOJ appeal) and the AI-answer-engine overhang (Perplexity/ChatGPT) are both real and unresolved, but neither has yet dented Alphabet's ~80% query-volume share or its ad revenue growth.</p>
+  <p><strong>Net read:</strong> the fastest, lowest-risk way to monetize this theme today is through the fuel-cycle bottleneck (enrichment/uranium) and the incumbent utilities with existing reactors to contract out, not the pre-revenue SMR developers &mdash; even though the developers carry the highest headline newsflow and volatility.</p>
 
   <h3>Technology disruption</h3>
-  <p>Generative AI is reshaping both halves of this industry at once. On the infrastructure side, custom silicon (Google's Ironwood 7th-gen TPU, deployed for Gemini inference; Broadcom-co-designed accelerators for Meta/OpenAI/Anthropic) is challenging Nvidia's default position for inference workloads specifically, even as Nvidia keeps the training-workload lead. On the consumer side, Gemini 3/AI Mode has pushed Google's own query volume to an all-time high (queries are getting longer and more complex, evidence users are asking more of Search rather than abandoning it), while independent AI-native answer engines are capturing a real, measurable slice of informational-query referral traffic outside Google's ecosystem entirely (Perplexity 7.67% share of AI-chatbot referrals vs. Google's own Gemini app at 7.03%, per Statcounter). The two effects are not mutually exclusive: Google can grow overall query volume while still losing share of a specific, valuable query type to non-Google answer engines.</p>
+  <p>Two technology shifts are compounding each other. First, the NRC's Part 53 rule (effective March 30, 2026) is the first new reactor-licensing framework in nearly four decades, explicitly designed to make advanced-reactor licensing faster and cheaper, and NRC officials have publicly credited AI tools with cutting licensing review times. Second, on the fuel side, HALEU (high-assay low-enriched uranium) is the specific enrichment level most SMR and microreactor designs require, and it remains a genuine supply-chain chokepoint distinct from ordinary reactor-grade uranium &mdash; new multi-year HALEU supply contracts (Centrus/Antares, Centrus/Radiant, both signed September 2026) are themselves a leading indicator of which SMR developers are furthest along toward real fuel deliveries rather than just announced deals.</p>
 
   <h3>Regulatory environment</h3>
-  <p><strong>Tailwinds:</strong> the December 2025 final remedies judgment in the DOJ's search-monopoly case was notably narrower than the government sought &mdash; no Chrome divestiture, no ban on Google's default-search payments to Apple and other distribution partners &mdash; a real, if partial, regulatory reprieve for the existing business model.<br>
-  <strong>Risks:</strong> the DOJ and a coalition of states cross-appealed, pressing the D.C. Circuit for the harsher structural relief the trial court declined to order (Chrome divestiture, ending the Apple deal); Google itself also appealed on liability and remedies. Briefing continued through summer 2026 with no oral-argument schedule yet, meaning resolution is likely to run well into 2027 &mdash; a genuine, dated, but slow-moving tail risk. Separately, the data-sharing/search-syndication requirements that took effect February 2026 are still being built out operationally, so their real competitive impact on Google's ad business is not yet observable.</p>
+  <p><strong>Tailwinds:</strong> the ADVANCE Act (2024) and the NRC's Part 53 final rule (March 2026) together represent the most significant pro-nuclear regulatory shift in decades, explicitly directing the NRC to weigh the cost of <em>not</em> deploying nuclear power alongside radiation risk, and DOE has committed $2.7B to expand domestic enrichment capacity.<br>
+  <strong>Risks:</strong> the same reforms have drawn criticism from parties who argue the NRC is sacrificing safety-review rigor for speed &mdash; a live governance debate, not a resolved one. Separately, state and local siting fights (water use, environmental review, community opposition) operate on a different and less predictable timeline than federal licensing, and can stall a project even after NRC approval; September 2026 coverage explicitly named both Oklo and NuScale as exposed to rising public backlash against data-center-linked nuclear siting.</p>
 
   <h2>Emerging Opportunities</h2>
   <ul>
-    <li><strong>Underserved niche &mdash; custom AI silicon as diversified infrastructure exposure:</strong> Broadcom's co-design role spans Google's TPUs, Meta's MTIA-adjacent accelerators, OpenAI's first custom processor, and Anthropic's TPU-linked capacity &mdash; a way to participate in the AI-infrastructure buildout without concentrating on any single hyperscaler's ad or cloud P&amp;L.</li>
-    <li><strong>Technology adoption gap &mdash; AI-native answer engines vs. traditional search:</strong> ChatGPT Search's >1B MAU and Perplexity's subscription-only pivot (abandoning ads in February 2026 to chase $500M of annualized subscription revenue) show a real, structurally different monetization model gaining share on exactly the query types that used to anchor search-ad revenue &mdash; neither is currently a public, tradable name, but the trend is a genuine risk factor for the whole industry's ad-dependent incumbents.</li>
-    <li><strong>Regulatory-driven repricing:</strong> the D.C. Circuit appeal (Google's own appeal plus the DOJ/states' cross-appeal for structural relief) is a live, dated catalyst that could reopen the Chrome-divestiture question as late as 2027 &mdash; worth tracking rather than pricing in either direction today.</li>
-    <li><strong>Consolidation/competitive dynamics in ad-tech:</strong> Amazon's DSP entry with subsidized pricing (funded by e-commerce/cloud profits) is visibly compressing independent ad-tech take rates &mdash; The Trade Desk's growth deceleration from 26% (2024) to 3% (Q2 2026) is the clearest public evidence of this pressure, and a genuine test of whether independent, non-walled-garden ad-tech can survive next to platform giants that can subsidize pricing.</li>
-    <li><strong>Cloud share-shift optionality:</strong> Google Cloud's 82% YoY growth (vs. ~19% for AWS in the same quarter) is the fastest of the Big Three and is visibly AI-demand-driven &mdash; a structural tailwind for GOOG specifically, distinct from and additive to its core Search/ads franchise.</li>
+    <li><strong>Underserved niche &mdash; HALEU enrichment bottleneck:</strong> the US enriches under 1% of global uranium supply and has only a handful of Western HALEU suppliers; Centrus Energy's September 2026 multi-year contracts (Antares, Radiant) and $500M capital raise are direct evidence this chokepoint is being actively monetized right now, ahead of any single SMR developer reaching commercial operation.</li>
+    <li><strong>Technology adoption gap &mdash; direct-to-hyperscaler microreactor deals vs. grid-scale SMR:</strong> Oklo's Meta and Equinix deals (direct bilateral PPAs/prepayments) and NuScale's TVA grid-scale deal (utility-intermediated) represent two structurally different go-to-market strategies for the same underlying technology category, with the market currently pricing them very differently (Oklo +13% in a single September session vs. NuScale -36% YTD).</li>
+    <li><strong>Regulatory tailwind, unevenly priced:</strong> the Part 53 licensing reform is a genuine, dated catalyst (effective March 2026) that the market reacted to sharply on the September 17 House vote news, but the offsetting safety-vs-speed political debate and local siting opposition are not yet fully priced into any single name.</li>
+    <li><strong>Consolidation/execution dynamics among incumbents:</strong> Constellation's 25% pullback from its October 2025 high after a 2026 EPS guidance miss shows that even the best-positioned incumbent nuclear-PPA name is not immune to execution risk &mdash; a genuine test of whether the structural demand story alone is enough to support current valuations across the group.</li>
+    <li><strong>Physical-commodity leverage:</strong> Cameco's 230M lb of long-term contracted volume against a 30M lb/yr industry-wide production deficit gives uranium miners unusually high earnings visibility for a commodity sector, though single-operator execution risk (McArthur River, Cigar Lake) is real and current, not hypothetical.</li>
   </ul>
 
   <h2>Investment Thesis — Top Opportunities</h2>
 
   <div class="opp">
-    <h4><span class="ticker">GOOG</span> — Alphabet Inc <span class="held-badge">HELD</span></h4>
-    <div class="price">$335.38 (+1.51% on the day; 6 sh, existing position, cost basis $345.41, 0.42% of NAV)</div>
-    <p><strong>Thesis reinforced, with real new evidence:</strong> Google Cloud revenue hit $20B (+63% YoY) on a $462B backlog, and Gemini 3.1 Pro/AI Mode integration pushed Search query volume to an all-time high even as core AI-response cost fell >30% and latency fell 35% over five years &mdash; evidence Alphabet can scale AI answers without destroying Search unit economics. Ad-side, Performance Max now captures over 30% of customer search ad spend. <strong>Moat:</strong> ~80% of global query volume, a $462B cloud backlog, and in-house TPU/Ironwood silicon that reduces dependence on external GPU supply. <strong>Risk:</strong> the DOJ/states' cross-appeal for structural relief (Chrome divestiture) keeps a real regulatory tail risk alive into 2027, and AI Overviews cause a 61% CTR drop on the queries where they appear &mdash; independent answer engines (ChatGPT Search, Perplexity) are capturing real share of exactly the informational-query traffic that used to anchor ad revenue, even if the effect hasn't shown up in Alphabet's topline yet.</p>
+    <h4><span class="ticker">LEU</span> — Centrus Energy Corp <span class="badge new">NEW IDEA</span></h4>
+    <div class="price">$144.90 last (2026-09-19); analyst avg PT $253.25 (+47.9%), 18 analysts, avg rating Buy</div>
+    <p><strong>Thesis:</strong> one of very few Western suppliers of HALEU, the specific enrichment level most SMR/microreactor designs require, and the US enriches under 1% of global uranium supply &mdash; a direct, current-revenue bottleneck play rather than a bet on any single SMR developer's success. September 2026 brought new multi-year HALEU contracts (Antares Nuclear, Radiant) plus a $500M capital raise to expand enrichment capacity. <strong>Moat:</strong> deep, multi-year government-backed contracts and a scarce domestic enrichment license. <strong>Risk:</strong> revenue base is still small relative to the capex needed to scale enrichment, and heavy DOE/government-contract dependence cuts both ways &mdash; a funding or political disruption would hit LEU harder than a diversified industrial supplier.</p>
   </div>
 
   <div class="opp">
-    <h4><span class="ticker">AVGO</span> — Broadcom Inc <span class="price">(new — not held)</span></h4>
-    <div class="price">$361.73 last, +0.25% on the day (NASDAQ)</div>
-    <p><strong>Thesis:</strong> the co-design partner behind Google's TPU program (long-term supply agreement through 2031) with parallel custom-accelerator deals across Meta (>1GW, through 2029), OpenAI (10GW, first deployments 2H 2026), and Anthropic (3.5GW of TPU-linked capacity) &mdash; diversified across essentially every major AI-capex spender rather than dependent on Google alone. AI semiconductor revenue hit $8.4B (+106% YoY) with a $73B backlog and management guidance for >$100B of AI-chip revenue in 2027. <strong>Moat:</strong> deep, multi-year co-design relationships with the largest AI compute buyers are hard to displace once integrated into a customer's silicon roadmap. <strong>Risk:</strong> this is fundamentally a bet on the AI-infrastructure capex cycle continuing at its current pace across all of Broadcom's customers simultaneously &mdash; a broad slowdown would hit this name harder than any single-hyperscaler holding, and it would sit alongside the account's existing CRWV/GEV AI-infrastructure exposure rather than diversify away from it.</p>
+    <h4><span class="ticker">CEG</span> — Constellation Energy Corp <span class="badge new">NEW IDEA</span></h4>
+    <div class="price">~$256 last, down ~25% from Oct 2025 high of $413 after 2026 EPS guidance of $11-12 missed consensus</div>
+    <p><strong>Thesis:</strong> the largest US nuclear-fleet operator and counterparty on the highest-profile hyperscaler nuclear PPA to date (the Crane Clean Energy Center/Three Mile Island restart deal with Microsoft). The guidance-miss pullback is a real repricing, not a manufactured dip, and offers entry into the demand story at a lower multiple than October 2025. <strong>Moat:</strong> an existing, licensed, operating reactor fleet that SMR developers will not match for years. <strong>Risk:</strong> that same fleet is fixed and finite &mdash; Constellation cannot quickly build more capacity to capture incremental hyperscaler demand the way a successful SMR developer eventually could, and the guidance miss shows earnings execution is not automatic even with structural tailwinds.</p>
   </div>
 
   <div class="opp">
-    <h4><span class="ticker">TTD</span> — The Trade Desk Inc <span class="price">(watch — not held)</span></h4>
-    <div class="price">$14.30 last, +2.36% on the day (NASDAQ), down ~52% in H1 2026</div>
-    <p><strong>Watch, not a new action:</strong> a genuinely differentiated, non-walled-garden ad-tech model (100% demand-side-platform revenue, no owned media inventory) that stands structurally apart from GOOG's and Amazon's conflict-of-interest exposure selling into their own ad inventory. <strong>Risk/why watch-only:</strong> the fundamentals are actively deteriorating, not just cheap after a crash &mdash; revenue growth decelerated from 26% (2024) to 18% (2025) to just 3% YoY in Q2 2026 ($715M, a miss), as Amazon's subsidized DSP pricing (funded by e-commerce/cloud profits) visibly compresses take rates industry-wide. Worth revisiting once growth deceleration shows signs of bottoming, not before.</p>
+    <h4><span class="ticker">OKLO</span> — Oklo Inc <span class="badge new">NEW IDEA</span></h4>
+    <div class="price">$40.37 last, +13% on Sept 17, 2026 (House data-center power vote)</div>
+    <p><strong>Thesis:</strong> the purest direct-to-hyperscaler microreactor play &mdash; a 1.2 GW deal with Meta in Ohio, a $25M Equinix prepayment for a future 20-year, up-to-500 MW PPA, and a 2,100 MW customer pipeline (+200% since its 2023 business-combination announcement). <strong>Moat:</strong> first-mover direct hyperscaler relationships and a diversified business via its Atomic Alchemy acquisition (fuel recycling, medical isotopes). <strong>Risk:</strong> pre-commercial-operation &mdash; no reactor is yet generating revenue-producing power &mdash; and September 2026 coverage explicitly flagged rising public/local backlash against data-center-linked nuclear siting as a real threat to Oklo specifically.</p>
+  </div>
+
+  <div class="opp">
+    <h4><span class="ticker">CCJ</span> — Cameco Corp <span class="badge new">NEW IDEA</span></h4>
+    <div class="price">$92.21 last (2026-09-20 range $90.68-$96.09), down 7.23% over the past month</div>
+    <p><strong>Thesis:</strong> the physical-commodity underpinning of the entire nuclear buildout, with 230M lb under long-term contract and a 28M lb 2026 delivery target against an industry-wide 30M-lb/yr annual production shortfall &mdash; unusually high earnings visibility for a commodity producer. <strong>Moat:</strong> one of the world's largest, lowest-cost uranium reserve bases with long-term contract coverage already locked in. <strong>Risk:</strong> the current month's underperformance is a live reminder that operational execution (McArthur River restart complexity, Cigar Lake throughput variability) can offset an otherwise structurally undersupplied commodity thesis. Prior scout cycles referenced CCJ as a critical-minerals holding, but that could not be verified against live account data this run &mdash; confirm before sizing to avoid doubling an existing position.</p>
+  </div>
+
+  <div class="opp watch">
+    <h4><span class="ticker">SMR</span> — NuScale Power Corp <span class="badge watch">WATCH — NOT HELD-CONFIRMED</span></h4>
+    <div class="price">~$9.06 (near 50-day moving average), down 36% YTD</div>
+    <p><strong>Watch, not a new action:</strong> NuScale's grid-scale, utility-intermediated go-to-market (its largest deal is a 6 GW system for the Tennessee Valley Authority) is a real strategic alternative to Oklo's direct-to-hyperscaler approach, but the market is pricing the two very differently right now (Oklo +13% in a single September session vs. NuScale -36% YTD). Worth revisiting once TVA-scale units approach commercial operation, or if the market re-rates the grid-scale strategy on its own merits rather than by comparison to Oklo's newsflow.</p>
   </div>
 
   <h2>Key Risks Across the Theme</h2>
   <ul>
-    <li><strong>Sector concentration:</strong> GOOG is already the account's entire Telecomm/Communication-Services sleeve alongside TTWO (3.93% of NAV); AVGO would additionally overlap with the account's existing CRWV/GEV AI-infrastructure exposure (2.76%/1.97% of NAV) rather than diversify away from the AI-capex theme &mdash; size accordingly.</li>
-    <li><strong>AI-answer-engine disintermediation:</strong> ChatGPT Search and Perplexity are capturing real, growing share of informational-query referral traffic outside Google's ecosystem, on subscription rather than ad-supported models &mdash; not yet an existential threat to Alphabet's ~80% query-volume share, but a genuine, unresolved structural risk to the ad-supported search model this whole theme depends on.</li>
-    <li><strong>Regulatory tail risk:</strong> the DOJ/states' cross-appeal at the D.C. Circuit keeps the possibility of Chrome divestiture or termination of the Apple default-search deal alive into 2027 &mdash; a low-probability but high-impact outcome for GOOG's core moat that current remedies (already in effect since February 2026) do not resolve.</li>
-    <li><strong>AI-capex-cycle dependency:</strong> AVGO's entire new-idea thesis rests on continued hyperscaler AI infrastructure spending across multiple customers simultaneously; a broad slowdown in AI capex would be a shared risk factor across AVGO and the account's existing CRWV/GEV holdings at once.</li>
-    <li><strong>Ad-tech fee compression:</strong> TTD's sharp growth deceleration is live evidence that Amazon's subsidized DSP pricing is compressing take rates across independent ad-tech &mdash; a risk factor for the broader digital-ad ecosystem, not just TTD specifically.</li>
+    <li><strong>IBKR access gap this cycle:</strong> account holdings, NAV, and existing sector concentration could not be checked this run &mdash; every ticker above should be cross-referenced against the live account (especially CCJ, which prior scout cycles referenced as an existing critical-minerals holding) before any sizing decision.</li>
+    <li><strong>Nuclear siting &amp; local-opposition risk:</strong> rising public backlash against data-center-linked nuclear/SMR projects can stall deployment even after federal NRC approval &mdash; a genuine execution risk sitting underneath every name in this cycle's set, most acutely for pre-commercial developers like Oklo and NuScale.</li>
+    <li><strong>Regulatory reversal risk:</strong> the Part 53 licensing-speed thesis this whole theme partly depends on has drawn active safety-rigor criticism; a safety incident or political reversal would undercut the licensing-speed tailwind quickly.</li>
+    <li><strong>Substitution by gas:</strong> most SMR/microreactor designs will not reach commercial operation until the early-to-mid 2030s, and natural-gas generation remains faster to permit and build &mdash; a real risk that hyperscalers lean on gas for near-term power needs regardless of the long-run nuclear buildout thesis.</li>
+    <li><strong>Single-operator execution risk:</strong> both Cameco (McArthur River, Cigar Lake) and Constellation (2026 guidance miss) show that even the best-positioned incumbents in a structurally favorable market are not immune to company-specific execution stumbles.</li>
   </ul>
 
   <div class="footer-note">
     Sources: <span class="source-list">
-    <a href="https://www.grandviewresearch.com/industry-analysis/digital-advertising-market-report">Grand View Research — digital advertising market size 2026-2033</a> &middot;
-    <a href="https://www.researchandmarkets.com/report/digital-ad-spending">Research and Markets — digital ad spending forecast to 2030</a> &middot;
-    <a href="https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/">Statista/Synergy Research — cloud infrastructure market share</a> &middot;
-    <a href="https://axis-intelligence.com/cloud-market-share-statistics/">Axis Intelligence — cloud market share 2026, AWS/Azure/Google Cloud</a> &middot;
-    <a href="https://searchengineland.com/doj-states-appeal-google-search-antitrust-remedies-ruling-468230">Search Engine Land — DOJ/states appeal Google search remedies ruling</a> &middot;
-    <a href="https://www.congress.gov/crs-product/LSB11362">Congress.gov CRS — federal court endorses behavioral remedies over structural relief</a> &middot;
-    <a href="https://www.litigationlogic.io/legal-news/google-search-antitrust-remedies-appeal-2026/">LitigationLogic — Google search antitrust remedies take effect, appeal begins</a> &middot;
-    <a href="https://cloud.google.com/blog/products/compute/ironwood-tpus-and-new-axion-based-vms-for-your-ai-workloads">Google Cloud Blog — Ironwood TPUs</a> &middot;
-    <a href="https://dejan.ai/blog/googles-trajectory-2026-and-beyond/">Dejan.ai — Google's trajectory 2026, AI Overviews CTR impact</a> &middot;
-    <a href="https://trakkr.ai/insights/ai-search-market-share-2026">Trakkr — AI search market share 2026, ChatGPT/Perplexity/Gemini</a> &middot;
-    <a href="https://www.digitalapplied.com/blog/ai-search-advertising-chatgpt-google-perplexity-2026">DigitalApplied — AI search advertising, Perplexity subscription pivot</a> &middot;
-    <a href="https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia">Tom's Hardware — custom AI ASIC state of play, Broadcom deals</a> &middot;
-    <a href="https://finance.yahoo.com/technology/ai/articles/broadcom-builds-custom-chips-google-215000298.html">Yahoo Finance — Broadcom custom chips for Google/Meta/Anthropic/OpenAI</a> &middot;
-    <a href="https://www.fool.com/investing/2026/07/10/why-trade-desk-stock-lost-52-in-h1-2026/">Motley Fool — Trade Desk stock down 52% in H1 2026</a> &middot;
-    <a href="https://www.investing.com/news/swot-analysis/the-trade-desks-swot-analysis-stock-faces-competitive-pressures-93CH-4707883">Investing.com — Trade Desk SWOT, competitive pressure from Amazon</a>
+    <a href="https://carboncredits.com/2026-the-year-nuclear-power-reclaims-relevance-with-15-reactors-ai-demand-and-chinas-expansion/">Carbon Credits — 2026, the year nuclear power reclaims relevance</a> &middot;
+    <a href="https://www.idtechex.com/en/research-article/data-centers-go-nuclear-why-ai-giants-are-investing-in-smrs/34846">IDTechEx — data centers go nuclear, why AI giants are investing in SMRs</a> &middot;
+    <a href="https://www.iaea.org/bulletin/data-centres-artificial-intelligence-and-cryptocurrencies-eye-advanced-nuclear-to-meet-growing-power-needs">IAEA Bulletin — data centres, AI and advanced nuclear</a> &middot;
+    <a href="https://www.fool.com/investing/2026/08/30/are-oklo-and-nuscale-power-still-a-buy-after-data/">Motley Fool — are Oklo and NuScale still a buy after data-center backlash</a> &middot;
+    <a href="https://247wallst.com/investing/2026/09/17/oklo-jumps-13-nuscale-power-climbs-10-does-the-house-data-center-power-vote-reach-nuclear/">24/7 Wall St — Oklo jumps 13%, NuScale climbs 10% on House data-center power vote</a> &middot;
+    <a href="https://stockships.com/nuclear-hyperscaler-stocks-2026/">Stock Ships — nuclear hyperscaler stocks 2026, CEG/VST/TLN/OKLO/SMR/NNE mapped to hyperscaler deals</a> &middot;
+    <a href="https://carboncredits.com/uranium-prices-2026-supply-crunch-and-rising-demand-fuel-a-nuclear-bull-market/">Carbon Credits — uranium prices 2026, supply crunch meets AI-driven demand</a> &middot;
+    <a href="https://www.fool.com/investing/2026/04/13/cameco-in-3-years-what-the-energy-supercycle-could/">Motley Fool — Cameco in 3 years, the energy supercycle</a> &middot;
+    <a href="https://www.cameco.com/invest/markets/supply-demand">Cameco — supply &amp; demand</a> &middot;
+    <a href="https://market.us/report/nuclear-small-modular-reactors-market/">Market.us — nuclear SMR market size, 14.8% CAGR</a> &middot;
+    <a href="https://www.marketresearchfuture.com/reports/small-modular-reactor-market-23561">Market Research Future — SMR market size &amp; growth</a> &middot;
+    <a href="https://www.federalregister.gov/documents/2026/03/30/2026-06048/risk-informed-technology-inclusive-regulatory-framework-for-advanced-reactors">Federal Register — NRC Part 53 final rule, March 30, 2026</a> &middot;
+    <a href="https://www.nrc.gov/about-nrc/governing-laws/advance-act/about-advance-act">NRC — about the ADVANCE Act</a> &middot;
+    <a href="https://www.nextgov.com/artificial-intelligence/2026/06/ai-has-helped-slash-nuclear-licensing-review-times-nrc-official-says/414446/">Nextgov/FCW — AI has helped slash nuclear licensing review times</a> &middot;
+    <a href="https://www.canarymedia.com/articles/nuclear/us-nuclear-regulator-rewriting-rules">Canary Media — top US nuclear regulator rewriting its rules</a> &middot;
+    <a href="https://www.fool.com/investing/2026/09/16/vistra-vs-constellation-vs-talen-energy-which-nucl/">Motley Fool — Vistra vs. Constellation vs. Talen, which nuclear-heavy stock is the better AI-power bet</a> &middot;
+    <a href="https://www.fool.com/investing/2026/09/16/constellation-energy-vs-vistra-2-very-different-be/">Motley Fool — Constellation Energy vs. Vistra, two very different bets on the same AI power boom</a> &middot;
+    <a href="https://stockanalysis.com/stocks/leu/">StockAnalysis.com — Centrus Energy (LEU) price &amp; overview</a> &middot;
+    <a href="https://stockanalysis.com/stocks/ccj/">StockAnalysis.com — Cameco (CCJ) price &amp; overview</a> &middot;
+    <a href="https://stockanalysis.com/stocks/bwxt/">StockAnalysis.com — BWX Technologies (BWXT) price &amp; overview</a> &middot;
+    <a href="https://stockanalysis.com/stocks/nne/">StockAnalysis.com — NANO Nuclear Energy (NNE) price &amp; overview</a>
     </span>
     <br><br>
-    Prices are IBKR account/market snapshots as of run time (2026-09-13). This report is a research screen, not investment advice — position sizing should account for existing account concentration in AI-infrastructure and Telecomm/Communication-Services names.
+    Prices are open-web snapshots near the run date (2026-09-20) &mdash; the IBKR connector was not authenticated this session, so no live account/market data or position-level detail was available. This report is a research screen, not investment advice; confirm every ticker against the live account before acting.
   </div>
 
 </div>
