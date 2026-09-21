@@ -3,886 +3,217 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Momentum Screener — 2026-09-14</title>
+<title>Momentum Screener — 2026-09-21</title>
 <style>
-  :root {
-    --bg:#0b0e14; --panel:#131722; --panel2:#1a2030; --text:#e6e9f0; --muted:#8b93a7;
-    --accent:#4f8cff; --high:#22c55e; --med:#eab308; --watch:#64748b; --none:#374151;
-    --border:#2a3142; --danger:#f87171;
+  :root{
+    --bg:#0b0e14; --panel:#131722; --panel2:#181d2a; --border:#242b3d;
+    --text:#e6e9f0; --muted:#8b93a7; --accent:#5b8cff; --accent2:#31d0aa;
+    --high:#31d0aa; --pass:#e8b339; --danger:#ff5c72;
   }
-  * { box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; margin:0; padding:0 16px 48px; }
-  .wrap { max-width:1200px; margin:0 auto; }
-  h1 { font-size:1.6rem; margin:28px 0 4px; }
-  h2 { font-size:1.2rem; margin:36px 0 12px; border-bottom:1px solid var(--border); padding-bottom:8px; }
-  h3 { font-size:1rem; color:var(--muted); margin:20px 0 8px; }
-  .subtitle { color:var(--muted); font-size:0.9rem; margin-bottom:20px; }
-  .cards { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
-  .card { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 18px; min-width:140px; flex:1 1 140px; }
-  .card .num { font-size:1.5rem; font-weight:700; }
-  .card .label { color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; margin-top:2px; }
-  .funnel { display:flex; flex-direction:column; gap:6px; margin:16px 0; }
-  .funnel-row { display:flex; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:8px 14px; }
-  .funnel-row .bar { height:10px; background:var(--accent); border-radius:4px; }
-  .funnel-row .flabel { flex:0 0 340px; font-size:0.85rem; }
-  .funnel-row .fcount { flex:0 0 70px; text-align:right; font-weight:700; }
-  .funnel-row .fbarwrap { flex:1; background:var(--panel2); border-radius:4px; overflow:hidden; }
-  table { width:100%; border-collapse:collapse; font-size:0.83rem; }
-  th { text-align:left; padding:8px 10px; background:var(--panel2); position:sticky; top:0; border-bottom:1px solid var(--border); white-space:nowrap; }
-  td { padding:6px 10px; border-bottom:1px solid var(--border); white-space:nowrap; }
-  td.num { text-align:right; font-variant-numeric:tabular-nums; }
-  td.center { text-align:center; }
-  .tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:10px; max-height:600px; overflow-y:auto; }
-  .badge { padding:2px 8px; border-radius:999px; font-size:0.72rem; font-weight:700; }
-  .badge-high { background:rgba(34,197,94,0.18); color:var(--high); }
-  .badge-med { background:rgba(234,179,8,0.18); color:var(--med); }
-  .badge-watch { background:rgba(100,116,139,0.25); color:#cbd5e1; }
-  .badge-none-c1 { background:rgba(55,65,81,0.4); color:var(--muted); }
-  .badge-none { background:rgba(55,65,81,0.4); color:var(--muted); }
-  .item-card { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin-bottom:12px; }
-  .item-card h4 { margin:0 0 6px; font-size:1.05rem; display:flex; gap:10px; align-items:center; }
-  .item-card .price { color:var(--muted); font-weight:400; font-size:0.85rem; }
-  .item-card p { margin:6px 0; font-size:0.88rem; line-height:1.5; }
-  .item-card .flag { color:var(--danger); font-weight:600; }
-  .item-card .div-note { color:#93c5fd; }
-  .methodology { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px; font-size:0.88rem; line-height:1.6; }
-  .methodology ul { margin:8px 0; padding-left:20px; }
-  .search-box { width:100%; padding:10px 14px; margin:12px 0; background:var(--panel2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.9rem; }
-  .tag-pill { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.72rem; font-weight:700; margin-left:8px; }
-  .footer-note { color:var(--muted); font-size:0.78rem; margin-top:40px; border-top:1px solid var(--border); padding-top:16px; }
-  .caveat { background:rgba(248,113,113,0.08); border:1px solid rgba(248,113,113,0.3); border-radius:8px; padding:12px 16px; font-size:0.85rem; margin:12px 0; }
-  a { color:var(--accent); }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px;}
+  header h1{font-size:1.6rem;margin:0 0 4px;}
+  header .sub{color:var(--muted);font-size:.92rem;margin-bottom:20px;}
+  .badge{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:3px 12px;font-size:.78rem;color:var(--muted);margin-right:8px;}
+  .badge.ok{color:var(--high);border-color:#1e5a4a;}
+  section{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:20px;}
+  h2{font-size:1.05rem;margin:0 0 14px;color:var(--text);}
+  h3{font-size:.92rem;margin:18px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .funnel{display:flex;flex-wrap:wrap;gap:10px;}
+  .fstage{flex:1;min-width:130px;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-align:center;}
+  .fstage .n{font-size:1.5rem;font-weight:700;color:var(--accent2);}
+  .fstage .l{font-size:.74rem;color:var(--muted);margin-top:2px;}
+  .arrow{align-self:center;color:var(--muted);font-size:1.1rem;}
+  table{width:100%;border-collapse:collapse;font-size:.85rem;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{color:var(--muted);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0;background:var(--panel);cursor:pointer;}
+  tr:hover td{background:#161b28;}
+  .tag{display:inline-block;padding:2px 9px;border-radius:6px;font-size:.72rem;font-weight:700;letter-spacing:.02em;}
+  .tag.HIGH{background:#0f3b31;color:var(--high);}
+  .tag.PASS{background:#3a2f0f;color:var(--pass);}
+  .label{font-weight:700;}
+  .sector-pill{font-size:.72rem;color:var(--muted);}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+  select,input[type=text]{background:var(--panel2);border:1px solid var(--border);color:var(--text);padding:7px 10px;border-radius:8px;font-size:.82rem;}
+  input[type=text]{flex:1;min-width:180px;}
+  .count-pill{color:var(--muted);font-size:.8rem;margin-left:auto;align-self:center;}
+  .divnote{color:var(--muted);font-size:.8rem;}
+  .entry{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;color:var(--accent);}
+  .sector-table td, .sector-table th{text-align:right;}
+  .sector-table td:first-child, .sector-table th:first-child{text-align:left;}
+  .caveat{border-left:3px solid var(--danger);background:#20141a;padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:10px;font-size:.85rem;}
+  .caveat b{color:var(--danger);}
+  .note{border-left:3px solid var(--accent);background:#101828;padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:10px;font-size:.85rem;}
+  footer{color:var(--muted);font-size:.76rem;text-align:center;margin-top:30px;}
+  a{color:var(--accent);}
 </style>
 </head>
 <body>
 <div class="wrap">
+<header>
   <h1>Momentum / Technical Equity Screener</h1>
-  <div class="subtitle">Run: 2026-09-14 · UNIVERSE: broad S&amp;P 500 (503 constituents, sourced fresh this run) — NOT a watchlist · SPY 3-month benchmark: +2.61% (2026-06-17→2026-09-14) · SPY 1-year benchmark: +14.62% (2025-09-15→2026-09-14)</div>
+  <div class="sub">Run 2026-09-21 15:10 UTC &middot; Universe: full S&amp;P 500 (503 tickers, sourced fresh this run) &middot; Live IBKR market data throughout</div>
+  <span class="badge ok">Universe check: 503 (full S&amp;P 500, not a watchlist)</span>
+  <span class="badge">SPY 3mo benchmark: +4.61%</span>
+  <span class="badge">Stage 0 threshold: +2.61% (SPY − 2pp)</span>
+</header>
 
-  <div class="cards">
-    <div class="card"><div class="num">503</div><div class="label">S&amp;P 500 universe</div></div>
-    <div class="card"><div class="num">264</div><div class="label">Stage 0 survivors</div></div>
-    <div class="card"><div class="num">100</div><div class="label">Carried to Stage 1-4</div></div>
-    <div class="card"><div class="num">28</div><div class="label">HIGH tier (final)</div></div>
-    <div class="card"><div class="num">0</div><div class="label">Unresolved tickers</div></div>
-  </div>
-
+<section>
   <h2>Funnel reconciliation</h2>
-  <div class="funnel">
-    <div class="funnel-row"><div class="flabel">S&amp;P 500 universe (sourced fresh)</div><div class="fbarwrap"><div class="bar" style="width:100%"></div></div><div class="fcount">503</div></div>
-    <div class="funnel-row"><div class="flabel">Stage 0 classified (0 unresolved)</div><div class="fbarwrap"><div class="bar" style="width:100%"></div></div><div class="fcount">503</div></div>
-    <div class="funnel-row"><div class="flabel">Stage 0 survivors (3mo return ≥ SPY−2pp = 0.61%)</div><div class="fbarwrap"><div class="bar" style="width:52.5%"></div></div><div class="fcount">264</div></div>
-    <div class="funnel-row"><div class="flabel">Prioritized top-100 by Stage-0 momentum</div><div class="fbarwrap"><div class="bar" style="width:19.9%"></div></div><div class="fcount">100</div></div>
-    <div class="funnel-row"><div class="flabel">C1: price above 40-week SMA</div><div class="fbarwrap"><div class="bar" style="width:88%"></div></div><div class="fcount">88</div></div>
-    <div class="funnel-row"><div class="flabel">C2: also above 10-week SMA (golden cross)</div><div class="fbarwrap"><div class="bar" style="width:63%"></div></div><div class="fcount">63</div></div>
-    <div class="funnel-row"><div class="flabel">C3: also RSI14(weekly) in 45–80 band</div><div class="fbarwrap"><div class="bar" style="width:55%"></div></div><div class="fcount">55</div></div>
-    <div class="funnel-row"><div class="flabel">C4 / HIGH: also ≤15% off 52wk high AND RS ≥ SPY+5pp</div><div class="fbarwrap"><div class="bar" style="width:28%"></div></div><div class="fcount">28</div></div>
-  </div>
+  <div class="funnel" id="funnelBox"></div>
+</section>
 
+<section>
+  <h2>Final candidates (cleared C1&ndash;C4)</h2>
+  <div class="controls">
+    <select id="sectorFilter"></select>
+    <select id="tagFilter">
+      <option value="">All tags</option>
+      <option value="HIGH">HIGH (buy now)</option>
+      <option value="PASS">PASS (wait for pullback)</option>
+    </select>
+    <input type="text" id="searchBox" placeholder="Search ticker…">
+    <span class="count-pill" id="countPill"></span>
+  </div>
+  <div style="overflow-x:auto;max-height:640px;overflow-y:auto;">
+  <table id="itemsTable">
+    <thead>
+      <tr>
+        <th data-k="label">Ticker</th>
+        <th data-k="sector">Sector</th>
+        <th data-k="tag">Tag</th>
+        <th data-k="entry_price">Entry price to watch</th>
+        <th>Rationale</th>
+        <th>Diversification note</th>
+      </tr>
+    </thead>
+    <tbody id="itemsBody"></tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>Stage 0 &mdash; per-sector bulk pre-filter</h2>
+  <table class="sector-table">
+    <thead><tr><th>GICS Sector</th><th>Universe</th><th>Survivors</th><th>Discarded</th><th>Unverifiable</th></tr></thead>
+    <tbody id="sectorBody"></tbody>
+  </table>
+</section>
+
+<section>
   <h2>Methodology</h2>
-  <div class="methodology">
-    <p><strong>UNIVERSE:</strong> Full S&amp;P 500 constituent list (503 tickers), sourced fresh this run from a public constituents dataset and cross-verified against live news of the pending 2026-09-21 quarterly rebalance (Bloom Energy/Everpure/Illumina in, Molson Coors/Trade Desk/Builders FirstSource out — not yet effective as of this run's date, so excluded/included correctly per the current, not future, index).</p>
-    <p><strong>Stage 0 (bulk pre-filter):</strong> For every constituent, 3-month daily price history (2026-06-17 → 2026-09-14) was pulled live via the IBKR connector and compared to SPY's 3-month return of +2.61%. Any ticker returning less than SPY−2pp (0.61%) was discarded. All 503 tickers resolved to an exact-match US common-stock contract (0 unresolved) — dual-class tickers (BRK.B, BF.B) were matched via IBKR's space-notation convention ("BRK B", "BF B").</p>
-    <p><strong>Stage 1-4 (technical funnel), cost-optimized:</strong> Given the cost of running full daily-bar technical analysis across all 264 Stage-0 survivors, this run — following the same disclosed methodology as the 2026-09-07 run — narrowed Stage 1-4 to the <strong>top 100 survivors by Stage-0 3-month momentum</strong>. For these 100, 1-year weekly-bar price history (52-53 weeks) was pulled live and used to compute:</p>
-    <ul>
-      <li><strong>C1:</strong> current price above the 40-week SMA (long-term uptrend)</li>
-      <li><strong>C2:</strong> current price also above the 10-week SMA, with 10w SMA &gt; 40w SMA (golden-cross posture)</li>
-      <li><strong>C3:</strong> RSI14, computed on weekly closes (standard 14-period average gain/loss method), in the healthy 45–80 band (excludes both weak and overbought names)</li>
-      <li><strong>C4 / HIGH:</strong> also within 15% of the 52-week high (from the weekly "high" series) AND 1-year relative strength vs SPY (ticker 1yr return − SPY's +14.62% 1yr return) ≥ +5pp</li>
-    </ul>
-    <p><strong>No-derivatives guard:</strong> broad index trackers, physically-backed commodity ETCs, and covered-call income funds were excluded from candidacy at the source (S&amp;P 500 constituent list contains only single-equity names, no ETFs).</p>
-    <p><strong>No-single-print guard:</strong> all trend signals are derived from multi-week SMA/RSI windows, never a single day's move.</p>
-    <p><strong>Anomaly flagging:</strong> any HIGH-tier name whose computed 1-year return is ≥80% is marked FLAGGED below and in the JSON output, with a recommendation to verify against stock splits or other corporate actions before acting — this run flagged DELL (+308.94%), HPE (+125.01%), APA (+97.49%), and CRWD (+83.70%). These are the actual first/last close values IBKR returned for the requested window; they were not independently corroborated against a corporate-actions feed, so treat them as unverified until checked.</p>
-  </div>
+  <h3>Stage 0 &mdash; cheap bulk pre-filter</h3>
+  <p>Full S&amp;P 500 constituent list (503 tickers) sourced fresh this run, grouped by GICS sector. Each ticker's 3-month price return was pulled live via IBKR (<code>get_price_history</code>, THREE_MONTHS/ONE_DAY bars, regular trading hours). SPY's own 3-month return (+4.61%, close $733.24 &rarr; $767.01) sets the benchmark. Any ticker whose 3-month return fell more than 2 percentage points below SPY's (i.e. below +2.61%) was discarded — 503 &rarr; 203 survived.</p>
+  <h3>C1 &mdash; no-derivatives guard</h3>
+  <p>Confirmed every Stage-0 survivor is a single operating company, not a broad index tracker, physically-backed commodity ETC, or covered-call income fund. All 203 passed (the universe is single-equity S&amp;P 500 constituents by construction).</p>
+  <h3>C2 &mdash; no-single-print guard</h3>
+  <p>For each survivor, computed the single largest one-day close-to-close % move within the trailing 3 months and what fraction of the <em>entire</em> 3-month cumulative return that one day represented. Tickers where one day accounted for &gt;50% of the whole move were discarded as gap/earnings-day-driven rather than genuine sustained trends (this caught MRNA's flagged +173.98% Stage-0 return, which turned out to be ~98% explained by a single +177% print). 91 of 203 were cut here.</p>
+  <h3>C3 &mdash; setup criterion checklist</h3>
+  <p>Using 6-month daily bars, computed 20-day and 50-day simple moving averages. A ticker passed only if: (a) price &gt; 50-day SMA, (b) price within 20% of its 3-month high, (c) price not more than 30% above its 50-day SMA (avoiding blow-off-top chases). 24 more were cut here, leaving 88 final candidates (C4).</p>
+  <h3>Entry price / tag convention</h3>
+  <p><span class="tag HIGH">HIGH</span> = clean breakout, current price is the entry to watch. <span class="tag PASS">PASS</span> = valid setup but currently extended above its 20-day SMA or already below it; entry is a named pullback level (20-day or 50-day SMA).</p>
+</section>
 
-  <div class="caveat">
-    <strong>Unverifiable / data-quality notes:</strong>
-    <ul style="margin:6px 0 0 18px;">
-      <li>MRK's %-off-52wk-high computed as a small negative value (current price exceeds the max recorded weekly "high" bar) — likely a lagging partial-week high field on the most recent bar, not excluded, flagged for awareness.</li>
-      <li>XOM resolved to IBKR's "EXXONMOBIL HOLDINGS CORP" listing (contract 895178251) — the single exact-symbol US STK match returned; not independently corroborated as identical to the ticker's historical listing structure.</li>
-      <li>Several tickers (AOS, KHC, MNST, OKE, VMRK, HONA/HON) returned price-history windows starting a day or two earlier/later than the modal 2026-06-17 start date; first/last values as actually returned by IBKR were used in all cases rather than interpolated.</li>
-      <li>HONA (Honeywell Aerospace)'s earliest print (2026-06-15, close=$200, volume=100) looks like a nominal reference/spinoff price rather than a real trading print; its Stage-0 return is unverified as a result. It did not survive to the final HIGH tier.</li>
-      <li>All Stage-0 and Stage-1-4 figures are live IBKR data as of 2026-09-14 (same-day bar may be a partial/in-progress session).</li>
-    </ul>
-  </div>
+<section>
+  <h2>Data-quality notes &amp; corrections made during this run</h2>
+  <div class="caveat"><b>STZ (Constellation Brands)</b> — persistent IBKR API error (-32400) across 9+ retry attempts by two independent agents; <code>search_contracts</code> for "Constellation Brands" now returns zero results. Classified <b>UNVERIFIABLE</b>, excluded from the funnel rather than guessed.</div>
+  <div class="note"><b>Ticker relabeling corrected (Information Technology):</b> tickers "P" and "Q" in the current S&amp;P 500 are Everpure Inc-A and Qnity Electronics Inc respectively (not the legacy companies a prior assumption suggested). A sub-agent's initial resolution was corrected against live IBKR data before this report was built: P (Everpure) return +51.00%, survivor; Q (Qnity Electronics) return &minus;23.93%, discarded.</div>
+  <div class="note"><b>JNJ data-collision resolved (Health Care):</b> an initial data pull returned JNJ price data identical to LH's (contract mix-up); re-verified directly against IBKR (contract 8719, NYSE): 3-month return +13.11%, survivor.</div>
+  <div class="note"><b>MRSH:</b> the freshly-sourced S&amp;P 500 constituent list shows Marsh McLennan trading under ticker MRSH (not the legacy MMC) — used as sourced per the live-data mandate.</div>
+  <div class="note"><b>HONA / FDXF:</b> confirmed as legitimate distinct 2026 spin-off listings (Honeywell Aerospace, FedEx Freight) separate from their parents (HON, FDX), each screened independently.</div>
+</section>
 
-  <h2>HIGH tier — 28 names (full detail)</h2>
-  <div class="item-card">
-    <h4>DELL <span class="price">$539.55</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="flag">Price $539.55 is 4.97% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 308.94% beating SPY&#x27;s 14.62% by 294.32pp. FLAGGED: 1-year return of 308.94% is unusually large -- verify against corporate actions/splits before acting.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding DELL raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>HPE <span class="price">$56.22</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="flag">Price $56.22 is 12.50% off its 52-week high, RSI14(weekly)=57.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 125.01% beating SPY&#x27;s 14.62% by 110.39pp. FLAGGED: 1-year return of 125.01% is unusually large -- verify against corporate actions/splits before acting.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding HPE raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>APA <span class="price">$46.37</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="flag">Price $46.37 is 0.15% off its 52-week high, RSI14(weekly)=73.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 97.49% beating SPY&#x27;s 14.62% by 82.87pp. FLAGGED: 1-year return of 97.49% is unusually large -- verify against corporate actions/splits before acting.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding APA raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>CRWD <span class="price">$230.79</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="flag">Price $230.79 is 1.32% off its 52-week high, RSI14(weekly)=66.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 83.70% beating SPY&#x27;s 14.62% by 69.08pp. FLAGGED: 1-year return of 83.70% is unusually large -- verify against corporate actions/splits before acting.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding CRWD raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>TGT <span class="price">$157.57</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $157.57 is 7.72% off its 52-week high, RSI14(weekly)=64.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 78.79% beating SPY&#x27;s 14.62% by 64.17pp.</p>
-    <p class="div-note">No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO (equities) plus IGLN/REMX/SSLV (metals ETFs), DBC (commodities ETF), TLT (bonds ETF)); adds Consumer Staples sector diversification.</p>
-  </div>
-  <div class="item-card">
-    <h4>MRK <span class="price">$144.54</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $144.54 is -1.82% off its 52-week high, RSI14(weekly)=67.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 77.33% beating SPY&#x27;s 14.62% by 62.71pp. NOTE: pct-off-52wk-high computed as negative (current price exceeds the max weekly &#x27;high&#x27; bar in the returned series, likely a lagging partial-week high field) -- data quality caveat, not excluded.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding MRK raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>PANW <span class="price">$366.32</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $366.32 is 8.16% off its 52-week high, RSI14(weekly)=62.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 75.95% beating SPY&#x27;s 14.62% by 61.33pp.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding PANW raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>CRL <span class="price">$270.56</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $270.56 is 10.80% off its 52-week high, RSI14(weekly)=76.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 74.12% beating SPY&#x27;s 14.62% by 59.50pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding CRL raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>EXPD <span class="price">$191.61</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $191.61 is 1.12% off its 52-week high, RSI14(weekly)=67.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 59.48% beating SPY&#x27;s 14.62% by 44.86pp.</p>
-    <p class="div-note">Portfolio already holds GEV (Industrials); adding EXPD raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>CF <span class="price">$134.46</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $134.46 is 5.28% off its 52-week high, RSI14(weekly)=68.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 58.02% beating SPY&#x27;s 14.62% by 43.40pp.</p>
-    <p class="div-note">Portfolio already holds CCJ/FCX/KGC/NEM (Materials); adding CF raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>NTAP <span class="price">$192.41</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $192.41 is 7.97% off its 52-week high, RSI14(weekly)=63.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 53.74% beating SPY&#x27;s 14.62% by 39.12pp.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding NTAP raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>BBY <span class="price">$139.12</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $139.12 is 0.28% off its 52-week high, RSI14(weekly)=68.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 51.35% beating SPY&#x27;s 14.62% by 36.73pp.</p>
-    <p class="div-note">No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO (equities) plus IGLN/REMX/SSLV (metals ETFs), DBC (commodities ETF), TLT (bonds ETF)); adds Consumer Discretionary sector diversification.</p>
-  </div>
-  <div class="item-card">
-    <h4>DVN <span class="price">$51.27</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $51.27 is 2.73% off its 52-week high, RSI14(weekly)=62.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 50.97% beating SPY&#x27;s 14.62% by 36.35pp.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding DVN raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>NEM <span class="price">$122.17</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $122.17 is 9.70% off its 52-week high, RSI14(weekly)=65.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.49% beating SPY&#x27;s 14.62% by 34.87pp.</p>
-    <p class="div-note">NEM is already a current position in this account -- this is a signal to add to an existing holding, not new diversification.</p>
-  </div>
-  <div class="item-card">
-    <h4>XOM <span class="price">$168.12</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $168.12 is 4.70% off its 52-week high, RSI14(weekly)=65.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.02% beating SPY&#x27;s 14.62% by 34.40pp.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding XOM raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>DE <span class="price">$681.70</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $681.70 is 3.43% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 45.16% beating SPY&#x27;s 14.62% by 30.54pp.</p>
-    <p class="div-note">Portfolio already holds GEV (Industrials); adding DE raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>RVTY <span class="price">$125.02</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $125.02 is 6.00% off its 52-week high, RSI14(weekly)=78.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 44.17% beating SPY&#x27;s 14.62% by 29.55pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding RVTY raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>CVX <span class="price">$216.19</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $216.19 is 0.62% off its 52-week high, RSI14(weekly)=65.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 38.40% beating SPY&#x27;s 14.62% by 23.78pp.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding CVX raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>TRV <span class="price">$379.16</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $379.16 is 4.90% off its 52-week high, RSI14(weekly)=74.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.88% beating SPY&#x27;s 14.62% by 22.26pp.</p>
-    <p class="div-note">No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO (equities) plus IGLN/REMX/SSLV (metals ETFs), DBC (commodities ETF), TLT (bonds ETF)); adds Financials sector diversification.</p>
-  </div>
-  <div class="item-card">
-    <h4>CPAY <span class="price">$411.25</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $411.25 is 3.79% off its 52-week high, RSI14(weekly)=70.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.21% beating SPY&#x27;s 14.62% by 21.59pp.</p>
-    <p class="div-note">No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO (equities) plus IGLN/REMX/SSLV (metals ETFs), DBC (commodities ETF), TLT (bonds ETF)); adds Financials sector diversification.</p>
-  </div>
-  <div class="item-card">
-    <h4>OXY <span class="price">$62.74</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $62.74 is 6.98% off its 52-week high, RSI14(weekly)=60.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.10% beating SPY&#x27;s 14.62% by 21.48pp.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding OXY raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>REGN <span class="price">$782.04</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $782.04 is 9.00% off its 52-week high, RSI14(weekly)=71.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 32.10% beating SPY&#x27;s 14.62% by 17.48pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding REGN raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>DGX <span class="price">$236.59</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $236.59 is 4.29% off its 52-week high, RSI14(weekly)=68.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.86% beating SPY&#x27;s 14.62% by 14.24pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding DGX raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>COP <span class="price">$92.70</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $92.70 is 0.16% off its 52-week high, RSI14(weekly)=68.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.34% beating SPY&#x27;s 14.62% by 13.72pp.</p>
-    <p class="div-note">Portfolio already holds MPC (Energy); adding COP raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>GILD <span class="price">$144.82</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $144.82 is 7.93% off its 52-week high, RSI14(weekly)=68.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 26.94% beating SPY&#x27;s 14.62% by 12.32pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding GILD raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>SOLV <span class="price">$89.24</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $89.24 is 5.23% off its 52-week high, RSI14(weekly)=62.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 21.05% beating SPY&#x27;s 14.62% by 6.43pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding SOLV raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>HPQ <span class="price">$34.07</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $34.07 is 5.96% off its 52-week high, RSI14(weekly)=73.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.99% beating SPY&#x27;s 14.62% by 6.37pp.</p>
-    <p class="div-note">Portfolio already holds CRWV (Information Technology); adding HPQ raises single-sector concentration risk.</p>
-  </div>
-  <div class="item-card">
-    <h4>BDX <span class="price">$180.69</span><span class="tag-pill badge-high">HIGH</span></h4>
-    <p class="">Price $180.69 is 6.41% off its 52-week high, RSI14(weekly)=70.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.71% beating SPY&#x27;s 14.62% by 6.09pp.</p>
-    <p class="div-note">Portfolio already holds LLY (Health Care); adding BDX raises single-sector concentration risk.</p>
-  </div>
-
-  <h2>Full Stage 1-4 breakdown (100 tickers carried from Stage 0)</h2>
-  <input class="search-box" id="s1search" placeholder="Filter by ticker, name, or sector…" onkeyup="filterTable('s1table','s1search')">
-  <div class="tablewrap">
-  <table id="s1table">
-    <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Price</th><th>SMA10w</th><th>SMA40w</th><th>RSI14w</th><th>%Off 52wk High</th><th>1yr Return</th><th>RS vs SPY</th><th>Tier</th></tr></thead>
-    <tbody>
-<tr class='tier-high'><td>DELL</td><td>Dell Technologies</td><td>Information Technology</td><td class='num'>$539.55</td><td class='num'>$471.31</td><td class='num'>$283.15</td><td class='num'>65.4</td><td class='num'>4.97%</td><td class='num'>308.94% ⚠️</td><td class='num'>+294.32pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>HPE</td><td>Hewlett Packard Enterprise</td><td>Information Technology</td><td class='num'>$56.22</td><td class='num'>$52.94</td><td class='num'>$35.55</td><td class='num'>57.7</td><td class='num'>12.50%</td><td class='num'>125.01% ⚠️</td><td class='num'>+110.39pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>APA</td><td>APA Corporation</td><td>Energy</td><td class='num'>$46.37</td><td class='num'>$40.66</td><td class='num'>$34.96</td><td class='num'>73.0</td><td class='num'>0.15%</td><td class='num'>97.49% ⚠️</td><td class='num'>+82.87pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>CRWD</td><td>CrowdStrike</td><td>Information Technology</td><td class='num'>$230.79</td><td class='num'>$206.96</td><td class='num'>$147.71</td><td class='num'>66.1</td><td class='num'>1.32%</td><td class='num'>83.70% ⚠️</td><td class='num'>+69.08pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>TGT</td><td>Target Corporation</td><td>Consumer Staples</td><td class='num'>$157.57</td><td class='num'>$153.15</td><td class='num'>$127.88</td><td class='num'>64.1</td><td class='num'>7.72%</td><td class='num'>78.79%</td><td class='num'>+64.17pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>MRK</td><td>Merck &amp; Co.</td><td>Health Care</td><td class='num'>$144.54</td><td class='num'>$139.29</td><td class='num'>$122.11</td><td class='num'>67.2</td><td class='num'>-1.82%</td><td class='num'>77.33%</td><td class='num'>+62.71pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>PANW</td><td>Palo Alto Networks</td><td>Information Technology</td><td class='num'>$366.32</td><td class='num'>$352.21</td><td class='num'>$243.34</td><td class='num'>62.9</td><td class='num'>8.16%</td><td class='num'>75.95%</td><td class='num'>+61.33pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>CRL</td><td>Charles River Laboratories</td><td>Health Care</td><td class='num'>$270.56</td><td class='num'>$265.50</td><td class='num'>$206.04</td><td class='num'>76.7</td><td class='num'>10.80%</td><td class='num'>74.12%</td><td class='num'>+59.50pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>EXPD</td><td>Expeditors International</td><td>Industrials</td><td class='num'>$191.61</td><td class='num'>$184.26</td><td class='num'>$161.97</td><td class='num'>67.1</td><td class='num'>1.12%</td><td class='num'>59.48%</td><td class='num'>+44.86pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>CF</td><td>CF Industries</td><td>Materials</td><td class='num'>$134.46</td><td class='num'>$126.06</td><td class='num'>$112.09</td><td class='num'>68.4</td><td class='num'>5.28%</td><td class='num'>58.02%</td><td class='num'>+43.40pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>NTAP</td><td>NetApp</td><td>Information Technology</td><td class='num'>$192.41</td><td class='num'>$186.33</td><td class='num'>$136.14</td><td class='num'>63.3</td><td class='num'>7.97%</td><td class='num'>53.74%</td><td class='num'>+39.12pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>BBY</td><td>Best Buy</td><td>Consumer Discretionary</td><td class='num'>$139.12</td><td class='num'>$127.58</td><td class='num'>$116.08</td><td class='num'>68.0</td><td class='num'>0.28%</td><td class='num'>51.35%</td><td class='num'>+36.73pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>DVN</td><td>Devon Energy</td><td>Energy</td><td class='num'>$51.27</td><td class='num'>$46.88</td><td class='num'>$44.51</td><td class='num'>62.6</td><td class='num'>2.73%</td><td class='num'>50.97%</td><td class='num'>+36.35pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>NEM</td><td>Newmont</td><td>Materials</td><td class='num'>$122.17</td><td class='num'>$114.40</td><td class='num'>$111.13</td><td class='num'>65.5</td><td class='num'>9.70%</td><td class='num'>49.49%</td><td class='num'>+34.87pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>XOM</td><td>ExxonMobil</td><td>Energy</td><td class='num'>$168.12</td><td class='num'>$158.83</td><td class='num'>$148.10</td><td class='num'>65.8</td><td class='num'>4.70%</td><td class='num'>49.02%</td><td class='num'>+34.40pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>DE</td><td>Deere &amp; Company</td><td>Industrials</td><td class='num'>$681.70</td><td class='num'>$637.65</td><td class='num'>$582.26</td><td class='num'>65.4</td><td class='num'>3.43%</td><td class='num'>45.16%</td><td class='num'>+30.54pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>RVTY</td><td>Revvity</td><td>Health Care</td><td class='num'>$125.02</td><td class='num'>$119.77</td><td class='num'>$103.85</td><td class='num'>78.6</td><td class='num'>6.00%</td><td class='num'>44.17%</td><td class='num'>+29.55pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>CVX</td><td>Chevron Corporation</td><td>Energy</td><td class='num'>$216.19</td><td class='num'>$201.15</td><td class='num'>$185.77</td><td class='num'>65.7</td><td class='num'>0.62%</td><td class='num'>38.40%</td><td class='num'>+23.78pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>TRV</td><td>Travelers Companies (The)</td><td>Financials</td><td class='num'>$379.16</td><td class='num'>$374.25</td><td class='num'>$318.65</td><td class='num'>74.9</td><td class='num'>4.90%</td><td class='num'>36.88%</td><td class='num'>+22.26pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>CPAY</td><td>Corpay</td><td>Financials</td><td class='num'>$411.25</td><td class='num'>$398.99</td><td class='num'>$344.79</td><td class='num'>70.0</td><td class='num'>3.79%</td><td class='num'>36.21%</td><td class='num'>+21.59pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>OXY</td><td>Occidental Petroleum</td><td>Energy</td><td class='num'>$62.74</td><td class='num'>$58.81</td><td class='num'>$53.90</td><td class='num'>60.8</td><td class='num'>6.98%</td><td class='num'>36.10%</td><td class='num'>+21.48pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>REGN</td><td>Regeneron Pharmaceuticals</td><td>Health Care</td><td class='num'>$782.04</td><td class='num'>$770.26</td><td class='num'>$734.33</td><td class='num'>71.9</td><td class='num'>9.00%</td><td class='num'>32.10%</td><td class='num'>+17.48pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>DGX</td><td>Quest Diagnostics</td><td>Health Care</td><td class='num'>$236.59</td><td class='num'>$234.02</td><td class='num'>$204.21</td><td class='num'>68.1</td><td class='num'>4.29%</td><td class='num'>28.86%</td><td class='num'>+14.24pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>COP</td><td>ConocoPhillips</td><td>Energy</td><td class='num'>$92.70</td><td class='num'>$86.76</td><td class='num'>$72.45</td><td class='num'>68.5</td><td class='num'>0.16%</td><td class='num'>28.34%</td><td class='num'>+13.72pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>GILD</td><td>Gilead Sciences</td><td>Health Care</td><td class='num'>$144.82</td><td class='num'>$139.67</td><td class='num'>$135.88</td><td class='num'>68.8</td><td class='num'>7.93%</td><td class='num'>26.94%</td><td class='num'>+12.32pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>SOLV</td><td>Solventum</td><td>Health Care</td><td class='num'>$89.24</td><td class='num'>$86.54</td><td class='num'>$77.44</td><td class='num'>62.1</td><td class='num'>5.23%</td><td class='num'>21.05%</td><td class='num'>+6.43pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>HPQ</td><td>HP Inc.</td><td>Information Technology</td><td class='num'>$34.07</td><td class='num'>$30.04</td><td class='num'>$23.49</td><td class='num'>73.2</td><td class='num'>5.96%</td><td class='num'>20.99%</td><td class='num'>+6.37pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-high'><td>BDX</td><td>Becton Dickinson</td><td>Health Care</td><td class='num'>$180.69</td><td class='num'>$176.52</td><td class='num'>$162.30</td><td class='num'>70.7</td><td class='num'>6.41%</td><td class='num'>20.71%</td><td class='num'>+6.09pp</td><td><span class='badge badge-high'>HIGH</span></td></tr>
-<tr class='tier-med'><td>MRNA</td><td>Moderna</td><td>Health Care</td><td class='num'>$140.33</td><td class='num'>$100.62</td><td class='num'>$62.19</td><td class='num'>77.2</td><td class='num'>20.57%</td><td class='num'>455.98% ⚠️</td><td class='num'>+441.36pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>ABBV</td><td>AbbVie</td><td>Health Care</td><td class='num'>$260.60</td><td class='num'>$255.49</td><td class='num'>$230.09</td><td class='num'>63.0</td><td class='num'>2.57%</td><td class='num'>17.14%</td><td class='num'>+2.52pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>FOXA</td><td>Fox Corporation (Class A)</td><td>Communication Services</td><td class='num'>$67.51</td><td class='num'>$64.01</td><td class='num'>$63.30</td><td class='num'>51.7</td><td class='num'>11.62%</td><td class='num'>11.37%</td><td class='num'>-3.25pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>FOX</td><td>Fox Corporation (Class B)</td><td>Communication Services</td><td class='num'>$59.92</td><td class='num'>$57.06</td><td class='num'>$56.84</td><td class='num'>51.2</td><td class='num'>12.11%</td><td class='num'>9.84%</td><td class='num'>-4.78pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>ZBRA</td><td>Zebra Technologies</td><td>Information Technology</td><td class='num'>$349.35</td><td class='num'>$336.11</td><td class='num'>$262.60</td><td class='num'>78.4</td><td class='num'>9.55%</td><td class='num'>9.67%</td><td class='num'>-4.95pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>JKHY</td><td>Jack Henry &amp; Associates</td><td>Financials</td><td class='num'>$166.00</td><td class='num'>$159.42</td><td class='num'>$158.45</td><td class='num'>78.4</td><td class='num'>14.16%</td><td class='num'>9.23%</td><td class='num'>-5.39pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>GEN</td><td>Gen Digital</td><td>Information Technology</td><td class='num'>$30.87</td><td class='num'>$28.94</td><td class='num'>$24.82</td><td class='num'>75.1</td><td class='num'>2.46%</td><td class='num'>6.48%</td><td class='num'>-8.14pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>SWKS</td><td>Skyworks Solutions</td><td>Information Technology</td><td class='num'>$83.48</td><td class='num'>$70.09</td><td class='num'>$64.96</td><td class='num'>58.2</td><td class='num'>9.56%</td><td class='num'>5.74%</td><td class='num'>-8.88pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>GPN</td><td>Global Payments</td><td>Financials</td><td class='num'>$89.59</td><td class='num'>$87.77</td><td class='num'>$76.18</td><td class='num'>77.0</td><td class='num'>6.56%</td><td class='num'>3.51%</td><td class='num'>-11.11pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>CRM</td><td>Salesforce</td><td>Information Technology</td><td class='num'>$252.77</td><td class='num'>$213.23</td><td class='num'>$199.60</td><td class='num'>77.5</td><td class='num'>6.07%</td><td class='num'>2.30%</td><td class='num'>-12.32pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>MSI</td><td>Motorola Solutions</td><td>Information Technology</td><td class='num'>$477.29</td><td class='num'>$457.89</td><td class='num'>$429.70</td><td class='num'>70.3</td><td class='num'>3.55%</td><td class='num'>0.23%</td><td class='num'>-14.39pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>MA</td><td>Mastercard</td><td>Financials</td><td class='num'>$575.39</td><td class='num'>$568.83</td><td class='num'>$530.62</td><td class='num'>72.3</td><td class='num'>4.36%</td><td class='num'>-1.50%</td><td class='num'>-16.12pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>MDT</td><td>Medtronic</td><td>Health Care</td><td class='num'>$93.36</td><td class='num'>$89.33</td><td class='num'>$88.70</td><td class='num'>74.5</td><td class='num'>12.20%</td><td class='num'>-1.81%</td><td class='num'>-16.43pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>NWSA</td><td>News Corp (Class A)</td><td>Communication Services</td><td class='num'>$30.02</td><td class='num'>$29.16</td><td class='num'>$26.41</td><td class='num'>68.8</td><td class='num'>5.18%</td><td class='num'>-1.96%</td><td class='num'>-16.58pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>GPC</td><td>Genuine Parts Company</td><td>Consumer Discretionary</td><td class='num'>$132.80</td><td class='num'>$132.01</td><td class='num'>$120.26</td><td class='num'>74.3</td><td class='num'>12.38%</td><td class='num'>-3.30%</td><td class='num'>-17.92pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>MSFT</td><td>Microsoft</td><td>Information Technology</td><td class='num'>$500.65</td><td class='num'>$472.84</td><td class='num'>$429.83</td><td class='num'>72.0</td><td class='num'>9.58%</td><td class='num'>-3.34%</td><td class='num'>-17.96pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>J</td><td>Jacobs Solutions</td><td>Industrials</td><td class='num'>$142.69</td><td class='num'>$142.38</td><td class='num'>$132.67</td><td class='num'>64.8</td><td class='num'>15.29%</td><td class='num'>-4.34%</td><td class='num'>-18.96pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>ADP</td><td>Automatic Data Processing</td><td>Industrials</td><td class='num'>$272.11</td><td class='num'>$270.24</td><td class='num'>$237.08</td><td class='num'>70.7</td><td class='num'>7.74%</td><td class='num'>-6.81%</td><td class='num'>-21.43pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>CMG</td><td>Chipotle Mexican Grill</td><td>Consumer Discretionary</td><td class='num'>$36.61</td><td class='num'>$35.44</td><td class='num'>$35.20</td><td class='num'>59.1</td><td class='num'>14.50%</td><td class='num'>-6.89%</td><td class='num'>-21.51pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>CDW</td><td>CDW Corporation</td><td>Information Technology</td><td class='num'>$149.96</td><td class='num'>$143.12</td><td class='num'>$131.44</td><td class='num'>60.6</td><td class='num'>11.37%</td><td class='num'>-6.98%</td><td class='num'>-21.60pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>PLTR</td><td>Palantir Technologies</td><td>Information Technology</td><td class='num'>$167.39</td><td class='num'>$159.96</td><td class='num'>$149.80</td><td class='num'>64.9</td><td class='num'>19.34%</td><td class='num'>-8.22%</td><td class='num'>-22.84pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>SMCI</td><td>Supermicro</td><td>Information Technology</td><td class='num'>$37.80</td><td class='num'>$34.55</td><td class='num'>$31.66</td><td class='num'>60.2</td><td class='num'>35.69%</td><td class='num'>-17.48%</td><td class='num'>-32.10pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>WDAY</td><td>Workday, Inc.</td><td>Information Technology</td><td class='num'>$191.56</td><td class='num'>$179.66</td><td class='num'>$156.42</td><td class='num'>70.9</td><td class='num'>23.33%</td><td class='num'>-18.01%</td><td class='num'>-32.63pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>ROP</td><td>Roper Technologies</td><td>Information Technology</td><td class='num'>$395.83</td><td class='num'>$395.37</td><td class='num'>$371.18</td><td class='num'>68.1</td><td class='num'>24.07%</td><td class='num'>-21.56%</td><td class='num'>-36.18pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>IT</td><td>Gartner</td><td>Information Technology</td><td class='num'>$189.00</td><td class='num'>$174.77</td><td class='num'>$172.78</td><td class='num'>65.1</td><td class='num'>28.90%</td><td class='num'>-26.28%</td><td class='num'>-40.90pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>NOW</td><td>ServiceNow</td><td>Information Technology</td><td class='num'>$138.18</td><td class='num'>$124.73</td><td class='num'>$114.72</td><td class='num'>69.1</td><td class='num'>29.04%</td><td class='num'>-28.12%</td><td class='num'>-42.74pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-med'><td>GDDY</td><td>GoDaddy</td><td>Information Technology</td><td class='num'>$101.17</td><td class='num'>$95.16</td><td class='num'>$93.11</td><td class='num'>72.8</td><td class='num'>31.73%</td><td class='num'>-30.12%</td><td class='num'>-44.74pp</td><td><span class='badge badge-med'>MED</span></td></tr>
-<tr class='tier-watch'><td>VLO</td><td>Valero Energy</td><td>Energy</td><td class='num'>$398.93</td><td class='num'>$342.63</td><td class='num'>$253.62</td><td class='num'>80.7</td><td class='num'>0.17%</td><td class='num'>145.31% ⚠️</td><td class='num'>+130.69pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>MPC</td><td>Marathon Petroleum</td><td>Energy</td><td class='num'>$408.93</td><td class='num'>$351.52</td><td class='num'>$254.33</td><td class='num'>81.6</td><td class='num'>0.04%</td><td class='num'>120.49% ⚠️</td><td class='num'>+105.87pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>PSX</td><td>Phillips 66</td><td>Energy</td><td class='num'>$263.70</td><td class='num'>$232.80</td><td class='num'>$180.20</td><td class='num'>83.3</td><td class='num'>0.65%</td><td class='num'>103.28% ⚠️</td><td class='num'>+88.66pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>IQV</td><td>IQVIA</td><td>Health Care</td><td class='num'>$264.82</td><td class='num'>$244.06</td><td class='num'>$202.52</td><td class='num'>82.1</td><td class='num'>2.57%</td><td class='num'>41.45%</td><td class='num'>+26.83pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>TECH</td><td>Bio-Techne</td><td>Health Care</td><td class='num'>$72.21</td><td class='num'>$72.19</td><td class='num'>$61.55</td><td class='num'>94.7</td><td class='num'>0.56%</td><td class='num'>35.86%</td><td class='num'>+21.24pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>TMO</td><td>Thermo Fisher Scientific</td><td>Health Care</td><td class='num'>$609.72</td><td class='num'>$594.21</td><td class='num'>$534.67</td><td class='num'>85.0</td><td class='num'>5.32%</td><td class='num'>27.14%</td><td class='num'>+12.52pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>AMP</td><td>Ameriprise Financial</td><td>Financials</td><td class='num'>$559.23</td><td class='num'>$551.64</td><td class='num'>$492.87</td><td class='num'>80.7</td><td class='num'>2.33%</td><td class='num'>14.24%</td><td class='num'>-0.38pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-watch'><td>VEEV</td><td>Veeva Systems</td><td>Health Care</td><td class='num'>$262.63</td><td class='num'>$238.43</td><td class='num'>$197.88</td><td class='num'>80.8</td><td class='num'>15.42%</td><td class='num'>-5.46%</td><td class='num'>-20.08pp</td><td><span class='badge badge-watch'>WATCH</span></td></tr>
-<tr class='tier-none-c1'><td>INCY</td><td>Incyte</td><td>Health Care</td><td class='num'>$121.48</td><td class='num'>$121.70</td><td class='num'>$106.09</td><td class='num'>62.4</td><td class='num'>8.39%</td><td class='num'>40.39%</td><td class='num'>+25.77pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>ABNB</td><td>Airbnb</td><td>Consumer Discretionary</td><td class='num'>$168.88</td><td class='num'>$169.85</td><td class='num'>$143.09</td><td class='num'>69.6</td><td class='num'>12.71%</td><td class='num'>32.94%</td><td class='num'>+18.32pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>EXPE</td><td>Expedia Group</td><td>Consumer Discretionary</td><td class='num'>$282.06</td><td class='num'>$297.88</td><td class='num'>$259.28</td><td class='num'>64.4</td><td class='num'>17.53%</td><td class='num'>26.81%</td><td class='num'>+12.19pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>DXCM</td><td>Dexcom</td><td>Health Care</td><td class='num'>$84.33</td><td class='num'>$84.46</td><td class='num'>$72.35</td><td class='num'>59.3</td><td class='num'>8.92%</td><td class='num'>25.03%</td><td class='num'>+10.41pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>ALL</td><td>Allstate</td><td>Financials</td><td class='num'>$257.39</td><td class='num'>$258.74</td><td class='num'>$224.66</td><td class='num'>72.3</td><td class='num'>7.15%</td><td class='num'>24.92%</td><td class='num'>+10.30pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>GRMN</td><td>Garmin</td><td>Consumer Discretionary</td><td class='num'>$282.70</td><td class='num'>$282.99</td><td class='num'>$243.96</td><td class='num'>66.3</td><td class='num'>10.05%</td><td class='num'>20.24%</td><td class='num'>+5.62pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>A</td><td>Agilent Technologies</td><td>Health Care</td><td class='num'>$145.70</td><td class='num'>$145.92</td><td class='num'>$130.78</td><td class='num'>62.2</td><td class='num'>11.02%</td><td class='num'>15.34%</td><td class='num'>+0.72pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>LH</td><td>Labcorp</td><td>Health Care</td><td class='num'>$312.23</td><td class='num'>$314.87</td><td class='num'>$278.28</td><td class='num'>66.6</td><td class='num'>8.65%</td><td class='num'>12.61%</td><td class='num'>-2.01pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>COR</td><td>Cencora</td><td>Health Care</td><td class='num'>$323.05</td><td class='num'>$317.91</td><td class='num'>$319.18</td><td class='num'>72.2</td><td class='num'>14.43%</td><td class='num'>11.39%</td><td class='num'>-3.23pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>EL</td><td>Estée Lauder Companies (The)</td><td>Consumer Staples</td><td class='num'>$96.83</td><td class='num'>$92.39</td><td class='num'>$92.42</td><td class='num'>57.0</td><td class='num'>20.39%</td><td class='num'>10.28%</td><td class='num'>-4.34pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>BAX</td><td>Baxter International</td><td>Health Care</td><td class='num'>$23.89</td><td class='num'>$25.14</td><td class='num'>$20.74</td><td class='num'>61.7</td><td class='num'>20.37%</td><td class='num'>3.78%</td><td class='num'>-10.84pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>CTAS</td><td>Cintas</td><td>Industrials</td><td class='num'>$201.26</td><td class='num'>$202.88</td><td class='num'>$187.80</td><td class='num'>70.8</td><td class='num'>8.17%</td><td class='num'>0.56%</td><td class='num'>-14.06pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>FDS</td><td>FactSet</td><td>Financials</td><td class='num'>$279.20</td><td class='num'>$279.45</td><td class='num'>$248.32</td><td class='num'>59.8</td><td class='num'>23.47%</td><td class='num'>-3.44%</td><td class='num'>-18.06pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>WTW</td><td>Willis Towers Watson</td><td>Financials</td><td class='num'>$322.18</td><td class='num'>$325.91</td><td class='num'>$299.70</td><td class='num'>69.0</td><td class='num'>8.68%</td><td class='num'>-4.32%</td><td class='num'>-18.94pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>CTSH</td><td>Cognizant</td><td>Information Technology</td><td class='num'>$62.54</td><td class='num'>$57.28</td><td class='num'>$61.33</td><td class='num'>62.1</td><td class='num'>28.14%</td><td class='num'>-6.57%</td><td class='num'>-21.19pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>ICE</td><td>Intercontinental Exchange</td><td>Financials</td><td class='num'>$158.54</td><td class='num'>$154.37</td><td class='num'>$155.18</td><td class='num'>63.7</td><td class='num'>9.95%</td><td class='num'>-6.61%</td><td class='num'>-21.23pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>T</td><td>AT&amp;T</td><td>Communication Services</td><td class='num'>$26.25</td><td class='num'>$24.72</td><td class='num'>$25.23</td><td class='num'>60.7</td><td class='num'>11.88%</td><td class='num'>-9.51%</td><td class='num'>-24.13pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>PAYX</td><td>Paychex</td><td>Industrials</td><td class='num'>$116.83</td><td class='num'>$119.27</td><td class='num'>$104.07</td><td class='num'>67.9</td><td class='num'>13.96%</td><td class='num'>-10.13%</td><td class='num'>-24.75pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>VLTO</td><td>Veralto</td><td>Industrials</td><td class='num'>$95.67</td><td class='num'>$95.94</td><td class='num'>$92.79</td><td class='num'>73.2</td><td class='num'>12.65%</td><td class='num'>-10.51%</td><td class='num'>-25.13pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>ALLE</td><td>Allegion</td><td>Industrials</td><td class='num'>$155.32</td><td class='num'>$156.73</td><td class='num'>$150.53</td><td class='num'>67.4</td><td class='num'>15.18%</td><td class='num'>-13.39%</td><td class='num'>-28.01pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>META</td><td>Meta Platforms</td><td>Communication Services</td><td class='num'>$656.73</td><td class='num'>$602.93</td><td class='num'>$620.41</td><td class='num'>59.9</td><td class='num'>16.96%</td><td class='num'>-15.63%</td><td class='num'>-30.25pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>PYPL</td><td>PayPal</td><td>Financials</td><td class='num'>$53.66</td><td class='num'>$56.82</td><td class='num'>$50.01</td><td class='num'>69.2</td><td class='num'>32.26%</td><td class='num'>-21.34%</td><td class='num'>-35.96pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>DASH</td><td>DoorDash</td><td>Consumer Discretionary</td><td class='num'>$200.40</td><td class='num'>$206.08</td><td class='num'>$186.42</td><td class='num'>65.5</td><td class='num'>29.81%</td><td class='num'>-24.46%</td><td class='num'>-39.08pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>BR</td><td>Broadridge Financial Solutions</td><td>Industrials</td><td class='num'>$172.64</td><td class='num'>$166.94</td><td class='num'>$171.60</td><td class='num'>68.2</td><td class='num'>31.87%</td><td class='num'>-28.50%</td><td class='num'>-43.12pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none-c1'><td>TYL</td><td>Tyler Technologies</td><td>Information Technology</td><td class='num'>$350.59</td><td class='num'>$334.73</td><td class='num'>$346.93</td><td class='num'>61.0</td><td class='num'>36.02%</td><td class='num'>-34.39%</td><td class='num'>-49.01pp</td><td><span class='badge badge-none-c1'>NONE_C1</span></td></tr>
-<tr class='tier-none'><td>DG</td><td>Dollar General</td><td>Consumer Staples</td><td class='num'>$127.13</td><td class='num'>$125.11</td><td class='num'>$127.25</td><td class='num'>60.2</td><td class='num'>19.65%</td><td class='num'>24.50%</td><td class='num'>+9.88pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>ULTA</td><td>Ulta Beauty</td><td>Consumer Discretionary</td><td class='num'>$544.25</td><td class='num'>$523.78</td><td class='num'>$556.04</td><td class='num'>62.0</td><td class='num'>23.88%</td><td class='num'>4.37%</td><td class='num'>-10.25pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>UHS</td><td>Universal Health Services</td><td>Health Care</td><td class='num'>$174.11</td><td class='num'>$168.64</td><td class='num'>$180.89</td><td class='num'>68.2</td><td class='num'>29.32%</td><td class='num'>-7.70%</td><td class='num'>-22.32pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>RMD</td><td>ResMed|</td><td>Health Care</td><td class='num'>$223.94</td><td class='num'>$218.40</td><td class='num'>$225.39</td><td class='num'>62.8</td><td class='num'>21.39%</td><td class='num'>-18.03%</td><td class='num'>-32.65pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>ACN</td><td>Accenture</td><td>Information Technology</td><td class='num'>$189.00</td><td class='num'>$174.36</td><td class='num'>$197.05</td><td class='num'>57.9</td><td class='num'>35.07%</td><td class='num'>-21.15%</td><td class='num'>-35.77pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>ABT</td><td>Abbott Laboratories</td><td>Health Care</td><td class='num'>$103.36</td><td class='num'>$107.13</td><td class='num'>$104.07</td><td class='num'>66.0</td><td class='num'>24.83%</td><td class='num'>-24.02%</td><td class='num'>-38.64pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>BRO</td><td>Brown &amp; Brown</td><td>Financials</td><td class='num'>$67.64</td><td class='num'>$70.09</td><td class='num'>$68.41</td><td class='num'>61.4</td><td class='num'>29.94%</td><td class='num'>-26.26%</td><td class='num'>-40.88pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>LDOS</td><td>Leidos</td><td>Industrials</td><td class='num'>$133.13</td><td class='num'>$129.27</td><td class='num'>$148.79</td><td class='num'>56.3</td><td class='num'>35.31%</td><td class='num'>-28.98%</td><td class='num'>-43.60pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>ADBE</td><td>Adobe Inc.</td><td>Information Technology</td><td class='num'>$258.95</td><td class='num'>$258.65</td><td class='num'>$260.83</td><td class='num'>65.4</td><td class='num'>30.18%</td><td class='num'>-29.23%</td><td class='num'>-43.85pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>TRMB</td><td>Trimble Inc.</td><td>Information Technology</td><td class='num'>$57.83</td><td class='num'>$57.55</td><td class='num'>$62.86</td><td class='num'>67.6</td><td class='num'>31.50%</td><td class='num'>-30.14%</td><td class='num'>-44.76pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>INTU</td><td>Intuit</td><td>Information Technology</td><td class='num'>$338.28</td><td class='num'>$329.20</td><td class='num'>$400.28</td><td class='num'>67.8</td><td class='num'>52.02%</td><td class='num'>-50.83%</td><td class='num'>-65.45pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-<tr class='tier-none'><td>BSX</td><td>Boston Scientific</td><td>Health Care</td><td class='num'>$44.15</td><td class='num'>$46.83</td><td class='num'>$62.57</td><td class='num'>44.4</td><td class='num'>58.21%</td><td class='num'>-54.88%</td><td class='num'>-69.50pp</td><td><span class='badge badge-none'>NONE</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h2>Full Stage 0 pre-filter results (all 503 S&amp;P 500 tickers)</h2>
-  <input class="search-box" id="s0search" placeholder="Filter by ticker, name, or sector…" onkeyup="filterTable('s0table','s0search')">
-  <div class="tablewrap">
-  <table id="s0table">
-    <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>3mo Return</th><th>As Of</th><th>Stage 0 Survivor</th></tr></thead>
-    <tbody>
-<tr><td>MRNA</td><td>Moderna</td><td>Health Care</td><td class='num'>126.96%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VEEV</td><td>Veeva Systems</td><td>Health Care</td><td class='num'>69.17%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MPC</td><td>Marathon Petroleum</td><td>Energy</td><td class='num'>66.29%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VLO</td><td>Valero Energy</td><td>Energy</td><td class='num'>66.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CRM</td><td>Salesforce</td><td>Information Technology</td><td class='num'>63.84%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WDAY</td><td>Workday, Inc.</td><td>Information Technology</td><td class='num'>58.06%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PSX</td><td>Phillips 66</td><td>Energy</td><td class='num'>57.95%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>IQV</td><td>IQVIA</td><td>Health Care</td><td class='num'>56.46%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CRL</td><td>Charles River Laboratories</td><td>Health Care</td><td class='num'>52.56%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ZBRA</td><td>Zebra Technologies</td><td>Information Technology</td><td class='num'>49.09%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HPQ</td><td>HP Inc.</td><td>Information Technology</td><td class='num'>47.33%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NOW</td><td>ServiceNow</td><td>Information Technology</td><td class='num'>45.02%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>IT</td><td>Gartner</td><td>Information Technology</td><td class='num'>41.94%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>APA</td><td>APA Corporation</td><td>Energy</td><td class='num'>36.78%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SMCI</td><td>Supermicro</td><td>Information Technology</td><td class='num'>35.92%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GPN</td><td>Global Payments</td><td>Financials</td><td class='num'>35.41%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>JKHY</td><td>Jack Henry &amp; Associates</td><td>Financials</td><td class='num'>34.34%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GDDY</td><td>GoDaddy</td><td>Information Technology</td><td class='num'>33.78%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CRWD</td><td>CrowdStrike</td><td>Information Technology</td><td class='num'>32.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MSFT</td><td>Microsoft</td><td>Information Technology</td><td class='num'>32.48%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TMO</td><td>Thermo Fisher Scientific</td><td>Health Care</td><td class='num'>32.19%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ADBE</td><td>Adobe Inc.</td><td>Information Technology</td><td class='num'>31.94%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FOXA</td><td>Fox Corporation (Class A)</td><td>Communication Services</td><td class='num'>31.84%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TECH</td><td>Bio-Techne</td><td>Health Care</td><td class='num'>31.27%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PANW</td><td>Palo Alto Networks</td><td>Information Technology</td><td class='num'>29.11%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GEN</td><td>Gen Digital</td><td>Information Technology</td><td class='num'>28.88%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>REGN</td><td>Regeneron Pharmaceuticals</td><td>Health Care</td><td class='num'>28.68%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FOX</td><td>Fox Corporation (Class B)</td><td>Communication Services</td><td class='num'>28.59%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PLTR</td><td>Palantir Technologies</td><td>Information Technology</td><td class='num'>28.56%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CTSH</td><td>Cognizant</td><td>Information Technology</td><td class='num'>28.41%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DELL</td><td>Dell Technologies</td><td>Information Technology</td><td class='num'>28.41%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BDX</td><td>Becton Dickinson</td><td>Health Care</td><td class='num'>28.06%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RVTY</td><td>Revvity</td><td>Health Care</td><td class='num'>28.04%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PYPL</td><td>PayPal</td><td>Financials</td><td class='num'>27.80%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CF</td><td>CF Industries</td><td>Materials</td><td class='num'>27.61%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BBY</td><td>Best Buy</td><td>Consumer Discretionary</td><td class='num'>26.65%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>INTU</td><td>Intuit</td><td>Information Technology</td><td class='num'>26.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MRK</td><td>Merck &amp; Co.</td><td>Health Care</td><td class='num'>25.41%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>COP</td><td>ConocoPhillips</td><td>Energy</td><td class='num'>24.99%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GPC</td><td>Genuine Parts Company</td><td>Consumer Discretionary</td><td class='num'>24.94%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ADP</td><td>Automatic Data Processing</td><td>Industrials</td><td class='num'>24.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NTAP</td><td>NetApp</td><td>Information Technology</td><td class='num'>24.25%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TRV</td><td>Travelers Companies (The)</td><td>Financials</td><td class='num'>24.23%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WTW</td><td>Willis Towers Watson</td><td>Financials</td><td class='num'>23.90%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BAX</td><td>Baxter International</td><td>Health Care</td><td class='num'>23.83%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TGT</td><td>Target Corporation</td><td>Consumer Staples</td><td class='num'>23.75%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>UHS</td><td>Universal Health Services</td><td>Health Care</td><td class='num'>23.39%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BR</td><td>Broadridge Financial Solutions</td><td>Industrials</td><td class='num'>23.29%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>INCY</td><td>Incyte</td><td>Health Care</td><td class='num'>23.17%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>LDOS</td><td>Leidos</td><td>Industrials</td><td class='num'>22.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TYL</td><td>Tyler Technologies</td><td>Information Technology</td><td class='num'>22.29%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FDS</td><td>FactSet</td><td>Financials</td><td class='num'>22.21%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CVX</td><td>Chevron Corporation</td><td>Energy</td><td class='num'>22.05%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GRMN</td><td>Garmin</td><td>Consumer Discretionary</td><td class='num'>21.66%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ACN</td><td>Accenture</td><td>Information Technology</td><td class='num'>21.41%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ULTA</td><td>Ulta Beauty</td><td>Consumer Discretionary</td><td class='num'>21.37%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SWKS</td><td>Skyworks Solutions</td><td>Information Technology</td><td class='num'>21.30%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DASH</td><td>DoorDash</td><td>Consumer Discretionary</td><td class='num'>21.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>LH</td><td>Labcorp</td><td>Health Care</td><td class='num'>20.87%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ABNB</td><td>Airbnb</td><td>Consumer Discretionary</td><td class='num'>20.81%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ROP</td><td>Roper Technologies</td><td>Information Technology</td><td class='num'>20.65%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RMD</td><td>ResMed|</td><td>Health Care</td><td class='num'>20.21%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DVN</td><td>Devon Energy</td><td>Energy</td><td class='num'>20.10%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EXPD</td><td>Expeditors International</td><td>Industrials</td><td class='num'>20.00%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SOLV</td><td>Solventum</td><td>Health Care</td><td class='num'>19.97%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DGX</td><td>Quest Diagnostics</td><td>Health Care</td><td class='num'>19.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MDT</td><td>Medtronic</td><td>Health Care</td><td class='num'>19.91%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PAYX</td><td>Paychex</td><td>Industrials</td><td class='num'>19.52%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>XOM</td><td>ExxonMobil</td><td>Energy</td><td class='num'>19.51%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CDW</td><td>CDW Corporation</td><td>Information Technology</td><td class='num'>19.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ALLE</td><td>Allegion</td><td>Industrials</td><td class='num'>19.03%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MSI</td><td>Motorola Solutions</td><td>Information Technology</td><td class='num'>19.03%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TRMB</td><td>Trimble Inc.</td><td>Information Technology</td><td class='num'>18.99%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CTAS</td><td>Cintas</td><td>Industrials</td><td class='num'>18.88%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EXPE</td><td>Expedia Group</td><td>Consumer Discretionary</td><td class='num'>18.60%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DXCM</td><td>Dexcom</td><td>Health Care</td><td class='num'>18.50%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ABBV</td><td>AbbVie</td><td>Health Care</td><td class='num'>18.15%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>OXY</td><td>Occidental Petroleum</td><td>Energy</td><td class='num'>18.12%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AMP</td><td>Ameriprise Financial</td><td>Financials</td><td class='num'>18.11%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ICE</td><td>Intercontinental Exchange</td><td>Financials</td><td class='num'>18.03%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EL</td><td>Estée Lauder Companies (The)</td><td>Consumer Staples</td><td class='num'>17.34%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>T</td><td>AT&amp;T</td><td>Communication Services</td><td class='num'>17.16%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>A</td><td>Agilent Technologies</td><td>Health Care</td><td class='num'>17.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DG</td><td>Dollar General</td><td>Consumer Staples</td><td class='num'>17.10%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MA</td><td>Mastercard</td><td>Financials</td><td class='num'>17.06%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CPAY</td><td>Corpay</td><td>Financials</td><td class='num'>17.05%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>COR</td><td>Cencora</td><td>Health Care</td><td class='num'>17.04%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ABT</td><td>Abbott Laboratories</td><td>Health Care</td><td class='num'>16.98%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HPE</td><td>Hewlett Packard Enterprise</td><td>Information Technology</td><td class='num'>16.83%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>META</td><td>Meta Platforms</td><td>Communication Services</td><td class='num'>16.53%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ALL</td><td>Allstate</td><td>Financials</td><td class='num'>16.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VLTO</td><td>Veralto</td><td>Industrials</td><td class='num'>16.19%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BSX</td><td>Boston Scientific</td><td>Health Care</td><td class='num'>16.15%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>J</td><td>Jacobs Solutions</td><td>Industrials</td><td class='num'>15.87%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NWSA</td><td>News Corp (Class A)</td><td>Communication Services</td><td class='num'>15.86%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NEM</td><td>Newmont</td><td>Materials</td><td class='num'>15.60%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CMG</td><td>Chipotle Mexican Grill</td><td>Consumer Discretionary</td><td class='num'>15.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DE</td><td>Deere &amp; Company</td><td>Industrials</td><td class='num'>15.40%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BRO</td><td>Brown &amp; Brown</td><td>Financials</td><td class='num'>15.31%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GILD</td><td>Gilead Sciences</td><td>Health Care</td><td class='num'>15.29%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AJG</td><td>Arthur J. Gallagher &amp; Co.</td><td>Financials</td><td class='num'>15.12%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MCK</td><td>McKesson Corporation</td><td>Health Care</td><td class='num'>15.05%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ADSK</td><td>Autodesk</td><td>Information Technology</td><td class='num'>14.97%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PTC</td><td>PTC Inc.</td><td>Information Technology</td><td class='num'>14.92%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>JNJ</td><td>Johnson &amp; Johnson</td><td>Health Care</td><td class='num'>14.86%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WELL</td><td>Welltower</td><td>Real Estate</td><td class='num'>14.60%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ADM</td><td>Archer Daniels Midland</td><td>Consumer Staples</td><td class='num'>14.38%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>COIN</td><td>Coinbase</td><td>Financials</td><td class='num'>14.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HUM</td><td>Humana</td><td>Health Care</td><td class='num'>14.07%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AXON</td><td>Axon Enterprise</td><td>Industrials</td><td class='num'>13.97%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MTD</td><td>Mettler Toledo</td><td>Health Care</td><td class='num'>13.90%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TSCO</td><td>Tractor Supply</td><td>Consumer Discretionary</td><td class='num'>13.88%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ANET</td><td>Arista Networks</td><td>Information Technology</td><td class='num'>13.85%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WAT</td><td>Waters Corporation</td><td>Health Care</td><td class='num'>13.77%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>V</td><td>Visa Inc.</td><td>Financials</td><td class='num'>13.76%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FTNT</td><td>Fortinet</td><td>Information Technology</td><td class='num'>13.72%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SCHW</td><td>Charles Schwab Corporation</td><td>Financials</td><td class='num'>13.52%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MET</td><td>MetLife</td><td>Financials</td><td class='num'>13.17%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FANG</td><td>Diamondback Energy</td><td>Energy</td><td class='num'>13.15%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EOG</td><td>EOG Resources</td><td>Energy</td><td class='num'>13.11%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AAPL</td><td>Apple Inc.</td><td>Information Technology</td><td class='num'>12.91%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VRSN</td><td>Verisign</td><td>Information Technology</td><td class='num'>12.91%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NWS</td><td>News Corp (Class B)</td><td>Communication Services</td><td class='num'>12.87%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>OKE</td><td>Oneok</td><td>Energy</td><td class='num'>12.83%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VRTX</td><td>Vertex Pharmaceuticals</td><td>Health Care</td><td class='num'>12.60%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EG</td><td>Everest Group</td><td>Financials</td><td class='num'>12.54%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TRGP</td><td>Targa Resources</td><td>Energy</td><td class='num'>12.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CVNA</td><td>Carvana</td><td>Consumer Discretionary</td><td class='num'>12.42%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CNP</td><td>CenterPoint Energy</td><td>Utilities</td><td class='num'>12.38%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DHR</td><td>Danaher Corporation</td><td>Health Care</td><td class='num'>12.20%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PRU</td><td>Prudential Financial</td><td>Financials</td><td class='num'>11.85%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>KO</td><td>Coca-Cola Company (The)</td><td>Consumer Staples</td><td class='num'>11.80%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CBOE</td><td>Cboe Global Markets</td><td>Financials</td><td class='num'>11.77%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VZ</td><td>Verizon</td><td>Communication Services</td><td class='num'>11.69%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CMCSA</td><td>Comcast</td><td>Communication Services</td><td class='num'>11.50%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DLTR</td><td>Dollar Tree</td><td>Consumer Staples</td><td class='num'>11.21%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MOS</td><td>Mosaic Company (The)</td><td>Materials</td><td class='num'>11.20%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>STT</td><td>State Street Corporation</td><td>Financials</td><td class='num'>11.16%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HSIC</td><td>Henry Schein</td><td>Health Care</td><td class='num'>10.63%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EFX</td><td>Equifax</td><td>Industrials</td><td class='num'>10.58%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CME</td><td>CME Group</td><td>Financials</td><td class='num'>10.57%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ERIE</td><td>Erie Indemnity</td><td>Financials</td><td class='num'>10.55%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BNY</td><td>BNY Mellon</td><td>Financials</td><td class='num'>10.54%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MKC</td><td>McCormick &amp; Company</td><td>Consumer Staples</td><td class='num'>10.54%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AMGN</td><td>Amgen</td><td>Health Care</td><td class='num'>10.51%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ZBH</td><td>Zimmer Biomet</td><td>Health Care</td><td class='num'>10.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>IVZ</td><td>Invesco</td><td>Financials</td><td class='num'>10.35%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>IFF</td><td>International Flavors &amp; Fragrances</td><td>Materials</td><td class='num'>10.34%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BAC</td><td>Bank of America</td><td>Financials</td><td class='num'>10.28%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>UNP</td><td>Union Pacific Corporation</td><td>Industrials</td><td class='num'>10.23%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HCA</td><td>HCA Healthcare</td><td>Health Care</td><td class='num'>10.14%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GIS</td><td>General Mills</td><td>Consumer Staples</td><td class='num'>10.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AWK</td><td>American Water Works</td><td>Utilities</td><td class='num'>10.09%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HAS</td><td>Hasbro</td><td>Consumer Discretionary</td><td class='num'>10.04%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VTR</td><td>Ventas</td><td>Real Estate</td><td class='num'>9.85%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FAST</td><td>Fastenal</td><td>Industrials</td><td class='num'>9.78%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>XYZ</td><td>Block, Inc.</td><td>Financials</td><td class='num'>9.69%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NDAQ</td><td>Nasdaq, Inc.</td><td>Financials</td><td class='num'>9.68%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HOOD</td><td>Robinhood Markets</td><td>Financials</td><td class='num'>9.65%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MRSH</td><td>Marsh McLennan</td><td>Financials</td><td class='num'>9.49%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RJF</td><td>Raymond James Financial</td><td>Financials</td><td class='num'>9.23%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CHTR</td><td>Charter Communications</td><td>Communication Services</td><td class='num'>9.15%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BIIB</td><td>Biogen</td><td>Health Care</td><td class='num'>9.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RSG</td><td>Republic Services</td><td>Industrials</td><td class='num'>8.92%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AIZ</td><td>Assurant</td><td>Financials</td><td class='num'>8.91%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>USB</td><td>U.S. Bancorp</td><td>Financials</td><td class='num'>8.77%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SLB</td><td>Schlumberger</td><td>Energy</td><td class='num'>8.62%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PSKY</td><td>Paramount Skydance Corporation</td><td>Communication Services</td><td class='num'>8.52%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GM</td><td>General Motors</td><td>Consumer Discretionary</td><td class='num'>8.50%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ELV</td><td>Elevance Health</td><td>Health Care</td><td class='num'>8.49%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PM</td><td>Philip Morris International</td><td>Consumer Staples</td><td class='num'>8.45%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SJM</td><td>J.M. Smucker Company (The)</td><td>Consumer Staples</td><td class='num'>8.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PGR</td><td>Progressive Corporation</td><td>Financials</td><td class='num'>8.38%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EXE</td><td>Expand Energy</td><td>Energy</td><td class='num'>8.37%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CTVA</td><td>Corteva</td><td>Materials</td><td class='num'>8.07%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DIS</td><td>Walt Disney Company (The)</td><td>Communication Services</td><td class='num'>7.78%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SWK</td><td>Stanley Black &amp; Decker</td><td>Industrials</td><td class='num'>7.71%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CBRE</td><td>CBRE Group</td><td>Real Estate</td><td class='num'>7.59%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FISV</td><td>Fiserv</td><td>Financials</td><td class='num'>7.38%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NDSN</td><td>Nordson Corporation</td><td>Industrials</td><td class='num'>7.35%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BG</td><td>Bunge Global</td><td>Consumer Staples</td><td class='num'>7.29%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WST</td><td>West Pharmaceutical Services</td><td>Health Care</td><td class='num'>7.19%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WFC</td><td>Wells Fargo</td><td>Financials</td><td class='num'>7.16%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PFE</td><td>Pfizer</td><td>Health Care</td><td class='num'>7.10%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WBD</td><td>Warner Bros. Discovery</td><td>Communication Services</td><td class='num'>7.09%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>STE</td><td>Steris</td><td>Health Care</td><td class='num'>6.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FFIV</td><td>F5, Inc.</td><td>Information Technology</td><td class='num'>6.91%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>HIG</td><td>Hartford (The)</td><td>Financials</td><td class='num'>6.82%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NSC</td><td>Norfolk Southern</td><td>Industrials</td><td class='num'>6.79%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CSX</td><td>CSX Corporation</td><td>Industrials</td><td class='num'>6.74%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AVY</td><td>Avery Dennison</td><td>Materials</td><td class='num'>6.73%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MTB</td><td>M&amp;T Bank</td><td>Financials</td><td class='num'>6.67%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NTRS</td><td>Northern Trust</td><td>Financials</td><td class='num'>6.49%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AMZN</td><td>Amazon</td><td>Consumer Discretionary</td><td class='num'>6.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PFG</td><td>Principal Financial Group</td><td>Financials</td><td class='num'>6.31%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SYY</td><td>Sysco</td><td>Consumer Staples</td><td class='num'>6.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ACGL</td><td>Arch Capital Group</td><td>Financials</td><td class='num'>6.01%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CFG</td><td>Citizens Financial Group</td><td>Financials</td><td class='num'>5.94%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RF</td><td>Regions Financial Corporation</td><td>Financials</td><td class='num'>5.93%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>JPM</td><td>JPMorgan Chase</td><td>Financials</td><td class='num'>5.76%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>GEHC</td><td>GE HealthCare</td><td>Health Care</td><td class='num'>5.74%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ARE</td><td>Alexandria Real Estate Equities</td><td>Real Estate</td><td class='num'>5.55%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TPL</td><td>Texas Pacific Land Corporation</td><td>Energy</td><td class='num'>5.50%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>OMC</td><td>Omnicom Group</td><td>Communication Services</td><td class='num'>5.28%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MCO</td><td>Moody&#x27;s Corporation</td><td>Financials</td><td class='num'>5.18%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TFC</td><td>Truist Financial</td><td>Financials</td><td class='num'>5.15%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>EQT</td><td>EQT Corporation</td><td>Energy</td><td class='num'>5.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VTRS</td><td>Viatris</td><td>Health Care</td><td class='num'>5.02%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BRK.B</td><td>Berkshire Hathaway</td><td>Financials</td><td class='num'>5.00%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CPRT</td><td>Copart</td><td>Industrials</td><td class='num'>4.95%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SPGI</td><td>S&amp;P Global</td><td>Financials</td><td class='num'>4.94%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PNC</td><td>PNC Financial Services</td><td>Financials</td><td class='num'>4.83%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BF.B</td><td>Brown–Forman</td><td>Consumer Staples</td><td class='num'>4.82%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WRB</td><td>W. R. Berkley Corporation</td><td>Financials</td><td class='num'>4.76%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>VRSK</td><td>Verisk Analytics</td><td>Industrials</td><td class='num'>4.72%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CB</td><td>Chubb Limited</td><td>Financials</td><td class='num'>4.45%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BALL</td><td>Ball Corporation</td><td>Materials</td><td class='num'>4.42%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DOC</td><td>Healthpeak Properties</td><td>Real Estate</td><td class='num'>4.38%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NFLX</td><td>Netflix</td><td>Communication Services</td><td class='num'>4.04%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>KKR</td><td>KKR &amp; Co.</td><td>Financials</td><td class='num'>3.76%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>COF</td><td>Capital One</td><td>Financials</td><td class='num'>3.75%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PCAR</td><td>Paccar</td><td>Industrials</td><td class='num'>3.69%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AMCR</td><td>Amcor</td><td>Materials</td><td class='num'>3.68%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CAH</td><td>Cardinal Health</td><td>Health Care</td><td class='num'>3.57%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MDLZ</td><td>Mondelez International</td><td>Consumer Staples</td><td class='num'>3.34%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>KDP</td><td>Keurig Dr Pepper</td><td>Consumer Staples</td><td class='num'>3.27%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NVDA</td><td>Nvidia</td><td>Information Technology</td><td class='num'>3.20%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>LYB</td><td>LyondellBasell</td><td>Materials</td><td class='num'>3.17%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DPZ</td><td>Domino&#x27;s</td><td>Consumer Discretionary</td><td class='num'>3.12%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>APD</td><td>Air Products</td><td>Materials</td><td class='num'>3.08%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BKNG</td><td>Booking Holdings</td><td>Consumer Discretionary</td><td class='num'>2.97%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FITB</td><td>Fifth Third Bancorp</td><td>Financials</td><td class='num'>2.88%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BXP</td><td>BXP, Inc.</td><td>Real Estate</td><td class='num'>2.85%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MO</td><td>Altria</td><td>Consumer Staples</td><td class='num'>2.77%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ITW</td><td>Illinois Tool Works</td><td>Industrials</td><td class='num'>2.66%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ECL</td><td>Ecolab</td><td>Materials</td><td class='num'>2.62%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>KHC</td><td>Kraft Heinz</td><td>Consumer Staples</td><td class='num'>2.58%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SHW</td><td>Sherwin-Williams</td><td>Materials</td><td class='num'>2.47%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>ARES</td><td>Ares Management</td><td>Financials</td><td class='num'>2.42%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>FIS</td><td>Fidelity National Information Services</td><td>Financials</td><td class='num'>2.33%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>SYF</td><td>Synchrony Financial</td><td>Financials</td><td class='num'>2.28%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>PKG</td><td>Packaging Corporation of America</td><td>Materials</td><td class='num'>2.25%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AIG</td><td>American International Group</td><td>Financials</td><td class='num'>2.21%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>LLY</td><td>Lilly (Eli)</td><td>Health Care</td><td class='num'>2.18%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BX</td><td>Blackstone Inc.</td><td>Financials</td><td class='num'>2.10%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WAB</td><td>Wabtec</td><td>Industrials</td><td class='num'>1.92%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>L</td><td>Loews Corporation</td><td>Financials</td><td class='num'>1.83%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>NUE</td><td>Nucor</td><td>Materials</td><td class='num'>1.79%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>RTX</td><td>RTX Corporation</td><td>Industrials</td><td class='num'>1.78%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AME</td><td>Ametek</td><td>Industrials</td><td class='num'>1.75%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>DRI</td><td>Darden Restaurants</td><td>Consumer Discretionary</td><td class='num'>1.73%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>MMM</td><td>3M</td><td>Industrials</td><td class='num'>1.48%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CSGP</td><td>CoStar Group</td><td>Real Estate</td><td class='num'>1.48%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BLK</td><td>BlackRock</td><td>Financials</td><td class='num'>1.47%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CI</td><td>Cigna</td><td>Health Care</td><td class='num'>1.45%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>AES</td><td>AES Corporation</td><td>Utilities</td><td class='num'>1.44%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>TMUS</td><td>T-Mobile US</td><td>Communication Services</td><td class='num'>1.25%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>JBHT</td><td>J.B. Hunt</td><td>Industrials</td><td class='num'>1.24%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WMB</td><td>Williams Companies</td><td>Energy</td><td class='num'>1.21%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>APH</td><td>Amphenol</td><td>Information Technology</td><td class='num'>1.13%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>BEN</td><td>Franklin Resources</td><td>Financials</td><td class='num'>0.90%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>UBER</td><td>Uber</td><td>Industrials</td><td class='num'>0.80%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WM</td><td>Waste Management</td><td>Industrials</td><td class='num'>0.70%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>CINF</td><td>Cincinnati Financial</td><td>Financials</td><td class='num'>0.66%</td><td>2026-09-14</td><td class='center'>✓</td></tr>
-<tr><td>WSM</td><td>Williams-Sonoma, Inc.</td><td>Consumer Discretionary</td><td class='num'>0.59%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KVUE</td><td>Kenvue</td><td>Consumer Staples</td><td class='num'>0.56%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GL</td><td>Globe Life</td><td>Financials</td><td class='num'>0.53%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SW</td><td>Smurfit Westrock</td><td>Materials</td><td class='num'>0.51%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CEG</td><td>Constellation Energy</td><td>Utilities</td><td class='num'>0.50%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AFL</td><td>Aflac</td><td>Financials</td><td class='num'>0.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EBAY</td><td>eBay Inc.</td><td>Consumer Discretionary</td><td class='num'>0.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HBAN</td><td>Huntington Bancshares</td><td>Financials</td><td class='num'>0.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HSY</td><td>Hershey Company (The)</td><td>Consumer Staples</td><td class='num'>0.15%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EMR</td><td>Emerson Electric</td><td>Industrials</td><td class='num'>0.06%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LYV</td><td>Live Nation Entertainment</td><td>Communication Services</td><td class='num'>-0.15%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TAP</td><td>Molson Coors Beverage Company</td><td>Consumer Staples</td><td class='num'>-0.15%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IEX</td><td>IDEX Corporation</td><td>Industrials</td><td class='num'>-0.32%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SBUX</td><td>Starbucks</td><td>Consumer Discretionary</td><td class='num'>-0.54%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NVR</td><td>NVR, Inc.</td><td>Consumer Discretionary</td><td class='num'>-0.56%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ESS</td><td>Essex Property Trust</td><td>Real Estate</td><td class='num'>-0.62%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ED</td><td>Consolidated Edison</td><td>Utilities</td><td class='num'>-0.67%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TKO</td><td>TKO Group Holdings</td><td>Communication Services</td><td class='num'>-0.67%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EW</td><td>Edwards Lifesciences</td><td>Health Care</td><td class='num'>-0.68%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LMT</td><td>Lockheed Martin</td><td>Industrials</td><td class='num'>-0.68%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AOS</td><td>A. O. Smith</td><td>Industrials</td><td class='num'>-0.85%</td><td>2026-09-11</td><td class='center'>—</td></tr>
-<tr><td>F</td><td>Ford Motor Company</td><td>Consumer Discretionary</td><td class='num'>-0.86%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DDOG</td><td>Datadog</td><td>Information Technology</td><td class='num'>-0.94%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FE</td><td>FirstEnergy</td><td>Utilities</td><td class='num'>-0.95%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SNA</td><td>Snap-on</td><td>Industrials</td><td class='num'>-0.95%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FCX</td><td>Freeport-McMoRan</td><td>Materials</td><td class='num'>-0.97%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>VMRK</td><td>Vivmark Residential</td><td>Real Estate</td><td class='num'>-1.00%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KMI</td><td>Kinder Morgan</td><td>Energy</td><td class='num'>-1.08%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KMB</td><td>Kimberly-Clark</td><td>Consumer Staples</td><td class='num'>-1.16%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ES</td><td>Eversource Energy</td><td>Utilities</td><td class='num'>-1.30%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GD</td><td>General Dynamics</td><td>Industrials</td><td class='num'>-1.32%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LITE</td><td>Lumentum</td><td>Information Technology</td><td class='num'>-1.40%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TROW</td><td>T. Rowe Price</td><td>Financials</td><td class='num'>-1.54%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>BMY</td><td>Bristol Myers Squibb</td><td>Health Care</td><td class='num'>-1.58%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>O</td><td>Realty Income</td><td>Real Estate</td><td class='num'>-1.67%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ROST</td><td>Ross Stores</td><td>Consumer Discretionary</td><td class='num'>-1.68%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HAL</td><td>Halliburton</td><td>Energy</td><td class='num'>-1.79%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GWW</td><td>W. W. Grainger</td><td>Industrials</td><td class='num'>-1.90%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EVRG</td><td>Evergy</td><td>Utilities</td><td class='num'>-1.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PH</td><td>Parker Hannifin</td><td>Industrials</td><td class='num'>-2.00%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CHD</td><td>Church &amp; Dwight</td><td>Consumer Staples</td><td class='num'>-2.10%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ORLY</td><td>O&#x27;Reilly Automotive</td><td>Consumer Discretionary</td><td class='num'>-2.16%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KEY</td><td>KeyCorp</td><td>Financials</td><td class='num'>-2.30%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SPG</td><td>Simon Property Group</td><td>Real Estate</td><td class='num'>-2.54%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PG</td><td>Procter &amp; Gamble</td><td>Consumer Staples</td><td class='num'>-2.57%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CL</td><td>Colgate-Palmolive</td><td>Consumer Staples</td><td class='num'>-2.62%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>OTIS</td><td>Otis Worldwide</td><td>Industrials</td><td class='num'>-2.65%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>XYL</td><td>Xylem Inc.</td><td>Industrials</td><td class='num'>-2.65%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TDY</td><td>Teledyne Technologies</td><td>Information Technology</td><td class='num'>-2.71%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PEP</td><td>PepsiCo</td><td>Consumer Staples</td><td class='num'>-2.75%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KR</td><td>Kroger</td><td>Consumer Staples</td><td class='num'>-2.90%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DLR</td><td>Digital Realty</td><td>Real Estate</td><td class='num'>-2.96%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ETN</td><td>Eaton Corporation</td><td>Industrials</td><td class='num'>-2.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NOC</td><td>Northrop Grumman</td><td>Industrials</td><td class='num'>-3.05%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>JCI</td><td>Johnson Controls</td><td>Industrials</td><td class='num'>-3.19%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AMT</td><td>American Tower</td><td>Real Estate</td><td class='num'>-3.22%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>XEL</td><td>Xcel Energy</td><td>Utilities</td><td class='num'>-3.28%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PHM</td><td>PulteGroup</td><td>Consumer Discretionary</td><td class='num'>-3.32%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CVS</td><td>CVS Health</td><td>Health Care</td><td class='num'>-3.34%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>REG</td><td>Regency Centers</td><td>Real Estate</td><td class='num'>-3.36%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EXR</td><td>Extra Space Storage</td><td>Real Estate</td><td class='num'>-3.39%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TEL</td><td>TE Connectivity</td><td>Information Technology</td><td class='num'>-3.44%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>BKR</td><td>Baker Hughes</td><td>Energy</td><td class='num'>-3.46%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FERG</td><td>Ferguson Enterprises</td><td>Industrials</td><td class='num'>-3.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>INVH</td><td>Invitation Homes</td><td>Real Estate</td><td class='num'>-3.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AZO</td><td>AutoZone</td><td>Consumer Discretionary</td><td class='num'>-3.57%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ATO</td><td>Atmos Energy</td><td>Utilities</td><td class='num'>-3.60%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DAL</td><td>Delta Air Lines</td><td>Industrials</td><td class='num'>-3.65%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>UPS</td><td>United Parcel Service</td><td>Industrials</td><td class='num'>-3.77%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DUK</td><td>Duke Energy</td><td>Utilities</td><td class='num'>-3.86%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>UNH</td><td>UnitedHealth Group</td><td>Health Care</td><td class='num'>-3.93%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>RDDT</td><td>Reddit</td><td>Communication Services</td><td class='num'>-4.01%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ZTS</td><td>Zoetis</td><td>Health Care</td><td class='num'>-4.09%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AEE</td><td>Ameren</td><td>Utilities</td><td class='num'>-4.13%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FDX</td><td>FedEx</td><td>Industrials</td><td class='num'>-4.34%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IP</td><td>International Paper</td><td>Materials</td><td class='num'>-4.37%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AXP</td><td>American Express</td><td>Financials</td><td class='num'>-4.38%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PPL</td><td>PPL Corporation</td><td>Utilities</td><td class='num'>-4.44%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FRT</td><td>Federal Realty Investment Trust</td><td>Real Estate</td><td class='num'>-4.49%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NEE</td><td>NextEra Energy</td><td>Utilities</td><td class='num'>-4.51%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AEP</td><td>American Electric Power</td><td>Utilities</td><td class='num'>-4.70%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TTWO</td><td>Take-Two Interactive</td><td>Communication Services</td><td class='num'>-4.85%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SYK</td><td>Stryker Corporation</td><td>Health Care</td><td class='num'>-4.91%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GOOGL</td><td>Alphabet Inc. (Class A)</td><td>Communication Services</td><td class='num'>-4.92%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HD</td><td>Home Depot (The)</td><td>Consumer Discretionary</td><td class='num'>-4.95%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PSA</td><td>Public Storage</td><td>Real Estate</td><td class='num'>-5.02%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SBAC</td><td>SBA Communications</td><td>Real Estate</td><td class='num'>-5.04%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IBKR</td><td>Interactive Brokers</td><td>Financials</td><td class='num'>-5.13%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PLD</td><td>Prologis</td><td>Real Estate</td><td class='num'>-5.14%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>D</td><td>Dominion Energy</td><td>Utilities</td><td class='num'>-5.16%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KIM</td><td>Kimco Realty</td><td>Real Estate</td><td class='num'>-5.19%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>COST</td><td>Costco</td><td>Consumer Staples</td><td class='num'>-5.30%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MAS</td><td>Masco</td><td>Industrials</td><td class='num'>-5.33%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>URI</td><td>United Rentals</td><td>Industrials</td><td class='num'>-5.33%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HII</td><td>Huntington Ingalls Industries</td><td>Industrials</td><td class='num'>-5.36%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AMD</td><td>Advanced Micro Devices</td><td>Information Technology</td><td class='num'>-5.42%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GOOG</td><td>Alphabet Inc. (Class C)</td><td>Communication Services</td><td class='num'>-5.43%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>C</td><td>Citigroup</td><td>Financials</td><td class='num'>-5.45%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TSN</td><td>Tyson Foods</td><td>Consumer Staples</td><td class='num'>-5.50%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CSCO</td><td>Cisco</td><td>Information Technology</td><td class='num'>-5.69%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MNST</td><td>Monster Beverage</td><td>Consumer Staples</td><td class='num'>-5.76%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EXC</td><td>Exelon</td><td>Utilities</td><td class='num'>-5.86%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AON</td><td>Aon plc</td><td>Financials</td><td class='num'>-6.06%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SO</td><td>Southern Company</td><td>Utilities</td><td class='num'>-6.07%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MS</td><td>Morgan Stanley</td><td>Financials</td><td class='num'>-6.12%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>YUM</td><td>Yum! Brands</td><td>Consumer Discretionary</td><td class='num'>-6.21%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CLX</td><td>Clorox</td><td>Consumer Staples</td><td class='num'>-6.35%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CPT</td><td>Camden Property Trust</td><td>Real Estate</td><td class='num'>-6.37%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IBM</td><td>IBM</td><td>Information Technology</td><td class='num'>-6.38%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ISRG</td><td>Intuitive Surgical</td><td>Health Care</td><td class='num'>-6.39%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PNW</td><td>Pinnacle West Capital</td><td>Utilities</td><td class='num'>-6.42%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IR</td><td>Ingersoll Rand</td><td>Industrials</td><td class='num'>-6.49%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>UAL</td><td>United Airlines Holdings</td><td>Industrials</td><td class='num'>-6.62%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MSCI</td><td>MSCI</td><td>Financials</td><td class='num'>-6.76%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PODD</td><td>Insulet Corporation</td><td>Health Care</td><td class='num'>-6.83%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>WEC</td><td>WEC Energy Group</td><td>Utilities</td><td class='num'>-6.86%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MAA</td><td>Mid-America Apartment Communities</td><td>Real Estate</td><td class='num'>-6.96%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IDXX</td><td>Idexx Laboratories</td><td>Health Care</td><td class='num'>-7.04%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>UDR</td><td>UDR, Inc.</td><td>Real Estate</td><td class='num'>-7.07%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ETR</td><td>Entergy</td><td>Utilities</td><td class='num'>-7.15%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KEYS</td><td>Keysight Technologies</td><td>Information Technology</td><td class='num'>-7.26%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>BA</td><td>Boeing</td><td>Industrials</td><td class='num'>-7.37%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>APO</td><td>Apollo Global Management</td><td>Financials</td><td class='num'>-7.59%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SRE</td><td>Sempra</td><td>Utilities</td><td class='num'>-7.81%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LEN</td><td>Lennar</td><td>Consumer Discretionary</td><td class='num'>-7.87%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EQIX</td><td>Equinix</td><td>Real Estate</td><td class='num'>-7.91%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LNT</td><td>Alliant Energy</td><td>Utilities</td><td class='num'>-7.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>WMT</td><td>Walmart</td><td>Consumer Staples</td><td class='num'>-8.03%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>VICI</td><td>Vici Properties</td><td>Real Estate</td><td class='num'>-8.08%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LOW</td><td>Lowe&#x27;s</td><td>Consumer Discretionary</td><td class='num'>-8.36%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CMS</td><td>CMS Energy</td><td>Utilities</td><td class='num'>-8.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GS</td><td>Goldman Sachs</td><td>Financials</td><td class='num'>-8.57%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CNC</td><td>Centene Corporation</td><td>Health Care</td><td class='num'>-8.80%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ROK</td><td>Rockwell Automation</td><td>Industrials</td><td class='num'>-9.01%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EME</td><td>Emcor</td><td>Industrials</td><td class='num'>-9.11%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TSLA</td><td>Tesla, Inc.</td><td>Consumer Discretionary</td><td class='num'>-9.13%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>WY</td><td>Weyerhaeuser</td><td>Real Estate</td><td class='num'>-9.25%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DHI</td><td>D. R. Horton</td><td>Consumer Discretionary</td><td class='num'>-9.27%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TT</td><td>Trane Technologies</td><td>Industrials</td><td class='num'>-9.34%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MCD</td><td>McDonald&#x27;s</td><td>Consumer Discretionary</td><td class='num'>-9.42%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FTV</td><td>Fortive</td><td>Industrials</td><td class='num'>-9.44%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PEG</td><td>Public Service Enterprise Group</td><td>Utilities</td><td class='num'>-9.60%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LULU</td><td>Lululemon Athletica</td><td>Consumer Discretionary</td><td class='num'>-9.86%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HST</td><td>Host Hotels &amp; Resorts</td><td>Real Estate</td><td class='num'>-9.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>VST</td><td>Vistra Corp.</td><td>Utilities</td><td class='num'>-10.16%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LIN</td><td>Linde plc</td><td>Materials</td><td class='num'>-10.24%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PPG</td><td>PPG Industries</td><td>Materials</td><td class='num'>-10.36%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DOW</td><td>Dow Inc.</td><td>Materials</td><td class='num'>-10.40%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DTE</td><td>DTE Energy</td><td>Utilities</td><td class='num'>-10.59%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>STZ</td><td>Constellation Brands</td><td>Consumer Staples</td><td class='num'>-10.70%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>IRM</td><td>Iron Mountain</td><td>Real Estate</td><td class='num'>-10.90%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TXT</td><td>Textron</td><td>Industrials</td><td class='num'>-11.00%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>STLD</td><td>Steel Dynamics</td><td>Materials</td><td class='num'>-11.29%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FICO</td><td>Fair Isaac</td><td>Information Technology</td><td class='num'>-11.35%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LVS</td><td>Las Vegas Sands</td><td>Consumer Discretionary</td><td class='num'>-11.41%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DVA</td><td>DaVita</td><td>Health Care</td><td class='num'>-11.48%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AVGO</td><td>Broadcom</td><td>Information Technology</td><td class='num'>-11.61%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NI</td><td>NiSource</td><td>Utilities</td><td class='num'>-11.80%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GE</td><td>GE Aerospace</td><td>Industrials</td><td class='num'>-11.94%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HLT</td><td>Hilton Worldwide</td><td>Consumer Discretionary</td><td class='num'>-11.94%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ADI</td><td>Analog Devices</td><td>Information Technology</td><td class='num'>-11.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MU</td><td>Micron Technology</td><td>Information Technology</td><td class='num'>-12.33%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ALGN</td><td>Align Technology</td><td>Health Care</td><td class='num'>-12.69%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PWR</td><td>Quanta Services</td><td>Industrials</td><td class='num'>-12.79%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HUBB</td><td>Hubbell Incorporated</td><td>Industrials</td><td class='num'>-12.93%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TXN</td><td>Texas Instruments</td><td>Information Technology</td><td class='num'>-12.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DD</td><td>DuPont</td><td>Industrials</td><td class='num'>-13.45%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HRL</td><td>Hormel Foods</td><td>Consumer Staples</td><td class='num'>-13.77%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GLW</td><td>Corning Inc.</td><td>Information Technology</td><td class='num'>-13.88%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CCI</td><td>Crown Castle</td><td>Real Estate</td><td class='num'>-14.17%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>WYNN</td><td>Wynn Resorts</td><td>Consumer Discretionary</td><td class='num'>-14.57%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DOV</td><td>Dover Corporation</td><td>Industrials</td><td class='num'>-14.80%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MLM</td><td>Martin Marietta Materials</td><td>Materials</td><td class='num'>-15.07%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>VMC</td><td>Vulcan Materials Company</td><td>Materials</td><td class='num'>-15.25%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>RCL</td><td>Royal Caribbean Group</td><td>Consumer Discretionary</td><td class='num'>-15.35%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SNPS</td><td>Synopsys</td><td>Information Technology</td><td class='num'>-15.46%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GEV</td><td>GE Vernova</td><td>Industrials</td><td class='num'>-15.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MGM</td><td>MGM Resorts</td><td>Consumer Discretionary</td><td class='num'>-15.53%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MAR</td><td>Marriott International</td><td>Consumer Discretionary</td><td class='num'>-15.67%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>COO</td><td>Cooper Companies (The)</td><td>Health Care</td><td class='num'>-15.68%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TER</td><td>Teradyne</td><td>Information Technology</td><td class='num'>-15.73%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CHRW</td><td>C.H. Robinson</td><td>Industrials</td><td class='num'>-15.77%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NKE</td><td>Nike, Inc.</td><td>Consumer Discretionary</td><td class='num'>-15.93%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TDG</td><td>TransDigm Group</td><td>Industrials</td><td class='num'>-15.95%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PCG</td><td>PG&amp;E Corporation</td><td>Utilities</td><td class='num'>-16.06%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LUV</td><td>Southwest Airlines</td><td>Industrials</td><td class='num'>-16.27%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>RL</td><td>Ralph Lauren Corporation</td><td>Consumer Discretionary</td><td class='num'>-16.46%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>QCOM</td><td>Qualcomm</td><td>Information Technology</td><td class='num'>-16.52%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HON</td><td>Honeywell Technologies</td><td>Industrials</td><td class='num'>-16.56%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ODFL</td><td>Old Dominion</td><td>Industrials</td><td class='num'>-17.01%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NRG</td><td>NRG Energy</td><td>Utilities</td><td class='num'>-17.19%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CAT</td><td>Caterpillar Inc.</td><td>Industrials</td><td class='num'>-17.31%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FIX</td><td>Comfort Systems USA</td><td>Industrials</td><td class='num'>-17.39%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FSLR</td><td>First Solar</td><td>Information Technology</td><td class='num'>-17.83%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AKAM</td><td>Akamai Technologies</td><td>Information Technology</td><td class='num'>-18.03%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CARR</td><td>Carrier Global</td><td>Industrials</td><td class='num'>-18.38%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MPWR</td><td>Monolithic Power Systems</td><td>Information Technology</td><td class='num'>-18.99%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TPR</td><td>Tapestry, Inc.</td><td>Consumer Discretionary</td><td class='num'>-19.13%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>JBL</td><td>Jabil</td><td>Information Technology</td><td class='num'>-19.26%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CRH</td><td>CRH plc</td><td>Materials</td><td class='num'>-19.54%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HWM</td><td>Howmet Aerospace</td><td>Industrials</td><td class='num'>-19.63%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>INTC</td><td>Intel</td><td>Information Technology</td><td class='num'>-19.63%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>EIX</td><td>Edison International</td><td>Utilities</td><td class='num'>-19.89%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>HONA</td><td>Honeywell Aerospace</td><td>Industrials</td><td class='num'>-20.14%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LHX</td><td>L3Harris</td><td>Industrials</td><td class='num'>-20.24%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TTD</td><td>Trade Desk (The)</td><td>Communication Services</td><td class='num'>-20.26%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>SNDK</td><td>Sandisk</td><td>Information Technology</td><td class='num'>-20.55%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ECHO</td><td>EchoStar</td><td>Communication Services</td><td class='num'>-21.10%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>BLDR</td><td>Builders FirstSource</td><td>Industrials</td><td class='num'>-21.33%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ORCL</td><td>Oracle Corporation</td><td>Information Technology</td><td class='num'>-21.45%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FDXF</td><td>FedEx Freight</td><td>Industrials</td><td class='num'>-21.77%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ROL</td><td>Rollins, Inc.</td><td>Industrials</td><td class='num'>-21.94%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>PNR</td><td>Pentair</td><td>Industrials</td><td class='num'>-22.22%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>TJX</td><td>TJX Companies</td><td>Consumer Discretionary</td><td class='num'>-22.44%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>Q</td><td>Qnity Electronics</td><td>Information Technology</td><td class='num'>-22.51%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>FLEX</td><td>Flex Ltd.</td><td>Information Technology</td><td class='num'>-22.57%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NXPI</td><td>NXP Semiconductors</td><td>Information Technology</td><td class='num'>-23.17%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MRVL</td><td>Marvell Technology</td><td>Information Technology</td><td class='num'>-23.42%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>MCHP</td><td>Microchip Technology</td><td>Information Technology</td><td class='num'>-23.80%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CIEN</td><td>Ciena</td><td>Information Technology</td><td class='num'>-24.51%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>DECK</td><td>Deckers Brands</td><td>Consumer Discretionary</td><td class='num'>-24.55%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CCL</td><td>Carnival Corporation</td><td>Consumer Discretionary</td><td class='num'>-24.82%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CMI</td><td>Cummins</td><td>Industrials</td><td class='num'>-24.82%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>STX</td><td>Seagate Technology</td><td>Information Technology</td><td class='num'>-25.23%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>VRT</td><td>Vertiv</td><td>Industrials</td><td class='num'>-25.31%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LRCX</td><td>Lam Research</td><td>Information Technology</td><td class='num'>-25.51%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>NCLH</td><td>Norwegian Cruise Line Holdings</td><td>Consumer Discretionary</td><td class='num'>-26.17%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>COHR</td><td>Coherent Corp.</td><td>Information Technology</td><td class='num'>-26.62%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CASY</td><td>Casey&#x27;s</td><td>Consumer Staples</td><td class='num'>-27.05%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>CDNS</td><td>Cadence Design Systems</td><td>Information Technology</td><td class='num'>-27.47%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>AMAT</td><td>Applied Materials</td><td>Information Technology</td><td class='num'>-27.88%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>KLAC</td><td>KLA Corporation</td><td>Information Technology</td><td class='num'>-28.37%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>LII</td><td>Lennox International</td><td>Industrials</td><td class='num'>-29.52%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>APTV</td><td>Aptiv</td><td>Consumer Discretionary</td><td class='num'>-29.66%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ALB</td><td>Albemarle Corporation</td><td>Materials</td><td class='num'>-30.92%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>APP</td><td>AppLovin</td><td>Communication Services</td><td class='num'>-32.06%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>GNRC</td><td>Generac</td><td>Industrials</td><td class='num'>-33.39%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>ON</td><td>ON Semiconductor</td><td>Information Technology</td><td class='num'>-35.90%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-<tr><td>WDC</td><td>Western Digital</td><td>Information Technology</td><td class='num'>-39.71%</td><td>2026-09-14</td><td class='center'>—</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="footer-note">
-    Momentum / Technical Equity Screener v3 (audit-hardened, cost-optimized) · Generated 2026-09-14 · Data sourced live via IBKR market-data connector and public S&amp;P 500 constituent lists · This report is a systematic screen, not investment advice — verify all flagged anomalies before acting.
-  </div>
+<footer>
+  Momentum Screener v3 (audit-hardened, cost-optimized) &middot; Full methodology and every sourced figure documented above &middot; Generated 2026-09-21
+</footer>
 </div>
+
 <script>
-function filterTable(tableId, inputId) {
-  var q = document.getElementById(inputId).value.toLowerCase();
-  var rows = document.querySelectorAll('#'+tableId+' tbody tr');
-  rows.forEach(function(row) {
-    row.style.display = row.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+const DATA = {"routine": "momentum", "run_at": "2026-09-21T15:10:00Z", "items": [{"label": "META", "tag": "HIGH", "detail": "[Communication Services] Closed today at a new 3-month high, extended above the 50-day SMA but still within the 30% cap, confirming strong momentum.", "entry_price": "$711.73 (clean breakout, current price -- fresh 3-month high today)", "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding META raises single-sector concentration risk."}, {"label": "BBY", "tag": "HIGH", "detail": "[Consumer Discretionary] 1.4% below its 3-month high with price above both the 20- and 50-day SMAs, confirming an intact uptrend.", "entry_price": "$93.46 (clean breakout, current price)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Discretionary sector diversification."}, {"label": "ULTA", "tag": "HIGH", "detail": "[Consumer Discretionary] 2.2% off its 3-month high, price comfortably above both SMAs (+5.9% above the 50-day).", "entry_price": "$552.81 (clean breakout, current price)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Discretionary sector diversification."}, {"label": "ADM", "tag": "HIGH", "detail": "[Consumer Staples] Price sits just above both the 20-day ($83.93) and 50-day ($82.59) SMAs with only 4.3% distance to its 3-month high.", "entry_price": "$84.27 (clean breakout, current price)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."}, {"label": "PSX", "tag": "HIGH", "detail": "[Energy] Refining-sector breakout holding near highs (-2.4% off $274.21), confirming sustained buying rather than a single spike.", "entry_price": "current price (~$265-270)", "diversification_note": "Portfolio already holds MPC (Energy); adding PSX raises single-sector concentration risk."}, {"label": "COIN", "tag": "HIGH", "detail": "[Financials] Grinding to within 1.9% of its 3-month high on steady momentum (largest single day only 49% of the +23.9% move), trading well above both moving averages without being overextended.", "entry_price": "$204.28 (current price \u2014 clean setup near highs)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "MET", "tag": "HIGH", "detail": "[Financials] Steady 11.1% 3-month climb without gap dependency, trading just above both moving averages and only 3.7% off its 3-month high.", "entry_price": "$97.24 (current price \u2014 near 3-month highs)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "TRV", "tag": "HIGH", "detail": "[Financials] One of the strongest, steadiest movers (+21.0% over 3 months, largest single day only 44% of the move), pressing toward new 3-month highs above both moving averages.", "entry_price": "$375.86 (current price \u2014 trading above 20-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "A", "tag": "HIGH", "detail": "[Health Care] Fresh 3-month high, 9% above its 50-day SMA, on a broad 17.3% 3-month gain not driven by any one session.", "entry_price": "$159.00 (current price, at 3-month high)", "diversification_note": "Portfolio already holds LLY (Health Care); adding A raises single-sector concentration risk."}, {"label": "ABBV", "tag": "HIGH", "detail": "[Health Care] Within 0.4% of its 3-month high and 3.6% above a rising 50-day SMA, a steady uptrend with no single-day distortion.", "entry_price": "$264.89 (current price, clean breakout)", "diversification_note": "Portfolio already holds LLY (Health Care); adding ABBV raises single-sector concentration risk."}, {"label": "DGX", "tag": "HIGH", "detail": "[Health Care] At its 3-month high and above its 20-day SMA, a steady 19.9% climb with the biggest single day only 8.6% of the move.", "entry_price": "$247.27 (current price, at 3-month high)", "diversification_note": "Portfolio already holds LLY (Health Care); adding DGX raises single-sector concentration risk."}, {"label": "DXCM", "tag": "HIGH", "detail": "[Health Care] Near its 3-month high, 5.6% above a rising 50-day SMA, powered by a broad 29.4% advance.", "entry_price": "$88.83 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding DXCM raises single-sector concentration risk."}, {"label": "GILD", "tag": "HIGH", "detail": "[Health Care] Within 0.2% of its 3-month high, 7.8% above the 50-day SMA, on a steady 21.9% 3-month climb.", "entry_price": "$150.95 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding GILD raises single-sector concentration risk."}, {"label": "ILMN", "tag": "HIGH", "detail": "[Health Care] New 3-month high and +39% over 3 months, but now 20% above its 50-day SMA -- a genuine but stretched trend.", "entry_price": "$247.00 (current price, size down for extension)", "diversification_note": "Portfolio already holds LLY (Health Care); adding ILMN raises single-sector concentration risk."}, {"label": "IQV", "tag": "HIGH", "detail": "[Health Care] 2% off its 3-month high after a 42.7% advance, still 9.7% above the 50-day SMA with no outsized single day.", "entry_price": "$265.96 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding IQV raises single-sector concentration risk."}, {"label": "JNJ", "tag": "HIGH", "detail": "[Health Care] 2.3% off its 3-month high and above its 20-day SMA, a steady 11.1% 3-month climb.", "entry_price": "$271.98 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding JNJ raises single-sector concentration risk."}, {"label": "MDT", "tag": "HIGH", "detail": "[Health Care] Just above its 20-day SMA and 2% off its 3-month high on a steady 14.6% advance.", "entry_price": "$92.29 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding MDT raises single-sector concentration risk."}, {"label": "MTD", "tag": "HIGH", "detail": "[Health Care] Near its 3-month high, above both 20- and 50-day SMAs, on a smooth 13.6% climb.", "entry_price": "$1,412.06 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding MTD raises single-sector concentration risk."}, {"label": "RVTY", "tag": "HIGH", "detail": "[Health Care] Strong 26.8% trend still only 1.9% off its high, but 19% above the 50-day SMA -- real but moderately extended.", "entry_price": "$143.97 (current price, extended)", "diversification_note": "Portfolio already holds LLY (Health Care); adding RVTY raises single-sector concentration risk."}, {"label": "TECH", "tag": "HIGH", "detail": "[Health Care] Fresh breakout to a 3-month high right at its 20/50-day SMA confluence, a tight low-volatility base after an April air-pocket.", "entry_price": "$72.52 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding TECH raises single-sector concentration risk."}, {"label": "TMO", "tag": "HIGH", "detail": "[Health Care] Within 1% of its 3-month high on a broad 28.9% advance, 9.9% above the 50-day SMA with no outsized single day.", "entry_price": "$651.94 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding TMO raises single-sector concentration risk."}, {"label": "UHS", "tag": "HIGH", "detail": "[Health Care] Above its 20-day SMA and only 1.8% off its 3-month high, a clean 23.2% 3-month uptrend.", "entry_price": "$177.98 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding UHS raises single-sector concentration risk."}, {"label": "WAT", "tag": "HIGH", "detail": "[Health Care] Above its 20-day SMA and under 2% off its 3-month high, a steady 11.9% advance with the biggest single day only 5.7% of the move.", "entry_price": "$421.87 (current price)", "diversification_note": "Portfolio already holds LLY (Health Care); adding WAT raises single-sector concentration risk."}, {"label": "DE", "tag": "HIGH", "detail": "[Industrials] Trading just 1.2% below its 3-month high and comfortably above both the 20-day ($669.52) and 50-day ($632.17) SMAs, confirming strong sustained momentum.", "entry_price": "$689.98 (clean breakout, current price)", "diversification_note": "Portfolio already holds GEV (Industrials); adding DE raises single-sector concentration risk."}, {"label": "EXPD", "tag": "HIGH", "detail": "[Industrials] Only 1.6% off its 3-month high of $193.90 and trading above both the 20-day and 50-day SMAs with a steady uptrend and no single-day distortion.", "entry_price": "$190.89 (clean breakout, current price)", "diversification_note": "Portfolio already holds GEV (Industrials); adding EXPD raises single-sector concentration risk."}, {"label": "AAPL", "tag": "HIGH", "detail": "[Information Technology] Reclaimed prior highs after an August pullback, holding cleanly above both the 20- and 50-day SMAs (only 2.2% off its 3-month high).", "entry_price": "$337.06 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding AAPL raises single-sector concentration risk."}, {"label": "ACN", "tag": "HIGH", "detail": "[Information Technology] Sitting right at its 20-day SMA support after a +50% 3-month re-rating, with the 50-day SMA rising well beneath it.", "entry_price": "$187.55 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ACN raises single-sector concentration risk."}, {"label": "ANET", "tag": "HIGH", "detail": "[Information Technology] Uptrend intact 6% off highs, comfortably above both SMAs with no single-day distortion in the move.", "entry_price": "$201.90 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ANET raises single-sector concentration risk."}, {"label": "CDW", "tag": "HIGH", "detail": "[Information Technology] Already pulled back slightly below its 20-day SMA while holding just above the rising 50-day SMA \u2014 a natural basing entry.", "entry_price": "$144.82 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CDW raises single-sector concentration risk."}, {"label": "CRM", "tag": "HIGH", "detail": "[Information Technology] Cooled off from its recent high into a base just under the 20-day SMA, still 15% above the 50-day SMA in a genuine multi-month uptrend.", "entry_price": "$240.23 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRM raises single-sector concentration risk."}, {"label": "CTSH", "tag": "HIGH", "detail": "[Information Technology] Consolidating just below its 20-day SMA after a genuine +44% 3-month advance, still well above the 50-day SMA.", "entry_price": "$60.26 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CTSH raises single-sector concentration risk."}, {"label": "FTNT", "tag": "HIGH", "detail": "[Information Technology] Within 2.2% of its 3-month high, trending steadily above both SMAs with moderate (not extreme) extension.", "entry_price": "$172.21 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding FTNT raises single-sector concentration risk."}, {"label": "GDDY", "tag": "HIGH", "detail": "[Information Technology] Trading essentially at its 20-day SMA, a clean low-risk entry point within an intact uptrend.", "entry_price": "$99.00 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding GDDY raises single-sector concentration risk."}, {"label": "GEN", "tag": "HIGH", "detail": "[Information Technology] Pulled back modestly below its 20-day SMA while still holding above the 50-day SMA support.", "entry_price": "$29.08 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding GEN raises single-sector concentration risk."}, {"label": "HPQ", "tag": "HIGH", "detail": "[Information Technology] Genuine sustained breakout (+42% 3mo, no single-day dominance), only modestly extended above its SMAs.", "entry_price": "$33.34 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPQ raises single-sector concentration risk."}, {"label": "IT", "tag": "HIGH", "detail": "[Information Technology] Consolidating just below its 20-day SMA after a +47% 3-month re-rating, comfortably above the 50-day SMA.", "entry_price": "$185.03 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding IT raises single-sector concentration risk."}, {"label": "MSFT", "tag": "HIGH", "detail": "[Information Technology] Sitting right at its 20-day SMA support, well above the 50-day SMA in a steady uptrend.", "entry_price": "$494.23 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding MSFT raises single-sector concentration risk."}, {"label": "MSI", "tag": "HIGH", "detail": "[Information Technology] Trading just below its 20-day SMA, a low-risk entry only 1.3% above the 50-day SMA.", "entry_price": "$459.70 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding MSI raises single-sector concentration risk."}, {"label": "NOW", "tag": "HIGH", "detail": "[Information Technology] Near highs (7% off) with a genuine, non-gap-driven +49% 3-month trend, moderately above its 50-day SMA.", "entry_price": "$138.81 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NOW raises single-sector concentration risk."}, {"label": "NTAP", "tag": "HIGH", "detail": "[Information Technology] Modest extension above the 20-day SMA in an orderly uptrend, 6% off its 3-month high.", "entry_price": "$195.67 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NTAP raises single-sector concentration risk."}, {"label": "NVDA", "tag": "HIGH", "detail": "[Information Technology] Trading close to its 20-day SMA with only mild extension above the 50-day SMA \u2014 clean setup.", "entry_price": "$223.54 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NVDA raises single-sector concentration risk."}, {"label": "PLTR", "tag": "HIGH", "detail": "[Information Technology] Only modestly extended, 3.7% off its 3-month high, in an intact and non-gap-driven uptrend.", "entry_price": "$181.35 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding PLTR raises single-sector concentration risk."}, {"label": "ROP", "tag": "HIGH", "detail": "[Information Technology] Steady trend with modest extension above both SMAs, 7% off its 3-month high.", "entry_price": "$370.00 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ROP raises single-sector concentration risk."}, {"label": "TEL", "tag": "HIGH", "detail": "[Information Technology] Basing right at its 20-day and 50-day SMAs after a flat 3-month stretch, low-risk entry point.", "entry_price": "$207.61 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TEL raises single-sector concentration risk."}, {"label": "TRMB", "tag": "HIGH", "detail": "[Information Technology] Trading essentially at both its 20- and 50-day SMAs \u2014 a tight, low-risk base.", "entry_price": "$57.23 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TRMB raises single-sector concentration risk."}, {"label": "TYL", "tag": "HIGH", "detail": "[Information Technology] Already pulled back 15% off its high and below its 20-day SMA while holding just above the 50-day SMA \u2014 the deepest, most attractive pullback in the group.", "entry_price": "$334.44 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TYL raises single-sector concentration risk."}, {"label": "VRSN", "tag": "HIGH", "detail": "[Information Technology] Making new 3-month highs with only modest extension above its SMAs.", "entry_price": "$305.79 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding VRSN raises single-sector concentration risk."}, {"label": "WDAY", "tag": "HIGH", "detail": "[Information Technology] Genuine (+72% 3mo, no single-day dominance) trend that has already cooled 14.5% off its high, trading right at its 20-day SMA.", "entry_price": "$194.62 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding WDAY raises single-sector concentration risk."}, {"label": "ZBRA", "tag": "HIGH", "detail": "[Information Technology] Consolidating just below its 20-day SMA after a +42% 3-month advance, still comfortably above the 50-day SMA.", "entry_price": "$348.79 (current price)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ZBRA raises single-sector concentration risk."}, {"label": "CF", "tag": "HIGH", "detail": "[Materials] Healthy pullback to a rising 50-day SMA after a rally to $139.27, a standard continuation setup.", "entry_price": "buy near current price / 50-day SMA (~$125)", "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (equities) + IGLN/REMX/SSLV (metals ETFs) (Materials); adding CF raises single-sector concentration risk."}, {"label": "FOX", "tag": "PASS", "detail": "[Communication Services] Same setup as its FOXA share class -- below the 20-day SMA, 50-day SMA as support, 7% off the 3-month high.", "entry_price": "buy on a pullback to $56.40-$59.68 (50/20-day SMA band)", "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding FOX raises single-sector concentration risk."}, {"label": "FOXA", "tag": "PASS", "detail": "[Communication Services] Price has pulled back below its 20-day SMA after a strong run; the 50-day SMA is the deeper support level to watch.", "entry_price": "buy on a pullback to $63.15-$66.80 (50/20-day SMA band)", "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding FOXA raises single-sector concentration risk."}, {"label": "NWSA", "tag": "PASS", "detail": "[Communication Services] Price is below its 20-day SMA; the 50-day SMA is the key support level in an otherwise intact uptrend.", "entry_price": "buy on a pullback to $29.18 (50-day SMA)", "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding NWSA raises single-sector concentration risk."}, {"label": "T", "tag": "PASS", "detail": "[Communication Services] Price is fractionally below its 20-day SMA; the 50-day SMA has acted as support through the recent base.", "entry_price": "buy on a pullback to $24.46 (50-day SMA)", "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding T raises single-sector concentration risk."}, {"label": "SJM", "tag": "PASS", "detail": "[Consumer Staples] Price is below its 20-day SMA but holding above the 50-day; a pullback to the 50-day SMA offers a lower-risk entry within the uptrend.", "entry_price": "buy on a pullback to $121.30 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."}, {"label": "TGT", "tag": "PASS", "detail": "[Consumer Staples] Price is below its 20-day SMA ($160.95) after a sharp August rally; the 50-day SMA marks the next meaningful support.", "entry_price": "buy on a pullback to $152.18 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."}, {"label": "APA", "tag": "PASS", "detail": "[Energy] Uptrend intact after a rally to $47.41; price is basing exactly on its rising 20-day SMA with the 50-day SMA ($40.20) well below as cushion.", "entry_price": "buy on a pullback to $43.90 (20-day SMA, where price is currently consolidating)", "diversification_note": "Portfolio already holds MPC (Energy); adding APA raises single-sector concentration risk."}, {"label": "COP", "tag": "PASS", "detail": "[Energy] Sharp pullback from $141+ highs is testing 50-day SMA support within an intact uptrend.", "entry_price": "buy on pullback to $125-126 (50-day SMA)", "diversification_note": "Portfolio already holds MPC (Energy); adding COP raises single-sector concentration risk."}, {"label": "CVX", "tag": "PASS", "detail": "[Energy] Steady uptrend pulling back from 3-month highs near $217.77 to test rising 50-day SMA support.", "entry_price": "buy on pullback to $199-201 (50-day SMA zone)", "diversification_note": "Portfolio already holds MPC (Energy); adding CVX raises single-sector concentration risk."}, {"label": "MPC", "tag": "PASS", "detail": "[Energy] Persistent, broad-based uptrend (67% 3-month gain built from many days, not one print) holding within 2.2% of its 3-month high.", "entry_price": "current price ($415-420), or pullback to 20-day SMA (~$390) for better risk/reward", "diversification_note": "MPC is already an existing account holding; adding to this position would deepen an already-concentrated exposure in Energy."}, {"label": "VLO", "tag": "PASS", "detail": "[Energy] Strongest refiner in the group; uptrend confirmed by broadly distributed daily gains, holding within 2.1% of its high.", "entry_price": "current price (~$400-405), or pullback to 20-day SMA (~$376) for a better entry", "diversification_note": "Portfolio already holds MPC (Energy); adding VLO raises single-sector concentration risk."}, {"label": "XOM", "tag": "PASS", "detail": "[Energy] Healthy digestion after new highs near $169.32, price basing right at the 50-day SMA.", "entry_price": "buy on pullback to ~$158 (50-day SMA)", "diversification_note": "Portfolio already holds MPC (Energy); adding XOM raises single-sector concentration risk."}, {"label": "CME", "tag": "PASS", "detail": "[Financials] Steady 12.1% 3-month uptrend with no single-day gap dependency (largest day only 41% of the move), currently consolidating at its 20-day SMA above solid 50-day support.", "entry_price": "buy on pullback to $266.96 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "CPAY", "tag": "PASS", "detail": "[Financials] Broad 14.9% 3-month gain built over many sessions (max day only 36% of total move), now retesting the 50-day SMA after topping near $427.", "entry_price": "buy on pullback to $396.32 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "EG", "tag": "PASS", "detail": "[Financials] Steady 10.9% climb with no single-day dependency, price and 20-/50-day SMAs all converging near $375-377 for a tight, low-risk entry.", "entry_price": "buy on pullback to $375.11 (50-day SMA, essentially current level)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "FDS", "tag": "PASS", "detail": "[Financials] Best 3-month gainer in the group (+30.7%) driven by steady gains rather than one earnings pop (largest day only 36% of the move), now consolidating above 50-day support.", "entry_price": "buy on pullback to $279.40 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "ICE", "tag": "PASS", "detail": "[Financials] Clean 18.0% uptrend with no outsized single-day jumps (largest day 27.5% of the move), pulling back toward 50-day SMA support after peaking near $165.", "entry_price": "buy on pullback to $152.97 (50-day SMA)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "V", "tag": "PASS", "detail": "[Financials] Broad 12.6% uptrend with no single-day dependency (largest day 25% of the move), sitting right on 50-day SMA support after a shallow pullback from highs.", "entry_price": "buy on pullback to $367.46 (50-day SMA, essentially current level)", "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."}, {"label": "BDX", "tag": "PASS", "detail": "[Health Care] Cooled to just 3% above its 50-day SMA after a 19.4% run; a dip to that support offers a lower-risk entry into the intact uptrend.", "entry_price": "buy on pullback to $175.37 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding BDX raises single-sector concentration risk."}, {"label": "CRL", "tag": "PASS", "detail": "[Health Care] Up 30.5% over 3 months but now 7% off its high and below its 20-day SMA; waiting for the 50-day SMA retest reduces chase risk.", "entry_price": "buy on pullback to $264.39 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding CRL raises single-sector concentration risk."}, {"label": "LH", "tag": "PASS", "detail": "[Health Care] 20.6% run has cooled to 5% below its high and under the 20-day SMA; the 50-day SMA is the level to watch.", "entry_price": "buy on pullback to $314.34 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding LH raises single-sector concentration risk."}, {"label": "MCK", "tag": "PASS", "detail": "[Health Care] Already pulled back to within 1% of its 50-day SMA after a 14.5% run, making the current level itself the entry to watch.", "entry_price": "buy on pullback to $868.05 (50-day SMA, near current level)", "diversification_note": "Portfolio already holds LLY (Health Care); adding MCK raises single-sector concentration risk."}, {"label": "PFE", "tag": "PASS", "detail": "[Health Care] 16.8% 3-month gain has slipped under the 20-day SMA; a dip to the 50-day SMA offers a cleaner entry.", "entry_price": "buy on pullback to $26.69 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding PFE raises single-sector concentration risk."}, {"label": "REGN", "tag": "PASS", "detail": "[Health Care] Up 27% over 3 months but 7.5% off highs and below its 20-day SMA; the 50-day SMA is the lower-risk entry to watch.", "entry_price": "buy on pullback to $766.05 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding REGN raises single-sector concentration risk."}, {"label": "RMD", "tag": "PASS", "detail": "[Health Care] 13.3% gain has faded to 6% below the high and under the 20-day SMA; a 50-day SMA retest offers better risk/reward.", "entry_price": "buy on pullback to $218.83 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding RMD raises single-sector concentration risk."}, {"label": "SOLV", "tag": "PASS", "detail": "[Health Care] 14.4% gain has slipped just under the 20-day SMA; the 50-day SMA is the support to watch for entry.", "entry_price": "buy on pullback to $86.33 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding SOLV raises single-sector concentration risk."}, {"label": "VEEV", "tag": "PASS", "detail": "[Health Care] Explosive 65% 3-month gain has cooled 8.6% off highs and below the 20-day SMA; a 50-day SMA pullback is a more disciplined entry after such an extended run.", "entry_price": "buy on pullback to $235.55 (50-day SMA)", "diversification_note": "Portfolio already holds LLY (Health Care); adding VEEV raises single-sector concentration risk."}, {"label": "ADP", "tag": "PASS", "detail": "[Industrials] Price sits right at its 50-day SMA support ($268.95) after pulling back only 6.4% from a 3-month high of $287.48, with the uptrend still technically intact.", "entry_price": "buy on a pullback to $268-269 (50-day SMA, essentially current level)", "diversification_note": "Portfolio already holds GEV (Industrials); adding ADP raises single-sector concentration risk."}, {"label": "J", "tag": "PASS", "detail": "[Industrials] Consolidating 5.9% below its 3-month high of $151.98 while holding just above the rising 50-day SMA ($141.71), a healthy basing pattern after the 3-month rally.", "entry_price": "buy on a pullback to $141-142 (50-day SMA support)", "diversification_note": "Portfolio already holds GEV (Industrials); adding J raises single-sector concentration risk."}, {"label": "LDOS", "tag": "PASS", "detail": "[Industrials] Currently testing its 50-day SMA ($127.74) almost exactly after a strong post-catalyst rally; holding this level would confirm the uptrend remains intact despite a 12.7% pullback from highs.", "entry_price": "buy on a pullback to $127-128 (50-day SMA, current support level)", "diversification_note": "Portfolio already holds GEV (Industrials); adding LDOS raises single-sector concentration risk."}, {"label": "CRWD", "tag": "PASS", "detail": "[Information Technology] Extended 12% above its 20-day SMA near 3-month highs; wait for a pullback to the 20-day SMA rather than chase.", "entry_price": "buy on pullback to $218.54 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRWD raises single-sector concentration risk."}, {"label": "DELL", "tag": "PASS", "detail": "[Information Technology] Strong trend but 12% above its 20-day SMA and 23% above the 50-day SMA \u2014 better entry on a pullback.", "entry_price": "buy on pullback to $510.18 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding DELL raises single-sector concentration risk."}, {"label": "FFIV", "tag": "PASS", "detail": "[Information Technology] Making new 3-month highs but 8% above its 20-day SMA; a pullback to the 20-day SMA offers a cleaner risk/reward.", "entry_price": "buy on pullback to $405.93 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding FFIV raises single-sector concentration risk."}, {"label": "HPE", "tag": "PASS", "detail": "[Information Technology] Strong sustained rally but nearly 9% above its 20-day SMA; better to wait for a pullback to that level.", "entry_price": "buy on pullback to $55.59 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPE raises single-sector concentration risk."}, {"label": "P", "tag": "PASS", "detail": "[Information Technology] Genuine sustained re-rating (+43% 3mo) but now 11% above its 20-day SMA; wait for a pullback.", "entry_price": "buy on pullback to $98.94 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding P raises single-sector concentration risk."}, {"label": "SMCI", "tag": "PASS", "detail": "[Information Technology] Near highs but stretched 8.6% above its 20-day SMA and 22% above the 50-day SMA; better entry on a pullback.", "entry_price": "buy on pullback to $38.09 (20-day SMA)", "diversification_note": "Portfolio already holds CRWV (Information Technology); adding SMCI raises single-sector concentration risk."}, {"label": "MOS", "tag": "PASS", "detail": "[Materials] Fertilizer name in a steady uptrend, consolidating tightly on its rising 20-day SMA.", "entry_price": "buy on pullback to $24.90-25.00 (20-day SMA)", "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (equities) + IGLN/REMX/SSLV (metals ETFs) (Materials); adding MOS raises single-sector concentration risk."}, {"label": "NEM", "tag": "PASS", "detail": "[Materials] Gold-miner momentum leader consolidating after a sharp rally to $135.14; 50-day SMA is the next support level.", "entry_price": "buy on pullback to $113-115 (50-day SMA), or current levels on gold strength", "diversification_note": "NEM is already an existing account holding; adding to this position would deepen an already-concentrated exposure in Materials."}], "funnel": {"stages": [{"label": "Universe (full S&P 500)", "count": 503}, {"label": "Stage 0 survivors (3mo return >= SPY-2pp = 2.61%)", "count": 203}, {"label": "C1 - no-derivatives guard", "count": 203}, {"label": "C2 - no-single-print guard", "count": 112}, {"label": "C3 - setup criterion checklist", "count": 88}, {"label": "C4 - final candidates", "count": 88}]}, "full_report_url": "data/momentum-latest.html"}
+;
+const SECTORS = [{"sector": "Communication Services", "total": 23, "survivors": 10, "discarded": 13, "unverifiable": 0}, {"sector": "Consumer Discretionary", "total": 47, "survivors": 13, "discarded": 34, "unverifiable": 0}, {"sector": "Consumer Staples", "total": 33, "survivors": 12, "discarded": 20, "unverifiable": 1}, {"sector": "Energy", "total": 21, "survivors": 13, "discarded": 8, "unverifiable": 0}, {"sector": "Financials", "total": 76, "survivors": 40, "discarded": 36, "unverifiable": 0}, {"sector": "Health Care", "total": 60, "survivors": 43, "discarded": 17, "unverifiable": 0}, {"sector": "Industrials", "total": 83, "survivors": 20, "discarded": 63, "unverifiable": 0}, {"sector": "Information Technology", "total": 74, "survivors": 40, "discarded": 34, "unverifiable": 0}, {"sector": "Materials", "total": 25, "survivors": 8, "discarded": 17, "unverifiable": 0}, {"sector": "Real Estate", "total": 30, "survivors": 3, "discarded": 27, "unverifiable": 0}, {"sector": "Utilities", "total": 31, "survivors": 1, "discarded": 30, "unverifiable": 0}];
+
+function renderFunnel(){
+  const box = document.getElementById('funnelBox');
+  box.innerHTML = '';
+  DATA.funnel.stages.forEach((s,i)=>{
+    if(i>0){
+      const a = document.createElement('div');
+      a.className='arrow'; a.textContent='→';
+      box.appendChild(a);
+    }
+    const d = document.createElement('div');
+    d.className='fstage';
+    d.innerHTML = `<div class="n">${s.count}</div><div class="l">${s.label}</div>`;
+    box.appendChild(d);
   });
 }
+
+function renderSectorTable(){
+  const tb = document.getElementById('sectorBody');
+  tb.innerHTML = SECTORS.map(r=>`<tr>
+    <td>${r.sector}</td><td>${r.total}</td><td>${r.survivors}</td><td>${r.discarded}</td><td>${r.unverifiable}</td>
+  </tr>`).join('');
+}
+
+let sortKey='label', sortDir=1;
+function currentFilters(){
+  const sector = document.getElementById('sectorFilter').value;
+  const tag = document.getElementById('tagFilter').value;
+  const q = document.getElementById('searchBox').value.trim().toUpperCase();
+  return DATA.items.filter(it=>{
+    if(sector && it.sector !== sector) return false;
+    if(tag && it.tag !== tag) return false;
+    if(q && !it.label.toUpperCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function renderTable(){
+  let rows = currentFilters();
+  rows.sort((a,b)=>{
+    const av=a[sortKey]||'', bv=b[sortKey]||'';
+    return av>bv?sortDir:av<bv?-sortDir:0;
+  });
+  document.getElementById('itemsBody').innerHTML = rows.map(it=>`
+    <tr>
+      <td class="label">${it.label}</td>
+      <td class="sector-pill">${it.sector}</td>
+      <td><span class="tag ${it.tag}">${it.tag}</span></td>
+      <td class="entry">${it.entry_price}</td>
+      <td>${it.detail.replace(/^\[[^\]]+\]\s*/,'')}</td>
+      <td class="divnote">${it.diversification_note}</td>
+    </tr>`).join('');
+  document.getElementById('countPill').textContent = `${rows.length} of ${DATA.items.length} shown`;
+}
+
+function initControls(){
+  const sectorSel = document.getElementById('sectorFilter');
+  const sectors = [...new Set(DATA.items.map(i=>i.sector))].sort();
+  sectorSel.innerHTML = '<option value="">All sectors</option>' + sectors.map(s=>`<option value="${s}">${s}</option>`).join('');
+  sectorSel.addEventListener('change', renderTable);
+  document.getElementById('tagFilter').addEventListener('change', renderTable);
+  document.getElementById('searchBox').addEventListener('input', renderTable);
+  document.querySelectorAll('#itemsTable thead th[data-k]').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const k = th.getAttribute('data-k');
+      if(sortKey===k) sortDir*=-1; else { sortKey=k; sortDir=1; }
+      renderTable();
+    });
+  });
+}
+
+// derive sector field for items (extracted from [Sector] prefix already present, but also stored explicitly)
+DATA.items.forEach(it=>{
+  const m = it.detail.match(/^\[([^\]]+)\]/);
+  it.sector = m ? m[1] : (it.sector || 'Other');
+});
+
+renderFunnel();
+renderSectorTable();
+initControls();
+renderTable();
 </script>
 </body>
 </html>

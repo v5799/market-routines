@@ -1,215 +1,650 @@
 {
   "routine": "momentum",
-  "run_at": "2026-09-14T16:30:00Z",
+  "run_at": "2026-09-21T15:10:00Z",
   "items": [
     {
-      "label": "DELL",
+      "label": "META",
       "tag": "HIGH",
-      "detail": "Price $539.55 is 4.97% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 308.94% beating SPY's 14.62% by 294.32pp. FLAGGED: 1-year return of 308.94% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "539.55",
-      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding DELL raises single-sector concentration risk."
-    },
-    {
-      "label": "HPE",
-      "tag": "HIGH",
-      "detail": "Price $56.22 is 12.50% off its 52-week high, RSI14(weekly)=57.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 125.01% beating SPY's 14.62% by 110.39pp. FLAGGED: 1-year return of 125.01% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "56.22",
-      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPE raises single-sector concentration risk."
-    },
-    {
-      "label": "APA",
-      "tag": "HIGH",
-      "detail": "Price $46.37 is 0.15% off its 52-week high, RSI14(weekly)=73.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 97.49% beating SPY's 14.62% by 82.87pp. FLAGGED: 1-year return of 97.49% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "46.37",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding APA raises single-sector concentration risk."
-    },
-    {
-      "label": "CRWD",
-      "tag": "HIGH",
-      "detail": "Price $230.79 is 1.32% off its 52-week high, RSI14(weekly)=66.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 83.70% beating SPY's 14.62% by 69.08pp. FLAGGED: 1-year return of 83.70% is unusually large -- verify against corporate actions/splits before acting.",
-      "entry_price": "230.79",
-      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRWD raises single-sector concentration risk."
-    },
-    {
-      "label": "TGT",
-      "tag": "HIGH",
-      "detail": "Price $157.57 is 7.72% off its 52-week high, RSI14(weekly)=64.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 78.79% beating SPY's 14.62% by 64.17pp.",
-      "entry_price": "157.57",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."
-    },
-    {
-      "label": "MRK",
-      "tag": "HIGH",
-      "detail": "Price $144.54 is -1.82% off its 52-week high, RSI14(weekly)=67.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 77.33% beating SPY's 14.62% by 62.71pp. NOTE: pct-off-52wk-high computed as negative (current price exceeds the max weekly 'high' bar in the returned series, likely a lagging partial-week high field) -- data quality caveat, not excluded.",
-      "entry_price": "144.54",
-      "diversification_note": "Portfolio already holds LLY (Health Care); adding MRK raises single-sector concentration risk."
-    },
-    {
-      "label": "PANW",
-      "tag": "HIGH",
-      "detail": "Price $366.32 is 8.16% off its 52-week high, RSI14(weekly)=62.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 75.95% beating SPY's 14.62% by 61.33pp.",
-      "entry_price": "366.32",
-      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding PANW raises single-sector concentration risk."
-    },
-    {
-      "label": "CRL",
-      "tag": "HIGH",
-      "detail": "Price $270.56 is 10.80% off its 52-week high, RSI14(weekly)=76.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 74.12% beating SPY's 14.62% by 59.50pp.",
-      "entry_price": "270.56",
-      "diversification_note": "Portfolio already holds LLY (Health Care); adding CRL raises single-sector concentration risk."
-    },
-    {
-      "label": "EXPD",
-      "tag": "HIGH",
-      "detail": "Price $191.61 is 1.12% off its 52-week high, RSI14(weekly)=67.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 59.48% beating SPY's 14.62% by 44.86pp.",
-      "entry_price": "191.61",
-      "diversification_note": "Portfolio already holds GEV (Industrials); adding EXPD raises single-sector concentration risk."
-    },
-    {
-      "label": "CF",
-      "tag": "HIGH",
-      "detail": "Price $134.46 is 5.28% off its 52-week high, RSI14(weekly)=68.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 58.02% beating SPY's 14.62% by 43.40pp.",
-      "entry_price": "134.46",
-      "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (Materials); adding CF raises single-sector concentration risk."
-    },
-    {
-      "label": "NTAP",
-      "tag": "HIGH",
-      "detail": "Price $192.41 is 7.97% off its 52-week high, RSI14(weekly)=63.3, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 53.74% beating SPY's 14.62% by 39.12pp.",
-      "entry_price": "192.41",
-      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NTAP raises single-sector concentration risk."
+      "detail": "[Communication Services] Closed today at a new 3-month high, extended above the 50-day SMA but still within the 30% cap, confirming strong momentum.",
+      "entry_price": "$711.73 (clean breakout, current price -- fresh 3-month high today)",
+      "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding META raises single-sector concentration risk."
     },
     {
       "label": "BBY",
       "tag": "HIGH",
-      "detail": "Price $139.12 is 0.28% off its 52-week high, RSI14(weekly)=68.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 51.35% beating SPY's 14.62% by 36.73pp.",
-      "entry_price": "139.12",
+      "detail": "[Consumer Discretionary] 1.4% below its 3-month high with price above both the 20- and 50-day SMAs, confirming an intact uptrend.",
+      "entry_price": "$93.46 (clean breakout, current price)",
       "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Discretionary sector diversification."
     },
     {
-      "label": "DVN",
+      "label": "ULTA",
       "tag": "HIGH",
-      "detail": "Price $51.27 is 2.73% off its 52-week high, RSI14(weekly)=62.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 50.97% beating SPY's 14.62% by 36.35pp.",
-      "entry_price": "51.27",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding DVN raises single-sector concentration risk."
+      "detail": "[Consumer Discretionary] 2.2% off its 3-month high, price comfortably above both SMAs (+5.9% above the 50-day).",
+      "entry_price": "$552.81 (clean breakout, current price)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Discretionary sector diversification."
     },
     {
-      "label": "NEM",
+      "label": "ADM",
       "tag": "HIGH",
-      "detail": "Price $122.17 is 9.70% off its 52-week high, RSI14(weekly)=65.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.49% beating SPY's 14.62% by 34.87pp.",
-      "entry_price": "122.17",
-      "diversification_note": "NEM is already a current position in this account (31 sh) -- this signals adding to an existing holding, not new diversification."
+      "detail": "[Consumer Staples] Price sits just above both the 20-day ($83.93) and 50-day ($82.59) SMAs with only 4.3% distance to its 3-month high.",
+      "entry_price": "$84.27 (clean breakout, current price)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."
     },
     {
-      "label": "XOM",
+      "label": "PSX",
       "tag": "HIGH",
-      "detail": "Price $168.12 is 4.70% off its 52-week high, RSI14(weekly)=65.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 49.02% beating SPY's 14.62% by 34.40pp.",
-      "entry_price": "168.12",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding XOM raises single-sector concentration risk."
+      "detail": "[Energy] Refining-sector breakout holding near highs (-2.4% off $274.21), confirming sustained buying rather than a single spike.",
+      "entry_price": "current price (~$265-270)",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding PSX raises single-sector concentration risk."
     },
     {
-      "label": "DE",
+      "label": "COIN",
       "tag": "HIGH",
-      "detail": "Price $681.70 is 3.43% off its 52-week high, RSI14(weekly)=65.4, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 45.16% beating SPY's 14.62% by 30.54pp.",
-      "entry_price": "681.70",
-      "diversification_note": "Portfolio already holds GEV (Industrials); adding DE raises single-sector concentration risk."
+      "detail": "[Financials] Grinding to within 1.9% of its 3-month high on steady momentum (largest single day only 49% of the +23.9% move), trading well above both moving averages without being overextended.",
+      "entry_price": "$204.28 (current price \u2014 clean setup near highs)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
     },
     {
-      "label": "RVTY",
+      "label": "MET",
       "tag": "HIGH",
-      "detail": "Price $125.02 is 6.00% off its 52-week high, RSI14(weekly)=78.6, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 44.17% beating SPY's 14.62% by 29.55pp.",
-      "entry_price": "125.02",
-      "diversification_note": "Portfolio already holds LLY (Health Care); adding RVTY raises single-sector concentration risk."
-    },
-    {
-      "label": "CVX",
-      "tag": "HIGH",
-      "detail": "Price $216.19 is 0.62% off its 52-week high, RSI14(weekly)=65.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 38.40% beating SPY's 14.62% by 23.78pp.",
-      "entry_price": "216.19",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding CVX raises single-sector concentration risk."
+      "detail": "[Financials] Steady 11.1% 3-month climb without gap dependency, trading just above both moving averages and only 3.7% off its 3-month high.",
+      "entry_price": "$97.24 (current price \u2014 near 3-month highs)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
     },
     {
       "label": "TRV",
       "tag": "HIGH",
-      "detail": "Price $379.16 is 4.90% off its 52-week high, RSI14(weekly)=74.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.88% beating SPY's 14.62% by 22.26pp.",
-      "entry_price": "379.16",
+      "detail": "[Financials] One of the strongest, steadiest movers (+21.0% over 3 months, largest single day only 44% of the move), pressing toward new 3-month highs above both moving averages.",
+      "entry_price": "$375.86 (current price \u2014 trading above 20-day SMA)",
       "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
     },
     {
-      "label": "CPAY",
+      "label": "A",
       "tag": "HIGH",
-      "detail": "Price $411.25 is 3.79% off its 52-week high, RSI14(weekly)=70.0, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.21% beating SPY's 14.62% by 21.59pp.",
-      "entry_price": "411.25",
-      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+      "detail": "[Health Care] Fresh 3-month high, 9% above its 50-day SMA, on a broad 17.3% 3-month gain not driven by any one session.",
+      "entry_price": "$159.00 (current price, at 3-month high)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding A raises single-sector concentration risk."
     },
     {
-      "label": "OXY",
+      "label": "ABBV",
       "tag": "HIGH",
-      "detail": "Price $62.74 is 6.98% off its 52-week high, RSI14(weekly)=60.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 36.10% beating SPY's 14.62% by 21.48pp.",
-      "entry_price": "62.74",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding OXY raises single-sector concentration risk."
-    },
-    {
-      "label": "REGN",
-      "tag": "HIGH",
-      "detail": "Price $782.04 is 9.00% off its 52-week high, RSI14(weekly)=71.9, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 32.10% beating SPY's 14.62% by 17.48pp.",
-      "entry_price": "782.04",
-      "diversification_note": "Portfolio already holds LLY (Health Care); adding REGN raises single-sector concentration risk."
+      "detail": "[Health Care] Within 0.4% of its 3-month high and 3.6% above a rising 50-day SMA, a steady uptrend with no single-day distortion.",
+      "entry_price": "$264.89 (current price, clean breakout)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding ABBV raises single-sector concentration risk."
     },
     {
       "label": "DGX",
       "tag": "HIGH",
-      "detail": "Price $236.59 is 4.29% off its 52-week high, RSI14(weekly)=68.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.86% beating SPY's 14.62% by 14.24pp.",
-      "entry_price": "236.59",
+      "detail": "[Health Care] At its 3-month high and above its 20-day SMA, a steady 19.9% climb with the biggest single day only 8.6% of the move.",
+      "entry_price": "$247.27 (current price, at 3-month high)",
       "diversification_note": "Portfolio already holds LLY (Health Care); adding DGX raises single-sector concentration risk."
     },
     {
-      "label": "COP",
+      "label": "DXCM",
       "tag": "HIGH",
-      "detail": "Price $92.70 is 0.16% off its 52-week high, RSI14(weekly)=68.5, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 28.34% beating SPY's 14.62% by 13.72pp.",
-      "entry_price": "92.70",
-      "diversification_note": "Portfolio already holds MPC (Energy); adding COP raises single-sector concentration risk."
+      "detail": "[Health Care] Near its 3-month high, 5.6% above a rising 50-day SMA, powered by a broad 29.4% advance.",
+      "entry_price": "$88.83 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding DXCM raises single-sector concentration risk."
     },
     {
       "label": "GILD",
       "tag": "HIGH",
-      "detail": "Price $144.82 is 7.93% off its 52-week high, RSI14(weekly)=68.8, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 26.94% beating SPY's 14.62% by 12.32pp.",
-      "entry_price": "144.82",
+      "detail": "[Health Care] Within 0.2% of its 3-month high, 7.8% above the 50-day SMA, on a steady 21.9% 3-month climb.",
+      "entry_price": "$150.95 (current price)",
       "diversification_note": "Portfolio already holds LLY (Health Care); adding GILD raises single-sector concentration risk."
     },
     {
-      "label": "SOLV",
+      "label": "ILMN",
       "tag": "HIGH",
-      "detail": "Price $89.24 is 5.23% off its 52-week high, RSI14(weekly)=62.1, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 21.05% beating SPY's 14.62% by 6.43pp.",
-      "entry_price": "89.24",
-      "diversification_note": "Portfolio already holds LLY (Health Care); adding SOLV raises single-sector concentration risk."
+      "detail": "[Health Care] New 3-month high and +39% over 3 months, but now 20% above its 50-day SMA -- a genuine but stretched trend.",
+      "entry_price": "$247.00 (current price, size down for extension)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding ILMN raises single-sector concentration risk."
+    },
+    {
+      "label": "IQV",
+      "tag": "HIGH",
+      "detail": "[Health Care] 2% off its 3-month high after a 42.7% advance, still 9.7% above the 50-day SMA with no outsized single day.",
+      "entry_price": "$265.96 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding IQV raises single-sector concentration risk."
+    },
+    {
+      "label": "JNJ",
+      "tag": "HIGH",
+      "detail": "[Health Care] 2.3% off its 3-month high and above its 20-day SMA, a steady 11.1% 3-month climb.",
+      "entry_price": "$271.98 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding JNJ raises single-sector concentration risk."
+    },
+    {
+      "label": "MDT",
+      "tag": "HIGH",
+      "detail": "[Health Care] Just above its 20-day SMA and 2% off its 3-month high on a steady 14.6% advance.",
+      "entry_price": "$92.29 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding MDT raises single-sector concentration risk."
+    },
+    {
+      "label": "MTD",
+      "tag": "HIGH",
+      "detail": "[Health Care] Near its 3-month high, above both 20- and 50-day SMAs, on a smooth 13.6% climb.",
+      "entry_price": "$1,412.06 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding MTD raises single-sector concentration risk."
+    },
+    {
+      "label": "RVTY",
+      "tag": "HIGH",
+      "detail": "[Health Care] Strong 26.8% trend still only 1.9% off its high, but 19% above the 50-day SMA -- real but moderately extended.",
+      "entry_price": "$143.97 (current price, extended)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding RVTY raises single-sector concentration risk."
+    },
+    {
+      "label": "TECH",
+      "tag": "HIGH",
+      "detail": "[Health Care] Fresh breakout to a 3-month high right at its 20/50-day SMA confluence, a tight low-volatility base after an April air-pocket.",
+      "entry_price": "$72.52 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding TECH raises single-sector concentration risk."
+    },
+    {
+      "label": "TMO",
+      "tag": "HIGH",
+      "detail": "[Health Care] Within 1% of its 3-month high on a broad 28.9% advance, 9.9% above the 50-day SMA with no outsized single day.",
+      "entry_price": "$651.94 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding TMO raises single-sector concentration risk."
+    },
+    {
+      "label": "UHS",
+      "tag": "HIGH",
+      "detail": "[Health Care] Above its 20-day SMA and only 1.8% off its 3-month high, a clean 23.2% 3-month uptrend.",
+      "entry_price": "$177.98 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding UHS raises single-sector concentration risk."
+    },
+    {
+      "label": "WAT",
+      "tag": "HIGH",
+      "detail": "[Health Care] Above its 20-day SMA and under 2% off its 3-month high, a steady 11.9% advance with the biggest single day only 5.7% of the move.",
+      "entry_price": "$421.87 (current price)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding WAT raises single-sector concentration risk."
+    },
+    {
+      "label": "DE",
+      "tag": "HIGH",
+      "detail": "[Industrials] Trading just 1.2% below its 3-month high and comfortably above both the 20-day ($669.52) and 50-day ($632.17) SMAs, confirming strong sustained momentum.",
+      "entry_price": "$689.98 (clean breakout, current price)",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding DE raises single-sector concentration risk."
+    },
+    {
+      "label": "EXPD",
+      "tag": "HIGH",
+      "detail": "[Industrials] Only 1.6% off its 3-month high of $193.90 and trading above both the 20-day and 50-day SMAs with a steady uptrend and no single-day distortion.",
+      "entry_price": "$190.89 (clean breakout, current price)",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding EXPD raises single-sector concentration risk."
+    },
+    {
+      "label": "AAPL",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Reclaimed prior highs after an August pullback, holding cleanly above both the 20- and 50-day SMAs (only 2.2% off its 3-month high).",
+      "entry_price": "$337.06 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding AAPL raises single-sector concentration risk."
+    },
+    {
+      "label": "ACN",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Sitting right at its 20-day SMA support after a +50% 3-month re-rating, with the 50-day SMA rising well beneath it.",
+      "entry_price": "$187.55 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ACN raises single-sector concentration risk."
+    },
+    {
+      "label": "ANET",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Uptrend intact 6% off highs, comfortably above both SMAs with no single-day distortion in the move.",
+      "entry_price": "$201.90 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ANET raises single-sector concentration risk."
+    },
+    {
+      "label": "CDW",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Already pulled back slightly below its 20-day SMA while holding just above the rising 50-day SMA \u2014 a natural basing entry.",
+      "entry_price": "$144.82 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CDW raises single-sector concentration risk."
+    },
+    {
+      "label": "CRM",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Cooled off from its recent high into a base just under the 20-day SMA, still 15% above the 50-day SMA in a genuine multi-month uptrend.",
+      "entry_price": "$240.23 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRM raises single-sector concentration risk."
+    },
+    {
+      "label": "CTSH",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Consolidating just below its 20-day SMA after a genuine +44% 3-month advance, still well above the 50-day SMA.",
+      "entry_price": "$60.26 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CTSH raises single-sector concentration risk."
+    },
+    {
+      "label": "FTNT",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Within 2.2% of its 3-month high, trending steadily above both SMAs with moderate (not extreme) extension.",
+      "entry_price": "$172.21 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding FTNT raises single-sector concentration risk."
+    },
+    {
+      "label": "GDDY",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Trading essentially at its 20-day SMA, a clean low-risk entry point within an intact uptrend.",
+      "entry_price": "$99.00 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding GDDY raises single-sector concentration risk."
+    },
+    {
+      "label": "GEN",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Pulled back modestly below its 20-day SMA while still holding above the 50-day SMA support.",
+      "entry_price": "$29.08 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding GEN raises single-sector concentration risk."
     },
     {
       "label": "HPQ",
       "tag": "HIGH",
-      "detail": "Price $34.07 is 5.96% off its 52-week high, RSI14(weekly)=73.2, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.99% beating SPY's 14.62% by 6.37pp.",
-      "entry_price": "34.07",
+      "detail": "[Information Technology] Genuine sustained breakout (+42% 3mo, no single-day dominance), only modestly extended above its SMAs.",
+      "entry_price": "$33.34 (current price)",
       "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPQ raises single-sector concentration risk."
     },
     {
-      "label": "BDX",
+      "label": "IT",
       "tag": "HIGH",
-      "detail": "Price $180.69 is 6.41% off its 52-week high, RSI14(weekly)=70.7, trading above both the 10-week and 40-week SMA (golden-cross posture), with 1-year return 20.71% beating SPY's 14.62% by 6.09pp.",
-      "entry_price": "180.69",
+      "detail": "[Information Technology] Consolidating just below its 20-day SMA after a +47% 3-month re-rating, comfortably above the 50-day SMA.",
+      "entry_price": "$185.03 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding IT raises single-sector concentration risk."
+    },
+    {
+      "label": "MSFT",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Sitting right at its 20-day SMA support, well above the 50-day SMA in a steady uptrend.",
+      "entry_price": "$494.23 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding MSFT raises single-sector concentration risk."
+    },
+    {
+      "label": "MSI",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Trading just below its 20-day SMA, a low-risk entry only 1.3% above the 50-day SMA.",
+      "entry_price": "$459.70 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding MSI raises single-sector concentration risk."
+    },
+    {
+      "label": "NOW",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Near highs (7% off) with a genuine, non-gap-driven +49% 3-month trend, moderately above its 50-day SMA.",
+      "entry_price": "$138.81 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NOW raises single-sector concentration risk."
+    },
+    {
+      "label": "NTAP",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Modest extension above the 20-day SMA in an orderly uptrend, 6% off its 3-month high.",
+      "entry_price": "$195.67 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NTAP raises single-sector concentration risk."
+    },
+    {
+      "label": "NVDA",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Trading close to its 20-day SMA with only mild extension above the 50-day SMA \u2014 clean setup.",
+      "entry_price": "$223.54 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding NVDA raises single-sector concentration risk."
+    },
+    {
+      "label": "PLTR",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Only modestly extended, 3.7% off its 3-month high, in an intact and non-gap-driven uptrend.",
+      "entry_price": "$181.35 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding PLTR raises single-sector concentration risk."
+    },
+    {
+      "label": "ROP",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Steady trend with modest extension above both SMAs, 7% off its 3-month high.",
+      "entry_price": "$370.00 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ROP raises single-sector concentration risk."
+    },
+    {
+      "label": "TEL",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Basing right at its 20-day and 50-day SMAs after a flat 3-month stretch, low-risk entry point.",
+      "entry_price": "$207.61 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TEL raises single-sector concentration risk."
+    },
+    {
+      "label": "TRMB",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Trading essentially at both its 20- and 50-day SMAs \u2014 a tight, low-risk base.",
+      "entry_price": "$57.23 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TRMB raises single-sector concentration risk."
+    },
+    {
+      "label": "TYL",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Already pulled back 15% off its high and below its 20-day SMA while holding just above the 50-day SMA \u2014 the deepest, most attractive pullback in the group.",
+      "entry_price": "$334.44 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding TYL raises single-sector concentration risk."
+    },
+    {
+      "label": "VRSN",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Making new 3-month highs with only modest extension above its SMAs.",
+      "entry_price": "$305.79 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding VRSN raises single-sector concentration risk."
+    },
+    {
+      "label": "WDAY",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Genuine (+72% 3mo, no single-day dominance) trend that has already cooled 14.5% off its high, trading right at its 20-day SMA.",
+      "entry_price": "$194.62 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding WDAY raises single-sector concentration risk."
+    },
+    {
+      "label": "ZBRA",
+      "tag": "HIGH",
+      "detail": "[Information Technology] Consolidating just below its 20-day SMA after a +42% 3-month advance, still comfortably above the 50-day SMA.",
+      "entry_price": "$348.79 (current price)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding ZBRA raises single-sector concentration risk."
+    },
+    {
+      "label": "CF",
+      "tag": "HIGH",
+      "detail": "[Materials] Healthy pullback to a rising 50-day SMA after a rally to $139.27, a standard continuation setup.",
+      "entry_price": "buy near current price / 50-day SMA (~$125)",
+      "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (equities) + IGLN/REMX/SSLV (metals ETFs) (Materials); adding CF raises single-sector concentration risk."
+    },
+    {
+      "label": "FOX",
+      "tag": "PASS",
+      "detail": "[Communication Services] Same setup as its FOXA share class -- below the 20-day SMA, 50-day SMA as support, 7% off the 3-month high.",
+      "entry_price": "buy on a pullback to $56.40-$59.68 (50/20-day SMA band)",
+      "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding FOX raises single-sector concentration risk."
+    },
+    {
+      "label": "FOXA",
+      "tag": "PASS",
+      "detail": "[Communication Services] Price has pulled back below its 20-day SMA after a strong run; the 50-day SMA is the deeper support level to watch.",
+      "entry_price": "buy on a pullback to $63.15-$66.80 (50/20-day SMA band)",
+      "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding FOXA raises single-sector concentration risk."
+    },
+    {
+      "label": "NWSA",
+      "tag": "PASS",
+      "detail": "[Communication Services] Price is below its 20-day SMA; the 50-day SMA is the key support level in an otherwise intact uptrend.",
+      "entry_price": "buy on a pullback to $29.18 (50-day SMA)",
+      "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding NWSA raises single-sector concentration risk."
+    },
+    {
+      "label": "T",
+      "tag": "PASS",
+      "detail": "[Communication Services] Price is fractionally below its 20-day SMA; the 50-day SMA has acted as support through the recent base.",
+      "entry_price": "buy on a pullback to $24.46 (50-day SMA)",
+      "diversification_note": "Portfolio already holds GOOG/TTWO (Communication Services); adding T raises single-sector concentration risk."
+    },
+    {
+      "label": "SJM",
+      "tag": "PASS",
+      "detail": "[Consumer Staples] Price is below its 20-day SMA but holding above the 50-day; a pullback to the 50-day SMA offers a lower-risk entry within the uptrend.",
+      "entry_price": "buy on a pullback to $121.30 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."
+    },
+    {
+      "label": "TGT",
+      "tag": "PASS",
+      "detail": "[Consumer Staples] Price is below its 20-day SMA ($160.95) after a sharp August rally; the 50-day SMA marks the next meaningful support.",
+      "entry_price": "buy on a pullback to $152.18 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Consumer Staples sector diversification."
+    },
+    {
+      "label": "APA",
+      "tag": "PASS",
+      "detail": "[Energy] Uptrend intact after a rally to $47.41; price is basing exactly on its rising 20-day SMA with the 50-day SMA ($40.20) well below as cushion.",
+      "entry_price": "buy on a pullback to $43.90 (20-day SMA, where price is currently consolidating)",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding APA raises single-sector concentration risk."
+    },
+    {
+      "label": "COP",
+      "tag": "PASS",
+      "detail": "[Energy] Sharp pullback from $141+ highs is testing 50-day SMA support within an intact uptrend.",
+      "entry_price": "buy on pullback to $125-126 (50-day SMA)",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding COP raises single-sector concentration risk."
+    },
+    {
+      "label": "CVX",
+      "tag": "PASS",
+      "detail": "[Energy] Steady uptrend pulling back from 3-month highs near $217.77 to test rising 50-day SMA support.",
+      "entry_price": "buy on pullback to $199-201 (50-day SMA zone)",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding CVX raises single-sector concentration risk."
+    },
+    {
+      "label": "MPC",
+      "tag": "PASS",
+      "detail": "[Energy] Persistent, broad-based uptrend (67% 3-month gain built from many days, not one print) holding within 2.2% of its 3-month high.",
+      "entry_price": "current price ($415-420), or pullback to 20-day SMA (~$390) for better risk/reward",
+      "diversification_note": "MPC is already an existing account holding; adding to this position would deepen an already-concentrated exposure in Energy."
+    },
+    {
+      "label": "VLO",
+      "tag": "PASS",
+      "detail": "[Energy] Strongest refiner in the group; uptrend confirmed by broadly distributed daily gains, holding within 2.1% of its high.",
+      "entry_price": "current price (~$400-405), or pullback to 20-day SMA (~$376) for a better entry",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding VLO raises single-sector concentration risk."
+    },
+    {
+      "label": "XOM",
+      "tag": "PASS",
+      "detail": "[Energy] Healthy digestion after new highs near $169.32, price basing right at the 50-day SMA.",
+      "entry_price": "buy on pullback to ~$158 (50-day SMA)",
+      "diversification_note": "Portfolio already holds MPC (Energy); adding XOM raises single-sector concentration risk."
+    },
+    {
+      "label": "CME",
+      "tag": "PASS",
+      "detail": "[Financials] Steady 12.1% 3-month uptrend with no single-day gap dependency (largest day only 41% of the move), currently consolidating at its 20-day SMA above solid 50-day support.",
+      "entry_price": "buy on pullback to $266.96 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "CPAY",
+      "tag": "PASS",
+      "detail": "[Financials] Broad 14.9% 3-month gain built over many sessions (max day only 36% of total move), now retesting the 50-day SMA after topping near $427.",
+      "entry_price": "buy on pullback to $396.32 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "EG",
+      "tag": "PASS",
+      "detail": "[Financials] Steady 10.9% climb with no single-day dependency, price and 20-/50-day SMAs all converging near $375-377 for a tight, low-risk entry.",
+      "entry_price": "buy on pullback to $375.11 (50-day SMA, essentially current level)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "FDS",
+      "tag": "PASS",
+      "detail": "[Financials] Best 3-month gainer in the group (+30.7%) driven by steady gains rather than one earnings pop (largest day only 36% of the move), now consolidating above 50-day support.",
+      "entry_price": "buy on pullback to $279.40 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "ICE",
+      "tag": "PASS",
+      "detail": "[Financials] Clean 18.0% uptrend with no outsized single-day jumps (largest day 27.5% of the move), pulling back toward 50-day SMA support after peaking near $165.",
+      "entry_price": "buy on pullback to $152.97 (50-day SMA)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "V",
+      "tag": "PASS",
+      "detail": "[Financials] Broad 12.6% uptrend with no single-day dependency (largest day 25% of the move), sitting right on 50-day SMA support after a shallow pullback from highs.",
+      "entry_price": "buy on pullback to $367.46 (50-day SMA, essentially current level)",
+      "diversification_note": "No direct overlap with current holdings (CCJ, CRWV, FCX, GEV, GOOG, KGC, LLY, MPC, NEM, TTWO equities plus IGLN/REMX/SSLV metals ETFs, DBC commodities ETF, TLT bonds ETF); adds Financials sector diversification."
+    },
+    {
+      "label": "BDX",
+      "tag": "PASS",
+      "detail": "[Health Care] Cooled to just 3% above its 50-day SMA after a 19.4% run; a dip to that support offers a lower-risk entry into the intact uptrend.",
+      "entry_price": "buy on pullback to $175.37 (50-day SMA)",
       "diversification_note": "Portfolio already holds LLY (Health Care); adding BDX raises single-sector concentration risk."
+    },
+    {
+      "label": "CRL",
+      "tag": "PASS",
+      "detail": "[Health Care] Up 30.5% over 3 months but now 7% off its high and below its 20-day SMA; waiting for the 50-day SMA retest reduces chase risk.",
+      "entry_price": "buy on pullback to $264.39 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding CRL raises single-sector concentration risk."
+    },
+    {
+      "label": "LH",
+      "tag": "PASS",
+      "detail": "[Health Care] 20.6% run has cooled to 5% below its high and under the 20-day SMA; the 50-day SMA is the level to watch.",
+      "entry_price": "buy on pullback to $314.34 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding LH raises single-sector concentration risk."
+    },
+    {
+      "label": "MCK",
+      "tag": "PASS",
+      "detail": "[Health Care] Already pulled back to within 1% of its 50-day SMA after a 14.5% run, making the current level itself the entry to watch.",
+      "entry_price": "buy on pullback to $868.05 (50-day SMA, near current level)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding MCK raises single-sector concentration risk."
+    },
+    {
+      "label": "PFE",
+      "tag": "PASS",
+      "detail": "[Health Care] 16.8% 3-month gain has slipped under the 20-day SMA; a dip to the 50-day SMA offers a cleaner entry.",
+      "entry_price": "buy on pullback to $26.69 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding PFE raises single-sector concentration risk."
+    },
+    {
+      "label": "REGN",
+      "tag": "PASS",
+      "detail": "[Health Care] Up 27% over 3 months but 7.5% off highs and below its 20-day SMA; the 50-day SMA is the lower-risk entry to watch.",
+      "entry_price": "buy on pullback to $766.05 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding REGN raises single-sector concentration risk."
+    },
+    {
+      "label": "RMD",
+      "tag": "PASS",
+      "detail": "[Health Care] 13.3% gain has faded to 6% below the high and under the 20-day SMA; a 50-day SMA retest offers better risk/reward.",
+      "entry_price": "buy on pullback to $218.83 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding RMD raises single-sector concentration risk."
+    },
+    {
+      "label": "SOLV",
+      "tag": "PASS",
+      "detail": "[Health Care] 14.4% gain has slipped just under the 20-day SMA; the 50-day SMA is the support to watch for entry.",
+      "entry_price": "buy on pullback to $86.33 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding SOLV raises single-sector concentration risk."
+    },
+    {
+      "label": "VEEV",
+      "tag": "PASS",
+      "detail": "[Health Care] Explosive 65% 3-month gain has cooled 8.6% off highs and below the 20-day SMA; a 50-day SMA pullback is a more disciplined entry after such an extended run.",
+      "entry_price": "buy on pullback to $235.55 (50-day SMA)",
+      "diversification_note": "Portfolio already holds LLY (Health Care); adding VEEV raises single-sector concentration risk."
+    },
+    {
+      "label": "ADP",
+      "tag": "PASS",
+      "detail": "[Industrials] Price sits right at its 50-day SMA support ($268.95) after pulling back only 6.4% from a 3-month high of $287.48, with the uptrend still technically intact.",
+      "entry_price": "buy on a pullback to $268-269 (50-day SMA, essentially current level)",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding ADP raises single-sector concentration risk."
+    },
+    {
+      "label": "J",
+      "tag": "PASS",
+      "detail": "[Industrials] Consolidating 5.9% below its 3-month high of $151.98 while holding just above the rising 50-day SMA ($141.71), a healthy basing pattern after the 3-month rally.",
+      "entry_price": "buy on a pullback to $141-142 (50-day SMA support)",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding J raises single-sector concentration risk."
+    },
+    {
+      "label": "LDOS",
+      "tag": "PASS",
+      "detail": "[Industrials] Currently testing its 50-day SMA ($127.74) almost exactly after a strong post-catalyst rally; holding this level would confirm the uptrend remains intact despite a 12.7% pullback from highs.",
+      "entry_price": "buy on a pullback to $127-128 (50-day SMA, current support level)",
+      "diversification_note": "Portfolio already holds GEV (Industrials); adding LDOS raises single-sector concentration risk."
+    },
+    {
+      "label": "CRWD",
+      "tag": "PASS",
+      "detail": "[Information Technology] Extended 12% above its 20-day SMA near 3-month highs; wait for a pullback to the 20-day SMA rather than chase.",
+      "entry_price": "buy on pullback to $218.54 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding CRWD raises single-sector concentration risk."
+    },
+    {
+      "label": "DELL",
+      "tag": "PASS",
+      "detail": "[Information Technology] Strong trend but 12% above its 20-day SMA and 23% above the 50-day SMA \u2014 better entry on a pullback.",
+      "entry_price": "buy on pullback to $510.18 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding DELL raises single-sector concentration risk."
+    },
+    {
+      "label": "FFIV",
+      "tag": "PASS",
+      "detail": "[Information Technology] Making new 3-month highs but 8% above its 20-day SMA; a pullback to the 20-day SMA offers a cleaner risk/reward.",
+      "entry_price": "buy on pullback to $405.93 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding FFIV raises single-sector concentration risk."
+    },
+    {
+      "label": "HPE",
+      "tag": "PASS",
+      "detail": "[Information Technology] Strong sustained rally but nearly 9% above its 20-day SMA; better to wait for a pullback to that level.",
+      "entry_price": "buy on pullback to $55.59 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding HPE raises single-sector concentration risk."
+    },
+    {
+      "label": "P",
+      "tag": "PASS",
+      "detail": "[Information Technology] Genuine sustained re-rating (+43% 3mo) but now 11% above its 20-day SMA; wait for a pullback.",
+      "entry_price": "buy on pullback to $98.94 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding P raises single-sector concentration risk."
+    },
+    {
+      "label": "SMCI",
+      "tag": "PASS",
+      "detail": "[Information Technology] Near highs but stretched 8.6% above its 20-day SMA and 22% above the 50-day SMA; better entry on a pullback.",
+      "entry_price": "buy on pullback to $38.09 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CRWV (Information Technology); adding SMCI raises single-sector concentration risk."
+    },
+    {
+      "label": "MOS",
+      "tag": "PASS",
+      "detail": "[Materials] Fertilizer name in a steady uptrend, consolidating tightly on its rising 20-day SMA.",
+      "entry_price": "buy on pullback to $24.90-25.00 (20-day SMA)",
+      "diversification_note": "Portfolio already holds CCJ/FCX/KGC/NEM (equities) + IGLN/REMX/SSLV (metals ETFs) (Materials); adding MOS raises single-sector concentration risk."
+    },
+    {
+      "label": "NEM",
+      "tag": "PASS",
+      "detail": "[Materials] Gold-miner momentum leader consolidating after a sharp rally to $135.14; 50-day SMA is the next support level.",
+      "entry_price": "buy on pullback to $113-115 (50-day SMA), or current levels on gold strength",
+      "diversification_note": "NEM is already an existing account holding; adding to this position would deepen an already-concentrated exposure in Materials."
     }
   ],
   "funnel": {
     "stages": [
-      { "label": "S&P 500 universe (sourced fresh via public constituents list, verified against 2026-09-21 pending rebalance)", "count": 503 },
-      { "label": "Stage 0 classified (3-month return vs SPY benchmark)", "count": 503 },
-      { "label": "Stage 0 unresolved / excluded", "count": 0 },
-      { "label": "Stage 0 survivors (3mo return >= SPY-2pp, i.e. >= 0.61%)", "count": 264 },
-      { "label": "Prioritized subset carried into Stage 1-4 (top 100 by Stage-0 3mo return)", "count": 100 },
-      { "label": "C1: price above 40-week SMA (long-term uptrend)", "count": 88 },
-      { "label": "C2: also above 10-week SMA with golden cross (10w>40w)", "count": 63 },
-      { "label": "C3: also RSI14(weekly) in healthy 45-80 band", "count": 55 },
-      { "label": "C4/HIGH: also within 15% of 52wk high AND relative strength >= SPY+5pp", "count": 28 }
+      {
+        "label": "Universe (full S&P 500)",
+        "count": 503
+      },
+      {
+        "label": "Stage 0 survivors (3mo return >= SPY-2pp = 2.61%)",
+        "count": 203
+      },
+      {
+        "label": "C1 - no-derivatives guard",
+        "count": 203
+      },
+      {
+        "label": "C2 - no-single-print guard",
+        "count": 112
+      },
+      {
+        "label": "C3 - setup criterion checklist",
+        "count": 88
+      },
+      {
+        "label": "C4 - final candidates",
+        "count": 88
+      }
     ]
   },
   "full_report_url": "data/momentum-latest.html"
