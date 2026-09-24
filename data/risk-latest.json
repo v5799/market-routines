@@ -1,96 +1,90 @@
 {
   "routine": "risk",
-  "run_at": "2026-09-23T06:56:00Z",
+  "run_at": "2026-09-24T07:10:00Z",
   "items": [
     {
-      "label": "Precious-metals cluster (IGLN+SSLV+KGC+NEM) -- cohesion holds at multi-run high; TLT reconfirmed best non-conflicted hedge",
+      "label": "Precious-metals cluster (IGLN+SSLV+KGC+NEM) -- cohesion holds at +0.7251, TLT reconfirmed best non-conflicted hedge",
       "tag": "HIGH",
-      "detail": "$58,370.65 = 12.12% of NAV. Fresh 1-year correlations (background-verified, sequential single-ticker fetches, n=246): internal cohesion +0.723 (IGLN/SSLV 0.817, IGLN/KGC 0.689, IGLN/NEM 0.675, SSLV/KGC 0.646, SSLV/NEM 0.623, KGC/NEM 0.890) -- essentially unchanged from 09-22's +0.7251. Of 8 candidates tested: SHY 0.203, IEF 0.206, TLT 0.125, AGG 0.231, EFA 0.509, VWO 0.513, DBC 0.142, GSG 0.006. GSG is numerically best but is already reserved (staged, unfilled) as the AI/tech cluster hedge, so TLT remains the correct non-double-booked pick.",
-      "recommendation": "Continue holding the existing 93-share TLT position as this cluster's hedge -- it's the correct non-double-booked choice, confirmed again this run. Since IGLN/SSLV remain the tightest pair (0.817), consider trimming ~15-20% of the smaller leg (SSLV) rather than adding a new hedge instrument, which would reduce same-basket risk more directly than resizing TLT."
+      "detail": "$57,419.73 = 11.96% of NAV. Fresh 1-year correlations (background-verified, sequential single-ticker fetches, n=245-251, zero byte-identical feed artifacts found across 153 pairwise checks): internal cohesion +0.7251 (IGLN/SSLV 0.8161, IGLN/KGC 0.6937, IGLN/NEM 0.6795, SSLV/KGC 0.6466, SSLV/NEM 0.6236, KGC/NEM 0.8914) -- essentially unchanged from 09-23's +0.723. Of 8 candidates tested (blend = value-weighted): SHY 0.1907, IEF 0.1801, TLT 0.0846, AGG 0.1945, EFA 0.4325, VWO 0.4445, DBC 0.1840, GSG 0.0529. GSG is numerically lowest but is reserved this run as the AI/tech cluster's hedge (see below), so TLT remains the correct non-double-booked pick.",
+      "recommendation": "Continue holding the existing 93-share TLT position as this cluster's hedge -- confirmed again this run as the lowest-correlation non-reserved candidate. IGLN/SSLV remain the tightest pair (0.8161); consider trimming ~15-20% of the smaller leg (SSLV) rather than adding a 4th hedge instrument."
     },
     {
-      "label": "Materials & mining satellites (CCJ+FCX+REMX) -- internal cohesion jumped to +0.600 this run, above the historical band",
+      "label": "Materials & mining satellites (CCJ+FCX+REMX) -- cohesion eased to +0.5409 from 09-23's +0.600, back within the normal band",
       "tag": "MED",
-      "detail": "$23,285.30 = 4.83% of NAV. Internal cohesion +0.600 (n=250: CCJ/FCX 0.575, CCJ/REMX 0.556, FCX/REMX 0.667) -- a notable jump from 09-22's +0.4995 and above the 0.29-0.57 band seen across recent runs. The background subagent explicitly checked for a mislabeling/data-feed artifact on this cluster and found none, so this is treated as real drift, not a bug. Of 8 candidates tested: SHY 0.195, IEF 0.227, TLT 0.176, AGG 0.291, EFA 0.640, VWO 0.702, DBC 0.025, GSG -0.091 (best but already reserved for AI/tech).",
-      "recommendation": "DBC (already held via the 1,304-share combined position) remains the best non-conflicted hedge at 0.025 correlation -- no new hedge needed yet. Given cohesion jumped ~10 points this run (plausibly the Iran/Hormuz and US-Canada trade headlines hitting all three commodity-linked names together), set an explicit trigger: if it holds above 0.55 for a second consecutive run, trim REMX -- the smallest and most speculative of the three -- by roughly 20%."
+      "detail": "$22,660.10 = 4.72% of NAV. Internal cohesion +0.5409 (n=245-249: CCJ/FCX 0.5904, CCJ/REMX 0.4505, FCX/REMX 0.5817) -- down from 09-23's elevated +0.600 and back within the 0.29-0.57 historical band, so the trim-REMX trigger set last run (activate if cohesion holds >0.55 for 2 consecutive runs) was NOT confirmed this run and remains un-triggered. Of 8 candidates tested: SHY 0.1687, IEF 0.2062, TLT 0.1651, AGG 0.2679, EFA 0.6041, VWO 0.6786, DBC 0.0148, GSG -0.0947 (numerically best but reserved for AI/tech).",
+      "recommendation": "DBC (already held via the 1,304-share combined position) remains the correct non-conflicted hedge at 0.0148 correlation -- no new hedge needed. The REMX-trim trigger stays armed but inactive; re-evaluate if cohesion crosses 0.55 again next run."
     },
     {
-      "label": "AI/tech capex cluster (CRWV+GEV+GOOG) -- GSG reconfirmed the single best-tested candidate across all 3 clusters; still unfilled",
+      "label": "AI/tech capex cluster (CRWV+GEV+GOOG) -- GSG reconfirmed best of all 24 candidate tests; staged order now marketable",
       "tag": "MED",
-      "detail": "$34,285.82 = 7.12% of NAV. Internal cohesion +0.254 (n=250: CRWV/GEV 0.428, CRWV/GOOG 0.140, GEV/GOOG 0.193), matching the recurring ~0.25-0.26 baseline. Of 8 candidates tested: SHY 0.011, IEF 0.067, TLT 0.061, AGG 0.132, EFA 0.514, VWO 0.585, DBC -0.070, GSG -0.117 -- the only negative reading and the most negative correlation of all 24 candidate tests run across all 3 clusters this run.",
-      "recommendation": "Submit the already-staged GSG order (instruction 101, BUY 212 @ $36.50 limit GTC) -- current live price $35.63 is below the limit, so it would execute immediately at a better price than staged if submitted today. This is now purely an execution decision for the user; no further analysis needed."
+      "detail": "$33,748.02 = 7.03% of NAV. Internal cohesion +0.2515 (n=249: CRWV/GEV 0.4263, CRWV/GOOG 0.1376, GEV/GOOG 0.1904), matching the recurring ~0.25-0.26 baseline. Of 8 candidates tested: SHY -0.0031, IEF 0.0391, TLT 0.0436, AGG 0.1015, EFA 0.4709, VWO 0.5442, DBC -0.0410, GSG -0.0839 -- the single most negative reading of all 24 candidate tests run this run, and unlike the other two clusters GSG is both numerically best AND not needed elsewhere for this cluster. Staged instruction 101 (BUY 212 GSG @ $36.50 limit GTC) is now marketable: live GSG price is $36.15, below the limit.",
+      "recommendation": "Submit the already-staged GSG order (instruction 101) -- it is currently marketable at a better price ($36.15) than the $36.50 limit. This is now purely an execution decision for the user."
     },
     {
-      "label": "IGLN and REMX unfilled buy orders remain open 9 days -- still adding to clusters flagged HIGH/MED this run if filled",
+      "label": "IGLN and REMX unfilled buy orders remain open 10 days -- still adding to flagged clusters if filled",
       "tag": "HIGH",
-      "detail": "get_account_orders confirms both live orders remain open, unchanged since 2026-09-14 (now 9 days stale): BUY 200 IGLN @ $75.00 limit GTC (order 1446583396, current $83.99, order 10.7% below market) and BUY 750 REMX @ $11.80 limit GTC (order 1446583393, current $13.75, order 14.2% below market). A fill on either would add directly to a cluster this run flags at HIGH (precious metals, cohesion +0.723) or MED-with-rising-cohesion (materials, +0.600).",
-      "recommendation": "Cancel order 1446583396 (IGLN) in IBKR given the sustained elevated cohesion in the precious-metals cluster, or lower it further below market to make an accidental fill even less likely. Given materials cohesion's jump this run, also reconsider order 1446583393 (REMX) -- it was lower priority when materials cohesion sat near +0.50, less so now that it's at +0.600."
+      "detail": "get_account_orders confirms both live orders remain open, unchanged since 2026-09-14 (now 10 days stale): BUY 200 IGLN @ $75.00 limit GTC (order 1446583396, current $83.09, order 9.7% below market) and BUY 750 REMX @ $11.80 limit GTC (order 1446583393, current $13.62, order 13.4% below market). A fill on either would add directly to the HIGH-flagged precious-metals cluster or the MED materials cluster.",
+      "recommendation": "Cancel order 1446583396 (IGLN) or reprice it further below market given sustained elevated precious-metals cohesion. REMX order priority has eased slightly now that materials cohesion dropped back to +0.5409, but it remains unfilled 10 days on and worth reviewing."
     },
     {
-      "label": "Concentration score eased to 34 (from 36) -- still a cash-concentration reading, not equity risk",
+      "label": "Concentration score ticked up to 35 (from 34) -- driven by today's broad-based equity losses shifting weight toward cash, not new buying",
       "tag": "HIGH",
-      "detail": "Herfindahl calc (recomputed from scratch this run): cash is $264,749.82 = 54.96% of NAV ($481,697.73; includes a $43.82 position-sum-vs-official-aggregate reconciliation gap, absorbed into cash per established methodology -- the narrowest gap seen in recent runs). Remaining buckets: precious metals 12.12%, other satellites (LLY+TTWO+MPC) 10.61%, commodities hedge (DBC) 8.78%, AI/tech 7.12%, materials 4.83%, bonds hedge (TLT) 1.58%. The drop from 36 to 34 reflects two cash-funded fills since the 09-22 snapshot -- TTWO +50sh ($10,250, 09-22) and GEV +10sh ($8,973.70, 09-16) -- growing the 'other satellites' bucket from $41,129.68 to $51,089.54, not a change in equity risk appetite.",
-      "recommendation": "Submit the already-staged VWRA order (instruction 100, BUY 955 @ $192.00 limit GTC) to begin converting idle cash into diversified global-equity exposure -- current live price is $194.96, so the order will not fill immediately at today's price; consider whether to raise the limit toward market if faster execution is preferred, while still respecting the tail-hedge reserve note below."
+      "detail": "Herfindahl calc (recomputed from scratch this run): cash is $265,245.51 = 55.24% of NAV ($480,216.74; includes a $427.00 position-sum-vs-official-aggregate reconciliation gap, absorbed into cash per established methodology -- wider than 09-23's $43.82 gap). Remaining buckets: precious metals 11.96%, other satellites (LLY+TTWO+MPC) 10.58%, commodities hedge (DBC) 8.93%, AI/tech 7.03%, materials 4.72%, bonds hedge (TLT) 1.55%. NAV fell $1,480.99 (-0.31%) vs 09-23's reported $481,697.73, roughly consistent with today's broad losses in GEV (-$176.60), CRWV (-$157.50), KGC (-$46.75), FCX (-$40.42), TLT (-$22.32) outweighing small gains in TTWO/MPC/GOOG -- no new trades occurred, so the score move reflects a market-driven equity-value dip, not a cash deployment.",
+      "recommendation": "Submit the already-staged GSG order (marketable now, see above) to begin converting idle cash into the AI/tech hedge. VWRA remains unfilled below market ($193.62 live vs $192.00 limit) -- consider whether to raise the limit toward market if faster execution of the core-sleeve rotation is preferred, subject to the tail-hedge reserve note below."
     },
     {
-      "label": "Deploying available cash -- $50k tail-hedge reserve preserved but headroom has narrowed",
+      "label": "Deploying available cash -- $50k tail-hedge reserve preserved but headroom has narrowed further",
       "tag": "MED",
-      "detail": "Available cash/settled funds: $264,601.41 (get_account_summary). This run's still-pending staged trades total ~$193,740 (VWRA 955sh @ current $194.96 = $186,186.80 + GSG 212sh @ current $35.63 = $7,553.56, both drafts, neither submitted), leaving ~$70,861 in reserve -- still above the $50,000 tail-hedge-kitty target, but with ~$13,825 less headroom than 09-22's ~$84,686 (narrower because VWRA/GSG's cost-to-fill rose with price, and cash was drawn down by this week's TTWO/GEV fills).",
-      "recommendation": "Do not deploy the full remaining buffer into new ideas without keeping the $50k tail-hedge reserve intact -- current staging still respects this, with roughly $20,861 of headroom beyond the reserve. This buffer has narrowed since last run; re-confirm it each run before adding any further legs, including the still-pending core-sleeve satellite fund decision below."
+      "detail": "Available cash/settled funds: $264,601.41 (get_account_summary). The staged VWRA order alone (955sh @ today's live $193.62 = $184,907.10) would leave ~$79,694.31 in reserve -- still above the $50,000 tail-hedge-kitty target, with ~$29,694 of headroom beyond it. Per this run's fund-research subagent: layering a VYMI (or other satellite) purchase of the size discussed in prior runs (~$50k) on top of VWRA would draw cash down to roughly $29,500 -- BELOW the $50,000 reserve target.",
+      "recommendation": "Do not stage a VYMI/satellite purchase this run without resizing -- doing so on top of the already-staged VWRA order would breach the $50k tail-hedge reserve. Re-confirm this math each run before adding any further legs to the core-sleeve rotation."
     },
     {
-      "label": "Core sleeve rotation (VWRA + income/regional satellite) -- VIGI/IDVO primary-source gaps remain unresolved",
+      "label": "Core sleeve rotation (VWRA + income/regional satellite) -- VIGI's TER now substantially corroborated; IDVO's primary-source gap remains open",
       "tag": "WATCH",
-      "detail": "Live web + IBKR research (background-verified) refreshed pricing: VYMI $103.93 (yield 3.58%), SCHY $32.61 (yield 3.42%), VIGI $96.71 (yield 2.16%, third-party-corroborated only), IDVO $43.07 (yield 5.70% per IBKR; third-party expense ratio 0.66%, notably higher than previously assumed and still not independently confirmed), EIMI (LSE) GBP 56.26. Vanguard's own VIGI factsheet and Amplify's own IDVO factsheet were both unreachable this run (network egress proxy blocked stockanalysis.com, advisors.vanguard.com, fund-docs.vanguard.com, amplifyetfs.com) -- the primary-source gap flagged last run remains open.",
-      "recommendation": "Continue carrying VYMI as the lead income/regional satellite candidate -- longest track record in this analysis and the highest yield (3.58%) among the well-verified names. Do not stage a purchase of VIGI or IDVO until their primary-source factsheets are actually reachable; retry next run, or the user can pull these two figures directly. Domicile/tax treatment (PFIC expectation for VWRA/EIMI; general expectation but unverified for the US-domiciled candidates) remains an open question for the user to verify with a professional, not a settled conclusion."
+      "detail": "Live web + IBKR research (background-verified) refreshed pricing: VWRA $193.62 (live, staged limit $192.00 still below market), VYMI $103.13 (yield ~3.6%, TER 0.07% -- newly confirmed this run), SCHY $31.94 (yield 3.44%, TER 0.08%), VIGI $97.41 (yield 2.16%, TER 0.07% -- now substantially corroborated via search-index citations of Vanguard's own factsheet, though not independently opened directly), IDVO $42.89 (yield 5.86-6.1%, TER 0.66% -- cross-referenced against 3 SEC Form 497 filings located by search but still not independently opened). This run's WebFetch access was blocked far more broadly than usual (SEC.gov, Yahoo Finance, Morningstar, WSJ, stockanalysis.com, even Wikipedia as a control -- not just Vanguard/Amplify), so all figures above come from search-engine synthesis rather than a directly-opened primary document, a materially weaker sourcing tier worth noting explicitly.",
+      "recommendation": "VYMI remains the lead income/regional-satellite candidate -- lowest cost tied with VIGI/SCHY (0.07%), longest track record, and the highest yield (3.6%) among the genuinely passive/diversified options. Do not stage a VYMI purchase yet given the tail-hedge reserve math above. Domicile/tax treatment (PFIC exposure for VWRA/VIGI; general expectation but unverified for the US-domiciled candidates VYMI/SCHY/IDVO) remains an open question for the user to verify with a professional for every candidate, not a settled conclusion."
     },
     {
-      "label": "Iran/Hormuz -- diplomatic movement this run (Araghchi-Witkoff meeting), but no signed deal; kept at HIGH",
+      "label": "Iran/Hormuz -- no deal signed, Trump suggests resolution more likely after Nov midterms; Brent jumped to $101.61",
       "tag": "HIGH",
-      "detail": "Live web research (2026-09-23) found no further tanker incidents since 09-21's strike (later reported as a suspected drone hit on the UK-flagged tanker 'La Stephanie'; no group claimed responsibility). Iran's FM Araghchi met US Special Envoy Witkoff at the UN General Assembly on 09-22/09-23 -- Iran's terms remain lifting the naval blockade, releasing frozen assets, and ending regional military ops in exchange for reopening Hormuz 'within days'; Trump called it a 'very good meeting' but no signed deal as of 09-23. Brent eased to ~$99.01/bbl (-2.11% 24h) from $100.06 on 09-21, consistent with the de-escalation signal though still elevated. No clean 09-23 US-close print was available at research time.",
-      "recommendation": "Keep this at HIGH rather than downgrading -- a meeting is not a signed deal. Do not treat the DBC/GSG commodity-hedge exposure as excess to be trimmed; keep that ballast in place until a concrete reopening agreement is confirmed. Revisit specifically if a signed Oman-brokered deal is confirmed (supports downgrading) or a third tanker incident occurs (supports treating this as still escalating)."
+      "detail": "Live web research (2026-09-23/24) found no signed deal and no collapse -- still active negotiation. CNBC (09-23): Trump now suggests a deal is more likely 'after the midterms' (November), a softer/later timeline than Iran's own 'reopen within days' language; Iran calls Trump's threats 'strategic desperation'. No new tanker/military incidents found since the 09-21 'La Stephanie' strike. Brent closed $101.61/bbl (+2.37%) on 09-23 per Trading Economics -- a ~$2.60 jump from the $99.01 cited yesterday, notable even amid the diplomatic-meeting framing; today's (09-24) print was not yet available at research time.",
+      "recommendation": "Keep this at HIGH rather than downgrading -- the price jump and the 'after midterms' signal both argue for a longer timeline than a single friendly meeting implies. Do not treat the DBC/GSG commodity-hedge exposure as excess to trim. Revisit specifically on a signed deal or a new tanker/military incident."
     },
     {
-      "label": "September FOMC -- no new developments since the decision; October meeting odds ~57-60% for another hike",
+      "label": "September FOMC -- Fed Governor Barr's hawkish 09-23 remarks push hike odds up, but sources diverge sharply on the new number",
       "tag": "MED",
-      "detail": "Live web research found no new Fed-specific commentary dated after 09-22 (most recent on-record remains Chair Warsh's Aug 28 Jackson Hole speech). The next meeting is confirmed for Oct 27-28, 2026; tracker odds as of 09-22 show ~57-60% probability of another 25bp hike, consistent with the 16/18 dot-plot participants projecting at least one more 2026 hike from the Sept 16 decision.",
-      "recommendation": "No immediate action -- the account's TLT exposure remains a direct-rate-sensitivity holding worth watching given a ~57-60% chance of another hike in late October. Re-check specifically for Fed commentary between now and the Oct 27-28 meeting."
+      "detail": "Live web research found Fed Governor Michael Barr's 09-23 Chicago speech: 'further policy adjustments are likely to be needed,' inflation 'not clearly trending toward target' (FXStreet, CNBC, 09-23). Odds for the Oct 27-28 meeting moved up from 09-22's ~57-60%, but sources conflict on magnitude: CME-FedWatch-style reads cite ~73%, while prediction-market dashboards show ~53.5% -- a genuine, unresolved source conflict on the exact number, though direction (up) is consistent. Next catalysts: Oct 7 FOMC minutes, Oct 14 CPI.",
+      "recommendation": "No immediate action -- the account's TLT exposure remains the direct rate-sensitivity holding to watch given rising (if uncertain-magnitude) hike odds. Re-check ahead of the Oct 7 minutes and Oct 14 CPI print."
     },
     {
-      "label": "US-Canada trade war -- import ban 6 days out (09-29), no resumed-talks news found",
+      "label": "US-Canada trade war -- import ban 5 days out (09-29), talks 'stalled' despite warmer rhetoric from both leaders",
       "tag": "MED",
-      "detail": "Live web research confirms no news of the 09-29 import ban (Canadian dairy/alcohol/motorcycles) being postponed or modified as of 09-23; Canadian retaliatory tariffs remain in force since 09-08. A former Canadian ambassador warned formal talks 'could take months' to resume; no story found of contact resuming after 09-22 -- flagged as a genuine information gap, not confirmation either way. CCJ ($9,458.90, 1.96% of NAV) + KGC ($7,829.25, 1.63%) = $17,288.15 = 3.59% of NAV remains the account's Canadian-linked exposure.",
-      "recommendation": "No direct action needed at current exposure. Watch specifically for the ban actually taking effect on 09-29 (6 days away) -- if it triggers a sharp CAD-linked selloff in CCJ/KGC, that is the trigger to revisit position sizing, not the ban announcement itself."
+      "detail": "Live web research found no news of the 09-29 ban being postponed or modified -- a genuine information gap on the single most important open question. CNN (09-23): formal trade talks described as 'once-again stalled,' Carney publicly mocked Trump's gestures at a 09-18 speech. Separately, unconfirmed reports of warmer rhetoric (Trump said a deal could come 'fairly soon' over the weekend; Carney called a deal 'still possible,' citing 'regular contact' with Trump) -- net read (inference, not directly sourced): tone has warmed but nothing concrete suggests the ban is being walked back with 5 days to go. CCJ+KGC = $16,618.75 = 3.46% of NAV remains the account's Canadian-linked exposure.",
+      "recommendation": "No direct action needed at current exposure. Watch specifically for whether the ban actually takes effect 09-29 (5 days away) -- that is the trigger to revisit CCJ/KGC sizing, not the rhetoric shift."
     },
     {
-      "label": "GOOG litigation -- reply-brief date conflict likely two distinct sub-deadlines, not resolved against primary source",
+      "label": "GOOG litigation -- Sept 29 reply-brief date now well-corroborated across sources; docket itself still unreachable; distinct ad-tech case update noted",
       "tag": "WATCH",
-      "detail": "Best-available live web research (one primary source, Courthouse News, was blocked by the network egress proxy) suggests Google's own DC Circuit reply brief is due 09-29 while the full round of parties' reply briefs is due 'late October' -- likely two different filings within the same briefing schedule rather than a genuine contradiction, though not independently confirmed against the primary docket text. Oral argument remains unscheduled, with outside estimates still pointing to early 2027. New this run: an Economic Liberties amicus brief argues Gemini's rapid rise (aided by the ~$1B Apple-Siri deal) proves remedies must be strengthened, specifically urging a full ban on Google's ~$20B/yr default-placement payments to device makers. GOOG remains a small position: 6sh, $2,093.82, 0.43% of NAV.",
-      "recommendation": "Position size remains too small to warrant a trim on this overhang either way. Continue monitoring -- try to independently confirm the reply-brief date resolution next run via the actual DC Circuit docket rather than secondary summaries."
+      "detail": "Multiple independent secondary legal/tech outlets consistently confirm Google's DC Circuit reply brief is due 09-29 (this Tuesday) with oral argument still unscheduled (est. early 2027) -- better corroborated than 09-23's single-conflicting-pair framing, but still not independently verified against the primary docket (courthousenews.com and courtlistener.com both network-egress-blocked this run). Correction to prior framing: the Economic Liberties amicus brief (urging a ban on Google's ~$20B/yr default-placement payments) was filed in August 2026, not newly as previously implied. Distinct matter worth not conflating: Google lost 'significant relief' to the DOJ in a SEPARATE ad-tech remedies case (Judge Brinkema, EDVA) around 09-17. GOOG remains a small position: 6sh, $2,010.72, 0.42% of NAV.",
+      "recommendation": "Position size remains too small to warrant a trim either way. Continue tracking the DC Circuit search-monopoly appeal and the EDVA ad-tech remedies case as two separate threads to avoid conflating them; try the primary docket again next run via a non-blocked source."
     },
     {
-      "label": "Nuclear/SMR theme -- policy-driven bounce, no fresh company news since 09-21",
+      "label": "Nuclear/SMR theme -- no fresh news since 09-21; heavy short interest, HALEU fuel shortage flagged as a live risk",
       "tag": "WATCH",
-      "detail": "Live web research confirms the 09-21 bounce (Oklo +5% to $39.84, NuScale +4% to $8.63) was explicitly attributed to sector rotation/policy headlines with 'no fresh company news attached'; no further nuclear-sector news (incidents, siting decisions, Part 53 developments) found dated after 09-21. The account holds no Scout-flagged nuclear/SMR names directly; CCJ remains adjacent only via the materials cluster.",
-      "recommendation": "No portfolio action -- this is Scout's research to size. Noting the lack of fresh news as a genuine information gap rather than a null finding."
+      "detail": "Live web research confirms no fresh company-specific or policy news since the 09-21 bounce. Oklo down ~4.0% to $38.82 and NuScale down ~2.4% to $8.68 (09-23 close) amid heavy short interest (Oklo 17%, NuScale 16%) and reported >$2B in YTD short-seller profits (Benzinga); a HALEU fuel-supply shortage is not expected to resolve until H2 2028. Account holds no direct nuclear/SMR names; CCJ remains adjacent only via the materials cluster.",
+      "recommendation": "No portfolio action -- this is Scout's research to size. Flagging the short-interest and fuel-shortage detail as new context for that routine."
     },
     {
-      "label": "Last run's TTWO order-status ambiguity resolved -- confirmed filled 2026-09-22 at $205",
+      "label": "Data notes: NAV cross-endpoint discrepancy, reconciliation gap widened, duplicate-exposure and feed-artifact checks both clear",
       "tag": "PASS",
-      "detail": "The 09-22 run flagged a TTWO order (50sh @ $205 limit) showing an ambiguous 'REPLACED' status. get_account_trades now confirms it filled 2026-09-22T14:26:01Z at $205.00 (50sh, $10,250 net); TTWO position is now 179 shares (up from 129), consistent with this fill -- no ambiguity remains. Separately, a GEV buy (10sh @ $897.37, 2026-09-16) also appears in trade history; the background track-record subagent confirmed neither trade matches any tracked Momentum/Scout call for its ticker, so both are correctly treated as pre-existing-position adds, not call attributions.",
-      "recommendation": "No action needed -- this closes out last run's WATCH flag. Continue confirming any future order-status changes against get_account_trades directly rather than relying on order-status labels alone, since 'REPLACED' proved misleading last run."
-    },
-    {
-      "label": "Data notes: duplicate-exposure check clear, correlation-feed identity check clear, reconciliation gap narrowest yet",
-      "tag": "PASS",
-      "detail": "Look-through duplicate-exposure check (Step 1.5): no pair of the account's 15 holdings shares an underlying index or tracks the same benchmark (KGC/NEM's high correlation, 0.890, reflects two distinct large-cap gold miners moving together, not index duplication; SPY5/SPYL remain fully liquidated). The background correlation subagent ran an explicit pairwise byte-identity check across all 18 fetched price series (10 cluster holdings + 8 candidates), specifically looking for the TLT/EFA-style feed artifact seen in a prior run -- found none this run. Position-sum ($216,947.91) vs official gross_position_value ($216,904.09) gap is $43.82 (0.02%), the narrowest reconciliation gap seen in recent runs; official IBKR aggregate used for NAV, residual absorbed into the cash bucket per established methodology.",
-      "recommendation": "No action needed on either check. Continue the sequential single-ticker verification method with an explicit identity check for correlation work, since it has now caught zero artifacts for two consecutive runs."
+      "detail": "get_account_summary's NAV ($480,216.74) matches get_pa_performance_all_periods' today figure exactly, but that same series' own 09-23 start_nav ($480,217.40) differs by ~$1,480 (0.31%) from what was reported as 09-23's headline NAV in yesterday's risk-latest.json ($481,697.73) -- a genuine cross-endpoint discrepancy, not reconciled further this run; get_account_summary's net_liquidation is used as this run's authoritative NAV per established methodology. Separately, summed position-level daily_pnl fields (-$427.66) were inconsistent with the performance API's near-flat 1D reading (-$0.66) -- likely a stale/pre-market mark on position-level fields, flagged for awareness. Position-sum ($214,971.23) vs official gross_position_value ($215,398.23) gap widened to $427.00 (0.198%, from 09-23's $43.82) -- absorbed into cash bucket per established methodology. Look-through duplicate-exposure check (Step 1.5): none of the 15 holdings share an underlying index or benchmark (KGC/NEM's high correlation, 0.8914, reflects two distinct gold miners, not index duplication). Correlation subagent's explicit pairwise byte-identity check across all 153 pairs of the 18 fetched price series found zero duplicates this run -- 2nd consecutive clean run.",
+      "recommendation": "No action needed on the duplicate-exposure or feed-artifact checks. Treat the NAV cross-endpoint discrepancy as a data-quality item to monitor -- if it recurs next run, investigate which endpoint (get_account_summary vs get_pa_performance_all_periods) is authoritative for headline NAV going forward."
     },
     {
       "label": "Track-record.json refreshed -- 235 entries, no new calls, no acted_on transitions",
       "tag": "PASS",
-      "detail": "Background-verified track-record refresh (235 entries, live prices as of 2026-09-23): 0 new calls needed (momentum-latest.json and scout-latest.json both unchanged since the 09-22 run and already fully logged), 0 new acted_on/status transitions. momentum-MPC-2026-09-07 remains the only open acted-on call (6sh @ $400.20 entry, now $386.96, -3.31%). This week's two new trades (TTWO 09-22, GEV 09-16) were checked against every tracked label and confirmed unattributable to any call.",
-      "recommendation": "No action needed -- continue the sequential per-run refresh process. track-record.json already committed and auto-merged to main separately, ahead of this report."
+      "detail": "Background-verified track-record refresh (235 entries, live prices as of 2026-09-24, committed and auto-merged to main separately as PR #11 ahead of this report): 0 new calls needed (momentum-latest.json and scout-latest.json both unchanged since the last risk run and already fully logged), 0 new acted_on/status transitions. momentum-MPC-2026-09-07 remains the only open acted-on call (6sh @ $400.20 entry, now $389.00 last price, +4.931% return since call). All acted_on:false entries confirmed to correctly omit entry/sold fields entirely rather than nulling them.",
+      "recommendation": "No action needed -- continue the sequential per-run refresh process."
     },
     {
       "label": "Leverage / margin -- confirmed low, connector fully healthy this run",
@@ -101,111 +95,111 @@
   ],
   "diversification_actions": [
     {
-      "action": "Precious-metals cluster (IGLN+SSLV+KGC+NEM) -- keep the already-filled TLT hedge (93 shares, ~$7,615)",
-      "rationale": "TLT has the lowest correlation to the blended cluster return of any candidate not already committed elsewhere, at +0.125 (n=246), versus +0.20-0.23 for SHY/IEF/AGG and +0.51 for EFA/VWO; GSG tested numerically better (+0.006) but is already reserved, unfilled, as the AI/tech cluster hedge."
+      "action": "Precious-metals cluster (IGLN+SSLV+KGC+NEM) -- keep the already-filled TLT hedge (93 shares, ~$7,460)",
+      "rationale": "TLT has the lowest correlation to the blended cluster return of any candidate not already committed elsewhere, at +0.0846 (n=245-251), versus +0.18-0.19 for SHY/IEF/DBC/AGG and +0.43-0.44 for EFA/VWO; GSG tested numerically better (+0.0529) but is reserved this run as the AI/tech cluster hedge."
     },
     {
       "action": "Materials & mining satellites (CCJ+FCX+REMX) -- keep the already-held DBC position (part of the 1,304-share combined DBC holding); no new hedge staged",
-      "rationale": "DBC's correlation to the blended cluster return is +0.025 this run (n=250) -- still the lowest among non-reserved candidates, though internal cohesion jumped to +0.600 this run (from +0.4995), the highest reading seen for this cluster; GSG (-0.091) is numerically superior but already reserved for the AI/tech cluster."
+      "rationale": "DBC's correlation to the blended cluster return is +0.0148 this run (n=245-249) -- the lowest among non-reserved candidates; internal cohesion eased to +0.5409 this run (from +0.600 last run), back within the historical band. GSG (-0.0947) is numerically superior but reserved for the AI/tech cluster."
     },
     {
-      "action": "AI/tech capex cluster (CRWV+GEV+GOOG) -- keep the already-staged GSG hedge (instruction 101, BUY 212 @ $36.50 limit GTC, currently marketable at $35.63)",
-      "rationale": "GSG has the most negative correlation of all 24 candidate tests run across all 3 clusters this run, at -0.117 (n=250) against the blended AI/tech return -- the only negative reading -- confirming the already-staged, unfilled hedge is the correct call."
+      "action": "AI/tech capex cluster (CRWV+GEV+GOOG) -- keep the already-staged GSG hedge (instruction 101, BUY 212 @ $36.50 limit GTC, currently marketable at $36.15)",
+      "rationale": "GSG has the most negative correlation of all 24 candidate tests run across all 3 clusters this run, at -0.0839 (n=249) against the blended AI/tech return -- and unlike the other two clusters, GSG is both numerically best AND not needed elsewhere for this cluster, so no conflict-avoidance override applies here."
     }
   ],
   "portfolio_snapshot": {
-    "nav": 481697.73,
-    "as_of": "2026-09-23",
-    "concentration_score": 34,
+    "nav": 480216.74,
+    "as_of": "2026-09-24",
+    "concentration_score": 35,
     "buckets": [
-      { "label": "Cash (incl. reconciliation-gap absorption)", "amount": 264749.82, "pct": 54.962 },
-      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 58370.65, "pct": 12.118 },
-      { "label": "Other satellites (LLY+TTWO+MPC)", "amount": 51089.54, "pct": 10.606 },
-      { "label": "Commodities hedge (DBC)", "amount": 42301.76, "pct": 8.782 },
-      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 34285.82, "pct": 7.117 },
-      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 23285.30, "pct": 4.834 },
-      { "label": "Bonds hedge (TLT)", "amount": 7614.84, "pct": 1.581 }
+      { "label": "Cash (incl. reconciliation-gap absorption)", "amount": 265245.51, "pct": 55.235 },
+      { "label": "Precious metals (IGLN+SSLV+KGC+NEM)", "amount": 57419.73, "pct": 11.957 },
+      { "label": "Other satellites (LLY+TTWO+MPC)", "amount": 50807.40, "pct": 10.580 },
+      { "label": "Commodities hedge (DBC)", "amount": 42875.52, "pct": 8.928 },
+      { "label": "AI/tech capex cluster (CRWV+GEV+GOOG)", "amount": 33748.02, "pct": 7.028 },
+      { "label": "Materials & mining satellites (CCJ+FCX+REMX)", "amount": 22660.10, "pct": 4.719 },
+      { "label": "Bonds hedge (TLT)", "amount": 7460.46, "pct": 1.554 }
     ],
     "profit": {
-      "total": 1697.73,
-      "pct_on_core": 0.3537,
+      "total": 216.74,
+      "pct_on_core": 0.0452,
       "core_capital": 480000,
       "realized": 0,
-      "unrealized": -6740.13,
-      "interest_est": 819
+      "unrealized": -8245.99,
+      "interest_est": 848
     },
-    "note": "NAV $481,697.73, essentially flat vs 09-22's $481,724.06 (-$26.33, a rounding-level move per get_pa_performance_all_periods' 1D series). Concentration_score eased from 36 to 34 -- not from new equity risk, but because two cash-funded fills landed since the last snapshot (TTWO +50sh $10,250 on 09-22, GEV +10sh $8,973.70 on 09-16), shifting weight from the cash bucket into 'other satellites'. profit.realized sourced from get_account_balances' realized_pnl field (same-day figure, not cumulative, per prior-run finding) -- reads $0 today (no sells). interest_est is ESTIMATED (no direct IBKR interest ledger exists): incremented from the 09-22 run's $790 by 1 day's accrual at an assumed ~4% annualized rate on the ~$265k cash balance (~$29 increment, rounded to $819)."
+    "note": "NAV $480,216.74, down $1,480.99 (-0.31%) vs 09-23's reported $481,697.73, roughly consistent with today's broad-based losses in GEV/CRWV/KGC/FCX/TLT (see daily_pnl) outweighing small gains elsewhere -- no trades occurred, so this is a market move, not a cash deployment. A cross-endpoint NAV discrepancy vs get_pa_performance_all_periods' own 09-23 start_nav figure ($480,217.40) is flagged in the data-quality item above and not fully reconciled this run. Concentration_score ticked up from 34 to 35, driven by the same market-value dip shifting relative weight toward cash. profit.realized sourced from get_account_balances' realized_pnl field (same-day figure, reads $0 today -- no sells). profit.unrealized sourced directly from get_account_balances (-$8,245.99); note this does not exactly reconcile against profit.total (NAV minus the fixed $480,000 core_capital baseline) since profit.total is a distinct, non-decomposed definition. interest_est is ESTIMATED (no direct IBKR interest ledger exists): incremented from the 09-23 run's $819 by 1 day's accrual at an assumed ~4% annualized rate on the ~$264.6k cash balance (~$29 increment, rounded to $848)."
   },
   "hedge_analysis": [
     {
       "cluster": "Precious-metals cluster (IGLN+SSLV+KGC+NEM)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.203 },
-        { "ticker": "IEF", "correlation": 0.206 },
-        { "ticker": "TLT", "correlation": 0.125 },
-        { "ticker": "AGG", "correlation": 0.231 },
-        { "ticker": "EFA", "correlation": 0.509 },
-        { "ticker": "VWO", "correlation": 0.513 },
-        { "ticker": "DBC", "correlation": 0.142 },
-        { "ticker": "GSG", "correlation": 0.006 }
+        { "ticker": "SHY", "correlation": 0.1907 },
+        { "ticker": "IEF", "correlation": 0.1801 },
+        { "ticker": "TLT", "correlation": 0.0846 },
+        { "ticker": "AGG", "correlation": 0.1945 },
+        { "ticker": "EFA", "correlation": 0.4325 },
+        { "ticker": "VWO", "correlation": 0.4445 },
+        { "ticker": "DBC", "correlation": 0.1840 },
+        { "ticker": "GSG", "correlation": 0.0529 }
       ],
-      "winner": "TLT (already held -- GSG is numerically lowest at +0.006 but is already staged, unfilled, as the AI/tech cluster hedge, so not double-booked here)"
+      "winner": "TLT (already held -- GSG is numerically lowest at +0.0529 but reserved this run as the AI/tech cluster hedge, so not double-booked here)"
     },
     {
       "cluster": "Materials & mining satellites (CCJ+FCX+REMX)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.195 },
-        { "ticker": "IEF", "correlation": 0.227 },
-        { "ticker": "TLT", "correlation": 0.176 },
-        { "ticker": "AGG", "correlation": 0.291 },
-        { "ticker": "EFA", "correlation": 0.640 },
-        { "ticker": "VWO", "correlation": 0.702 },
-        { "ticker": "DBC", "correlation": 0.025 },
-        { "ticker": "GSG", "correlation": -0.091 }
+        { "ticker": "SHY", "correlation": 0.1687 },
+        { "ticker": "IEF", "correlation": 0.2062 },
+        { "ticker": "TLT", "correlation": 0.1651 },
+        { "ticker": "AGG", "correlation": 0.2679 },
+        { "ticker": "EFA", "correlation": 0.6041 },
+        { "ticker": "VWO", "correlation": 0.6786 },
+        { "ticker": "DBC", "correlation": 0.0148 },
+        { "ticker": "GSG", "correlation": -0.0947 }
       ],
-      "winner": "DBC (already held via the combined 1,304-share position -- GSG is numerically lowest at -0.091 but already reserved for the AI/tech cluster)"
+      "winner": "DBC (already held via the combined 1,304-share position -- GSG is numerically lowest at -0.0947 but reserved for the AI/tech cluster)"
     },
     {
       "cluster": "AI/tech capex cluster (CRWV+GEV+GOOG)",
       "candidates": [
-        { "ticker": "SHY", "correlation": 0.011 },
-        { "ticker": "IEF", "correlation": 0.067 },
-        { "ticker": "TLT", "correlation": 0.061 },
-        { "ticker": "AGG", "correlation": 0.132 },
-        { "ticker": "EFA", "correlation": 0.514 },
-        { "ticker": "VWO", "correlation": 0.585 },
-        { "ticker": "DBC", "correlation": -0.070 },
-        { "ticker": "GSG", "correlation": -0.117 }
+        { "ticker": "SHY", "correlation": -0.0031 },
+        { "ticker": "IEF", "correlation": 0.0391 },
+        { "ticker": "TLT", "correlation": 0.0436 },
+        { "ticker": "AGG", "correlation": 0.1015 },
+        { "ticker": "EFA", "correlation": 0.4709 },
+        { "ticker": "VWO", "correlation": 0.5442 },
+        { "ticker": "DBC", "correlation": -0.0410 },
+        { "ticker": "GSG", "correlation": -0.0839 }
       ],
-      "winner": "GSG (staged, instruction 101 -- best of 8 candidates and the most negative of all 24 tests run this run, the only negative reading in this cluster)"
+      "winner": "GSG (staged, instruction 101, now marketable -- best of 8 candidates and the most negative of all 24 tests run this run; unlike the other 2 clusters, GSG is both numerically best AND not needed elsewhere for this cluster)"
     }
   ],
   "daily_pnl": {
-    "as_of": "2026-09-23",
+    "as_of": "2026-09-24",
     "movers": [
-      { "label": "TTWO", "dollar_change": 248.81, "pct_change": 0.676 },
-      { "label": "CRWV", "dollar_change": 138.00, "pct_change": 1.061 },
-      { "label": "GEV", "dollar_change": 34.40, "pct_change": 0.181 },
-      { "label": "LLY", "dollar_change": 27.70, "pct_change": 0.237 },
-      { "label": "TLT", "dollar_change": 12.09, "pct_change": 0.159 },
-      { "label": "KGC", "dollar_change": -63.25, "pct_change": -0.801 },
-      { "label": "FCX", "dollar_change": -37.60, "pct_change": -0.538 },
-      { "label": "NEM", "dollar_change": -29.14, "pct_change": -0.739 },
-      { "label": "MPC", "dollar_change": -16.32, "pct_change": -0.698 },
-      { "label": "DBC", "dollar_change": -0.0018, "pct_change": 0.000 }
+      { "label": "TTWO", "dollar_change": 32.22, "pct_change": 0.087 },
+      { "label": "MPC", "dollar_change": 3.72, "pct_change": 0.160 },
+      { "label": "GOOG", "dollar_change": 0.84, "pct_change": 0.042 },
+      { "label": "DBC", "dollar_change": 0.0014, "pct_change": 0.000 },
+      { "label": "REMX", "dollar_change": 0.0000, "pct_change": 0.000 },
+      { "label": "TLT", "dollar_change": -22.32, "pct_change": -0.298 },
+      { "label": "FCX", "dollar_change": -40.42, "pct_change": -0.592 },
+      { "label": "KGC", "dollar_change": -46.75, "pct_change": -0.615 },
+      { "label": "CRWV", "dollar_change": -157.50, "pct_change": -1.208 },
+      { "label": "GEV", "dollar_change": -176.60, "pct_change": -0.928 }
     ],
-    "note": "DBC's daily P&L reads a near-zero, technically negative -$0.0018 -- consistent with the recurring data-freshness artifact noted in prior runs for ETC/ETF-style positions (IGLN, REMX, SSLV also read effectively $0.00 today, likely the same artifact). Only 9 of 15 holdings show clearly real nonzero movement (CCJ ~0 excluded, TTWO/CRWV/GEV/LLY/TLT gainers, KGC/FCX/NEM/MPC losers); DBC fills the 5th loser slot at its literal near-zero value since no other holding had genuine negative movement large enough to compete."
+    "note": "DBC and REMX's daily P&L read near-zero (technically +$0.0014 and +$0.00001) -- consistent with the recurring data-freshness artifact noted in prior runs for ETC/ETF-style positions (IGLN, SSLV also read effectively $0.00 today, likely the same artifact). Only 8 of 15 holdings show clearly real nonzero movement (CCJ/LLY/NEM near-zero, excluded); DBC and REMX fill the 4th/5th gainer slots at their literal near-zero values since no other holding had genuine positive movement to compete. This run's aggregate daily_pnl (-$427.66 summed) does not reconcile against the official 1D NAV change (-$0.66 per get_pa_performance_all_periods) -- see the data-quality item above."
   },
   "staged_instructions": [
     {
       "id": "100",
-      "description": "BUY 955 VWRA @ $192.00 limit, GTC -- global-core leg of the SPY5/SPYL rotation, unchanged since 09-20; today's live price ($194.96) remains above the limit so the order will not fill immediately",
+      "description": "BUY 955 VWRA @ $192.00 limit, GTC -- global-core leg of the SPY5/SPYL rotation, unchanged since 09-20; today's live price ($193.62) remains above the limit so the order will not fill immediately. Do not resize upward without re-checking the $50k tail-hedge reserve headroom (see risk-flag item above).",
       "created_at": "2026-09-20T23:20:36Z",
       "status": "pending_review"
     },
     {
       "id": "101",
-      "description": "BUY 212 GSG @ $36.50 limit, GTC -- hedge for the AI/tech capex cluster (CRWV+GEV+GOOG), reaffirmed as the single best-tested candidate across all 3 clusters and all 24 tests run this run (-0.117 correlation); today's live price ($35.63) remains below the limit so the order is currently marketable",
+      "description": "BUY 212 GSG @ $36.50 limit, GTC -- hedge for the AI/tech capex cluster (CRWV+GEV+GOOG), reaffirmed as the single best-tested candidate across all 3 clusters and all 24 tests run this run (-0.0839 correlation); today's live price ($36.15) is below the limit so the order is currently marketable.",
       "created_at": "2026-09-20T23:30:24Z",
       "status": "pending_review"
     }
