@@ -8,9 +8,9 @@
     "call_price": 483.49,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 513.83,
-    "return_since_call_pct": 6.275
+    "last_checked": "2026-10-02",
+    "last_price": 515.68,
+    "return_since_call_pct": 6.658
   },
   {
     "id": "scout-VKTX-2026-08-31",
@@ -21,9 +21,9 @@
     "call_price": 32.42,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 32.87,
-    "return_since_call_pct": 1.388
+    "last_checked": "2026-10-02",
+    "last_price": 30.9,
+    "return_since_call_pct": -4.688
   },
   {
     "id": "scout-GPCR-2026-08-31",
@@ -34,9 +34,9 @@
     "call_price": 45.86,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 31.27,
-    "return_since_call_pct": -31.814
+    "last_checked": "2026-10-02",
+    "last_price": 28.98,
+    "return_since_call_pct": -36.808
   },
   {
     "id": "momentum-TECH-2026-08-31",
@@ -47,9 +47,9 @@
     "call_price": 72.31,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 72.47,
-    "return_since_call_pct": 0.221
+    "last_checked": "2026-10-02",
+    "last_price": 72.4,
+    "return_since_call_pct": 0.124
   },
   {
     "id": "momentum-IQV-2026-08-31",
@@ -60,9 +60,9 @@
     "call_price": 258.33,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 268.85,
-    "return_since_call_pct": 4.072
+    "last_checked": "2026-10-02",
+    "last_price": 260.72,
+    "return_since_call_pct": 0.925
   },
   {
     "id": "momentum-EXPE-2026-08-31",
@@ -73,9 +73,9 @@
     "call_price": 319.47,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 263.36,
-    "return_since_call_pct": -17.563
+    "last_checked": "2026-10-02",
+    "last_price": 262.77,
+    "return_since_call_pct": -17.748
   },
   {
     "id": "momentum-GPC-2026-08-31",
@@ -86,9 +86,9 @@
     "call_price": 136.39,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 125.74,
-    "return_since_call_pct": -7.808
+    "last_checked": "2026-10-02",
+    "last_price": 125.12,
+    "return_since_call_pct": -8.263
   },
   {
     "id": "momentum-ABNB-2026-08-31",
@@ -99,9 +99,9 @@
     "call_price": 183.22,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 160.65,
-    "return_since_call_pct": -12.319
+    "last_checked": "2026-10-02",
+    "last_price": 162.99,
+    "return_since_call_pct": -11.041
   },
   {
     "id": "momentum-WDAY-2026-08-31",
@@ -112,9 +112,9 @@
     "call_price": 198.64,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 190.42,
-    "return_since_call_pct": -4.138
+    "last_checked": "2026-10-02",
+    "last_price": 186.75,
+    "return_since_call_pct": -5.986
   },
   {
     "id": "momentum-WTW-2026-08-31",
@@ -125,9 +125,9 @@
     "call_price": 338.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 288.23,
-    "return_since_call_pct": -14.841
+    "last_checked": "2026-10-02",
+    "last_price": 291.6,
+    "return_since_call_pct": -13.845
   },
   {
     "id": "momentum-PANW-2026-08-31",
@@ -138,9 +138,9 @@
     "call_price": 377.33,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 401.99,
-    "return_since_call_pct": 6.535
+    "last_checked": "2026-10-02",
+    "last_price": 397.86,
+    "return_since_call_pct": 5.441
   },
   {
     "id": "momentum-PLTR-2026-08-31",
@@ -151,9 +151,9 @@
     "call_price": 186.28,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 187.96,
-    "return_since_call_pct": 0.902
+    "last_checked": "2026-10-02",
+    "last_price": 190.91,
+    "return_since_call_pct": 2.486
   },
   {
     "id": "momentum-TGT-2026-08-31",
@@ -164,9 +164,9 @@
     "call_price": 161.68,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 156.69,
-    "return_since_call_pct": -3.086
+    "last_checked": "2026-10-02",
+    "last_price": 156.7,
+    "return_since_call_pct": -3.08
   },
   {
     "id": "momentum-TMO-2026-08-31",
@@ -177,9 +177,9 @@
     "call_price": 614.72,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 675.05,
-    "return_since_call_pct": 9.814
+    "last_checked": "2026-10-02",
+    "last_price": 652.51,
+    "return_since_call_pct": 6.148
   },
   {
     "id": "momentum-BDX-2026-08-31",
@@ -190,9 +190,9 @@
     "call_price": 188.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 179.0,
-    "return_since_call_pct": -4.974
+    "last_checked": "2026-10-02",
+    "last_price": 178.07,
+    "return_since_call_pct": -5.468
   },
   {
     "id": "momentum-MRK-2026-08-31",
@@ -203,9 +203,9 @@
     "call_price": 147.91,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 145.0,
-    "return_since_call_pct": -1.967
+    "last_checked": "2026-10-02",
+    "last_price": 143.81,
+    "return_since_call_pct": -2.772
   },
   {
     "id": "momentum-PAYX-2026-08-31",
@@ -216,9 +216,9 @@
     "call_price": 126.88,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 98.42,
-    "return_since_call_pct": -22.431
+    "last_checked": "2026-10-02",
+    "last_price": 100.84,
+    "return_since_call_pct": -20.523
   },
   {
     "id": "momentum-LH-2026-08-31",
@@ -229,9 +229,9 @@
     "call_price": 333.64,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 308.11,
-    "return_since_call_pct": -7.652
+    "last_checked": "2026-10-02",
+    "last_price": 304.6,
+    "return_since_call_pct": -8.704
   },
   {
     "id": "momentum-REGN-2026-08-31",
@@ -242,9 +242,9 @@
     "call_price": 797.04,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 758.27,
-    "return_since_call_pct": -4.864
+    "last_checked": "2026-10-02",
+    "last_price": 734.81,
+    "return_since_call_pct": -7.808
   },
   {
     "id": "momentum-AMGN-2026-08-31",
@@ -255,9 +255,9 @@
     "call_price": 430.88,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 420.0,
-    "return_since_call_pct": -2.525
+    "last_checked": "2026-10-02",
+    "last_price": 407.27,
+    "return_since_call_pct": -5.479
   },
   {
     "id": "momentum-AJG-2026-08-31",
@@ -268,9 +268,9 @@
     "call_price": 262.38,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 228.11,
-    "return_since_call_pct": -13.061
+    "last_checked": "2026-10-02",
+    "last_price": 231.82,
+    "return_since_call_pct": -11.647
   },
   {
     "id": "momentum-BRO-2026-08-31",
@@ -281,9 +281,9 @@
     "call_price": 72.17,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 60.9,
-    "return_since_call_pct": -15.616
+    "last_checked": "2026-10-02",
+    "last_price": 61.77,
+    "return_since_call_pct": -14.41
   },
   {
     "id": "momentum-VRTX-2026-08-31",
@@ -294,9 +294,9 @@
     "call_price": 542.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 522.81,
-    "return_since_call_pct": -3.582
+    "last_checked": "2026-10-02",
+    "last_price": 506.74,
+    "return_since_call_pct": -6.545
   },
   {
     "id": "momentum-ABT-2026-08-31",
@@ -307,9 +307,9 @@
     "call_price": 110.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 99.16,
-    "return_since_call_pct": -9.904
+    "last_checked": "2026-10-02",
+    "last_price": 97.11,
+    "return_since_call_pct": -11.766
   },
   {
     "id": "momentum-JKHY-2026-08-31",
@@ -320,9 +320,9 @@
     "call_price": 167.7,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 143.24,
-    "return_since_call_pct": -14.586
+    "last_checked": "2026-10-02",
+    "last_price": 143.84,
+    "return_since_call_pct": -14.228
   },
   {
     "id": "momentum-ADP-2026-08-31",
@@ -333,9 +333,9 @@
     "call_price": 286.26,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 258.06,
-    "return_since_call_pct": -9.851
+    "last_checked": "2026-10-02",
+    "last_price": 263.96,
+    "return_since_call_pct": -7.79
   },
   {
     "id": "momentum-NOW-2026-08-31",
@@ -346,9 +346,9 @@
     "call_price": 147.43,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 133.32,
-    "return_since_call_pct": -9.571
+    "last_checked": "2026-10-02",
+    "last_price": 138.0,
+    "return_since_call_pct": -6.396
   },
   {
     "id": "momentum-ALL-2026-08-31",
@@ -359,9 +359,9 @@
     "call_price": 258.57,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 221.86,
-    "return_since_call_pct": -14.197
+    "last_checked": "2026-10-02",
+    "last_price": 224.41,
+    "return_since_call_pct": -13.211
   },
   {
     "id": "momentum-J-2026-08-31",
@@ -372,9 +372,9 @@
     "call_price": 150.89,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 135.27,
-    "return_since_call_pct": -10.352
+    "last_checked": "2026-10-02",
+    "last_price": 139.79,
+    "return_since_call_pct": -7.356
   },
   {
     "id": "momentum-DGX-2026-08-31",
@@ -385,9 +385,9 @@
     "call_price": 240.79,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 233.07,
-    "return_since_call_pct": -3.206
+    "last_checked": "2026-10-02",
+    "last_price": 231.09,
+    "return_since_call_pct": -4.028
   },
   {
     "id": "momentum-AMP-2026-08-31",
@@ -398,9 +398,9 @@
     "call_price": 555.42,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 492.35,
-    "return_since_call_pct": -11.355
+    "last_checked": "2026-10-02",
+    "last_price": 494.82,
+    "return_since_call_pct": -10.911
   },
   {
     "id": "momentum-DXCM-2026-08-31",
@@ -411,9 +411,9 @@
     "call_price": 90.26,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 86.29,
-    "return_since_call_pct": -4.398
+    "last_checked": "2026-10-02",
+    "last_price": 86.23,
+    "return_since_call_pct": -4.465
   },
   {
     "id": "momentum-SCHW-2026-08-31",
@@ -424,9 +424,9 @@
     "call_price": 110.07,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 97.74,
-    "return_since_call_pct": -11.202
+    "last_checked": "2026-10-02",
+    "last_price": 98.37,
+    "return_since_call_pct": -10.63
   },
   {
     "id": "momentum-RJF-2026-08-31",
@@ -437,9 +437,9 @@
     "call_price": 178.85,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 157.48,
-    "return_since_call_pct": -11.949
+    "last_checked": "2026-10-02",
+    "last_price": 159.76,
+    "return_since_call_pct": -10.674
   },
   {
     "id": "momentum-STT-2026-08-31",
@@ -450,9 +450,9 @@
     "call_price": 192.15,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 173.67,
-    "return_since_call_pct": -9.617
+    "last_checked": "2026-10-02",
+    "last_price": 174.62,
+    "return_since_call_pct": -9.123
   },
   {
     "id": "momentum-V-2026-08-31",
@@ -463,9 +463,9 @@
     "call_price": 380.83,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 359.44,
-    "return_since_call_pct": -5.617
+    "last_checked": "2026-10-02",
+    "last_price": 359.85,
+    "return_since_call_pct": -5.509
   },
   {
     "id": "momentum-BMY-2026-08-31",
@@ -476,9 +476,9 @@
     "call_price": 66.59,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 62.4,
-    "return_since_call_pct": -6.292
+    "last_checked": "2026-10-02",
+    "last_price": 61.05,
+    "return_since_call_pct": -8.32
   },
   {
     "id": "momentum-IVZ-2026-08-31",
@@ -489,9 +489,9 @@
     "call_price": 32.64,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 30.16,
-    "return_since_call_pct": -7.598
+    "last_checked": "2026-10-02",
+    "last_price": 30.42,
+    "return_since_call_pct": -6.801
   },
   {
     "id": "momentum-AMCR-2026-08-31",
@@ -502,9 +502,9 @@
     "call_price": 46.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.85,
-    "return_since_call_pct": -9.121
+    "last_checked": "2026-10-02",
+    "last_price": 42.0,
+    "return_since_call_pct": -8.795
   },
   {
     "id": "momentum-BX-2026-08-31",
@@ -515,9 +515,9 @@
     "call_price": 142.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 112.8,
-    "return_since_call_pct": -20.597
+    "last_checked": "2026-10-02",
+    "last_price": 112.24,
+    "return_since_call_pct": -20.991
   },
   {
     "id": "momentum-CRWD-2026-08-31",
@@ -528,9 +528,9 @@
     "call_price": 227.12,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 266.7,
-    "return_since_call_pct": 17.427
+    "last_checked": "2026-10-02",
+    "last_price": 267.25,
+    "return_since_call_pct": 17.669
   },
   {
     "id": "momentum-IT-2026-08-31",
@@ -541,9 +541,9 @@
     "call_price": 198.48,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 186.54,
-    "return_since_call_pct": -6.016
+    "last_checked": "2026-10-02",
+    "last_price": 192.8,
+    "return_since_call_pct": -2.862
   },
   {
     "id": "momentum-DHR-2026-08-31",
@@ -554,9 +554,9 @@
     "call_price": 213.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 221.55,
-    "return_since_call_pct": 3.615
+    "last_checked": "2026-10-02",
+    "last_price": 211.76,
+    "return_since_call_pct": -0.963
   },
   {
     "id": "momentum-VLTO-2026-08-31",
@@ -567,9 +567,9 @@
     "call_price": 99.02,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 94.32,
-    "return_since_call_pct": -4.747
+    "last_checked": "2026-10-02",
+    "last_price": 94.6,
+    "return_since_call_pct": -4.464
   },
   {
     "id": "momentum-MCK-2026-08-31",
@@ -580,9 +580,9 @@
     "call_price": 885.18,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 853.81,
-    "return_since_call_pct": -3.544
+    "last_checked": "2026-10-02",
+    "last_price": 898.82,
+    "return_since_call_pct": 1.541
   },
   {
     "id": "momentum-MSFT-2026-08-31",
@@ -593,9 +593,9 @@
     "call_price": 511.4,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 513.83,
-    "return_since_call_pct": 0.475
+    "last_checked": "2026-10-02",
+    "last_price": 515.68,
+    "return_since_call_pct": 0.837
   },
   {
     "id": "momentum-BR-2026-08-31",
@@ -606,9 +606,9 @@
     "call_price": 182.58,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 161.1,
-    "return_since_call_pct": -11.765
+    "last_checked": "2026-10-02",
+    "last_price": 161.15,
+    "return_since_call_pct": -11.737
   },
   {
     "id": "momentum-GPN-2026-08-31",
@@ -619,9 +619,9 @@
     "call_price": 90.16,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 81.67,
-    "return_since_call_pct": -9.417
+    "last_checked": "2026-10-02",
+    "last_price": 80.29,
+    "return_since_call_pct": -10.947
   },
   {
     "id": "momentum-BALL-2026-08-31",
@@ -632,9 +632,9 @@
     "call_price": 63.15,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 56.03,
-    "return_since_call_pct": -11.275
+    "last_checked": "2026-10-02",
+    "last_price": 56.5,
+    "return_since_call_pct": -10.53
   },
   {
     "id": "momentum-MSI-2026-08-31",
@@ -645,9 +645,9 @@
     "call_price": 484.53,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 445.97,
-    "return_since_call_pct": -7.958
+    "last_checked": "2026-10-02",
+    "last_price": 448.03,
+    "return_since_call_pct": -7.533
   },
   {
     "id": "momentum-ABBV-2026-08-31",
@@ -658,9 +658,9 @@
     "call_price": 256.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 261.59,
-    "return_since_call_pct": 2.184
+    "last_checked": "2026-10-02",
+    "last_price": 260.47,
+    "return_since_call_pct": 1.746
   },
   {
     "id": "momentum-HSIC-2026-08-31",
@@ -671,9 +671,9 @@
     "call_price": 89.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 83.97,
-    "return_since_call_pct": -5.905
+    "last_checked": "2026-10-02",
+    "last_price": 84.93,
+    "return_since_call_pct": -4.83
   },
   {
     "id": "momentum-IFF-2026-08-31",
@@ -684,9 +684,9 @@
     "call_price": 86.5,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 83.48,
-    "return_since_call_pct": -3.491
+    "last_checked": "2026-10-02",
+    "last_price": 83.12,
+    "return_since_call_pct": -3.908
   },
   {
     "id": "momentum-ZBH-2026-08-31",
@@ -697,9 +697,9 @@
     "call_price": 99.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.83,
-    "return_since_call_pct": -11.01
+    "last_checked": "2026-10-02",
+    "last_price": 88.06,
+    "return_since_call_pct": -11.781
   },
   {
     "id": "momentum-CBRE-2026-08-31",
@@ -710,9 +710,9 @@
     "call_price": 147.68,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 128.47,
-    "return_since_call_pct": -13.008
+    "last_checked": "2026-10-02",
+    "last_price": 130.53,
+    "return_since_call_pct": -11.613
   },
   {
     "id": "momentum-NEM-2026-08-31",
@@ -723,9 +723,9 @@
     "call_price": 125.86,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 115.75,
-    "return_since_call_pct": -8.033
+    "last_checked": "2026-10-02",
+    "last_price": 115.19,
+    "return_since_call_pct": -8.478
   },
   {
     "id": "momentum-HPQ-2026-08-31",
@@ -736,9 +736,9 @@
     "call_price": 30.4,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 31.28,
-    "return_since_call_pct": 2.895
+    "last_checked": "2026-10-02",
+    "last_price": 32.15,
+    "return_since_call_pct": 5.757
   },
   {
     "id": "momentum-GEN-2026-08-31",
@@ -749,9 +749,9 @@
     "call_price": 30.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 21.96,
-    "return_since_call_pct": -28.748
+    "last_checked": "2026-10-02",
+    "last_price": 22.34,
+    "return_since_call_pct": -27.515
   },
   {
     "id": "momentum-FTNT-2026-08-31",
@@ -762,9 +762,9 @@
     "call_price": 169.91,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 178.76,
-    "return_since_call_pct": 5.209
+    "last_checked": "2026-10-02",
+    "last_price": 178.53,
+    "return_since_call_pct": 5.073
   },
   {
     "id": "momentum-CTAS-2026-08-31",
@@ -775,9 +775,9 @@
     "call_price": 202.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 195.06,
-    "return_since_call_pct": -3.464
+    "last_checked": "2026-10-02",
+    "last_price": 195.6,
+    "return_since_call_pct": -3.197
   },
   {
     "id": "momentum-GDDY-2026-08-31",
@@ -788,9 +788,9 @@
     "call_price": 97.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 95.9,
-    "return_since_call_pct": -1.185
+    "last_checked": "2026-10-02",
+    "last_price": 96.98,
+    "return_since_call_pct": -0.072
   },
   {
     "id": "momentum-OMC-2026-08-31",
@@ -801,9 +801,9 @@
     "call_price": 87.65,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 73.63,
-    "return_since_call_pct": -15.995
+    "last_checked": "2026-10-02",
+    "last_price": 74.7,
+    "return_since_call_pct": -14.775
   },
   {
     "id": "momentum-DG-2026-08-31",
@@ -814,9 +814,9 @@
     "call_price": 126.15,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 119.58,
-    "return_since_call_pct": -5.208
+    "last_checked": "2026-10-02",
+    "last_price": 118.93,
+    "return_since_call_pct": -5.723
   },
   {
     "id": "momentum-UNP-2026-08-31",
@@ -827,9 +827,9 @@
     "call_price": 301.68,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 272.13,
-    "return_since_call_pct": -9.795
+    "last_checked": "2026-10-02",
+    "last_price": 272.42,
+    "return_since_call_pct": -9.699
   },
   {
     "id": "momentum-COP-2026-08-31",
@@ -840,9 +840,9 @@
     "call_price": 132.41,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 125.11,
-    "return_since_call_pct": -5.513
+    "last_checked": "2026-10-02",
+    "last_price": 129.28,
+    "return_since_call_pct": -2.364
   },
   {
     "id": "momentum-AWK-2026-08-31",
@@ -853,9 +853,9 @@
     "call_price": 138.75,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 129.47,
-    "return_since_call_pct": -6.688
+    "last_checked": "2026-10-02",
+    "last_price": 127.86,
+    "return_since_call_pct": -7.849
   },
   {
     "id": "momentum-ADBE-2026-08-31",
@@ -866,9 +866,9 @@
     "call_price": 291.22,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 238.89,
-    "return_since_call_pct": -17.969
+    "last_checked": "2026-10-02",
+    "last_price": 241.28,
+    "return_since_call_pct": -17.149
   },
   {
     "id": "momentum-APA-2026-08-31",
@@ -879,9 +879,9 @@
     "call_price": 42.9,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.54,
-    "return_since_call_pct": -3.17
+    "last_checked": "2026-10-02",
+    "last_price": 43.33,
+    "return_since_call_pct": 1.002
   },
   {
     "id": "momentum-KO-2026-08-31",
@@ -892,9 +892,9 @@
     "call_price": 89.09,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 86.04,
-    "return_since_call_pct": -3.424
+    "last_checked": "2026-10-02",
+    "last_price": 86.25,
+    "return_since_call_pct": -3.188
   },
   {
     "id": "momentum-NSC-2026-08-31",
@@ -905,9 +905,9 @@
     "call_price": 344.69,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 309.0,
-    "return_since_call_pct": -10.354
+    "last_checked": "2026-10-02",
+    "last_price": 310.26,
+    "return_since_call_pct": -9.989
   },
   {
     "id": "momentum-AVY-2026-08-31",
@@ -918,9 +918,9 @@
     "call_price": 176.2,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 170.67,
-    "return_since_call_pct": -3.138
+    "last_checked": "2026-10-02",
+    "last_price": 171.62,
+    "return_since_call_pct": -2.599
   },
   {
     "id": "momentum-ADSK-2026-08-31",
@@ -931,9 +931,9 @@
     "call_price": 259.3,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 209.0,
-    "return_since_call_pct": -19.398
+    "last_checked": "2026-10-02",
+    "last_price": 211.31,
+    "return_since_call_pct": -18.508
   },
   {
     "id": "momentum-MCO-2026-08-31",
@@ -944,9 +944,9 @@
     "call_price": 504.54,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 454.13,
-    "return_since_call_pct": -9.991
+    "last_checked": "2026-10-02",
+    "last_price": 447.36,
+    "return_since_call_pct": -11.333
   },
   {
     "id": "momentum-PTC-2026-08-31",
@@ -957,9 +957,9 @@
     "call_price": 157.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 140.3,
-    "return_since_call_pct": -10.847
+    "last_checked": "2026-10-02",
+    "last_price": 146.47,
+    "return_since_call_pct": -6.926
   },
   {
     "id": "momentum-NWS-2026-08-31",
@@ -970,9 +970,9 @@
     "call_price": 34.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 31.72,
-    "return_since_call_pct": -7.951
+    "last_checked": "2026-10-02",
+    "last_price": 31.45,
+    "return_since_call_pct": -8.735
   },
   {
     "id": "momentum-TRGP-2026-08-31",
@@ -983,9 +983,9 @@
     "call_price": 290.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 270.31,
-    "return_since_call_pct": -7.052
+    "last_checked": "2026-10-02",
+    "last_price": 279.31,
+    "return_since_call_pct": -3.958
   },
   {
     "id": "momentum-OKE-2026-08-31",
@@ -996,9 +996,9 @@
     "call_price": 95.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 85.27,
-    "return_since_call_pct": -10.468
+    "last_checked": "2026-10-02",
+    "last_price": 87.16,
+    "return_since_call_pct": -8.484
   },
   {
     "id": "momentum-PFE-2026-08-31",
@@ -1009,9 +1009,9 @@
     "call_price": 28.33,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 28.49,
-    "return_since_call_pct": 0.565
+    "last_checked": "2026-10-02",
+    "last_price": 28.13,
+    "return_since_call_pct": -0.706
   },
   {
     "id": "momentum-ANET-2026-08-31",
@@ -1022,9 +1022,9 @@
     "call_price": 194.81,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 207.34,
-    "return_since_call_pct": 6.432
+    "last_checked": "2026-10-02",
+    "last_price": 206.36,
+    "return_since_call_pct": 5.929
   },
   {
     "id": "momentum-NDSN-2026-08-31",
@@ -1035,9 +1035,9 @@
     "call_price": 322.53,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 327.85,
-    "return_since_call_pct": 1.649
+    "last_checked": "2026-10-02",
+    "last_price": 329.02,
+    "return_since_call_pct": 2.012
   },
   {
     "id": "momentum-DE-2026-08-31",
@@ -1048,9 +1048,9 @@
     "call_price": 653.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 671.55,
-    "return_since_call_pct": 2.831
+    "last_checked": "2026-10-02",
+    "last_price": 667.26,
+    "return_since_call_pct": 2.174
   },
   {
     "id": "momentum-A-2026-08-31",
@@ -1061,9 +1061,9 @@
     "call_price": 152.35,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 172.31,
-    "return_since_call_pct": 13.101
+    "last_checked": "2026-10-02",
+    "last_price": 166.68,
+    "return_since_call_pct": 9.406
   },
   {
     "id": "momentum-DELL-2026-08-31",
@@ -1074,9 +1074,9 @@
     "call_price": 464.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 549.96,
-    "return_since_call_pct": 18.431
+    "last_checked": "2026-10-02",
+    "last_price": 545.4,
+    "return_since_call_pct": 17.449
   },
   {
     "id": "momentum-PM-2026-08-31",
@@ -1087,9 +1087,9 @@
     "call_price": 189.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 191.07,
-    "return_since_call_pct": 0.659
+    "last_checked": "2026-10-02",
+    "last_price": 188.18,
+    "return_since_call_pct": -0.864
   },
   {
     "id": "momentum-CDW-2026-08-31",
@@ -1100,9 +1100,9 @@
     "call_price": 150.38,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 128.16,
-    "return_since_call_pct": -14.776
+    "last_checked": "2026-10-02",
+    "last_price": 135.83,
+    "return_since_call_pct": -9.675
   },
   {
     "id": "momentum-CF-2026-08-31",
@@ -1113,9 +1113,9 @@
     "call_price": 127.74,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 114.99,
-    "return_since_call_pct": -9.981
+    "last_checked": "2026-10-02",
+    "last_price": 114.54,
+    "return_since_call_pct": -10.333
   },
   {
     "id": "momentum-KHC-2026-08-31",
@@ -1126,9 +1126,9 @@
     "call_price": 25.69,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 22.8,
-    "return_since_call_pct": -11.25
+    "last_checked": "2026-10-02",
+    "last_price": 22.46,
+    "return_since_call_pct": -12.573
   },
   {
     "id": "momentum-APD-2026-08-31",
@@ -1139,9 +1139,9 @@
     "call_price": 307.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 278.73,
-    "return_since_call_pct": -9.279
+    "last_checked": "2026-10-02",
+    "last_price": 273.33,
+    "return_since_call_pct": -11.037
   },
   {
     "id": "momentum-XOM-2026-08-31",
@@ -1152,9 +1152,9 @@
     "call_price": 160.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 161.16,
-    "return_since_call_pct": 0.574
+    "last_checked": "2026-10-02",
+    "last_price": 163.5,
+    "return_since_call_pct": 2.034
   },
   {
     "id": "momentum-WMB-2026-08-31",
@@ -1165,9 +1165,9 @@
     "call_price": 75.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 68.4,
-    "return_since_call_pct": -8.861
+    "last_checked": "2026-10-02",
+    "last_price": 69.22,
+    "return_since_call_pct": -7.768
   },
   {
     "id": "momentum-FCX-2026-08-31",
@@ -1178,9 +1178,9 @@
     "call_price": 75.62,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 70.35,
-    "return_since_call_pct": -6.969
+    "last_checked": "2026-10-02",
+    "last_price": 69.37,
+    "return_since_call_pct": -8.265
   },
   {
     "id": "scout-RBLX-2026-09-06",
@@ -1191,9 +1191,9 @@
     "call_price": 43.48,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 42.91,
-    "return_since_call_pct": -1.311
+    "last_checked": "2026-10-02",
+    "last_price": 43.1,
+    "return_since_call_pct": -0.874
   },
   {
     "id": "scout-U-2026-09-06",
@@ -1204,9 +1204,9 @@
     "call_price": 41.55,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.0,
-    "return_since_call_pct": -1.324
+    "last_checked": "2026-10-02",
+    "last_price": 43.88,
+    "return_since_call_pct": 5.608
   },
   {
     "id": "momentum-DELL-2026-09-07",
@@ -1217,9 +1217,9 @@
     "call_price": 524.14,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 549.96,
-    "return_since_call_pct": 4.926
+    "last_checked": "2026-10-02",
+    "last_price": 545.4,
+    "return_since_call_pct": 4.056
   },
   {
     "id": "momentum-MPC-2026-09-07",
@@ -1230,9 +1230,9 @@
     "call_price": 370.72,
     "acted_on": true,
     "status": "open",
-    "last_checked": "2026-10-01",
-    "last_price": 395.42,
-    "return_since_call_pct": 6.663,
+    "last_checked": "2026-10-02",
+    "last_price": 420.15,
+    "return_since_call_pct": 4.985,
     "entry_price": 400.2,
     "entry_date": "2026-09-14"
   },
@@ -1245,9 +1245,9 @@
     "call_price": 213.1,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 266.7,
-    "return_since_call_pct": 25.153
+    "last_checked": "2026-10-02",
+    "last_price": 267.25,
+    "return_since_call_pct": 25.411
   },
   {
     "id": "momentum-MRK-2026-09-07",
@@ -1258,9 +1258,9 @@
     "call_price": 150.33,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 145.0,
-    "return_since_call_pct": -3.546
+    "last_checked": "2026-10-02",
+    "last_price": 143.81,
+    "return_since_call_pct": -4.337
   },
   {
     "id": "momentum-CF-2026-09-07",
@@ -1271,9 +1271,9 @@
     "call_price": 133.35,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 114.99,
-    "return_since_call_pct": -13.768
+    "last_checked": "2026-10-02",
+    "last_price": 114.54,
+    "return_since_call_pct": -14.106
   },
   {
     "id": "momentum-AMGN-2026-09-07",
@@ -1284,9 +1284,9 @@
     "call_price": 437.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 420.0,
-    "return_since_call_pct": -3.941
+    "last_checked": "2026-10-02",
+    "last_price": 407.27,
+    "return_since_call_pct": -6.852
   },
   {
     "id": "momentum-RVTY-2026-09-07",
@@ -1297,9 +1297,9 @@
     "call_price": 130.22,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 152.89,
-    "return_since_call_pct": 17.409
+    "last_checked": "2026-10-02",
+    "last_price": 149.06,
+    "return_since_call_pct": 14.468
   },
   {
     "id": "momentum-DE-2026-09-07",
@@ -1310,9 +1310,9 @@
     "call_price": 693.53,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 671.55,
-    "return_since_call_pct": -3.169
+    "last_checked": "2026-10-02",
+    "last_price": 667.26,
+    "return_since_call_pct": -3.788
   },
   {
     "id": "momentum-INCY-2026-09-07",
@@ -1323,9 +1323,9 @@
     "call_price": 126.75,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 121.35,
-    "return_since_call_pct": -4.26
+    "last_checked": "2026-10-02",
+    "last_price": 117.14,
+    "return_since_call_pct": -7.582
   },
   {
     "id": "momentum-REGN-2026-09-07",
@@ -1336,9 +1336,9 @@
     "call_price": 827.72,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 758.27,
-    "return_since_call_pct": -8.391
+    "last_checked": "2026-10-02",
+    "last_price": 734.81,
+    "return_since_call_pct": -11.225
   },
   {
     "id": "momentum-BMY-2026-09-07",
@@ -1349,9 +1349,9 @@
     "call_price": 66.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 62.4,
-    "return_since_call_pct": -6.615
+    "last_checked": "2026-10-02",
+    "last_price": 61.05,
+    "return_since_call_pct": -8.635
   },
   {
     "id": "momentum-EXPE-2026-09-07",
@@ -1362,9 +1362,9 @@
     "call_price": 298.04,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 263.36,
-    "return_since_call_pct": -11.636
+    "last_checked": "2026-10-02",
+    "last_price": 262.77,
+    "return_since_call_pct": -11.834
   },
   {
     "id": "momentum-LH-2026-09-07",
@@ -1375,9 +1375,9 @@
     "call_price": 546.12,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 308.11,
-    "return_since_call_pct": -43.582
+    "last_checked": "2026-10-02",
+    "last_price": 304.6,
+    "return_since_call_pct": -44.225
   },
   {
     "id": "momentum-ANET-2026-09-07",
@@ -1388,9 +1388,9 @@
     "call_price": 193.78,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 207.34,
-    "return_since_call_pct": 6.998
+    "last_checked": "2026-10-02",
+    "last_price": 206.36,
+    "return_since_call_pct": 6.492
   },
   {
     "id": "momentum-TRV-2026-09-07",
@@ -1401,9 +1401,9 @@
     "call_price": 369.35,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 356.51,
-    "return_since_call_pct": -3.476
+    "last_checked": "2026-10-02",
+    "last_price": 361.64,
+    "return_since_call_pct": -2.087
   },
   {
     "id": "momentum-CPAY-2026-09-07",
@@ -1414,9 +1414,9 @@
     "call_price": 416.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 388.6,
-    "return_since_call_pct": -6.67
+    "last_checked": "2026-10-02",
+    "last_price": 389.73,
+    "return_since_call_pct": -6.398
   },
   {
     "id": "momentum-GILD-2026-09-07",
@@ -1427,9 +1427,9 @@
     "call_price": 151.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 149.05,
-    "return_since_call_pct": -1.291
+    "last_checked": "2026-10-02",
+    "last_price": 147.5,
+    "return_since_call_pct": -2.318
   },
   {
     "id": "momentum-DLTR-2026-09-07",
@@ -1440,9 +1440,9 @@
     "call_price": 131.42,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 114.02,
-    "return_since_call_pct": -13.24
+    "last_checked": "2026-10-02",
+    "last_price": 114.43,
+    "return_since_call_pct": -12.928
   },
   {
     "id": "momentum-DGX-2026-09-07",
@@ -1453,9 +1453,9 @@
     "call_price": 237.14,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 233.07,
-    "return_since_call_pct": -1.716
+    "last_checked": "2026-10-02",
+    "last_price": 231.09,
+    "return_since_call_pct": -2.551
   },
   {
     "id": "momentum-SOLV-2026-09-07",
@@ -1466,9 +1466,9 @@
     "call_price": 91.69,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.15,
-    "return_since_call_pct": -3.861
+    "last_checked": "2026-10-02",
+    "last_price": 87.77,
+    "return_since_call_pct": -4.275
   },
   {
     "id": "momentum-SWK-2026-09-07",
@@ -1479,9 +1479,9 @@
     "call_price": 97.36,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.59,
-    "return_since_call_pct": -9.008
+    "last_checked": "2026-10-02",
+    "last_price": 89.59,
+    "return_since_call_pct": -7.981
   },
   {
     "id": "scout-AVGO-2026-09-13",
@@ -1492,9 +1492,9 @@
     "call_price": 361.73,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 355.75,
-    "return_since_call_pct": -1.653
+    "last_checked": "2026-10-02",
+    "last_price": 346.96,
+    "return_since_call_pct": -4.083
   },
   {
     "id": "momentum-DELL-2026-09-14",
@@ -1505,9 +1505,9 @@
     "call_price": 539.55,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 549.96,
-    "return_since_call_pct": 1.929
+    "last_checked": "2026-10-02",
+    "last_price": 545.4,
+    "return_since_call_pct": 1.084
   },
   {
     "id": "momentum-HPE-2026-09-14",
@@ -1518,9 +1518,9 @@
     "call_price": 56.22,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 65.6,
-    "return_since_call_pct": 16.684
+    "last_checked": "2026-10-02",
+    "last_price": 65.55,
+    "return_since_call_pct": 16.596
   },
   {
     "id": "momentum-APA-2026-09-14",
@@ -1531,9 +1531,9 @@
     "call_price": 46.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.54,
-    "return_since_call_pct": -10.416
+    "last_checked": "2026-10-02",
+    "last_price": 43.33,
+    "return_since_call_pct": -6.556
   },
   {
     "id": "momentum-CRWD-2026-09-14",
@@ -1544,9 +1544,9 @@
     "call_price": 230.79,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 266.7,
-    "return_since_call_pct": 15.56
+    "last_checked": "2026-10-02",
+    "last_price": 267.25,
+    "return_since_call_pct": 15.798
   },
   {
     "id": "momentum-TGT-2026-09-14",
@@ -1557,9 +1557,9 @@
     "call_price": 157.57,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 156.69,
-    "return_since_call_pct": -0.558
+    "last_checked": "2026-10-02",
+    "last_price": 156.7,
+    "return_since_call_pct": -0.552
   },
   {
     "id": "momentum-MRK-2026-09-14",
@@ -1570,9 +1570,9 @@
     "call_price": 144.54,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 145.0,
-    "return_since_call_pct": 0.318
+    "last_checked": "2026-10-02",
+    "last_price": 143.81,
+    "return_since_call_pct": -0.505
   },
   {
     "id": "momentum-PANW-2026-09-14",
@@ -1583,9 +1583,9 @@
     "call_price": 366.32,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 401.99,
-    "return_since_call_pct": 9.737
+    "last_checked": "2026-10-02",
+    "last_price": 397.86,
+    "return_since_call_pct": 8.61
   },
   {
     "id": "momentum-CRL-2026-09-14",
@@ -1596,9 +1596,9 @@
     "call_price": 270.56,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 295.01,
-    "return_since_call_pct": 9.037
+    "last_checked": "2026-10-02",
+    "last_price": 286.83,
+    "return_since_call_pct": 6.013
   },
   {
     "id": "momentum-EXPD-2026-09-14",
@@ -1609,9 +1609,9 @@
     "call_price": 191.61,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 184.64,
-    "return_since_call_pct": -3.638
+    "last_checked": "2026-10-02",
+    "last_price": 187.74,
+    "return_since_call_pct": -2.02
   },
   {
     "id": "momentum-CF-2026-09-14",
@@ -1622,9 +1622,9 @@
     "call_price": 134.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 114.99,
-    "return_since_call_pct": -14.48
+    "last_checked": "2026-10-02",
+    "last_price": 114.54,
+    "return_since_call_pct": -14.815
   },
   {
     "id": "momentum-NTAP-2026-09-14",
@@ -1635,9 +1635,9 @@
     "call_price": 192.41,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 210.08,
-    "return_since_call_pct": 9.184
+    "last_checked": "2026-10-02",
+    "last_price": 215.05,
+    "return_since_call_pct": 11.767
   },
   {
     "id": "momentum-BBY-2026-09-14",
@@ -1648,9 +1648,9 @@
     "call_price": 139.12,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.24,
-    "return_since_call_pct": -36.573
+    "last_checked": "2026-10-02",
+    "last_price": 87.7,
+    "return_since_call_pct": -36.961
   },
   {
     "id": "momentum-DVN-2026-09-14",
@@ -1661,9 +1661,9 @@
     "call_price": 51.27,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 46.04,
-    "return_since_call_pct": -10.201
+    "last_checked": "2026-10-02",
+    "last_price": 47.16,
+    "return_since_call_pct": -8.016
   },
   {
     "id": "momentum-NEM-2026-09-14",
@@ -1674,9 +1674,9 @@
     "call_price": 122.17,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 115.75,
-    "return_since_call_pct": -5.255
+    "last_checked": "2026-10-02",
+    "last_price": 115.19,
+    "return_since_call_pct": -5.713
   },
   {
     "id": "momentum-XOM-2026-09-14",
@@ -1687,9 +1687,9 @@
     "call_price": 168.12,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 161.16,
-    "return_since_call_pct": -4.14
+    "last_checked": "2026-10-02",
+    "last_price": 163.5,
+    "return_since_call_pct": -2.748
   },
   {
     "id": "momentum-DE-2026-09-14",
@@ -1700,9 +1700,9 @@
     "call_price": 681.7,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 671.55,
-    "return_since_call_pct": -1.489
+    "last_checked": "2026-10-02",
+    "last_price": 667.26,
+    "return_since_call_pct": -2.118
   },
   {
     "id": "momentum-RVTY-2026-09-14",
@@ -1713,9 +1713,9 @@
     "call_price": 125.02,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 152.89,
-    "return_since_call_pct": 22.292
+    "last_checked": "2026-10-02",
+    "last_price": 149.06,
+    "return_since_call_pct": 19.229
   },
   {
     "id": "momentum-CVX-2026-09-14",
@@ -1726,9 +1726,9 @@
     "call_price": 216.19,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 203.0,
-    "return_since_call_pct": -6.101
+    "last_checked": "2026-10-02",
+    "last_price": 207.1,
+    "return_since_call_pct": -4.205
   },
   {
     "id": "momentum-TRV-2026-09-14",
@@ -1739,9 +1739,9 @@
     "call_price": 379.16,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 356.51,
-    "return_since_call_pct": -5.974
+    "last_checked": "2026-10-02",
+    "last_price": 361.64,
+    "return_since_call_pct": -4.621
   },
   {
     "id": "momentum-CPAY-2026-09-14",
@@ -1752,9 +1752,9 @@
     "call_price": 411.25,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 388.6,
-    "return_since_call_pct": -5.508
+    "last_checked": "2026-10-02",
+    "last_price": 389.73,
+    "return_since_call_pct": -5.233
   },
   {
     "id": "momentum-OXY-2026-09-14",
@@ -1765,9 +1765,9 @@
     "call_price": 62.74,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 55.41,
-    "return_since_call_pct": -11.683
+    "last_checked": "2026-10-02",
+    "last_price": 57.7,
+    "return_since_call_pct": -8.033
   },
   {
     "id": "momentum-REGN-2026-09-14",
@@ -1778,9 +1778,9 @@
     "call_price": 782.04,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 758.27,
-    "return_since_call_pct": -3.039
+    "last_checked": "2026-10-02",
+    "last_price": 734.81,
+    "return_since_call_pct": -6.039
   },
   {
     "id": "momentum-DGX-2026-09-14",
@@ -1791,9 +1791,9 @@
     "call_price": 236.59,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 233.07,
-    "return_since_call_pct": -1.488
+    "last_checked": "2026-10-02",
+    "last_price": 231.09,
+    "return_since_call_pct": -2.325
   },
   {
     "id": "momentum-COP-2026-09-14",
@@ -1804,9 +1804,9 @@
     "call_price": 92.7,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 125.11,
-    "return_since_call_pct": 34.962
+    "last_checked": "2026-10-02",
+    "last_price": 129.28,
+    "return_since_call_pct": 39.461
   },
   {
     "id": "momentum-GILD-2026-09-14",
@@ -1817,9 +1817,9 @@
     "call_price": 144.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 149.05,
-    "return_since_call_pct": 2.921
+    "last_checked": "2026-10-02",
+    "last_price": 147.5,
+    "return_since_call_pct": 1.851
   },
   {
     "id": "momentum-SOLV-2026-09-14",
@@ -1830,9 +1830,9 @@
     "call_price": 89.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.15,
-    "return_since_call_pct": -1.221
+    "last_checked": "2026-10-02",
+    "last_price": 87.77,
+    "return_since_call_pct": -1.647
   },
   {
     "id": "momentum-HPQ-2026-09-14",
@@ -1843,9 +1843,9 @@
     "call_price": 34.07,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 31.28,
-    "return_since_call_pct": -8.189
+    "last_checked": "2026-10-02",
+    "last_price": 32.15,
+    "return_since_call_pct": -5.635
   },
   {
     "id": "momentum-BDX-2026-09-14",
@@ -1856,9 +1856,9 @@
     "call_price": 180.69,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 179.0,
-    "return_since_call_pct": -0.935
+    "last_checked": "2026-10-02",
+    "last_price": 178.07,
+    "return_since_call_pct": -1.45
   },
   {
     "id": "scout-LEU-2026-09-20",
@@ -1869,9 +1869,9 @@
     "call_price": 145.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 141.7,
-    "return_since_call_pct": -2.431
+    "last_checked": "2026-10-02",
+    "last_price": 139.11,
+    "return_since_call_pct": -4.214
   },
   {
     "id": "scout-CEG-2026-09-20",
@@ -1882,9 +1882,9 @@
     "call_price": 254.71,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 262.79,
-    "return_since_call_pct": 3.172
+    "last_checked": "2026-10-02",
+    "last_price": 259.99,
+    "return_since_call_pct": 2.073
   },
   {
     "id": "scout-OKLO-2026-09-20",
@@ -1895,9 +1895,9 @@
     "call_price": 38.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 37.93,
-    "return_since_call_pct": -0.184
+    "last_checked": "2026-10-02",
+    "last_price": 36.36,
+    "return_since_call_pct": -4.316
   },
   {
     "id": "scout-CCJ-2026-09-20",
@@ -1908,9 +1908,9 @@
     "call_price": 91.62,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 87.91,
-    "return_since_call_pct": -4.049
+    "last_checked": "2026-10-02",
+    "last_price": 86.4,
+    "return_since_call_pct": -5.697
   },
   {
     "id": "momentum-META-2026-09-21",
@@ -1940,9 +1940,9 @@
     "call_price": 93.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.24,
-    "return_since_call_pct": -5.585
+    "last_checked": "2026-10-02",
+    "last_price": 87.7,
+    "return_since_call_pct": -6.163
   },
   {
     "id": "momentum-ULTA-2026-09-21",
@@ -1953,9 +1953,9 @@
     "call_price": 552.81,
     "acted_on": true,
     "status": "open",
-    "last_checked": "2026-10-01",
-    "last_price": 546.17,
-    "return_since_call_pct": -1.201,
+    "last_checked": "2026-10-02",
+    "last_price": 537.73,
+    "return_since_call_pct": -2.053,
     "entry_price": 549.0,
     "entry_date": "2026-09-29"
   },
@@ -1968,9 +1968,9 @@
     "call_price": 84.27,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 79.62,
-    "return_since_call_pct": -5.518
+    "last_checked": "2026-10-02",
+    "last_price": 79.52,
+    "return_since_call_pct": -5.637
   },
   {
     "id": "momentum-PSX-2026-09-21",
@@ -1981,9 +1981,9 @@
     "call_price": 261.75,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 255.31,
-    "return_since_call_pct": -2.46
+    "last_checked": "2026-10-02",
+    "last_price": 264.23,
+    "return_since_call_pct": 0.947
   },
   {
     "id": "momentum-COIN-2026-09-21",
@@ -1994,9 +1994,9 @@
     "call_price": 204.28,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 188.77,
-    "return_since_call_pct": -7.593
+    "last_checked": "2026-10-02",
+    "last_price": 192.9,
+    "return_since_call_pct": -5.571
   },
   {
     "id": "momentum-MET-2026-09-21",
@@ -2007,9 +2007,9 @@
     "call_price": 97.24,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 94.16,
-    "return_since_call_pct": -3.167
+    "last_checked": "2026-10-02",
+    "last_price": 94.35,
+    "return_since_call_pct": -2.972
   },
   {
     "id": "momentum-TRV-2026-09-21",
@@ -2020,9 +2020,9 @@
     "call_price": 375.86,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 356.51,
-    "return_since_call_pct": -5.148
+    "last_checked": "2026-10-02",
+    "last_price": 361.64,
+    "return_since_call_pct": -3.783
   },
   {
     "id": "momentum-A-2026-09-21",
@@ -2033,9 +2033,9 @@
     "call_price": 159.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 172.31,
-    "return_since_call_pct": 8.371
+    "last_checked": "2026-10-02",
+    "last_price": 166.68,
+    "return_since_call_pct": 4.83
   },
   {
     "id": "momentum-ABBV-2026-09-21",
@@ -2046,9 +2046,9 @@
     "call_price": 264.89,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 261.59,
-    "return_since_call_pct": -1.246
+    "last_checked": "2026-10-02",
+    "last_price": 260.47,
+    "return_since_call_pct": -1.669
   },
   {
     "id": "momentum-DGX-2026-09-21",
@@ -2059,9 +2059,9 @@
     "call_price": 247.27,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 233.07,
-    "return_since_call_pct": -5.743
+    "last_checked": "2026-10-02",
+    "last_price": 231.09,
+    "return_since_call_pct": -6.543
   },
   {
     "id": "momentum-DXCM-2026-09-21",
@@ -2072,9 +2072,9 @@
     "call_price": 88.83,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 86.29,
-    "return_since_call_pct": -2.859
+    "last_checked": "2026-10-02",
+    "last_price": 86.23,
+    "return_since_call_pct": -2.927
   },
   {
     "id": "momentum-GILD-2026-09-21",
@@ -2085,9 +2085,9 @@
     "call_price": 150.95,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 149.05,
-    "return_since_call_pct": -1.259
+    "last_checked": "2026-10-02",
+    "last_price": 147.5,
+    "return_since_call_pct": -2.286
   },
   {
     "id": "momentum-ILMN-2026-09-21",
@@ -2098,9 +2098,9 @@
     "call_price": 247.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 273.68,
-    "return_since_call_pct": 10.802
+    "last_checked": "2026-10-02",
+    "last_price": 265.72,
+    "return_since_call_pct": 7.579
   },
   {
     "id": "momentum-IQV-2026-09-21",
@@ -2111,9 +2111,9 @@
     "call_price": 265.96,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 268.85,
-    "return_since_call_pct": 1.087
+    "last_checked": "2026-10-02",
+    "last_price": 260.72,
+    "return_since_call_pct": -1.97
   },
   {
     "id": "momentum-JNJ-2026-09-21",
@@ -2124,9 +2124,9 @@
     "call_price": 271.98,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 264.73,
-    "return_since_call_pct": -2.666
+    "last_checked": "2026-10-02",
+    "last_price": 259.05,
+    "return_since_call_pct": -4.754
   },
   {
     "id": "momentum-MDT-2026-09-21",
@@ -2137,9 +2137,9 @@
     "call_price": 92.29,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 86.25,
-    "return_since_call_pct": -6.545
+    "last_checked": "2026-10-02",
+    "last_price": 86.44,
+    "return_since_call_pct": -6.339
   },
   {
     "id": "momentum-MTD-2026-09-21",
@@ -2150,9 +2150,9 @@
     "call_price": 1412.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 1510.95,
-    "return_since_call_pct": 7.003
+    "last_checked": "2026-10-02",
+    "last_price": 1481.17,
+    "return_since_call_pct": 4.894
   },
   {
     "id": "momentum-RVTY-2026-09-21",
@@ -2163,9 +2163,9 @@
     "call_price": 143.97,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 152.89,
-    "return_since_call_pct": 6.196
+    "last_checked": "2026-10-02",
+    "last_price": 149.06,
+    "return_since_call_pct": 3.535
   },
   {
     "id": "momentum-TECH-2026-09-21",
@@ -2176,9 +2176,9 @@
     "call_price": 72.52,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 72.47,
-    "return_since_call_pct": -0.069
+    "last_checked": "2026-10-02",
+    "last_price": 72.4,
+    "return_since_call_pct": -0.165
   },
   {
     "id": "momentum-TMO-2026-09-21",
@@ -2189,9 +2189,9 @@
     "call_price": 651.94,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 675.05,
-    "return_since_call_pct": 3.545
+    "last_checked": "2026-10-02",
+    "last_price": 652.51,
+    "return_since_call_pct": 0.087
   },
   {
     "id": "momentum-UHS-2026-09-21",
@@ -2202,9 +2202,9 @@
     "call_price": 177.98,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 174.26,
-    "return_since_call_pct": -2.09
+    "last_checked": "2026-10-02",
+    "last_price": 175.07,
+    "return_since_call_pct": -1.635
   },
   {
     "id": "momentum-WAT-2026-09-21",
@@ -2215,9 +2215,9 @@
     "call_price": 421.87,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 439.39,
-    "return_since_call_pct": 4.153
+    "last_checked": "2026-10-02",
+    "last_price": 425.53,
+    "return_since_call_pct": 0.868
   },
   {
     "id": "momentum-DE-2026-09-21",
@@ -2228,9 +2228,9 @@
     "call_price": 689.98,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 671.55,
-    "return_since_call_pct": -2.671
+    "last_checked": "2026-10-02",
+    "last_price": 667.26,
+    "return_since_call_pct": -3.293
   },
   {
     "id": "momentum-EXPD-2026-09-21",
@@ -2241,9 +2241,9 @@
     "call_price": 190.89,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 184.64,
-    "return_since_call_pct": -3.274
+    "last_checked": "2026-10-02",
+    "last_price": 187.74,
+    "return_since_call_pct": -1.65
   },
   {
     "id": "momentum-AAPL-2026-09-21",
@@ -2254,9 +2254,9 @@
     "call_price": 337.06,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 333.88,
-    "return_since_call_pct": -0.943
+    "last_checked": "2026-10-02",
+    "last_price": 330.98,
+    "return_since_call_pct": -1.804
   },
   {
     "id": "momentum-ACN-2026-09-21",
@@ -2267,9 +2267,9 @@
     "call_price": 187.55,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 183.0,
-    "return_since_call_pct": -2.426
+    "last_checked": "2026-10-02",
+    "last_price": 212.68,
+    "return_since_call_pct": 13.399
   },
   {
     "id": "momentum-ANET-2026-09-21",
@@ -2280,9 +2280,9 @@
     "call_price": 201.9,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 207.34,
-    "return_since_call_pct": 2.694
+    "last_checked": "2026-10-02",
+    "last_price": 206.36,
+    "return_since_call_pct": 2.209
   },
   {
     "id": "momentum-CDW-2026-09-21",
@@ -2293,9 +2293,9 @@
     "call_price": 144.82,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 128.16,
-    "return_since_call_pct": -11.504
+    "last_checked": "2026-10-02",
+    "last_price": 135.83,
+    "return_since_call_pct": -6.208
   },
   {
     "id": "momentum-CRM-2026-09-21",
@@ -2306,9 +2306,9 @@
     "call_price": 240.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 229.08,
-    "return_since_call_pct": -4.641
+    "last_checked": "2026-10-02",
+    "last_price": 236.69,
+    "return_since_call_pct": -1.474
   },
   {
     "id": "momentum-CTSH-2026-09-21",
@@ -2319,9 +2319,9 @@
     "call_price": 60.26,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 57.44,
-    "return_since_call_pct": -4.68
+    "last_checked": "2026-10-02",
+    "last_price": 60.88,
+    "return_since_call_pct": 1.029
   },
   {
     "id": "momentum-FTNT-2026-09-21",
@@ -2332,9 +2332,9 @@
     "call_price": 172.21,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 178.76,
-    "return_since_call_pct": 3.803
+    "last_checked": "2026-10-02",
+    "last_price": 178.53,
+    "return_since_call_pct": 3.67
   },
   {
     "id": "momentum-GDDY-2026-09-21",
@@ -2345,9 +2345,9 @@
     "call_price": 99.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 95.9,
-    "return_since_call_pct": -3.131
+    "last_checked": "2026-10-02",
+    "last_price": 96.98,
+    "return_since_call_pct": -2.04
   },
   {
     "id": "momentum-GEN-2026-09-21",
@@ -2358,9 +2358,9 @@
     "call_price": 29.08,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 21.96,
-    "return_since_call_pct": -24.484
+    "last_checked": "2026-10-02",
+    "last_price": 22.34,
+    "return_since_call_pct": -23.177
   },
   {
     "id": "momentum-HPQ-2026-09-21",
@@ -2371,9 +2371,9 @@
     "call_price": 33.34,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 31.28,
-    "return_since_call_pct": -6.179
+    "last_checked": "2026-10-02",
+    "last_price": 32.15,
+    "return_since_call_pct": -3.569
   },
   {
     "id": "momentum-IT-2026-09-21",
@@ -2384,9 +2384,9 @@
     "call_price": 185.03,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 186.54,
-    "return_since_call_pct": 0.816
+    "last_checked": "2026-10-02",
+    "last_price": 192.8,
+    "return_since_call_pct": 4.199
   },
   {
     "id": "momentum-MSFT-2026-09-21",
@@ -2397,9 +2397,9 @@
     "call_price": 494.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 513.83,
-    "return_since_call_pct": 3.966
+    "last_checked": "2026-10-02",
+    "last_price": 515.68,
+    "return_since_call_pct": 4.34
   },
   {
     "id": "momentum-MSI-2026-09-21",
@@ -2410,9 +2410,9 @@
     "call_price": 459.7,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 445.97,
-    "return_since_call_pct": -2.987
+    "last_checked": "2026-10-02",
+    "last_price": 448.03,
+    "return_since_call_pct": -2.539
   },
   {
     "id": "momentum-NOW-2026-09-21",
@@ -2423,9 +2423,9 @@
     "call_price": 138.81,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 133.32,
-    "return_since_call_pct": -3.955
+    "last_checked": "2026-10-02",
+    "last_price": 138.0,
+    "return_since_call_pct": -0.584
   },
   {
     "id": "momentum-NTAP-2026-09-21",
@@ -2436,9 +2436,9 @@
     "call_price": 195.67,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 210.08,
-    "return_since_call_pct": 7.364
+    "last_checked": "2026-10-02",
+    "last_price": 215.05,
+    "return_since_call_pct": 9.904
   },
   {
     "id": "momentum-NVDA-2026-09-21",
@@ -2468,9 +2468,9 @@
     "call_price": 181.35,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 187.96,
-    "return_since_call_pct": 3.645
+    "last_checked": "2026-10-02",
+    "last_price": 190.91,
+    "return_since_call_pct": 5.272
   },
   {
     "id": "momentum-ROP-2026-09-21",
@@ -2481,9 +2481,9 @@
     "call_price": 370.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 349.41,
-    "return_since_call_pct": -5.565
+    "last_checked": "2026-10-02",
+    "last_price": 362.59,
+    "return_since_call_pct": -2.003
   },
   {
     "id": "momentum-TEL-2026-09-21",
@@ -2494,9 +2494,9 @@
     "call_price": 207.61,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 211.08,
-    "return_since_call_pct": 1.671
+    "last_checked": "2026-10-02",
+    "last_price": 217.76,
+    "return_since_call_pct": 4.889
   },
   {
     "id": "momentum-TRMB-2026-09-21",
@@ -2507,9 +2507,9 @@
     "call_price": 57.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 57.11,
-    "return_since_call_pct": -0.21
+    "last_checked": "2026-10-02",
+    "last_price": 57.53,
+    "return_since_call_pct": 0.524
   },
   {
     "id": "momentum-TYL-2026-09-21",
@@ -2520,9 +2520,9 @@
     "call_price": 334.44,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 318.6,
-    "return_since_call_pct": -4.736
+    "last_checked": "2026-10-02",
+    "last_price": 330.18,
+    "return_since_call_pct": -1.274
   },
   {
     "id": "momentum-VRSN-2026-09-21",
@@ -2533,9 +2533,9 @@
     "call_price": 305.79,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 282.01,
-    "return_since_call_pct": -7.777
+    "last_checked": "2026-10-02",
+    "last_price": 286.9,
+    "return_since_call_pct": -6.177
   },
   {
     "id": "momentum-WDAY-2026-09-21",
@@ -2546,9 +2546,9 @@
     "call_price": 194.62,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 190.42,
-    "return_since_call_pct": -2.158
+    "last_checked": "2026-10-02",
+    "last_price": 186.75,
+    "return_since_call_pct": -4.044
   },
   {
     "id": "momentum-ZBRA-2026-09-21",
@@ -2559,9 +2559,9 @@
     "call_price": 348.79,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 373.31,
-    "return_since_call_pct": 7.03
+    "last_checked": "2026-10-02",
+    "last_price": 375.45,
+    "return_since_call_pct": 7.644
   },
   {
     "id": "momentum-CF-2026-09-21",
@@ -2572,9 +2572,9 @@
     "call_price": 123.27,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 114.99,
-    "return_since_call_pct": -6.717
+    "last_checked": "2026-10-02",
+    "last_price": 114.54,
+    "return_since_call_pct": -7.082
   },
   {
     "id": "momentum-FOX-2026-09-21",
@@ -2585,9 +2585,9 @@
     "call_price": 57.9,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 56.3,
-    "return_since_call_pct": -2.763
+    "last_checked": "2026-10-02",
+    "last_price": 54.92,
+    "return_since_call_pct": -5.147
   },
   {
     "id": "momentum-FOXA-2026-09-21",
@@ -2598,9 +2598,9 @@
     "call_price": 64.79,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 62.65,
-    "return_since_call_pct": -3.303
+    "last_checked": "2026-10-02",
+    "last_price": 61.28,
+    "return_since_call_pct": -5.418
   },
   {
     "id": "momentum-NWSA-2026-09-21",
@@ -2611,9 +2611,9 @@
     "call_price": 29.18,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 28.65,
-    "return_since_call_pct": -1.816
+    "last_checked": "2026-10-02",
+    "last_price": 28.64,
+    "return_since_call_pct": -1.851
   },
   {
     "id": "momentum-T-2026-09-21",
@@ -2624,9 +2624,9 @@
     "call_price": 24.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 24.39,
-    "return_since_call_pct": -0.286
+    "last_checked": "2026-10-02",
+    "last_price": 24.34,
+    "return_since_call_pct": -0.491
   },
   {
     "id": "momentum-SJM-2026-09-21",
@@ -2637,9 +2637,9 @@
     "call_price": 121.3,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 118.91,
-    "return_since_call_pct": -1.97
+    "last_checked": "2026-10-02",
+    "last_price": 115.95,
+    "return_since_call_pct": -4.411
   },
   {
     "id": "momentum-TGT-2026-09-21",
@@ -2650,9 +2650,9 @@
     "call_price": 152.18,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 156.69,
-    "return_since_call_pct": 2.964
+    "last_checked": "2026-10-02",
+    "last_price": 156.7,
+    "return_since_call_pct": 2.97
   },
   {
     "id": "momentum-APA-2026-09-21",
@@ -2663,9 +2663,9 @@
     "call_price": 43.9,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.54,
-    "return_since_call_pct": -5.376
+    "last_checked": "2026-10-02",
+    "last_price": 43.33,
+    "return_since_call_pct": -1.298
   },
   {
     "id": "momentum-COP-2026-09-21",
@@ -2676,9 +2676,9 @@
     "call_price": 127.53,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 125.11,
-    "return_since_call_pct": -1.898
+    "last_checked": "2026-10-02",
+    "last_price": 129.28,
+    "return_since_call_pct": 1.372
   },
   {
     "id": "momentum-CVX-2026-09-21",
@@ -2689,9 +2689,9 @@
     "call_price": 203.67,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 203.0,
-    "return_since_call_pct": -0.329
+    "last_checked": "2026-10-02",
+    "last_price": 207.1,
+    "return_since_call_pct": 1.684
   },
   {
     "id": "momentum-MPC-2026-09-21",
@@ -2702,9 +2702,9 @@
     "call_price": 402.38,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 395.42,
-    "return_since_call_pct": -1.73
+    "last_checked": "2026-10-02",
+    "last_price": 420.15,
+    "return_since_call_pct": 4.416
   },
   {
     "id": "momentum-VLO-2026-09-21",
@@ -2715,9 +2715,9 @@
     "call_price": 393.27,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 387.61,
-    "return_since_call_pct": -1.439
+    "last_checked": "2026-10-02",
+    "last_price": 408.46,
+    "return_since_call_pct": 3.862
   },
   {
     "id": "momentum-XOM-2026-09-21",
@@ -2728,9 +2728,9 @@
     "call_price": 158.0,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 161.16,
-    "return_since_call_pct": 2.0
+    "last_checked": "2026-10-02",
+    "last_price": 163.5,
+    "return_since_call_pct": 3.481
   },
   {
     "id": "momentum-CME-2026-09-21",
@@ -2741,9 +2741,9 @@
     "call_price": 266.96,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 261.98,
-    "return_since_call_pct": -1.865
+    "last_checked": "2026-10-02",
+    "last_price": 265.1,
+    "return_since_call_pct": -0.697
   },
   {
     "id": "momentum-CPAY-2026-09-21",
@@ -2754,9 +2754,9 @@
     "call_price": 396.32,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 388.6,
-    "return_since_call_pct": -1.948
+    "last_checked": "2026-10-02",
+    "last_price": 389.73,
+    "return_since_call_pct": -1.663
   },
   {
     "id": "momentum-EG-2026-09-21",
@@ -2767,9 +2767,9 @@
     "call_price": 375.11,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 365.17,
-    "return_since_call_pct": -2.65
+    "last_checked": "2026-10-02",
+    "last_price": 368.72,
+    "return_since_call_pct": -1.704
   },
   {
     "id": "momentum-FDS-2026-09-21",
@@ -2780,9 +2780,9 @@
     "call_price": 279.4,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 269.95,
-    "return_since_call_pct": -3.382
+    "last_checked": "2026-10-02",
+    "last_price": 277.61,
+    "return_since_call_pct": -0.641
   },
   {
     "id": "momentum-ICE-2026-09-21",
@@ -2793,9 +2793,9 @@
     "call_price": 152.97,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 152.03,
-    "return_since_call_pct": -0.614
+    "last_checked": "2026-10-02",
+    "last_price": 151.47,
+    "return_since_call_pct": -0.981
   },
   {
     "id": "momentum-V-2026-09-21",
@@ -2806,9 +2806,9 @@
     "call_price": 367.46,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 359.44,
-    "return_since_call_pct": -2.183
+    "last_checked": "2026-10-02",
+    "last_price": 359.85,
+    "return_since_call_pct": -2.071
   },
   {
     "id": "momentum-BDX-2026-09-21",
@@ -2819,9 +2819,9 @@
     "call_price": 175.37,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 179.0,
-    "return_since_call_pct": 2.07
+    "last_checked": "2026-10-02",
+    "last_price": 178.07,
+    "return_since_call_pct": 1.54
   },
   {
     "id": "momentum-CRL-2026-09-21",
@@ -2832,9 +2832,9 @@
     "call_price": 264.39,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 295.01,
-    "return_since_call_pct": 11.581
+    "last_checked": "2026-10-02",
+    "last_price": 286.83,
+    "return_since_call_pct": 8.487
   },
   {
     "id": "momentum-LH-2026-09-21",
@@ -2845,9 +2845,9 @@
     "call_price": 314.34,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 308.11,
-    "return_since_call_pct": -1.982
+    "last_checked": "2026-10-02",
+    "last_price": 304.6,
+    "return_since_call_pct": -3.099
   },
   {
     "id": "momentum-MCK-2026-09-21",
@@ -2858,9 +2858,9 @@
     "call_price": 868.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 853.81,
-    "return_since_call_pct": -1.64
+    "last_checked": "2026-10-02",
+    "last_price": 898.82,
+    "return_since_call_pct": 3.545
   },
   {
     "id": "momentum-PFE-2026-09-21",
@@ -2871,9 +2871,9 @@
     "call_price": 26.69,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 28.49,
-    "return_since_call_pct": 6.744
+    "last_checked": "2026-10-02",
+    "last_price": 28.13,
+    "return_since_call_pct": 5.395
   },
   {
     "id": "momentum-REGN-2026-09-21",
@@ -2884,9 +2884,9 @@
     "call_price": 766.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 758.27,
-    "return_since_call_pct": -1.016
+    "last_checked": "2026-10-02",
+    "last_price": 734.81,
+    "return_since_call_pct": -4.078
   },
   {
     "id": "momentum-RMD-2026-09-21",
@@ -2897,9 +2897,9 @@
     "call_price": 218.83,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 221.17,
-    "return_since_call_pct": 1.069
+    "last_checked": "2026-10-02",
+    "last_price": 221.15,
+    "return_since_call_pct": 1.06
   },
   {
     "id": "momentum-SOLV-2026-09-21",
@@ -2910,9 +2910,9 @@
     "call_price": 86.33,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 88.15,
-    "return_since_call_pct": 2.108
+    "last_checked": "2026-10-02",
+    "last_price": 87.77,
+    "return_since_call_pct": 1.668
   },
   {
     "id": "momentum-VEEV-2026-09-21",
@@ -2923,9 +2923,9 @@
     "call_price": 235.55,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 285.45,
-    "return_since_call_pct": 21.184
+    "last_checked": "2026-10-02",
+    "last_price": 281.93,
+    "return_since_call_pct": 19.69
   },
   {
     "id": "momentum-ADP-2026-09-21",
@@ -2936,9 +2936,9 @@
     "call_price": 269.94,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 258.06,
-    "return_since_call_pct": -4.401
+    "last_checked": "2026-10-02",
+    "last_price": 263.96,
+    "return_since_call_pct": -2.215
   },
   {
     "id": "momentum-J-2026-09-21",
@@ -2949,9 +2949,9 @@
     "call_price": 143.76,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 135.27,
-    "return_since_call_pct": -5.906
+    "last_checked": "2026-10-02",
+    "last_price": 139.79,
+    "return_since_call_pct": -2.762
   },
   {
     "id": "momentum-LDOS-2026-09-21",
@@ -2962,9 +2962,9 @@
     "call_price": 128.23,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 121.83,
-    "return_since_call_pct": -4.991
+    "last_checked": "2026-10-02",
+    "last_price": 121.97,
+    "return_since_call_pct": -4.882
   },
   {
     "id": "momentum-CRWD-2026-09-21",
@@ -2975,9 +2975,9 @@
     "call_price": 218.54,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 266.7,
-    "return_since_call_pct": 22.037
+    "last_checked": "2026-10-02",
+    "last_price": 267.25,
+    "return_since_call_pct": 22.289
   },
   {
     "id": "momentum-DELL-2026-09-21",
@@ -2988,9 +2988,9 @@
     "call_price": 510.18,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 549.96,
-    "return_since_call_pct": 7.797
+    "last_checked": "2026-10-02",
+    "last_price": 545.4,
+    "return_since_call_pct": 6.903
   },
   {
     "id": "momentum-FFIV-2026-09-21",
@@ -3001,9 +3001,9 @@
     "call_price": 405.93,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 445.18,
-    "return_since_call_pct": 9.669
+    "last_checked": "2026-10-02",
+    "last_price": 443.68,
+    "return_since_call_pct": 9.3
   },
   {
     "id": "momentum-HPE-2026-09-21",
@@ -3014,9 +3014,9 @@
     "call_price": 55.59,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 65.6,
-    "return_since_call_pct": 18.007
+    "last_checked": "2026-10-02",
+    "last_price": 65.55,
+    "return_since_call_pct": 17.917
   },
   {
     "id": "momentum-P-2026-09-21",
@@ -3027,9 +3027,9 @@
     "call_price": 98.94,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 132.6,
-    "return_since_call_pct": 34.021
+    "last_checked": "2026-10-02",
+    "last_price": 135.25,
+    "return_since_call_pct": 36.699
   },
   {
     "id": "momentum-SMCI-2026-09-21",
@@ -3040,9 +3040,9 @@
     "call_price": 38.09,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.72,
-    "return_since_call_pct": 9.53
+    "last_checked": "2026-10-02",
+    "last_price": 42.02,
+    "return_since_call_pct": 10.318
   },
   {
     "id": "momentum-MOS-2026-09-21",
@@ -3053,9 +3053,9 @@
     "call_price": 24.07,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 21.87,
-    "return_since_call_pct": -9.14
+    "last_checked": "2026-10-02",
+    "last_price": 21.5,
+    "return_since_call_pct": -10.677
   },
   {
     "id": "momentum-NEM-2026-09-21",
@@ -3066,9 +3066,9 @@
     "call_price": 123.05,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 115.75,
-    "return_since_call_pct": -5.933
+    "last_checked": "2026-10-02",
+    "last_price": 115.19,
+    "return_since_call_pct": -6.388
   },
   {
     "id": "scout-NBIS-2026-09-27",
@@ -3079,9 +3079,9 @@
     "call_price": 238.38,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 242.61,
-    "return_since_call_pct": 1.774
+    "last_checked": "2026-10-02",
+    "last_price": 233.44,
+    "return_since_call_pct": -2.072
   },
   {
     "id": "scout-IREN-2026-09-27",
@@ -3092,9 +3092,9 @@
     "call_price": 44.12,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 41.95,
-    "return_since_call_pct": -4.918
+    "last_checked": "2026-10-02",
+    "last_price": 41.23,
+    "return_since_call_pct": -6.55
   },
   {
     "id": "scout-VRT-2026-09-27",
@@ -3105,8 +3105,8 @@
     "call_price": 253.3,
     "acted_on": false,
     "status": "not_acted",
-    "last_checked": "2026-10-01",
-    "last_price": 247.3,
-    "return_since_call_pct": -2.369
+    "last_checked": "2026-10-02",
+    "last_price": 248.0,
+    "return_since_call_pct": -2.092
   }
 ]
