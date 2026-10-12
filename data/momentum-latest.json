@@ -1,279 +1,405 @@
 {
   "routine": "momentum",
-  "run_at": "2026-10-05T15:05:00Z",
+  "run_at": "2026-10-12T15:30:00Z",
   "items": [
     {
-      "label": "AME",
-      "tag": "PASS",
-      "detail": "[Industrials] AME +8.6% over 3 months, 3.8% below its 3-month high, trading 3.0% above its 50-day SMA with its largest single-day move only 49% of the total gain.",
-      "entry_price": "buy on a pullback to $242.82",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
-    },
-    {
-      "label": "EMR",
+      "label": "HPE",
       "tag": "HIGH",
-      "detail": "[Industrials] EMR +18.3% over 3 months, 2.9% below its 3-month high, trading 4.2% above its 50-day SMA with its largest single-day move only 22% of the total gain.",
-      "entry_price": "$161.48 (clean breakout, current price)",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
+      "detail": "[Information Technology] HPE +55.0% over 3 months, 0.0% below its 3-month high, 26.3% above its 50-day SMA; largest single day 23% of the move. FLAG: unusually large 3-month return; corporate actions not independently verified.",
+      "entry_price": "$71.66 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
-      "label": "EXPD",
+      "label": "VEEV",
       "tag": "HIGH",
-      "detail": "[Industrials] EXPD +16.2% over 3 months, 1.8% below its 3-month high, trading 3.2% above its 50-day SMA with its largest single-day move only 39% of the total gain.",
-      "entry_price": "$191.06 (clean breakout, current price)",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
+      "detail": "[Health Care] VEEV +52.9% over 3 months, 0.0% below its 3-month high, 14.1% above its 50-day SMA; largest single day 29% of the move. FLAG: unusually large 3-month return; corporate actions not independently verified.",
+      "entry_price": "$294.26 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
     },
     {
-      "label": "FAST",
-      "tag": "PASS",
-      "detail": "[Industrials] FAST +7.5% over 3 months, 5.5% below its 3-month high, trading 0.1% above its 50-day SMA with its largest single-day move only 44% of the total gain.",
-      "entry_price": "buy on a pullback to $49.77",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
-    },
-    {
-      "label": "IEX",
-      "tag": "PASS",
-      "detail": "[Industrials] IEX +6.6% over 3 months, 4.6% below its 3-month high, trading 1.2% above its 50-day SMA with its largest single-day move only 40% of the total gain.",
-      "entry_price": "buy on a pullback to $226.50",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
-    },
-    {
-      "label": "NDSN",
+      "label": "ACN",
       "tag": "HIGH",
-      "detail": "[Industrials] NDSN +16.9% over 3 months, 2.1% below its 3-month high, trading 5.0% above its 50-day SMA with its largest single-day move only 47% of the total gain.",
-      "entry_price": "$331.90 (clean breakout, current price)",
-      "diversification_note": "No current holding in Industrials; adds sector diversification away from the metals/energy/tech-heavy book."
-    },
-    {
-      "label": "APA",
-      "tag": "PASS",
-      "detail": "[Energy] APA +23.6% over 3 months, 8.7% below its 3-month high, trading 3.9% above its 50-day SMA with its largest single-day move only 38% of the total gain.",
-      "entry_price": "buy on a pullback to $43.89",
-      "diversification_note": "Account already holds MPC (Energy); adding APA increases Energy concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "CVX",
-      "tag": "PASS",
-      "detail": "[Energy] CVX +15.7% over 3 months, 6.5% below its 3-month high, trading 0.4% above its 50-day SMA with its largest single-day move only 29% of the total gain.",
-      "entry_price": "buy on a pullback to $208.35",
-      "diversification_note": "Account already holds MPC (Energy); adding CVX increases Energy concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "XOM",
-      "tag": "PASS",
-      "detail": "[Energy] XOM +15.6% over 3 months, 3.8% below its 3-month high, trading 1.6% above its 50-day SMA with its largest single-day move only 28% of the total gain.",
-      "entry_price": "buy on a pullback to $162.96",
-      "diversification_note": "Account already holds MPC (Energy); adding XOM increases Energy concentration, a modest hurt to diversification."
+      "detail": "[Information Technology] ACN +52.6% over 3 months, 1.5% below its 3-month high, 13.6% above its 50-day SMA; largest single day 30% of the move. FLAG: unusually large 3-month return; corporate actions not independently verified.",
+      "entry_price": "$215.61 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
       "label": "MPC",
       "tag": "HIGH",
-      "detail": "[Energy] MPC +53.1% over 3 months, 0.3% below its 3-month high, trading 16.8% above its 50-day SMA with its largest single-day move only 14% of the total gain.",
-      "entry_price": "$429.79 (clean breakout, current price)",
-      "diversification_note": "Already held in this account (Energy); adding raises existing single-name/sector concentration rather than diversifying."
-    },
-    {
-      "label": "PSX",
-      "tag": "PASS",
-      "detail": "[Energy] PSX +42.0% over 3 months, 3.8% below its 3-month high, trading 10.2% above its 50-day SMA with its largest single-day move only 14% of the total gain.",
-      "entry_price": "buy on a pullback to $260.75",
-      "diversification_note": "Account already holds MPC (Energy); adding PSX increases Energy concentration, a modest hurt to diversification."
+      "detail": "[Energy] MPC +52.1% over 3 months, 1.8% below its 3-month high, 20.1% above its 50-day SMA; largest single day 14% of the move. FLAG: unusually large 3-month return; corporate actions not independently verified.",
+      "entry_price": "$462.55 (clean breakout, current price)",
+      "diversification_note": "Already held in this account (adding increases an existing position). Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
     },
     {
       "label": "VLO",
       "tag": "HIGH",
-      "detail": "[Energy] VLO +45.8% over 3 months, 1.5% below its 3-month high, trading 15.5% above its 50-day SMA with its largest single-day move only 12% of the total gain.",
-      "entry_price": "$412.56 (clean breakout, current price)",
-      "diversification_note": "Account already holds MPC (Energy); adding VLO increases Energy concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "A",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +30.1% over 3mo vs SPY +3.37%, largest single day 4.7% (16% of move), 5.1% below 3mo high, last 167.96 is 9.7% above the 50d SMA 153.12.",
-      "entry_price": "buy on a pullback to $160.52",
-      "diversification_note": "Account already holds LLY (Health Care); adding A increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "TECH",
-      "tag": "HIGH",
-      "detail": "[Health Care] Health Care; +2.0% over 3mo vs SPY +3.37%, largest single day 0.7% (33% of move), 0.4% below 3mo high, last 72.41 is 0.2% above the 50d SMA 72.29. Caution: daily range under 0.7% all window, price pinned near $72, behaves like a pending-acquisition stock rather than a momentum name. Caution: price pinned near $72 with sub-0.7% daily range, consistent with a pending-acquisition stock, not a true momentum setup.",
-      "entry_price": "$72.41 (clean breakout, current price)",
-      "diversification_note": "Account already holds LLY (Health Care); adding TECH increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "CRL",
-      "tag": "HIGH",
-      "detail": "[Health Care] Health Care; +31.8% over 3mo vs SPY +3.37%, largest single day 11.4% (36% of move), 2.7% below 3mo high, last 295.07 is 6.4% above the 50d SMA 277.44.",
-      "entry_price": "$295.07 (clean breakout, current price)",
-      "diversification_note": "Account already holds LLY (Health Care); adding CRL increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "ILMN",
-      "tag": "HIGH",
-      "detail": "[Health Care] Health Care; +47.9% over 3mo vs SPY +3.37%, largest single day 8.9% (19% of move), 0.8% below 3mo high, last 277.80 is 25.9% above the 50d SMA 220.56.",
-      "entry_price": "$277.80 (clean breakout, current price)",
-      "diversification_note": "Account already holds LLY (Health Care); adding ILMN increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "MTD",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +19.4% over 3mo vs SPY +3.37%, largest single day 4.2% (22% of move), 4.1% below 3mo high, last 1491.22 is 5.6% above the 50d SMA 1411.76.",
-      "entry_price": "buy on a pullback to $1424.20",
-      "diversification_note": "Account already holds LLY (Health Care); adding MTD increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "PFE",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +14.3% over 3mo vs SPY +3.37%, largest single day 3.6% (25% of move), 5.9% below 3mo high, last 27.48 is 0.3% above the 50d SMA 27.39.",
-      "entry_price": "buy on a pullback to $27.96",
-      "diversification_note": "Account already holds LLY (Health Care); adding PFE increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "RVTY",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +38.3% over 3mo vs SPY +3.37%, largest single day 9.1% (24% of move), 4.5% below 3mo high, last 151.20 is 17.5% above the 50d SMA 128.63.",
-      "entry_price": "buy on a pullback to $142.00",
-      "diversification_note": "Account already holds LLY (Health Care); adding RVTY increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "TMO",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +29.3% over 3mo vs SPY +3.37%, largest single day 8.7% (30% of move), 3.5% below 3mo high, last 659.72 is 6.5% above the 50d SMA 619.28.",
-      "entry_price": "buy on a pullback to $648.56",
-      "diversification_note": "Account already holds LLY (Health Care); adding TMO increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "UHS",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +12.9% over 3mo vs SPY +3.37%, largest single day 5.6% (43% of move), 5.1% below 3mo high, last 176.55 is 2.0% above the 50d SMA 173.02.",
-      "entry_price": "buy on a pullback to $176.50",
-      "diversification_note": "Account already holds LLY (Health Care); adding UHS increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "VEEV",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +47.2% over 3mo vs SPY +3.37%, largest single day 15.2% (32% of move), 6.5% below 3mo high, last 276.91 is 9.6% above the 50d SMA 252.55.",
-      "entry_price": "buy on a pullback to $269.74",
-      "diversification_note": "Account already holds LLY (Health Care); adding VEEV increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "WAT",
-      "tag": "PASS",
-      "detail": "[Health Care] Health Care; +16.3% over 3mo vs SPY +3.37%, largest single day 5.7% (35% of move), 4.5% below 3mo high, last 428.23 is 4.1% above the 50d SMA 411.25.",
-      "entry_price": "buy on a pullback to $422.67",
-      "diversification_note": "Account already holds LLY (Health Care); adding WAT increases Health Care concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "ACN",
-      "tag": "PASS",
-      "detail": "[Information Technology] ACN up 42.7% over 3 months with largest single-day move only 37% of the total gain; last $195.79 is 14.0% below the 3mo high, 8.1% above the 50d SMA, and above the 20d SMA ($185.75).",
-      "entry_price": "buy on a pullback to $185.75",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding ACN increases Information Technology concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "CRWD",
-      "tag": "HIGH",
-      "detail": "[Information Technology] CRWD up 42.0% over 3 months with largest single-day move only 49% of the total gain; last $271.35 is 0.8% below the 3mo high, 22.5% above the 50d SMA, and above the 20d SMA ($245.20).",
-      "entry_price": "$271.35 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding CRWD increases Information Technology concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "HPE",
-      "tag": "PASS",
-      "detail": "[Information Technology] HPE up 51.7% over 3 months with largest single-day move only 24% of the total gain; last $67.75 is 3.6% below the 3mo high, 20.7% above the 50d SMA, and above the 20d SMA ($61.16).",
-      "entry_price": "buy on a pullback to $61.16",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding HPE increases Information Technology concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "HPQ",
-      "tag": "PASS",
-      "detail": "[Information Technology] HPQ up 33.0% over 3 months with largest single-day move only 25% of the total gain; last $31.62 is 12.7% below the 3mo high, 3.0% above the 50d SMA, and below the 20d SMA ($32.51).",
-      "entry_price": "buy on a pullback to $32.51",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding HPQ increases Information Technology concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "KEYS",
-      "tag": "HIGH",
-      "detail": "[Information Technology] KEYS up 21.6% over 3 months with largest single-day move only 32% of the total gain; last $385.70 is 0.6% below the 3mo high, 15.0% above the 50d SMA, and above the 20d SMA ($346.83).",
-      "entry_price": "$385.70 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding KEYS increases Information Technology concentration, a modest hurt to diversification."
+      "detail": "[Energy] VLO +48.2% over 3 months, 2.3% below its 3-month high, 18.0% above its 50-day SMA; largest single day 12% of the move.",
+      "entry_price": "$444.78 (clean breakout, current price)",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
     },
     {
       "label": "LITE",
-      "tag": "PASS",
-      "detail": "[Information Technology] LITE up 52.7% over 3 months with largest single-day move only 29% of the total gain; last $1080.00 is 3.9% below the 3mo high, 22.0% above the 50d SMA, and above the 20d SMA ($951.66).",
-      "entry_price": "buy on a pullback to $951.66",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding LITE increases Information Technology concentration, a modest hurt to diversification."
-    },
-    {
-      "label": "MSFT",
       "tag": "HIGH",
-      "detail": "[Information Technology] MSFT up 37.8% over 3 months with largest single-day move only 41% of the total gain; last $528.36 is 0.7% below the 3mo high, 7.7% above the 50d SMA, and above the 20d SMA ($503.11).",
-      "entry_price": "$528.36 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding MSFT increases Information Technology concentration, a modest hurt to diversification."
+      "detail": "[Information Technology] LITE +46.7% over 3 months, 2.6% below its 3-month high, 19.9% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$1028.50 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
       "label": "NTAP",
       "tag": "HIGH",
-      "detail": "[Information Technology] NTAP up 36.6% over 3 months with largest single-day move only 23% of the total gain; last $225.98 is 2.6% below the 3mo high, 16.8% above the 50d SMA, and above the 20d SMA ($199.90).",
-      "entry_price": "$225.98 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding NTAP increases Information Technology concentration, a modest hurt to diversification."
+      "detail": "[Information Technology] NTAP +46.3% over 3 months, 0.0% below its 3-month high, 19.6% above its 50-day SMA; largest single day 18% of the move.",
+      "entry_price": "$237.83 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
-      "label": "PANW",
+      "label": "DELL",
       "tag": "HIGH",
-      "detail": "[Information Technology] PANW up 26.8% over 3 months with largest single-day move only 49% of the total gain; last $406.41 is 0.8% below the 3mo high, 11.8% above the 50d SMA, and above the 20d SMA ($374.63).",
-      "entry_price": "$406.41 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding PANW increases Information Technology concentration, a modest hurt to diversification."
+      "detail": "[Information Technology] DELL +42.0% over 3 months, 0.4% below its 3-month high, 15.9% above its 50-day SMA; largest single day 38% of the move.",
+      "entry_price": "$583.15 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "PSX",
+      "tag": "HIGH",
+      "detail": "[Energy] PSX +41.8% over 3 months, 1.2% below its 3-month high, 12.5% above its 50-day SMA; largest single day 14% of the move.",
+      "entry_price": "$283.53 (clean breakout, current price)",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "RVTY",
+      "tag": "HIGH",
+      "detail": "[Health Care] RVTY +38.5% over 3 months, 2.0% below its 3-month high, 16.7% above its 50-day SMA; largest single day 24% of the move.",
+      "entry_price": "$154.27 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "MSFT",
+      "tag": "HIGH",
+      "detail": "[Information Technology] MSFT +35.2% over 3 months, 0.0% below its 3-month high, 6.9% above its 50-day SMA; largest single day 44% of the move.",
+      "entry_price": "$539.76 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
       "label": "NOW",
-      "tag": "PASS",
-      "detail": "[Information Technology] NOW up 26.8% over 3 months with largest single-day move only 37% of the total gain; last $136.65 is 8.7% below the 3mo high, 5.2% above the 50d SMA, and above the 20d SMA ($136.00).",
-      "entry_price": "buy on a pullback to $136.00",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding NOW increases Information Technology concentration, a modest hurt to diversification."
+      "tag": "HIGH",
+      "detail": "[Information Technology] NOW +34.5% over 3 months, 4.8% below its 3-month high, 6.5% above its 50-day SMA; largest single day 29% of the move.",
+      "entry_price": "$143.70 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
-      "label": "SWKS",
-      "tag": "PASS",
-      "detail": "[Information Technology] SWKS up 40.4% over 3 months with largest single-day move only 34% of the total gain; last $82.11 is 11.5% below the 3mo high, 10.0% above the 50d SMA, and below the 20d SMA ($85.90).",
-      "entry_price": "buy on a pullback to $85.90",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding SWKS increases Information Technology concentration, a modest hurt to diversification."
+      "label": "APA",
+      "tag": "HIGH",
+      "detail": "[Energy] APA +33.9% over 3 months, 3.2% below its 3-month high, 8.0% above its 50-day SMA; largest single day 27% of the move.",
+      "entry_price": "$46.94 (clean breakout, current price)",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "MRVL",
+      "tag": "HIGH",
+      "detail": "[Information Technology] MRVL +33.5% over 3 months, 4.1% below its 3-month high, 16.4% above its 50-day SMA; largest single day 38% of the move.",
+      "entry_price": "$271.04 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "CRL",
+      "tag": "HIGH",
+      "detail": "[Health Care] CRL +32.2% over 3 months, 2.9% below its 3-month high, 6.6% above its 50-day SMA; largest single day 35% of the move.",
+      "entry_price": "$301.00 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "A",
+      "tag": "HIGH",
+      "detail": "[Health Care] A +26.6% over 3 months, 2.7% below its 3-month high, 9.6% above its 50-day SMA; largest single day 18% of the move.",
+      "entry_price": "$171.17 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "ANET",
+      "tag": "HIGH",
+      "detail": "[Information Technology] ANET +26.1% over 3 months, 0.0% below its 3-month high, 9.5% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$215.53 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "TMO",
+      "tag": "HIGH",
+      "detail": "[Health Care] TMO +22.9% over 3 months, 3.2% below its 3-month high, 5.0% above its 50-day SMA; largest single day 38% of the move.",
+      "entry_price": "$659.37 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "ULTA",
+      "tag": "HIGH",
+      "detail": "[Consumer Discretionary] ULTA +22.4% over 3 months, 0.0% below its 3-month high, 5.6% above its 50-day SMA; largest single day 22% of the move.",
+      "entry_price": "$556.39 (clean breakout, current price)",
+      "diversification_note": "Already held in this account (adding increases an existing position). Overlaps existing ULTA retail exposure; modest diversification only."
+    },
+    {
+      "label": "UHS",
+      "tag": "HIGH",
+      "detail": "[Health Care] UHS +19.8% over 3 months, 2.2% below its 3-month high, 1.9% above its 50-day SMA; largest single day 22% of the move.",
+      "entry_price": "$178.59 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "HCA",
+      "tag": "HIGH",
+      "detail": "[Health Care] HCA +19.1% over 3 months, 0.0% below its 3-month high, 7.2% above its 50-day SMA; largest single day 38% of the move.",
+      "entry_price": "$452.80 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "EMR",
+      "tag": "HIGH",
+      "detail": "[Industrials] EMR +18.8% over 3 months, 1.6% below its 3-month high, 3.8% above its 50-day SMA; largest single day 20% of the move.",
+      "entry_price": "$162.45 (clean breakout, current price)",
+      "diversification_note": "No current Industrials holding; adds sector diversification \u2014 helps."
+    },
+    {
+      "label": "BDX",
+      "tag": "HIGH",
+      "detail": "[Health Care] BDX +18.6% over 3 months, 4.3% below its 3-month high, 1.0% above its 50-day SMA; largest single day 25% of the move.",
+      "entry_price": "$185.39 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "KEYS",
+      "tag": "HIGH",
+      "detail": "[Information Technology] KEYS +18.6% over 3 months, 1.4% below its 3-month high, 12.1% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$380.28 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "MCK",
+      "tag": "HIGH",
+      "detail": "[Health Care] MCK +17.9% over 3 months, 0.0% below its 3-month high, 6.2% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$950.31 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "MTD",
+      "tag": "HIGH",
+      "detail": "[Health Care] MTD +17.7% over 3 months, 0.0% below its 3-month high, 8.7% above its 50-day SMA; largest single day 24% of the move.",
+      "entry_price": "$1553.01 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "XOM",
+      "tag": "HIGH",
+      "detail": "[Energy] XOM +16.9% over 3 months, 0.2% below its 3-month high, 4.6% above its 50-day SMA; largest single day 26% of the move.",
+      "entry_price": "$172.28 (clean breakout, current price)",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "CVX",
+      "tag": "HIGH",
+      "detail": "[Energy] CVX +16.7% over 3 months, 2.7% below its 3-month high, 3.8% above its 50-day SMA; largest single day 27% of the move.",
+      "entry_price": "$215.86 (clean breakout, current price)",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "RMD",
+      "tag": "HIGH",
+      "detail": "[Health Care] RMD +15.8% over 3 months, 4.3% below its 3-month high, 2.2% above its 50-day SMA; largest single day 31% of the move.",
+      "entry_price": "$231.20 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "TRMB",
+      "tag": "HIGH",
+      "detail": "[Information Technology] TRMB +15.7% over 3 months, 2.4% below its 3-month high, 2.6% above its 50-day SMA; largest single day 34% of the move.",
+      "entry_price": "$59.60 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "WAT",
+      "tag": "HIGH",
+      "detail": "[Health Care] WAT +15.7% over 3 months, 2.1% below its 3-month high, 4.3% above its 50-day SMA; largest single day 36% of the move.",
+      "entry_price": "$434.32 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "GILD",
+      "tag": "HIGH",
+      "detail": "[Health Care] GILD +14.8% over 3 months, 1.0% below its 3-month high, 4.5% above its 50-day SMA; largest single day 24% of the move.",
+      "entry_price": "$151.44 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "CME",
+      "tag": "HIGH",
+      "detail": "[Financials] CME +14.4% over 3 months, 2.1% below its 3-month high, 3.2% above its 50-day SMA; largest single day 35% of the move.",
+      "entry_price": "$282.26 (clean breakout, current price)",
+      "diversification_note": "No current Financials holding; adds sector diversification away from the metals/energy/tech-heavy book \u2014 helps."
+    },
+    {
+      "label": "BIIB",
+      "tag": "HIGH",
+      "detail": "[Health Care] BIIB +14.4% over 3 months, 1.3% below its 3-month high, 4.0% above its 50-day SMA; largest single day 41% of the move.",
+      "entry_price": "$231.58 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "PFE",
+      "tag": "HIGH",
+      "detail": "[Health Care] PFE +13.9% over 3 months, 2.5% below its 3-month high, 2.4% above its 50-day SMA; largest single day 26% of the move.",
+      "entry_price": "$28.31 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "FFIV",
+      "tag": "HIGH",
+      "detail": "[Information Technology] FFIV +13.8% over 3 months, 0.0% below its 3-month high, 14.6% above its 50-day SMA; largest single day 34% of the move.",
+      "entry_price": "$476.86 (clean breakout, current price)",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
+    },
+    {
+      "label": "ABBV",
+      "tag": "HIGH",
+      "detail": "[Health Care] ABBV +13.3% over 3 months, 0.0% below its 3-month high, 6.8% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$277.47 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "FAST",
+      "tag": "HIGH",
+      "detail": "[Industrials] FAST +11.9% over 3 months, 3.1% below its 3-month high, 1.1% above its 50-day SMA; largest single day 28% of the move.",
+      "entry_price": "$51.30 (clean breakout, current price)",
+      "diversification_note": "No current Industrials holding; adds sector diversification \u2014 helps."
+    },
+    {
+      "label": "PM",
+      "tag": "HIGH",
+      "detail": "[Consumer Staples] PM +11.2% over 3 months, 0.0% below its 3-month high, 6.0% above its 50-day SMA; largest single day 44% of the move.",
+      "entry_price": "$202.67 (clean breakout, current price)",
+      "diversification_note": "No current Staples holding; defensive and low-correlation to the commodity/AI book \u2014 helps."
+    },
+    {
+      "label": "DIS",
+      "tag": "HIGH",
+      "detail": "[Communication Services] DIS +11.2% over 3 months, 2.9% below its 3-month high, 2.8% above its 50-day SMA; largest single day 32% of the move.",
+      "entry_price": "$108.07 (clean breakout, current price)",
+      "diversification_note": "Partly overlaps GOOG/TTWO media-internet exposure; modest diversification benefit."
+    },
+    {
+      "label": "JCI",
+      "tag": "HIGH",
+      "detail": "[Industrials] JCI +10.3% over 3 months, 0.8% below its 3-month high, 6.8% above its 50-day SMA; largest single day 48% of the move.",
+      "entry_price": "$156.00 (clean breakout, current price)",
+      "diversification_note": "No current Industrials holding; adds sector diversification \u2014 helps."
+    },
+    {
+      "label": "MA",
+      "tag": "HIGH",
+      "detail": "[Financials] MA +10.1% over 3 months, 1.8% below its 3-month high, 3.0% above its 50-day SMA; largest single day 33% of the move.",
+      "entry_price": "$592.10 (clean breakout, current price)",
+      "diversification_note": "No current Financials holding; adds sector diversification away from the metals/energy/tech-heavy book \u2014 helps."
+    },
+    {
+      "label": "COR",
+      "tag": "HIGH",
+      "detail": "[Health Care] COR +9.2% over 3 months, 4.0% below its 3-month high, 1.8% above its 50-day SMA; largest single day 42% of the move.",
+      "entry_price": "$325.14 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "KR",
+      "tag": "HIGH",
+      "detail": "[Consumer Staples] KR +9.0% over 3 months, 1.0% below its 3-month high, 5.7% above its 50-day SMA; largest single day 46% of the move.",
+      "entry_price": "$61.86 (clean breakout, current price)",
+      "diversification_note": "No current Staples holding; defensive and low-correlation to the commodity/AI book \u2014 helps."
+    },
+    {
+      "label": "V",
+      "tag": "HIGH",
+      "detail": "[Financials] V +8.5% over 3 months, 0.0% below its 3-month high, 4.2% above its 50-day SMA; largest single day 36% of the move.",
+      "entry_price": "$387.60 (clean breakout, current price)",
+      "diversification_note": "No current Financials holding; adds sector diversification away from the metals/energy/tech-heavy book \u2014 helps."
+    },
+    {
+      "label": "TECH",
+      "tag": "HIGH",
+      "detail": "[Health Care] TECH +1.4% over 3 months, 0.2% below its 3-month high, 0.2% above its 50-day SMA; largest single day 46% of the move. FLAG: price pinned near $72, likely pending cash acquisition; barely cleared Stage 0 \u2014 likely false positive.",
+      "entry_price": "$72.48 (clean breakout, current price)",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
     },
     {
       "label": "SMCI",
       "tag": "PASS",
-      "detail": "[Information Technology] SMCI up 53.5% over 3 months with largest single-day move only 37% of the total gain; last $43.25 is 3.0% below the 3mo high, 17.6% above the 50d SMA, and above the 20d SMA ($40.35).",
-      "entry_price": "buy on a pullback to $40.35",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding SMCI increases Information Technology concentration, a modest hurt to diversification."
+      "detail": "[Information Technology] SMCI +55.6% over 3 months, 6.9% below its 3-month high, 10.1% above its 50-day SMA; largest single day 36% of the move. FLAG: unusually large 3-month return; corporate actions not independently verified.",
+      "entry_price": "buy on a pullback to $38.00",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
-      "label": "TEL",
-      "tag": "HIGH",
-      "detail": "[Information Technology] TEL up 11.6% over 3 months with largest single-day move only 50% of the total gain; last $218.97 is 1.6% below the 3mo high, 4.5% above the 50d SMA, and above the 20d SMA ($210.54).",
-      "entry_price": "$218.97 (clean breakout, current price)",
-      "diversification_note": "Account already holds CRWV (Information Technology); adding TEL increases Information Technology concentration, a modest hurt to diversification."
+      "label": "ILMN",
+      "tag": "PASS",
+      "detail": "[Health Care] ILMN +48.6% over 3 months, 5.3% below its 3-month high, 22.6% above its 50-day SMA; largest single day 18% of the move.",
+      "entry_price": "buy on a pullback to $226.92",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "SWKS",
+      "tag": "PASS",
+      "detail": "[Information Technology] SWKS +32.8% over 3 months, 16.5% below its 3-month high, 0.3% above its 50-day SMA; largest single day 41% of the move.",
+      "entry_price": "buy on a pullback to $76.13",
+      "diversification_note": "Overlaps the existing AI/tech-capex cluster (GOOG, CRWV, TTWO) \u2014 adding it would raise concentration, not diversify."
     },
     {
       "label": "FCX",
       "tag": "PASS",
-      "detail": "[Materials] PASS: +25.8% over 3mo, largest single day 30% of the move, close 9.9% below 3mo high, above 20d SMA 71.77 and 2.2% above 50d SMA 70.73.",
-      "entry_price": "buy on a pullback to $71.77",
-      "diversification_note": "Already held in this account (Materials); adding raises existing single-name/sector concentration rather than diversifying."
+      "detail": "[Materials] FCX +20.9% over 3 months, 7.8% below its 3-month high, 3.0% above its 50-day SMA; largest single day 37% of the move.",
+      "entry_price": "buy on a pullback to $71.56",
+      "diversification_note": "Already held in this account (adding increases an existing position). Materials/metals already heavy (FCX, KGC, NEM, REMX, SSLV, IGLN) \u2014 hurts diversification."
     },
     {
-      "label": "BBY",
+      "label": "COP",
       "tag": "PASS",
-      "detail": "[Consumer Discretionary] BBY 3M return 12.5% vs SPY +3.37%; last $87.79 is 9.1% below 3M high, 0.1% above 50d SMA; largest single day move 5.3% (43% of total).",
-      "entry_price": "buy on a pullback to $90.74",
-      "diversification_note": "Account already holds ULTA (Consumer Discretionary); adding BBY increases Consumer Discretionary concentration, a modest hurt to diversification."
+      "detail": "[Energy] COP +20.3% over 3 months, 5.0% below its 3-month high, 3.6% above its 50-day SMA; largest single day 23% of the move.",
+      "entry_price": "buy on a pullback to $129.38",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
     },
     {
-      "label": "ULTA",
+      "label": "AMGN",
       "tag": "PASS",
-      "detail": "[Consumer Discretionary] ULTA 3M return 19.6% vs SPY +3.37%; last $544.27 is 4.3% below 3M high, 1.6% above 50d SMA; largest single day move 4.9% (25% of total).",
-      "entry_price": "buy on a pullback to $545.00",
-      "diversification_note": "Already held in this account (Consumer Discretionary); adding raises existing single-name/sector concentration rather than diversifying."
+      "detail": "[Health Care] AMGN +15.8% over 3 months, 6.6% below its 3-month high, 0.7% above its 50-day SMA; largest single day 29% of the move.",
+      "entry_price": "buy on a pullback to $411.89",
+      "diversification_note": "Adds Health Care breadth beyond the single LLY position; defensive and low-correlation to the metals/AI-heavy book \u2014 helps."
+    },
+    {
+      "label": "FDS",
+      "tag": "PASS",
+      "detail": "[Financials] FDS +14.3% over 3 months, 8.4% below its 3-month high, 1.3% above its 50-day SMA; largest single day 47% of the move.",
+      "entry_price": "buy on a pullback to $283.52",
+      "diversification_note": "No current Financials holding; adds sector diversification away from the metals/energy/tech-heavy book \u2014 helps."
+    },
+    {
+      "label": "DVN",
+      "tag": "PASS",
+      "detail": "[Energy] DVN +12.4% over 3 months, 6.0% below its 3-month high, 1.9% above its 50-day SMA; largest single day 45% of the move.",
+      "entry_price": "buy on a pullback to $47.36",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "OXY",
+      "tag": "PASS",
+      "detail": "[Energy] OXY +11.8% over 3 months, 5.4% below its 3-month high, 2.4% above its 50-day SMA; largest single day 42% of the move.",
+      "entry_price": "buy on a pullback to $58.73",
+      "diversification_note": "Adds to the energy/commodity exposure already held via MPC, CCJ and DBC \u2014 more of the same factor, hurts diversification."
+    },
+    {
+      "label": "TSCO",
+      "tag": "PASS",
+      "detail": "[Consumer Discretionary] TSCO +11.7% over 3 months, 7.5% below its 3-month high, 0.1% above its 50-day SMA; largest single day 37% of the move.",
+      "entry_price": "buy on a pullback to $33.68",
+      "diversification_note": "Overlaps existing ULTA retail exposure; modest diversification only."
+    },
+    {
+      "label": "ICE",
+      "tag": "PASS",
+      "detail": "[Financials] ICE +11.7% over 3 months, 5.1% below its 3-month high, 0.4% above its 50-day SMA; largest single day 36% of the move.",
+      "entry_price": "buy on a pullback to $155.55",
+      "diversification_note": "No current Financials holding; adds sector diversification away from the metals/energy/tech-heavy book \u2014 helps."
     }
   ],
   "funnel": {
@@ -283,24 +409,28 @@
         "count": 503
       },
       {
-        "label": "Stage 0 survivors (3mo return >= SPY-2pp = 1.37%; GEN unresolved)",
-        "count": 174
+        "label": "Stage 0 evaluated (5 unresolved: VYLR, VMRK, CBRE, CCI, CPT)",
+        "count": 498
+      },
+      {
+        "label": "Stage 0 survivors (3mo return >= SPY +3.15% - 2pp = 1.15%)",
+        "count": 194
       },
       {
         "label": "C1 - no-derivatives guard",
-        "count": 174
+        "count": 194
       },
       {
         "label": "C2 - no-single-print guard",
-        "count": 55
+        "count": 69
       },
       {
         "label": "C3 - setup criterion checklist",
-        "count": 39
+        "count": 57
       },
       {
         "label": "C4 - final candidates",
-        "count": 39
+        "count": 57
       }
     ]
   },
